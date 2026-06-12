@@ -14,9 +14,9 @@ export const profile = {
     "I solve blockers before breakfast",
   ],
   identity:
-    "Technical Project Manager · Engineering Team Lead · Entrepreneur · Podcaster · AI Instructor",
+    "Technical Project Manager @ Platformz · Engineering Team Lead · Entrepreneur · Podcaster · AI Instructor",
   pitch:
-    "The person who turns chaos into shipped products. I build cross-functional product teams, clear the path, and deliver — sprint after sprint.",
+    "The person who turns chaos into shipped products. At Platformz I run delivery for three client platforms alongside the CEO — leading a 30+ person team of engineers, DevOps, designers, leads, and marketing.",
   email: "arifuzantor@gmail.com",
   linkedin: "https://linkedin.com/in/azantor",
   github: "https://github.com/azaworld",
@@ -27,9 +27,9 @@ export const profile = {
 
 export const heroStats = [
   { value: 5, suffix: "+", label: "Years leading delivery" },
-  { value: 40, suffix: "+", label: "Releases shipped" }, // {{ADJUST_NUMBER}}
-  { value: 12, suffix: "+", label: "Engineers led" }, // {{ADJUST_NUMBER}}
-  { value: 3, suffix: "", label: "Ventures founded" }, // {{ADJUST_NUMBER}}
+  { value: 30, suffix: "+", label: "People led — eng, DevOps, design, marketing" },
+  { value: 3, suffix: "", label: "Client platforms running" },
+  { value: 10, suffix: "+", label: "Portals shipped to production" },
 ];
 
 // RPG character stats for the About section (0–100)
@@ -45,10 +45,12 @@ export const originStory = [
    blocked, which dependency is about to bite, and which conversation will unblock
    three engineers at once. That's the role I was built for.`,
   `I started in the trenches of quality engineering, leading QA for mission-critical
-   healthcare platforms — then grew into running the whole delivery machine:
-   standups, roadmaps, releases, stakeholder reporting, and the thousand invisible
-   decisions that turn a plan into a product. Along the way I founded ventures,
-   taught AI to working professionals, and started a podcast about building things.`,
+   healthcare platforms — then grew into running the whole delivery machine. Today
+   I'm the Technical Project Manager at Platformz, running three client platforms
+   (FUR4, Rockerz, DMV Raw Feeders) side-by-side with the CEO and leading a 30+
+   person team across engineering, DevOps, design, leads, and marketing. Along the
+   way I founded ventures, taught AI to working professionals, and started a
+   podcast about building things.`,
   `{{ADD_A_PERSONAL_PARAGRAPH — what drives you, what you're building next}}`,
 ];
 
@@ -70,7 +72,7 @@ export const skillTree: SkillNode[] = [
     branch: "Leadership",
     level: 5,
     example:
-      "Ran multi-team delivery for a healthcare platform across web, mobile, and backend — coordinated releases across Trip Scheduler, Trip Assistant, and RCM products.",
+      "Run delivery for 3 client platforms at Platformz (FUR4, Rockerz, DMV Raw Feeders) — including a 3P hybrid EDI program across 5 enterprise partners that compressed a 12+ month timeline into ~60 days.",
   },
   {
     id: "agile",
@@ -86,7 +88,7 @@ export const skillTree: SkillNode[] = [
     branch: "Leadership",
     level: 5,
     example:
-      "The connective tissue between product, engineering, design, and DevOps — ran release-readiness reviews across four teams.",
+      "Lead a 30+ person team across engineering, DevOps, design, leads, and marketing — one daily delivery cadence spanning retail, EDI, integration, fulfillment, and internal engineering.",
   },
   {
     id: "stakeholder",
@@ -94,7 +96,7 @@ export const skillTree: SkillNode[] = [
     branch: "Leadership",
     level: 4,
     example:
-      "Weekly exec-level reporting: roadmap progress, risk register, and the honest version of 'are we on track?'",
+      "Run the delivery side of Platformz directly with the CEO — roadmap progress, risk register, client-facing status, and the honest version of 'are we on track?'",
   },
   {
     id: "qa-release",
@@ -148,12 +150,37 @@ export type Mission = {
 
 export const missions: Mission[] = [
   {
+    id: "platformz",
+    codename: "Operation Command Center",
+    role: "Technical Project Manager",
+    org: "Platformz — platformz.us",
+    period: "Sept 2024 — Present",
+    status: "ACTIVE",
+    brief:
+      "Running delivery for three client platforms alongside the CEO — leading a 30+ person team of engineers, DevOps, designers, leads, and marketing.",
+    objectives: [
+      "FUR4 — enterprise omnichannel pet-brand platform: 5 portals (DTC storefront, B2B dealer portal, influencer referral portal, GOD ops-health portal, AI operations control tower) on a Magento commerce core",
+      "FUR4 3P hybrid EDI program across 5 enterprise partners — full compliance with end-to-end automation",
+      "Rockerz — immersive product customizer plus DTC, dealer, dealer-locator, and referral portals on AWS",
+      "DMV Raw Feeders — zone-based delivery routing, subscription management, and referral portal",
+      "Daily ops cadence across retail, EDI, integration, fulfillment, and engineering teams",
+    ],
+    bossFight:
+      "A 3P hybrid EDI rollout — retailer requirements, EDI document lifecycles, inventory rules, SLAs, and siloed vendors across Amazon, Walmart, Target, and Chewy. The kind of program that typically takes 12+ months. We shipped it in ~60 days.",
+    loot: [
+      "12+ month EDI program delivered in ~60 days",
+      "FUR4 live on Chewy, Amazon, Walmart, eBay, Macy's & more",
+      "3 client platforms in stable, monitored production",
+      "30+ person cross-functional team on one delivery cadence",
+    ],
+  },
+  {
     id: "kinetik",
     codename: "Operation Lifeline",
     role: "QA Lead → Delivery Lead",
     org: "Kinetik Care — New York, USA",
-    period: "Sept 2023 — Present",
-    status: "ACTIVE",
+    period: "Sept 2023 — Sept 2024",
+    status: "COMPLETE",
     brief:
       "Own delivery quality for a healthcare platform moving real patients — iOS, Android, web, and mission-critical backend systems.",
     objectives: [
@@ -229,8 +256,8 @@ export const dashboard = {
   counters: [
     { label: "Standups run", value: 900, suffix: "+" }, // {{ADJUST}}
     { label: "Blockers cleared", value: 480, suffix: "+" }, // {{ADJUST}}
-    { label: "Releases shipped", value: 40, suffix: "+" }, // {{ADJUST}}
-    { label: "Teams coordinated", value: 4, suffix: "" }, // {{ADJUST}}
+    { label: "Portals & releases shipped", value: 40, suffix: "+" }, // {{ADJUST}}
+    { label: "People led across 3 clients", value: 30, suffix: "+" },
   ],
   radials: [
     { label: "On-time delivery", value: 94 }, // {{ADJUST}}
