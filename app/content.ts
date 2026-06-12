@@ -11,10 +11,11 @@ export const profile = {
     "I lead engineering teams",
     "I ship products",
     "I build companies",
+    "I teach AI & tech",
     "I solve blockers before breakfast",
   ],
   identity:
-    "CEO @ AZAI Labs · TPM @ Platformz · Senior QA @ Kintsugi · Founder @ AZADEMY",
+    "Founder & CEO @ AZAI Labs · TPM @ Platformz · Podcaster · AI Tech Instructor",
   pitch:
     "The person who turns chaos into shipped products. I run delivery for three client platforms at Platformz, own quality at Kintsugi, and build AI companies on the side — AZAI Labs ships agents that do real work, and AZADEMY gets engineers hired.",
   email: "arifuzantor@gmail.com",
@@ -25,6 +26,9 @@ export const profile = {
   azailabs: "https://azailabs.dev",
   azademy: "https://azademy.org",
   upwork: "https://www.upwork.com/freelancers/~01b1ba72ba57683f43",
+  listen2aza: "https://www.youtube.com/@Listen2AZA",
+  foundation: "https://ssasf.vercel.app",
+  foundationFacebook: "https://www.facebook.com/asattarfoundation/",
   calendar: "{{CALENDAR_BOOKING_LINK}}", // e.g. https://cal.com/yourname
   location: "Dhaka, Bangladesh",
 };
@@ -48,18 +52,89 @@ export const originStory = [
   `Every team has that person who sees the whole board — who knows which piece is
    blocked, which dependency is about to bite, and which conversation will unblock
    three engineers at once. That's the role I was built for.`,
-  `I started in the trenches of quality engineering — from freelance e-commerce QA to
-   reliability engineering at Mastercard, to leading QA for mission-critical healthcare
-   platforms — and grew into running the whole delivery machine. Today
-   I split my time between two active missions: Technical Project Manager at
-   Platformz, running three client platforms (FUR4, Rockerz, DMV Raw Feeders)
-   side-by-side with the CEO and leading a 30+ person team — and Senior QA Engineer
-   at Kintsugi in San Francisco, owning quality for an AI-powered tax platform.`,
-  `And I build companies. I'm the founder & CEO of AZAI Labs — an AI agents lab with
-   one belief: build with agents, not headcount — and the founder of AZADEMY, an
-   academy where learning meets earning: courses, AI & tech videos, and real
-   interview sessions that get CS people hired. The mission everywhere is the
-   same — turn chaos into shipped products.`,
+  `Today I build companies and run delivery: founder & CEO of AZAI Labs, founder of
+   AZADEMY and Listen2AZA, TPM at Platformz, Senior QA at Kintsugi — and I run the
+   Silent Sacrifice Abdus Sattar Foundation in honor of my father. The mission
+   everywhere is the same: turn chaos into shipped products. Here's how the
+   character leveled up:`,
+];
+
+// ----------------------------------------------------------------------------
+// THE JOURNEY — origin story as a level-up map (rendered as a flow in About)
+// ----------------------------------------------------------------------------
+export const journey = [
+  {
+    lv: 1,
+    year: "2018",
+    icon: "🎮",
+    title: "Side quests begin",
+    where: "Freelance QA — CarryBags Ltd, UK",
+    note: "First bugs busted, remote from Dhaka.",
+  },
+  {
+    lv: 2,
+    year: "2019",
+    icon: "🐣",
+    title: "Jr. Software QA Engineer",
+    where: "Dynamic Solution Innovators",
+    note: "OPENCRVS — software that registers births and deaths.",
+  },
+  {
+    lv: 3,
+    year: "2020",
+    icon: "🛡️",
+    title: "Software QA Engineer",
+    where: "REVE Systems",
+    note: "Sothik +60% performance · critical defects −30%.",
+  },
+  {
+    lv: 4,
+    year: "2021",
+    icon: "🌍",
+    title: "Augmented Sr. SQA",
+    where: "Intellex via TCS — US client",
+    note: "Global Magento commerce across 4 regions.",
+  },
+  {
+    lv: 5,
+    year: "2022",
+    icon: "💳",
+    title: "Sr. Automation & Reliability Engineer",
+    where: "Mastercard",
+    note: "Chaos engineering at global payments scale.",
+  },
+  {
+    lv: 6,
+    year: "2023",
+    icon: "🚑",
+    title: "QA Engineer I → QA Lead",
+    where: "Kinetik — New York",
+    note: "Healthcare platform moving real patients.",
+  },
+  {
+    lv: 7,
+    year: "2024",
+    icon: "🎯",
+    title: "Technical Project Manager",
+    where: "Platformz",
+    note: "3 client platforms · 30+ person team · with the CEO.",
+  },
+  {
+    lv: 8,
+    year: "2025",
+    icon: "🧠",
+    title: "Senior QA Engineer",
+    where: "Kintsugi — San Francisco",
+    note: "Quality for AI-powered tax compliance.",
+  },
+  {
+    lv: 9,
+    year: "2025",
+    icon: "👑",
+    title: "Founder & CEO — New Game+",
+    where: "AZAI Labs · AZADEMY · Listen2AZA · SSAS Foundation",
+    note: "Build with agents. Teach engineers. Tell stories. Honor my father.",
+  },
 ];
 
 // ----------------------------------------------------------------------------
@@ -433,6 +508,22 @@ export const ventures = [
     theme: "cyan" as const,
     link: "https://www.youtube.com/@azademy",
   },
+  {
+    name: "Listen2AZA",
+    tagline: "Stories you can press play on.",
+    description:
+      "An audiobook channel on YouTube — narrated books and stories for people who'd rather listen than scroll. Founder.",
+    theme: "magenta" as const,
+    link: "https://www.youtube.com/@Listen2AZA",
+  },
+  {
+    name: "Silent Sacrifice Abdus Sattar Foundation",
+    tagline: "Every father's silent sacrifice. Every child's potential.",
+    description:
+      "A foundation honoring my father, Sheikh Abdus Sattar — scholarships, free mentorship and internships, Quran education, support for struggling families and cancer patients, feeding the hungry, and tree plantation. 60+ Quran students in Ramadan 2025, 60 students mentored in year one.",
+    theme: "emerald" as const,
+    link: "https://ssasf.vercel.app",
+  },
 ];
 
 // AZADEMY social presence — shown under the Content & Media section
@@ -453,7 +544,7 @@ export const azademySocials = [
 export const credentials = [
   {
     icon: "🎓",
-    text: "BE, Computer Science & Engineering — Shahjalal University of Science and Technology",
+    text: "B.Sc. Engineering, Computer Science & Engineering — Shahjalal University of Science and Technology",
     link: "",
   },
   {

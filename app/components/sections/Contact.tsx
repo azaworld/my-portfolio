@@ -154,6 +154,11 @@ export default function Contact() {
                   <span aria-hidden>🎓</span> AZADEMY — azademy.org
                 </a>
               </li>
+              <li>
+                <a href={profile.foundation} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
+                  <span aria-hidden>🌱</span> SSAS Foundation — ssasf.vercel.app
+                </a>
+              </li>
               {!profile.calendar.startsWith("{{") && (
                 <li>
                   <a href={profile.calendar} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">

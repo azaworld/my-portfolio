@@ -9,6 +9,8 @@ const THEME_STYLES = {
   violet: { color: "var(--violet)", emoji: "🪐" },
   cyan: { color: "var(--cyan)", emoji: "🌊" },
   amber: { color: "var(--amber)", emoji: "☀️" },
+  magenta: { color: "var(--magenta)", emoji: "🎧" },
+  emerald: { color: "#34d399", emoji: "🌱" },
 } as const;
 
 export default function Ventures() {
