@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arifuz Antor — QA Automation Engineer",
+  title: "Arifuzzaman Antor — Sr. Software QA Automation Engineer",
   description:
-    "QA Automation Engineer building reliable test frameworks with Playwright, TypeScript, and CI/CD pipelines.",
+    "Senior Software QA Automation Engineer with 5+ years of experience across web, mobile, and API testing. Playwright + TypeScript, Docker, CI/CD, and AI-powered testing.",
 };
 
 export default function RootLayout({
