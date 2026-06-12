@@ -139,6 +139,16 @@ export default function Contact() {
                   <span aria-hidden>💻</span> GitHub — azaworld
                 </a>
               </li>
+              <li>
+                <a href={profile.azailabs} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
+                  <span aria-hidden>🤖</span> AZAI Labs — azailabs.dev
+                </a>
+              </li>
+              <li>
+                <a href={profile.azademy} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
+                  <span aria-hidden>🎓</span> AZADEMY — azademy.org
+                </a>
+              </li>
               {!profile.calendar.startsWith("{{") && (
                 <li>
                   <a href={profile.calendar} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">

@@ -1,6 +1,6 @@
 "use client";
 
-import { media } from "../../content";
+import { azademySocials, media } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import TiltCard from "../ui/TiltCard";
@@ -39,6 +39,26 @@ export default function Media() {
           </Reveal>
         ))}
       </div>
+
+      {/* AZADEMY everywhere */}
+      <Reveal delay={200}>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2.5">
+          <span className="mr-1 font-mono text-xs uppercase tracking-[0.25em] text-muted">
+            Follow AZADEMY
+          </span>
+          {azademySocials.map((s) => (
+            <a
+              key={s.label}
+              href={s.url}
+              target="_blank"
+              rel="noreferrer"
+              className="glass rounded-full px-3.5 py-1.5 text-xs text-muted transition-all duration-300 hover:-translate-y-0.5 hover:border-amber hover:text-amber"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </Reveal>
     </Section>
   );
 }

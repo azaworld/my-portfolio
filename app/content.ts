@@ -14,13 +14,16 @@ export const profile = {
     "I solve blockers before breakfast",
   ],
   identity:
-    "TPM @ Platformz · Senior QA Engineer @ Kintsugi · Entrepreneur · Podcaster · AI Instructor",
+    "CEO @ AZAI Labs · TPM @ Platformz · Senior QA @ Kintsugi · Founder @ AZADEMY",
   pitch:
-    "The person who turns chaos into shipped products. At Platformz I run delivery for three client platforms alongside the CEO — leading a 30+ person team of engineers, DevOps, designers, leads, and marketing.",
+    "The person who turns chaos into shipped products. I run delivery for three client platforms at Platformz, own quality at Kintsugi, and build AI companies on the side — AZAI Labs ships agents that do real work, and AZADEMY gets engineers hired.",
   email: "arifuzantor@gmail.com",
   linkedin: "https://linkedin.com/in/azantor",
   github: "https://github.com/azaworld",
   twitter: "https://x.com/azantor1",
+  youtube: "https://www.youtube.com/@azademy",
+  azailabs: "https://azailabs.dev",
+  azademy: "https://azademy.org",
   calendar: "{{CALENDAR_BOOKING_LINK}}", // e.g. https://cal.com/yourname
   location: "Dhaka, Bangladesh",
 };
@@ -50,10 +53,12 @@ export const originStory = [
    I split my time between two active missions: Technical Project Manager at
    Platformz, running three client platforms (FUR4, Rockerz, DMV Raw Feeders)
    side-by-side with the CEO and leading a 30+ person team — and Senior QA Engineer
-   at Kintsugi in San Francisco, owning quality for an AI-powered tax platform.
-   Along the way I founded ventures, taught AI to working professionals, and
-   started a podcast about building things.`,
-  `{{ADD_A_PERSONAL_PARAGRAPH — what drives you, what you're building next}}`,
+   at Kintsugi in San Francisco, owning quality for an AI-powered tax platform.`,
+  `And I build companies. I'm the founder & CEO of AZAI Labs — an AI agents lab with
+   one belief: build with agents, not headcount — and the founder of AZADEMY, an
+   academy where learning meets earning: courses, AI & tech videos, and real
+   interview sessions that get CS people hired. The mission everywhere is the
+   same — turn chaos into shipped products.`,
 ];
 
 // ----------------------------------------------------------------------------
@@ -130,7 +135,7 @@ export const skillTree: SkillNode[] = [
     branch: "Entrepreneurship",
     level: 4,
     example:
-      "{{VENTURE_EXAMPLE — what you founded, what it does, traction numbers}}",
+      "Founder & CEO of AZAI Labs — an AI agents lab shipping practical automation for quality, operations, and decision-making (build with agents, not headcount) — and founder of AZADEMY.",
   },
   {
     id: "ai-instruction",
@@ -138,7 +143,7 @@ export const skillTree: SkillNode[] = [
     branch: "Entrepreneurship",
     level: 4,
     example:
-      "Teaching working professionals to use AI tools practically — curriculum design and live instruction.",
+      "Founder of AZADEMY — 'learning meets earning': practical AI & tech courses, build videos, and real interview sessions engineered to get CS people hired.",
   },
 ];
 
@@ -160,6 +165,30 @@ export type Mission = {
 };
 
 export const missions: Mission[] = [
+  {
+    id: "azailabs",
+    codename: "Operation Genesis",
+    role: "Founder & CEO",
+    org: "AZAI Labs — San Francisco, USA · remote-first from Dhaka",
+    period: "2025 — Present",
+    status: "ACTIVE",
+    brief:
+      "Build with agents, not headcount — an AI agents lab shipping practical automation for quality, operations, and decision-making, plus agentic talent augmentation for teams worldwide.",
+    objectives: [
+      "Ship AI agents that automate real work — quality, operations, and decision-making",
+      "Augment client teams with agentic talent so they move faster with confidence",
+      "Build AI products end to end — agentic automation and computer vision",
+      "Run the company: product, clients, hiring, and vision",
+    ],
+    bossFight:
+      "Founding a company while running delivery for two others — the ultimate WIP-limit violation, managed the same way as everything else: ruthless prioritization and a daily cadence.",
+    loot: [
+      "AI agents in production doing real client work",
+      "A team that ships — 2–10 people, zero bureaucracy",
+      "{{TRACTION_METRIC — e.g. clients served, agents deployed}}",
+    ],
+    tech: ["AI Agents", "LLMs", "Computer Vision", "TypeScript", "Python", "AWS"],
+  },
   {
     id: "platformz",
     codename: "Operation Command Center",
@@ -380,29 +409,41 @@ export const dashboard = {
 // ----------------------------------------------------------------------------
 export const ventures = [
   {
-    name: "{{VENTURE_1_NAME}}",
-    tagline: "{{VENTURE_1_ONE_LINER}}",
+    name: "AZAI Labs",
+    tagline: "Build with agents, not headcount.",
     description:
-      "{{VENTURE_1_DESCRIPTION — what it is, who it serves, traction}}",
+      "An AI agents lab that ships real work — practical agents automating quality, operations, and decision-making, plus agentic talent augmentation for teams that need to move faster. Founded 2025 · San Francisco HQ, remote-first from Dhaka. Founder & CEO.",
     theme: "violet" as const,
-    link: "{{VENTURE_1_URL}}",
+    link: "https://azailabs.dev",
   },
   {
-    name: "{{PODCAST_NAME}}",
-    tagline: "Conversations about building things that ship",
+    name: "AZADEMY",
+    tagline: "Learning meets earning.",
     description:
-      "{{PODCAST_DESCRIPTION — topics, notable guests, where to listen}}",
-    theme: "cyan" as const,
-    link: "{{PODCAST_URL}}",
-  },
-  {
-    name: "AI Instruction",
-    tagline: "Teaching professionals to actually use AI",
-    description:
-      "{{COURSE_DESCRIPTION — what you teach, audience size, outcomes}}",
+      "An academy built to get CS people hired — practical courses, AI & tech deep-dives, and career content that turns skills into offers. Founder.",
     theme: "amber" as const,
-    link: "{{COURSE_URL}}",
+    link: "https://azademy.org",
   },
+  {
+    name: "AZADEMY Studio",
+    tagline: "Real interviews. Real builds. On camera.",
+    description:
+      "The content arm of AZADEMY on YouTube — AI and tech build videos, plus real interview sessions with engineers showing how technical interviews actually go.",
+    theme: "cyan" as const,
+    link: "https://www.youtube.com/@azademy",
+  },
+];
+
+// AZADEMY social presence — shown under the Content & Media section
+export const azademySocials = [
+  { label: "YouTube", url: "https://www.youtube.com/@azademy" },
+  { label: "Facebook", url: "https://facebook.com/azademy" },
+  { label: "LinkedIn", url: "https://linkedin.com/in/azademy" },
+  { label: "Instagram", url: "https://instagram.com/azademy" },
+  { label: "X", url: "https://twitter.com/azademy" },
+  { label: "Medium", url: "https://medium.com/azademy" },
+  { label: "TikTok", url: "https://tiktok.com/@azademy" },
+  { label: "azademy.org", url: "https://azademy.org" },
 ];
 
 // ----------------------------------------------------------------------------
@@ -448,21 +489,24 @@ export const testimonials = [
 
 export const media = [
   {
-    title: "{{VIDEO_1_TITLE — e.g. Podcast episode or interview}}",
-    description: "{{VIDEO_1_DESCRIPTION}}",
-    url: "{{YOUTUBE_URL_1}}",
-    duration: "{{12:34}}",
+    title: "Real Tech Interviews",
+    description:
+      "Live interview sessions with real engineers — see how technical interviews actually go, question by question, on AZADEMY.",
+    url: "https://www.youtube.com/@azademy",
+    duration: "Series",
   },
   {
-    title: "{{VIDEO_2_TITLE}}",
-    description: "{{VIDEO_2_DESCRIPTION}}",
-    url: "{{YOUTUBE_URL_2}}",
-    duration: "{{45:01}}",
+    title: "AI & Tech Builds",
+    description:
+      "Building AI products and agents in public — practical walkthroughs, not slideware. From the AZAI Labs trenches to your feed.",
+    url: "https://www.youtube.com/@azademy",
+    duration: "Series",
   },
   {
-    title: "{{VIDEO_3_TITLE}}",
-    description: "{{VIDEO_3_DESCRIPTION}}",
-    url: "{{YOUTUBE_URL_3}}",
-    duration: "{{08:22}}",
+    title: "Learning Meets Earning",
+    description:
+      "Courses and career content engineered for one outcome: CS people getting hired. Skills in, offers out.",
+    url: "https://azademy.org",
+    duration: "Courses",
   },
 ];

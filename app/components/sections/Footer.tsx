@@ -53,10 +53,13 @@ export default function Footer() {
           </span>
         </button>
 
-        <div className="flex gap-6 text-sm text-muted">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted">
           <a href={profile.github} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">GitHub</a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">LinkedIn</a>
           <a href={profile.twitter} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">X / Twitter</a>
+          <a href={profile.youtube} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">YouTube</a>
+          <a href={profile.azailabs} target="_blank" rel="noreferrer" className="transition-colors hover:text-violet">AZAI Labs</a>
+          <a href={profile.azademy} target="_blank" rel="noreferrer" className="transition-colors hover:text-amber">AZADEMY</a>
           <a href={`mailto:${profile.email}`} className="transition-colors hover:text-cyan">Email</a>
         </div>
 
