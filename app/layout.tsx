@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Arifuzzaman Antor — Sr. Software QA Automation Engineer",
+  title: "Arifuzzaman “Antor” — Technical Program Manager · Team Lead · Entrepreneur",
   description:
-    "Senior Software QA Automation Engineer with 5+ years of experience across web, mobile, and API testing. Playwright + TypeScript, Docker, CI/CD, and AI-powered testing.",
+    "The person who turns chaos into shipped products. Technical Program Manager, engineering team lead, entrepreneur, podcaster, and AI instructor. Explore the interactive portfolio — earn XP while you're at it.",
 };
 
 export default function RootLayout({
@@ -24,11 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} antialiased`} suppressHydrationWarning>
+      <body className="grain">
+        <div className="aurora-bg" aria-hidden />
+        {children}
+      </body>
     </html>
   );
 }
