@@ -358,6 +358,13 @@ h3,
   .cursor-orb { display: none; }
 }
 
+/* Mobile nav dropdown — solid panel so page content never bleeds through */
+.menu-panel {
+  background: color-mix(in srgb, var(--bg) 96%, white 4%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6);
+}
+
 /* HUD XP bar */
 .xp-fill {
   transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);

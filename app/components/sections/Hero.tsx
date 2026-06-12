@@ -52,7 +52,7 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="animate-fade-up mt-7 h-8 font-mono text-lg text-text sm:text-2xl" style={{ animationDelay: "1.4s" }}>
+        <p className="animate-fade-up mt-7 min-h-14 font-mono text-lg text-text sm:min-h-9 sm:text-2xl" style={{ animationDelay: "1.4s" }}>
           <Typewriter phrases={profile.roles} />
         </p>
 

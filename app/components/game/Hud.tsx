@@ -27,7 +27,7 @@ export default function Hud() {
   return (
     <>
       {/* XP bar */}
-      <div className="glass fixed bottom-4 left-4 z-[80] w-56 rounded-xl p-3 shadow-lg">
+      <div className="glass fixed bottom-4 left-4 z-[80] w-44 rounded-xl p-3 shadow-lg sm:w-56">
         <div className="flex items-center justify-between gap-2">
           <button
             onClick={handleBadgeClick}
@@ -58,7 +58,7 @@ export default function Hud() {
       </div>
 
       {/* Toasts */}
-      <div className="pointer-events-none fixed bottom-4 right-4 z-[85] flex w-72 flex-col gap-2">
+      <div className="pointer-events-none fixed bottom-4 right-4 z-[85] flex w-64 max-w-[calc(100vw-2rem)] flex-col gap-2 sm:w-72">
         {toasts.map((t) => (
           <div key={t.id} className="glass animate-pop-in rounded-xl p-3 shadow-xl">
             <p className="flex items-center gap-2 text-sm font-semibold">

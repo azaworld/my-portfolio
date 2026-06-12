@@ -49,6 +49,14 @@ export default function Navbar() {
     }, [applyTheme, unlock])
   );
 
+  // Close the mobile menu with Escape
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
   // Active-section highlighting
   useEffect(() => {
     const sections = LINKS.map((l) => document.querySelector(l.href)).filter(Boolean) as Element[];
@@ -65,6 +73,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    // the fixed header is the containing block for the absolute dropdown panel
     <header className="glass fixed left-1/2 top-4 z-[70] w-[calc(100%-2rem)] max-w-4xl -translate-x-1/2 rounded-2xl px-4 shadow-lg">
       <nav className="flex items-center justify-between py-3" aria-label="Main">
         <a href="#top" className="font-display text-sm font-bold tracking-tight">
@@ -130,13 +139,17 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="flex flex-col gap-1 pb-3 md:hidden">
+        <div className="menu-panel animate-pop-in absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[75] flex flex-col gap-1 rounded-2xl p-2 md:hidden">
           {LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-white/10 hover:text-text"
+              className={`rounded-xl px-4 py-3 text-sm transition-colors ${
+                active === link.href
+                  ? "bg-white/10 font-medium text-text"
+                  : "text-muted hover:bg-white/10 hover:text-text"
+              }`}
             >
               {link.label}
             </a>
