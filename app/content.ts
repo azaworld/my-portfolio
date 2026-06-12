@@ -14,7 +14,7 @@ export const profile = {
     "I solve blockers before breakfast",
   ],
   identity:
-    "Technical Project Manager @ Platformz · Engineering Team Lead · Entrepreneur · Podcaster · AI Instructor",
+    "TPM @ Platformz · Senior QA Engineer @ Kintsugi · Entrepreneur · Podcaster · AI Instructor",
   pitch:
     "The person who turns chaos into shipped products. At Platformz I run delivery for three client platforms alongside the CEO — leading a 30+ person team of engineers, DevOps, designers, leads, and marketing.",
   email: "arifuzantor@gmail.com",
@@ -46,11 +46,12 @@ export const originStory = [
    three engineers at once. That's the role I was built for.`,
   `I started in the trenches of quality engineering, leading QA for mission-critical
    healthcare platforms — then grew into running the whole delivery machine. Today
-   I'm the Technical Project Manager at Platformz, running three client platforms
-   (FUR4, Rockerz, DMV Raw Feeders) side-by-side with the CEO and leading a 30+
-   person team across engineering, DevOps, design, leads, and marketing. Along the
-   way I founded ventures, taught AI to working professionals, and started a
-   podcast about building things.`,
+   I split my time between two active missions: Technical Project Manager at
+   Platformz, running three client platforms (FUR4, Rockerz, DMV Raw Feeders)
+   side-by-side with the CEO and leading a 30+ person team — and Senior QA Engineer
+   at Kintsugi in San Francisco, owning quality for an AI-powered tax platform.
+   Along the way I founded ventures, taught AI to working professionals, and
+   started a podcast about building things.`,
   `{{ADD_A_PERSONAL_PARAGRAPH — what drives you, what you're building next}}`,
 ];
 
@@ -175,11 +176,32 @@ export const missions: Mission[] = [
     ],
   },
   {
+    id: "kintsugi",
+    codename: "Operation Precision",
+    role: "Senior QA Engineer",
+    org: "Kintsugi — San Francisco, USA (remote)",
+    period: "Sept 2025 — Present",
+    status: "ACTIVE",
+    brief:
+      "Senior quality engineering for an AI-powered sales tax automation platform — where a wrong number isn't a bug, it's a compliance problem.",
+    objectives: [
+      "Own QA automation strategy across the platform — Playwright + TypeScript wired into CI",
+      "Quality gates for AI-driven features where correctness is the product",
+      "{{ADD_KINTSUGI_DETAIL — e.g. key systems you cover, releases shipped}}",
+    ],
+    bossFight:
+      "Testing AI-powered tax logic: outputs vary, regulations shift, and 'looks right' isn't good enough. Built verification approaches that hold the line on accuracy.",
+    loot: [
+      "{{METRIC — e.g. escaped-defect rate, coverage}}",
+      "QA leadership across a high-stakes fintech domain",
+    ],
+  },
+  {
     id: "kinetik",
     codename: "Operation Lifeline",
-    role: "QA Lead → Delivery Lead",
-    org: "Kinetik Care — New York, USA",
-    period: "Sept 2023 — Sept 2024",
+    role: "QA Engineer I → QA Lead",
+    org: "Kinetik — Long Island City, New York (remote)",
+    period: "Sept 2023 — Sept 2025",
     status: "COMPLETE",
     brief:
       "Own delivery quality for a healthcare platform moving real patients — iOS, Android, web, and mission-critical backend systems.",
@@ -201,50 +223,50 @@ export const missions: Mission[] = [
     id: "reve",
     codename: "Operation Stronghold",
     role: "Software QA Engineer",
-    org: "REVE Systems",
-    period: "Dec 2022 — Sept 2023",
+    org: "REVE Systems — Dhaka, Bangladesh",
+    period: "Dec 2022 — Aug 2023",
     status: "COMPLETE",
     brief:
-      "Performance and security hardening for telecom-scale systems with distributed teams.",
+      "QA Lead for Sothik — a Bangla grammar & spell checker — and QA contributor on CBMS, with performance and security hardening across the board.",
     objectives: [
-      "Design automated suites with Selenium + Python",
-      "Lead performance & security testing — JMeter, OWASP ZAP",
-      "Improve traceability across distributed teams",
+      "Lead QA for Sothik (grammar & spell checker) end to end",
+      "QA contribution on CBMS",
+      "Performance & security testing — JMeter, OWASP ZAP",
     ],
     bossFight:
-      "Coordinating test cycles across timezones without blocking releases — solved with async handoffs and ruthless prioritization.",
-    loot: ["Reduced release cycle times", "Security testing playbook"],
+      "Testing a grammar engine where every false positive erodes user trust — built evaluation suites that measured linguistic accuracy, not just uptime.",
+    loot: ["Reduced release cycle times", "Security testing playbook", "QA lead experience"],
   },
   {
     id: "dsi",
     codename: "Operation Foundation",
     role: "Jr. Software QA Engineer",
-    org: "Dynamic Solution Innovators",
+    org: "Dynamic Solution Innovators Ltd. — Dhaka, Bangladesh",
     period: "Sept 2021 — Nov 2022",
     status: "COMPLETE",
     brief: "First boss arena: learning to ship with CI discipline.",
     objectives: [
       "Functional, API, and regression coverage",
-      "Jenkins CI-integrated automation",
+      "Cypress.io automation integrated with CI/CD pipelines for reliable continuous testing",
       "Reusable component design for test suites",
     ],
     bossFight: "Earning trust as the junior who finds the bugs that matter.",
     loot: ["Coverage up across the board", "CI pipeline ownership"],
   },
   {
-    id: "wcb",
+    id: "carrybags",
     codename: "Operation First Blood",
-    role: "QA Engineer",
-    org: "We Carry Bags — UK (remote)",
-    period: "June 2020 — Aug 2021",
+    role: "Software QA Engineer (part-time)",
+    org: "CarryBags Limited — London, UK (remote)",
+    period: "July 2020 — Aug 2021",
     status: "COMPLETE",
     brief: "The tutorial level — except the e-commerce revenue was real.",
     objectives: [
-      "Test automation for e-commerce platforms",
-      "Jenkins + Selenium nightly build testing",
+      "Lead QA efforts for key projects — testing workflows and team coordination",
+      "Test automation for an e-commerce platform",
       "Fast-turnaround QA sprints",
     ],
-    bossFight: "Remote-first collaboration before remote was cool.",
+    bossFight: "Remote-first collaboration across timezones before remote was cool.",
     loot: ["Nightly regression safety net", "First automation framework"],
   },
 ];
@@ -301,6 +323,27 @@ export const ventures = [
       "{{COURSE_DESCRIPTION — what you teach, audience size, outcomes}}",
     theme: "amber" as const,
     link: "{{COURSE_URL}}",
+  },
+];
+
+// ----------------------------------------------------------------------------
+// CREDENTIALS — education & certifications, shown in the About card
+// ----------------------------------------------------------------------------
+export const credentials = [
+  {
+    icon: "🎓",
+    text: "BE, Computer Science & Engineering — Shahjalal University of Science and Technology",
+    link: "",
+  },
+  {
+    icon: "🤖",
+    text: "Machine Learning Specialization — Coursera (2020)",
+    link: "https://www.coursera.org/account/accomplishments/specialization/FTSXWBVBZDVQ",
+  },
+  {
+    icon: "🐍",
+    text: "Programming for Everybody (Python) — Coursera (2020)",
+    link: "https://www.coursera.org/account/accomplishments/certificate/L83YBWRPB6GN",
   },
 ];
 

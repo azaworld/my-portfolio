@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { characterStats, originStory, profile } from "../../content";
+import { characterStats, credentials, originStory, profile } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 
@@ -75,6 +75,21 @@ export default function About() {
             <p className="mt-5 border-t border-white/10 pt-4 font-mono text-[11px] text-muted">
               CLASS: Technical Program Manager · SPEC: Cross-functional team builder
             </p>
+
+            <ul className="mt-4 space-y-2.5 border-t border-white/10 pt-4">
+              {credentials.map((cred) => (
+                <li key={cred.text} className="flex items-start gap-2 text-xs leading-relaxed text-muted">
+                  <span aria-hidden>{cred.icon}</span>
+                  {cred.link ? (
+                    <a href={cred.link} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan hover:underline">
+                      {cred.text} ↗
+                    </a>
+                  ) : (
+                    <span>{cred.text}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </div>
