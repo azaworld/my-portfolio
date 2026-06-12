@@ -26,7 +26,7 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: 5, suffix: "+", label: "Years leading delivery" },
+  { value: 7, suffix: "+", label: "Years in quality & delivery" },
   { value: 30, suffix: "+", label: "People led — eng, DevOps, design, marketing" },
   { value: 3, suffix: "", label: "Client platforms running" },
   { value: 10, suffix: "+", label: "Portals shipped to production" },
@@ -44,8 +44,9 @@ export const originStory = [
   `Every team has that person who sees the whole board — who knows which piece is
    blocked, which dependency is about to bite, and which conversation will unblock
    three engineers at once. That's the role I was built for.`,
-  `I started in the trenches of quality engineering, leading QA for mission-critical
-   healthcare platforms — then grew into running the whole delivery machine. Today
+  `I started in the trenches of quality engineering — from freelance e-commerce QA to
+   reliability engineering at Mastercard, to leading QA for mission-critical healthcare
+   platforms — and grew into running the whole delivery machine. Today
    I split my time between two active missions: Technical Project Manager at
    Platformz, running three client platforms (FUR4, Rockerz, DMV Raw Feeders)
    side-by-side with the CEO and leading a 30+ person team — and Senior QA Engineer
@@ -108,6 +109,14 @@ export const skillTree: SkillNode[] = [
       "Built the QA discipline from scratch — automation frameworks, release gates, and zero-surprise launch days.",
   },
   {
+    id: "reliability",
+    name: "Reliability & Chaos Engineering",
+    branch: "Delivery",
+    level: 4,
+    example:
+      "SRE practice at Mastercard — chaos engineering sessions, Prometheus + Grafana observability, Terraform-provisioned AWS infrastructure, and incident-response playbooks for critical payment systems.",
+  },
+  {
     id: "product",
     name: "Product Strategy",
     branch: "Entrepreneurship",
@@ -147,6 +156,7 @@ export type Mission = {
   objectives: string[];
   bossFight: string; // the biggest challenge
   loot: string[]; // outcomes / metrics
+  tech?: string[]; // "loadout" — technologies used, shown in the debrief
 };
 
 export const missions: Mission[] = [
@@ -174,6 +184,7 @@ export const missions: Mission[] = [
       "3 client platforms in stable, monitored production",
       "30+ person cross-functional team on one delivery cadence",
     ],
+    tech: ["Magento", "AWS", "EDI", "Docker", "Jira", "CI/CD"],
   },
   {
     id: "kintsugi",
@@ -195,79 +206,147 @@ export const missions: Mission[] = [
       "{{METRIC — e.g. escaped-defect rate, coverage}}",
       "QA leadership across a high-stakes fintech domain",
     ],
+    tech: ["Playwright", "TypeScript", "Postman", "CI/CD"],
   },
   {
     id: "kinetik",
     codename: "Operation Lifeline",
-    role: "QA Engineer I → QA Lead",
-    org: "Kinetik — Long Island City, New York (remote)",
+    role: "Software QA Engineer I → QA Lead",
+    org: "Kinetik — New York, USA (remote)",
     period: "Sept 2023 — Sept 2025",
     status: "COMPLETE",
     brief:
-      "Own delivery quality for a healthcare platform moving real patients — iOS, Android, web, and mission-critical backend systems.",
+      "Own delivery quality for a healthcare platform moving real patients — iOS, Android, web, and mission-critical backend systems across Trip Scheduler, Trip Assistant, and RCM.",
     objectives: [
-      "Lead QA and release strategy across Trip Scheduler, Trip Assistant, and RCM",
-      "Coordinate product managers, engineering leads, CTO, and DevOps for every release",
-      "Stand up TypeScript + Playwright automation across web and mobile",
-      "Run risk-based test planning for critical healthcare user flows",
+      "Led API automation with Playwright + Postman — automation scripts in TypeScript",
+      "Worked with AWS APIs (Lambda, SQS, S3) and web security testing",
+      "Validated Magento API integrations with QuickBooks, ShipBob, and Mailchimp — including data synchronization with external systems",
+      "E-commerce flows, 2FA with Twilio, usability, and multi-language / multi-currency support",
+      "UI, automated, and TDD strategies; Selenium browser suites; performance & stability testing",
+      "Manual testing with QASE and Jira across all three product lines",
     ],
     bossFight:
       "Shipping weekly into a healthcare environment where a regression isn't a bug — it's a missed patient trip. Built release gates that caught issues without slowing the team down.",
     loot: [
-      "{{METRIC — e.g. release bugs down X%}}",
       "Zero-surprise launch cadence across 3 product lines",
       "QA architecture adopted org-wide",
+      "TypeScript API automation suite covering critical flows",
     ],
+    tech: ["TypeScript", "Playwright", "Postman", "Selenium", "AWS", "QASE", "Jira", "Magento"],
+  },
+  {
+    id: "mastercard",
+    codename: "Operation Failsafe",
+    role: "Senior Software Automation & Reliability Engineer",
+    org: "Mastercard — Remote",
+    period: "Feb 2022 — Aug 2023",
+    status: "COMPLETE",
+    brief:
+      "Test automation and site reliability at global payments scale — where 'five nines' isn't a slogan, it's the floor.",
+    objectives: [
+      "Built test automation frameworks for functional and performance testing across mobile and web",
+      "CI/CD pipelines with Jenkins, GitLab CI, and AWS CodePipeline",
+      "Performance & load testing for high-traffic conditions with JMeter and Locust",
+      "Chaos engineering sessions to surface failure points before customers found them",
+      "Observability with Prometheus + Grafana — monitoring, logging, and alerting end to end",
+      "Infrastructure provisioning and scaling with AWS + Terraform alongside platform engineers",
+      "Incident response & disaster recovery playbooks; on-call for critical production systems",
+    ],
+    bossFight:
+      "Deliberately breaking payment-critical systems in controlled chaos sessions — and proving they heal. Resilience you can't fake on a slide deck.",
+    loot: [
+      "Incident response & DR playbooks adopted by the team",
+      "Mentored junior engineers in automation & SRE practice",
+      "High-traffic load profiles validated with JMeter + Locust",
+    ],
+    tech: ["AWS", "Terraform", "Jenkins", "GitLab CI", "JMeter", "Locust", "Prometheus", "Grafana"],
   },
   {
     id: "reve",
     codename: "Operation Stronghold",
     role: "Software QA Engineer",
-    org: "REVE Systems — Dhaka, Bangladesh",
-    period: "Dec 2022 — Aug 2023",
+    org: "REVE Systems — Dhaka, Bangladesh (onsite)",
+    period: "Dec 2020 — Aug 2023",
     status: "COMPLETE",
     brief:
-      "QA Lead for Sothik — a Bangla grammar & spell checker — and QA contributor on CBMS, with performance and security hardening across the board.",
+      "Comprehensive QA for CBMS and Sothik (Bangla grammar & spell checker) — mobile, performance, and security testing with measurable wins.",
     objectives: [
-      "Lead QA for Sothik (grammar & spell checker) end to end",
-      "QA contribution on CBMS",
-      "Performance & security testing — JMeter, OWASP ZAP",
+      "End-to-end testing for CBMS with detailed process documentation",
+      "Mobile testing across Android, iOS, Xamarin Test Cloud, and AWS Device Farm",
+      "Performance testing with JMeter and LoadRunner",
+      "Security testing with OWASP ZAP, Burp Suite, and Kali Linux",
+      "Stakeholder engagement, team mentoring, and risk-based testing",
     ],
     bossFight:
       "Testing a grammar engine where every false positive erodes user trust — built evaluation suites that measured linguistic accuracy, not just uptime.",
-    loot: ["Reduced release cycle times", "Security testing playbook", "QA lead experience"],
+    loot: [
+      "Mobile app testing speed up 40%",
+      "Sothik performance up 60%",
+      "Critical defects down 30% via regression strategy",
+    ],
+    tech: ["Selenium", "JMeter", "LoadRunner", "AWS Device Farm", "Xamarin Test Cloud", "OWASP ZAP", "Burp Suite", "Kali Linux"],
+  },
+  {
+    id: "intellex",
+    codename: "Operation Global Cart",
+    role: "Augmented Sr. SQA — Intellex via TCS",
+    org: "Tata Consultancy Services — Remote (US client)",
+    period: "Jan 2021 — Jan 2022",
+    status: "COMPLETE",
+    brief:
+      "Embedded senior QA for a US client's global Magento commerce platform — registration to checkout, across four regions.",
+    objectives: [
+      "Full e-commerce coverage: user registration, product catalog, and checkout workflows",
+      "2FA testing with Twilio; verification flows with Twilio + SendGrid",
+      "Multi-language and multi-currency validation across USA, UK, Canada, and Europe",
+      "Selenium browser automation suites for cross-device compatibility",
+      "Magento Commerce API integrations with QuickBooks, ShipBob, and Mailchimp",
+    ],
+    bossFight:
+      "One storefront, four regions, every currency-rounding and translation edge case waiting to embarrass somebody at checkout. None shipped.",
+    loot: [
+      "Global multi-region launch validated end to end",
+      "Automated usability & API suites for key commerce flows",
+      "Daily reporting cadence trusted by the client",
+    ],
+    tech: ["Selenium", "Magento", "Twilio", "SendGrid", "ReactJS", "Next.js", ".NET Core", "Azure", "SQL"],
   },
   {
     id: "dsi",
     codename: "Operation Foundation",
     role: "Jr. Software QA Engineer",
-    org: "Dynamic Solution Innovators Ltd. — Dhaka, Bangladesh",
-    period: "Sept 2021 — Nov 2022",
+    org: "Dynamic Solution Innovators Ltd. — Dhaka, Bangladesh (onsite)",
+    period: "Sept 2019 — Nov 2020",
     status: "COMPLETE",
-    brief: "First boss arena: learning to ship with CI discipline.",
+    brief:
+      "Quality for OPENCRVS — open-source civil registration infrastructure used for the world's most vital records — plus the Altech platform.",
     objectives: [
-      "Functional, API, and regression coverage",
-      "Cypress.io automation integrated with CI/CD pipelines for reliable continuous testing",
-      "Reusable component design for test suites",
+      "Manual testing with TestRail and automated testing with Cypress for OPENCRVS",
+      "Partnered with the Altech team on bugs, test plans, and quality planning",
+      "Cross-browser testing and continuous integration practices",
+      "Performance and security testing for stability and vulnerability discovery",
     ],
-    bossFight: "Earning trust as the junior who finds the bugs that matter.",
-    loot: ["Coverage up across the board", "CI pipeline ownership"],
+    bossFight: "Earning trust as the junior who finds the bugs that matter — on software that registers births and deaths.",
+    loot: ["OPENCRVS shipped with confidence", "CI-integrated Cypress suite", "Detailed test-plan discipline"],
+    tech: ["Cypress", "TestRail", "Notion", "Jira"],
   },
   {
     id: "carrybags",
     codename: "Operation First Blood",
-    role: "Software QA Engineer (part-time)",
-    org: "CarryBags Limited — London, UK (remote)",
-    period: "July 2020 — Aug 2021",
+    role: "Jr. Software QA Engineer (freelance)",
+    org: "CarryBags Ltd — Coventry, UK (remote)",
+    period: "July 2018 — Aug 2019",
     status: "COMPLETE",
     brief: "The tutorial level — except the e-commerce revenue was real.",
     objectives: [
-      "Lead QA efforts for key projects — testing workflows and team coordination",
-      "Test automation for an e-commerce platform",
-      "Fast-turnaround QA sprints",
+      "Functional, usability, compatibility, and performance testing across platforms",
+      "Manual mobile testing on Android and iOS — push notifications, location services, device integrations",
+      "Cross-device coverage and performance under varied network conditions",
+      "Test cases from functional specs and user stories; regression discipline",
     ],
     bossFight: "Remote-first collaboration across timezones before remote was cool.",
-    loot: ["Nightly regression safety net", "First automation framework"],
+    loot: ["Regression safety net", "First automation framework", "Stakeholder-ready bug reports"],
+    tech: ["Jira", "Selenium", "Postman", "SQL"],
   },
 ];
 

@@ -74,6 +74,19 @@ function MissionModal({ mission, onClose }: { mission: Mission; onClose: () => v
             </li>
           ))}
         </ul>
+
+        {mission.tech && (
+          <>
+            <h4 className="mt-7 font-mono text-xs uppercase tracking-[0.25em] text-cyan">⚙ Loadout</h4>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {mission.tech.map((t) => (
+                <li key={t} className="rounded-md border border-cyan/25 bg-cyan/10 px-2.5 py-1 font-mono text-[11px] text-cyan">
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     </div>
   );
@@ -99,15 +112,20 @@ export default function MissionLog() {
                 onClick={() => openDebrief(mission)}
                 className="glass glow-border flex h-full w-full flex-col rounded-2xl p-6 text-left"
               >
-                <div className="flex items-center justify-between">
-                  <span
-                    className={`rounded-full px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest ${
-                      mission.status === "ACTIVE"
-                        ? "bg-cyan/15 text-cyan"
-                        : "bg-white/10 text-muted"
-                    }`}
-                  >
-                    {mission.status === "ACTIVE" ? "● active" : "✓ complete"}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="flex items-center gap-2">
+                    <span className="font-mono text-[10px] font-bold text-violet">
+                      M-{String(missions.length - i).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`rounded-full px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest ${
+                        mission.status === "ACTIVE"
+                          ? "bg-cyan/15 text-cyan"
+                          : "bg-white/10 text-muted"
+                      }`}
+                    >
+                      {mission.status === "ACTIVE" ? "● active" : "✓ complete"}
+                    </span>
                   </span>
                   <span className="font-mono text-[10px] text-muted">{mission.period}</span>
                 </div>
@@ -115,7 +133,21 @@ export default function MissionLog() {
                 <p className="mt-1 text-sm font-medium text-cyan">{mission.role}</p>
                 <p className="text-xs text-muted">{mission.org}</p>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">{mission.brief}</p>
-                <p className="mt-5 font-mono text-xs text-violet transition-colors group-hover:text-cyan">
+                {mission.tech && (
+                  <ul className="mt-4 flex flex-wrap gap-1.5">
+                    {mission.tech.slice(0, 4).map((t) => (
+                      <li key={t} className="rounded bg-white/5 px-2 py-0.5 font-mono text-[10px] text-muted">
+                        {t}
+                      </li>
+                    ))}
+                    {mission.tech.length > 4 && (
+                      <li className="rounded bg-white/5 px-2 py-0.5 font-mono text-[10px] text-cyan">
+                        +{mission.tech.length - 4} in debrief
+                      </li>
+                    )}
+                  </ul>
+                )}
+                <p className="mt-4 font-mono text-xs text-violet transition-colors group-hover:text-cyan">
                   Open debrief → <span className="text-muted">(+15 XP)</span>
                 </p>
               </button>
