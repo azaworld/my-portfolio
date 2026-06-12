@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import portrait from "../../assets/arifuz.jpg";
 import { characterStats, credentials, originStory, profile } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
@@ -66,6 +68,15 @@ export default function About() {
 
         <Reveal variant="right">
           <div className="glass glow-border rounded-2xl p-6">
+            <div className="mb-5 flex items-center gap-4">
+              <div className="portrait-duotone h-16 w-16 shrink-0 !rounded-full ring-2 ring-violet/60">
+                <Image src={portrait} alt="" className="h-full w-full object-cover" />
+              </div>
+              <div>
+                <p className="font-display font-bold leading-tight">{profile.name}</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-cyan">player one</p>
+              </div>
+            </div>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">Character stats</p>
             <div className="mt-5 space-y-5">
               {characterStats.map((stat, i) => (

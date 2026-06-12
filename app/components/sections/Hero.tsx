@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import portrait from "../../assets/arifuz.jpg";
 import { profile, heroStats } from "../../content";
 import ParticleField from "../fx/ParticleField";
 import Typewriter from "../fx/Typewriter";
@@ -40,7 +42,17 @@ export default function Hero() {
       <div className="animate-float-slow pointer-events-none absolute left-[6%] top-[60%] h-16 w-16 rounded-full border border-cyan/40 bg-cyan/10 backdrop-blur-sm" style={{ animationDelay: "-3s" }} aria-hidden />
       <div className="animate-float-slow pointer-events-none absolute right-[20%] bottom-[12%] h-12 w-12 rotate-45 border border-magenta/40 bg-magenta/10 backdrop-blur-sm" style={{ animationDelay: "-5s" }} aria-hidden />
 
-      <div className="relative">
+      <div className="relative grid items-center gap-12 lg:grid-cols-[1.25fr_0.75fr]">
+        <div>
+        {/* Portrait — centered above the headline on mobile, right column on desktop */}
+        <div className="animate-fade-up mb-8 flex justify-center lg:hidden">
+          <div className="portrait-frame animate-float-slow w-40">
+            <div className="portrait-duotone">
+              <Image src={portrait} alt="Portrait of Arifuzzaman Antor" priority className="h-auto w-full" />
+            </div>
+          </div>
+        </div>
+
         <p className="animate-fade-up font-mono text-sm text-cyan">
           {profile.identity}
         </p>
@@ -89,6 +101,16 @@ export default function Hero() {
               <p className="mt-1 text-xs leading-snug text-muted">{stat.label}</p>
             </div>
           ))}
+        </div>
+        </div>
+
+        {/* Portrait — desktop right column */}
+        <div className="animate-fade-up hidden justify-center lg:flex" style={{ animationDelay: "600ms" }}>
+          <div className="portrait-frame animate-float-slow w-full max-w-sm">
+            <div className="portrait-duotone">
+              <Image src={portrait} alt="Portrait of Arifuzzaman Antor" priority className="h-auto w-full" />
+            </div>
+          </div>
         </div>
       </div>
 
