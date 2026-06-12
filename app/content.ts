@@ -242,6 +242,20 @@ export const skillTree: SkillNode[] = [
       "Run the delivery side of Platformz directly with the CEO — roadmap progress, risk register, client-facing status, and the honest version of 'are we on track?'",
   },
   {
+    id: "risk-escalation",
+    name: "Risk & Escalation",
+    branch: "Leadership",
+    level: 4,
+    example: "Risk registers, early warnings, and making the escalation call nobody else wants to make.",
+  },
+  {
+    id: "hiring-mentoring",
+    name: "Hiring & Mentoring",
+    branch: "Leadership",
+    level: 4,
+    example: "Mentored juniors at Mastercard; built and grew teams up to the 30+ person org at Platformz.",
+  },
+  {
     id: "qa-release",
     name: "QA & Release Management",
     branch: "Delivery",
@@ -256,6 +270,34 @@ export const skillTree: SkillNode[] = [
     level: 4,
     example:
       "SRE practice at Mastercard — chaos engineering sessions, Prometheus + Grafana observability, Terraform-provisioned AWS infrastructure, and incident-response playbooks for critical payment systems.",
+  },
+  {
+    id: "api-testing",
+    name: "API & Integration Testing",
+    branch: "Delivery",
+    level: 5,
+    example: "Postman, REST Assured, GraphQL — plus Magento ↔ QuickBooks/ShipBob/Mailchimp data-sync validation.",
+  },
+  {
+    id: "performance",
+    name: "Performance & Load",
+    branch: "Delivery",
+    level: 5,
+    example: "JMeter, k6, Locust, LoadRunner, Gatling — wired into nightly CI pipelines.",
+  },
+  {
+    id: "security-testing",
+    name: "Security Testing",
+    branch: "Delivery",
+    level: 4,
+    example: "OWASP ZAP, Burp Suite, and Kali Linux scans baked into release gates.",
+  },
+  {
+    id: "mobile-qa",
+    name: "Mobile QA",
+    branch: "Delivery",
+    level: 5,
+    example: "iOS & Android on real devices — Appium, Xamarin Test Cloud, AWS Device Farm.",
   },
   {
     id: "product",
@@ -281,6 +323,20 @@ export const skillTree: SkillNode[] = [
     example:
       "Founder of AZADEMY — 'learning meets earning': practical AI & tech courses, build videos, and real interview sessions engineered to get CS people hired.",
   },
+  {
+    id: "content-storytelling",
+    name: "Content & Storytelling",
+    branch: "Entrepreneurship",
+    level: 4,
+    example: "Two YouTube channels (AZADEMY, Listen2AZA), podcasting, and developer-facing courses.",
+  },
+  {
+    id: "community-impact",
+    name: "Community & Impact",
+    branch: "Entrepreneurship",
+    level: 4,
+    example: "Run the SSAS Foundation — scholarships, mentorship, and 60+ Quran students in year one.",
+  },
 ];
 
 // ----------------------------------------------------------------------------
@@ -291,7 +347,10 @@ export type Mission = {
   codename: string;
   role: string;
   org: string;
+  short: string; // compact label for the career timeline chart
   period: string;
+  start: number; // fractional year for the timeline chart, e.g. Sept 2024 → 2024.7
+  end: number | null; // null = present
   status: "ACTIVE" | "COMPLETE";
   brief: string;
   objectives: string[];
@@ -306,7 +365,10 @@ export const missions: Mission[] = [
     codename: "Operation Genesis",
     role: "Founder & CEO",
     org: "AZAI Labs — San Francisco, USA · remote-first from Dhaka",
+    short: "AZAI Labs",
     period: "2025 — Present",
+    start: 2025.0,
+    end: null,
     status: "ACTIVE",
     brief:
       "Build with agents, not headcount — an AI agents lab shipping practical automation for quality, operations, and decision-making, plus agentic talent augmentation for teams worldwide.",
@@ -330,7 +392,10 @@ export const missions: Mission[] = [
     codename: "Operation Command Center",
     role: "Technical Project Manager",
     org: "Platformz — platformz.us",
+    short: "Platformz",
     period: "Sept 2024 — Present",
+    start: 2024.7,
+    end: null,
     status: "ACTIVE",
     brief:
       "Running delivery for three client platforms alongside the CEO — leading a 30+ person team of engineers, DevOps, designers, leads, and marketing.",
@@ -356,7 +421,10 @@ export const missions: Mission[] = [
     codename: "Operation Precision",
     role: "Software Engineer",
     org: "Kintsugi — San Francisco, USA (remote)",
+    short: "Kintsugi",
     period: "Sept 2025 — Present",
+    start: 2025.7,
+    end: null,
     status: "ACTIVE",
     brief:
       "Software engineering for an AI-powered sales tax automation platform — where a wrong number isn't a bug, it's a compliance problem.",
@@ -378,7 +446,10 @@ export const missions: Mission[] = [
     codename: "Operation Lifeline",
     role: "Software QA Engineer I → QA Lead",
     org: "Kinetik — New York, USA (remote)",
+    short: "Kinetik",
     period: "Sept 2023 — Sept 2025",
+    start: 2023.7,
+    end: 2025.7,
     status: "COMPLETE",
     brief:
       "Own delivery quality for a healthcare platform moving real patients — iOS, Android, web, and mission-critical backend systems across Trip Scheduler, Trip Assistant, and RCM.",
@@ -404,7 +475,10 @@ export const missions: Mission[] = [
     codename: "Operation Failsafe",
     role: "Senior Software Automation & Reliability Engineer",
     org: "Mastercard — Remote",
+    short: "Mastercard",
     period: "Feb 2022 — Aug 2023",
+    start: 2022.1,
+    end: 2023.6,
     status: "COMPLETE",
     brief:
       "Test automation and site reliability at global payments scale — where 'five nines' isn't a slogan, it's the floor.",
@@ -427,36 +501,14 @@ export const missions: Mission[] = [
     tech: ["AWS", "Terraform", "Jenkins", "GitLab CI", "JMeter", "Locust", "Prometheus", "Grafana"],
   },
   {
-    id: "reve",
-    codename: "Operation Stronghold",
-    role: "Software QA Engineer",
-    org: "REVE Systems — Dhaka, Bangladesh (onsite)",
-    period: "Dec 2020 — Aug 2023",
-    status: "COMPLETE",
-    brief:
-      "Comprehensive QA for CBMS and Sothik (Bangla grammar & spell checker) — mobile, performance, and security testing with measurable wins.",
-    objectives: [
-      "End-to-end testing for CBMS with detailed process documentation",
-      "Mobile testing across Android, iOS, Xamarin Test Cloud, and AWS Device Farm",
-      "Performance testing with JMeter and LoadRunner",
-      "Security testing with OWASP ZAP, Burp Suite, and Kali Linux",
-      "Stakeholder engagement, team mentoring, and risk-based testing",
-    ],
-    bossFight:
-      "Testing a grammar engine where every false positive erodes user trust — built evaluation suites that measured linguistic accuracy, not just uptime.",
-    loot: [
-      "Mobile app testing speed up 40%",
-      "Sothik performance up 60%",
-      "Critical defects down 30% via regression strategy",
-    ],
-    tech: ["Selenium", "JMeter", "LoadRunner", "AWS Device Farm", "Xamarin Test Cloud", "OWASP ZAP", "Burp Suite", "Kali Linux"],
-  },
-  {
     id: "intellex",
     codename: "Operation Global Cart",
     role: "Augmented Sr. SQA — Intellex via TCS",
     org: "Tata Consultancy Services — Remote (US client)",
+    short: "TCS / Intellex",
     period: "Jan 2021 — Jan 2022",
+    start: 2021.0,
+    end: 2022.0,
     status: "COMPLETE",
     brief:
       "Embedded senior QA for a US client's global Magento commerce platform — registration to checkout, across four regions.",
@@ -477,11 +529,42 @@ export const missions: Mission[] = [
     tech: ["Selenium", "Magento", "Twilio", "SendGrid", "ReactJS", "Next.js", ".NET Core", "Azure", "SQL"],
   },
   {
+    id: "reve",
+    codename: "Operation Stronghold",
+    role: "Software QA Engineer",
+    org: "REVE Systems — Dhaka, Bangladesh (onsite)",
+    short: "REVE Systems",
+    period: "Dec 2020 — Aug 2023",
+    start: 2020.9,
+    end: 2023.6,
+    status: "COMPLETE",
+    brief:
+      "Comprehensive QA for CBMS and Sothik (Bangla grammar & spell checker) — mobile, performance, and security testing with measurable wins.",
+    objectives: [
+      "End-to-end testing for CBMS with detailed process documentation",
+      "Mobile testing across Android, iOS, Xamarin Test Cloud, and AWS Device Farm",
+      "Performance testing with JMeter and LoadRunner",
+      "Security testing with OWASP ZAP, Burp Suite, and Kali Linux",
+      "Stakeholder engagement, team mentoring, and risk-based testing",
+    ],
+    bossFight:
+      "Testing a grammar engine where every false positive erodes user trust — built evaluation suites that measured linguistic accuracy, not just uptime.",
+    loot: [
+      "Mobile app testing speed up 40%",
+      "Sothik performance up 60%",
+      "Critical defects down 30% via regression strategy",
+    ],
+    tech: ["Selenium", "JMeter", "LoadRunner", "AWS Device Farm", "Xamarin Test Cloud", "OWASP ZAP", "Burp Suite", "Kali Linux"],
+  },
+  {
     id: "dsi",
     codename: "Operation Foundation",
     role: "Jr. Software QA Engineer",
     org: "Dynamic Solution Innovators Ltd. — Dhaka, Bangladesh (onsite)",
+    short: "DSI",
     period: "Sept 2019 — Nov 2020",
+    start: 2019.7,
+    end: 2020.9,
     status: "COMPLETE",
     brief:
       "Quality for OPENCRVS — open-source civil registration infrastructure used for the world's most vital records — plus the Altech platform.",
@@ -500,7 +583,10 @@ export const missions: Mission[] = [
     codename: "Operation First Blood",
     role: "Jr. Software QA Engineer (freelance)",
     org: "CarryBags Ltd — Coventry, UK (remote)",
+    short: "CarryBags",
     period: "July 2018 — Aug 2019",
+    start: 2018.5,
+    end: 2019.6,
     status: "COMPLETE",
     brief: "The tutorial level — except the e-commerce revenue was real.",
     objectives: [
