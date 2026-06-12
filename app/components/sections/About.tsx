@@ -3,18 +3,110 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import portrait from "../../assets/arifuz.jpg";
-import { characterStats, credentials, journey, originStory, profile } from "../../content";
+import { characterStats, credentials, journey, originStory, profile, type JourneyStep } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
+import { useGame } from "../game/GameProvider";
+
+// One quest-map card: click to expand its details with a smooth animation.
+function JourneyCard({
+  step,
+  alignRight,
+  open,
+  onToggle,
+}: {
+  step: JourneyStep;
+  alignRight?: boolean;
+  open: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <button
+      onClick={onToggle}
+      aria-expanded={open}
+      className={`glass w-full rounded-2xl p-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan/40 ${
+        open ? "border-cyan/50 shadow-[0_0_32px_-8px_var(--glow)]" : ""
+      } ${step.lv === 9 ? "glow-border" : ""} ${alignRight ? "sm:text-right" : ""}`}
+    >
+      <p className={`flex items-center gap-2 ${alignRight ? "sm:flex-row-reverse" : ""}`}>
+        <span className="rounded-md bg-gradient-to-r from-violet to-cyan px-2 py-0.5 font-mono text-[10px] font-bold text-white">
+          LV{step.lv}
+        </span>
+        <span className="font-mono text-xs text-muted">{step.year}</span>
+        <span
+          className={`text-muted transition-transform duration-300 ${open ? "rotate-45" : ""} ${
+            alignRight ? "sm:mr-auto" : "ml-auto"
+          }`}
+          aria-hidden
+        >
+          +
+        </span>
+      </p>
+      <h4 className="mt-2 font-semibold leading-snug">{step.title}</h4>
+      <p className="mt-0.5 text-sm font-medium text-cyan">{step.where}</p>
+      <p className="mt-1.5 text-sm leading-relaxed text-muted">{step.note}</p>
+
+      {/* animated detail expansion */}
+      <div
+        className="grid transition-[grid-template-rows] duration-500 ease-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <ul className="mt-3 space-y-1.5 border-t border-white/10 pt-3">
+            {step.details.map((d, i) => (
+              <li
+                key={d}
+                className={`flex gap-2 text-xs leading-relaxed text-muted ${
+                  alignRight ? "sm:flex-row-reverse" : ""
+                } ${open ? "animate-fade-up" : ""}`}
+                style={open ? { animationDelay: `${i * 80}ms`, animationDuration: "0.4s" } : undefined}
+              >
+                <span className="text-cyan" aria-hidden>
+                  ▸
+                </span>
+                {d}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p className="mt-2 font-mono text-[10px] text-violet">
+        {open ? "− collapse" : "+ open details (+5 XP)"}
+      </p>
+    </button>
+  );
+}
 
 // The level-up journey: zigzag quest map with a glowing spine.
+// Consecutive `parallel` steps render side by side as simultaneous missions.
 function Journey() {
+  const [openLv, setOpenLv] = useState<number | null>(null);
+  const { addXp } = useGame();
+
+  const toggle = (lv: number) => {
+    setOpenLv((o) => (o === lv ? null : lv));
+    addXp(5, `journey-${lv}`);
+  };
+
+  // group steps into rows — pairs of parallel steps share one row
+  const rows: JourneyStep[][] = [];
+  for (let i = 0; i < journey.length; i++) {
+    if (journey[i].parallel && journey[i + 1]?.parallel) {
+      rows.push([journey[i], journey[i + 1]]);
+      i++;
+    } else {
+      rows.push([journey[i]]);
+    }
+  }
+
+  let singleIndex = 0;
   return (
     <div className="relative mt-16">
       <p className="font-mono text-xs uppercase tracking-[0.3em] text-cyan">quest map</p>
       <h3 className="font-display mt-2 text-2xl font-bold">
         The <span className="text-aurora">level-up</span> journey
       </h3>
+      <p className="mt-2 text-sm text-muted">Tap any checkpoint to open its details.</p>
 
       <div className="relative mt-10">
         {/* glowing spine */}
@@ -28,8 +120,37 @@ function Journey() {
         />
 
         <ol className="space-y-10">
-          {journey.map((step, i) => {
-            const left = i % 2 === 0;
+          {rows.map((row) => {
+            if (row.length === 2) {
+              const [a, b] = row;
+              return (
+                <li key={a.lv} className="relative">
+                  {/* energy orb where the track splits */}
+                  <span
+                    className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-amber bg-bg text-base shadow-[0_0_18px_var(--glow)] sm:left-1/2 sm:-translate-x-1/2"
+                    aria-hidden
+                  >
+                    ⚡
+                  </span>
+                  <p className="mb-5 ml-14 pt-2 sm:ml-0 sm:pt-12 sm:text-center">
+                    <span className="animate-pulse rounded-full border border-amber/40 bg-amber/10 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-widest text-amber">
+                      ⫽ two missions — running in parallel
+                    </span>
+                  </p>
+                  <div className="ml-14 grid gap-5 sm:ml-0 sm:grid-cols-2 sm:gap-12">
+                    <Reveal variant="left" className="sm:pr-10">
+                      <JourneyCard step={a} open={openLv === a.lv} onToggle={() => toggle(a.lv)} />
+                    </Reveal>
+                    <Reveal variant="right" className="sm:pl-10">
+                      <JourneyCard step={b} open={openLv === b.lv} onToggle={() => toggle(b.lv)} />
+                    </Reveal>
+                  </div>
+                </li>
+              );
+            }
+
+            const step = row[0];
+            const left = singleIndex++ % 2 === 0;
             return (
               <li key={step.lv} className="relative sm:grid sm:grid-cols-2 sm:gap-12">
                 {/* node orb on the spine */}
@@ -42,23 +163,14 @@ function Journey() {
 
                 <Reveal
                   variant={left ? "left" : "right"}
-                  className={`ml-14 sm:ml-0 ${left ? "sm:col-start-1 sm:pr-10 sm:text-right" : "sm:col-start-2 sm:pl-10"}`}
+                  className={`ml-14 sm:ml-0 ${left ? "sm:col-start-1 sm:pr-10" : "sm:col-start-2 sm:pl-10"}`}
                 >
-                  <div
-                    className={`glass inline-block rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan/40 ${
-                      step.lv === 9 ? "glow-border" : ""
-                    }`}
-                  >
-                    <p className={`flex items-center gap-2 ${left ? "sm:justify-end" : ""}`}>
-                      <span className="rounded-md bg-gradient-to-r from-violet to-cyan px-2 py-0.5 font-mono text-[10px] font-bold text-white">
-                        LV{step.lv}
-                      </span>
-                      <span className="font-mono text-xs text-muted">{step.year}</span>
-                    </p>
-                    <h4 className="mt-2 font-semibold leading-snug">{step.title}</h4>
-                    <p className="mt-0.5 text-sm font-medium text-cyan">{step.where}</p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{step.note}</p>
-                  </div>
+                  <JourneyCard
+                    step={step}
+                    alignRight={left}
+                    open={openLv === step.lv}
+                    onToggle={() => toggle(step.lv)}
+                  />
                 </Reveal>
               </li>
             );

@@ -53,16 +53,29 @@ export const originStory = [
    blocked, which dependency is about to bite, and which conversation will unblock
    three engineers at once. That's the role I was built for.`,
   `Today I build companies and run delivery: founder & CEO of AZAI Labs, founder of
-   AZADEMY and Listen2AZA, TPM at Platformz, Senior QA at Kintsugi — and I run the
+   AZADEMY and Listen2AZA, TPM at Platformz, Software Engineer at Kintsugi — and I run the
    Silent Sacrifice Abdus Sattar Foundation in honor of my father. The mission
    everywhere is the same: turn chaos into shipped products. Here's how the
    character leveled up:`,
 ];
 
 // ----------------------------------------------------------------------------
-// THE JOURNEY — origin story as a level-up map (rendered as a flow in About)
+// THE JOURNEY — origin story as a level-up map (rendered as a flow in About).
+// Click a card to expand its details. `parallel: true` on two consecutive
+// entries renders them side by side as simultaneous missions.
 // ----------------------------------------------------------------------------
-export const journey = [
+export type JourneyStep = {
+  lv: number;
+  year: string;
+  icon: string;
+  title: string;
+  where: string;
+  note: string;
+  details: string[];
+  parallel?: boolean;
+};
+
+export const journey: JourneyStep[] = [
   {
     lv: 1,
     year: "2018",
@@ -70,6 +83,11 @@ export const journey = [
     title: "Side quests begin",
     where: "Freelance QA — CarryBags Ltd, UK",
     note: "First bugs busted, remote from Dhaka.",
+    details: [
+      "Functional, usability, compatibility & performance testing across platforms",
+      "Manual mobile QA on Android & iOS — push notifications, location, device integrations",
+      "Regression discipline and stakeholder-ready bug reports",
+    ],
   },
   {
     lv: 2,
@@ -78,6 +96,11 @@ export const journey = [
     title: "Jr. Software QA Engineer",
     where: "Dynamic Solution Innovators",
     note: "OPENCRVS — software that registers births and deaths.",
+    details: [
+      "Manual testing with TestRail, automation with Cypress",
+      "Quality planning for OPENCRVS and the Altech platform",
+      "Cross-browser coverage and CI practices",
+    ],
   },
   {
     lv: 3,
@@ -86,6 +109,11 @@ export const journey = [
     title: "Software QA Engineer",
     where: "REVE Systems",
     note: "Sothik +60% performance · critical defects −30%.",
+    details: [
+      "Mobile testing speed up 40% — Android, iOS, Xamarin Test Cloud, AWS Device Farm",
+      "Security testing with OWASP ZAP, Burp Suite, and Kali Linux",
+      "Performance testing with JMeter and LoadRunner",
+    ],
   },
   {
     lv: 4,
@@ -94,6 +122,11 @@ export const journey = [
     title: "Augmented Sr. SQA",
     where: "Intellex via TCS — US client",
     note: "Global Magento commerce across 4 regions.",
+    details: [
+      "2FA and verification flows with Twilio + SendGrid",
+      "Multi-currency & multi-language validation — USA, UK, Canada, Europe",
+      "Magento API integrations: QuickBooks, ShipBob, Mailchimp",
+    ],
   },
   {
     lv: 5,
@@ -102,6 +135,11 @@ export const journey = [
     title: "Sr. Automation & Reliability Engineer",
     where: "Mastercard",
     note: "Chaos engineering at global payments scale.",
+    details: [
+      "CI/CD pipelines — Jenkins, GitLab CI, AWS CodePipeline",
+      "Chaos engineering sessions + Prometheus/Grafana observability",
+      "AWS + Terraform infrastructure automation; mentored junior engineers",
+    ],
   },
   {
     lv: 6,
@@ -110,22 +148,38 @@ export const journey = [
     title: "QA Engineer I → QA Lead",
     where: "Kinetik — New York",
     note: "Healthcare platform moving real patients.",
+    details: [
+      "Playwright + Postman API automation, scripted in TypeScript",
+      "AWS APIs (Lambda, SQS, S3) and Magento ↔ QuickBooks/ShipBob/Mailchimp sync",
+      "Release gates for critical healthcare user flows",
+    ],
   },
   {
     lv: 7,
-    year: "2024",
+    year: "2025 —",
+    icon: "🧠",
+    title: "Software Engineer",
+    where: "Kintsugi — San Francisco",
+    note: "Engineering quality into AI-powered tax compliance.",
+    parallel: true,
+    details: [
+      "Playwright + TypeScript automation wired into CI",
+      "Quality gates for AI-driven features where correctness is the product",
+    ],
+  },
+  {
+    lv: 8,
+    year: "2024 —",
     icon: "🎯",
     title: "Technical Project Manager",
     where: "Platformz",
     note: "3 client platforms · 30+ person team · with the CEO.",
-  },
-  {
-    lv: 8,
-    year: "2025",
-    icon: "🧠",
-    title: "Senior QA Engineer",
-    where: "Kintsugi — San Francisco",
-    note: "Quality for AI-powered tax compliance.",
+    parallel: true,
+    details: [
+      "FUR4 — 5 portals plus a 12-month EDI program shipped in ~60 days",
+      "Rockerz and DMV Raw Feeders delivery end to end",
+      "Daily cadence across retail, EDI, integration, fulfillment, and engineering",
+    ],
   },
   {
     lv: 9,
@@ -134,6 +188,12 @@ export const journey = [
     title: "Founder & CEO — New Game+",
     where: "AZAI Labs · AZADEMY · Listen2AZA · SSAS Foundation",
     note: "Build with agents. Teach engineers. Tell stories. Honor my father.",
+    details: [
+      "AZAI Labs — AI agents that do real client work",
+      "AZADEMY — learning meets earning for CS careers",
+      "Listen2AZA — audiobooks people press play on",
+      "Silent Sacrifice Abdus Sattar Foundation — scholarships, mentorship, Quran education",
+    ],
   },
 ];
 
@@ -294,12 +354,12 @@ export const missions: Mission[] = [
   {
     id: "kintsugi",
     codename: "Operation Precision",
-    role: "Senior QA Engineer",
+    role: "Software Engineer",
     org: "Kintsugi — San Francisco, USA (remote)",
     period: "Sept 2025 — Present",
     status: "ACTIVE",
     brief:
-      "Senior quality engineering for an AI-powered sales tax automation platform — where a wrong number isn't a bug, it's a compliance problem.",
+      "Software engineering for an AI-powered sales tax automation platform — where a wrong number isn't a bug, it's a compliance problem.",
     objectives: [
       "Own QA automation strategy across the platform — Playwright + TypeScript wired into CI",
       "Quality gates for AI-driven features where correctness is the product",
