@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { testimonials } from "../../content";
+import { freelance, testimonials } from "../../content";
 import Section from "../ui/Section";
 
 // Auto-rotating 3D carousel of quote cards.
@@ -22,6 +22,14 @@ export default function Testimonials() {
 
   return (
     <Section id="testimonials" kicker="party members say" title={<>Testi<span className="text-aurora">monials</span></>}>
+      <p className="-mt-4 mb-10 text-sm text-muted">
+        Real client reviews from{" "}
+        <a href={freelance.url} target="_blank" rel="noreferrer" className="text-cyan hover:underline">
+          Upwork
+        </a>{" "}
+        — {freelance.completedJobs} jobs completed, every single one rated ★{freelance.rating.toFixed(1)},{" "}
+        <span className="text-amber">{freelance.badge}</span> status earned.
+      </p>
       <div
         className="relative mx-auto max-w-2xl"
         style={{ perspective: "1200px" }}
@@ -38,7 +46,8 @@ export default function Testimonials() {
                 className="glass absolute inset-0 flex flex-col justify-between rounded-2xl p-7 transition-all duration-700"
                 style={{
                   transform: `translateX(${pos * 55}%) translateZ(${pos === 0 ? 0 : -160}px) rotateY(${pos * -22}deg) scale(${pos === 0 ? 1 : 0.86})`,
-                  opacity: pos === 0 ? 1 : 0.35,
+                  opacity: pos === 0 ? 1 : 0.15,
+                  filter: pos === 0 ? "none" : "blur(4px)",
                   zIndex: pos === 0 ? 2 : 1,
                   pointerEvents: pos === 0 ? "auto" : "none",
                 }}
@@ -82,6 +91,21 @@ export default function Testimonials() {
             →
           </button>
         </div>
+
+        {/* Client endorsements */}
+        <ul className="mt-8 flex flex-wrap justify-center gap-2">
+          {freelance.endorsements.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-amber/25 bg-amber/10 px-3.5 py-1.5 text-xs text-amber"
+            >
+              ✓ {tag}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-widest text-muted">
+          endorsed by clients
+        </p>
       </div>
     </Section>
   );

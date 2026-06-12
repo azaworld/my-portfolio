@@ -24,6 +24,7 @@ export const profile = {
   youtube: "https://www.youtube.com/@azademy",
   azailabs: "https://azailabs.dev",
   azademy: "https://azademy.org",
+  upwork: "https://www.upwork.com/freelancers/~01b1ba72ba57683f43",
   calendar: "{{CALENDAR_BOOKING_LINK}}", // e.g. https://cal.com/yourname
   location: "Dhaka, Bangladesh",
 };
@@ -468,24 +469,57 @@ export const credentials = [
 ];
 
 // ----------------------------------------------------------------------------
+// TESTIMONIALS — real client reviews from Upwork (all 5.0★)
+// ----------------------------------------------------------------------------
 export const testimonials = [
   {
     quote:
-      "{{TESTIMONIAL_1 — e.g. 'Antor is the reason we ship on time. Full stop.'}}",
-    author: "{{NAME_1}}",
-    title: "{{TITLE_1 — e.g. CTO, Kinetik}}",
+      "Arifuz is now our cooperant with whom we have been working for a long time. He is very reliable, proactive, helps us with his critical thinking and always delivers.",
+    author: "GameFlix",
+    title: "Long-term client · Upwork ★5.0",
   },
   {
-    quote: "{{TESTIMONIAL_2}}",
-    author: "{{NAME_2}}",
-    title: "{{TITLE_2}}",
+    quote:
+      "Our experience working with Arifuz is excellent. He is responsible and professional, gives clear feedback, and is always on time. We will continue our cooperation.",
+    author: "Grameenphone project",
+    title: "SIM testing client · Upwork ★5.0",
   },
   {
-    quote: "{{TESTIMONIAL_3}}",
-    author: "{{NAME_3}}",
-    title: "{{TITLE_3}}",
+    quote:
+      "Arifuz did a great job evaluating our TestComplete implementation and gave a very thorough and detailed summary. I hope to work with Arifuz again.",
+    author: "QA tooling assessment",
+    title: "Consulting client · Upwork ★5.0",
+  },
+  {
+    quote:
+      "Arifuz did a wonderful job. Everything went smoothly, communication was fluent, delivered on time and as expected. I highly recommend working with Arifuz.",
+    author: "Website QA",
+    title: "Testing client · Upwork ★5.0",
+  },
+  {
+    quote: "Very professional and knowledgeable. He answered all my questions.",
+    author: "QA consultation",
+    title: "1:1 consulting client · Upwork ★5.0",
   },
 ];
+
+// Freelance track record — shown as "Side Quests" in the Mission Log
+export const freelance = {
+  url: "https://www.upwork.com/freelancers/~01b1ba72ba57683f43",
+  completedJobs: 23,
+  inProgress: 2,
+  rating: 5.0,
+  badge: "Top Rated",
+  endorsements: [
+    "Reliable",
+    "Professional",
+    "Committed to Quality",
+    "Detail Oriented",
+    "Solution Oriented",
+    "Clear Communicator",
+    "Accountable for Outcomes",
+  ],
+};
 
 export const media = [
   {

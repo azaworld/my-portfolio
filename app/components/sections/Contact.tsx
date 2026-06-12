@@ -140,6 +140,11 @@ export default function Contact() {
                 </a>
               </li>
               <li>
+                <a href={profile.upwork} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
+                  <span aria-hidden>⭐</span> Upwork — Top Rated, 23 jobs at ★5.0
+                </a>
+              </li>
+              <li>
                 <a href={profile.azailabs} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
                   <span aria-hidden>🤖</span> AZAI Labs — azailabs.dev
                 </a>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { missions, type Mission } from "../../content";
+import { freelance, missions, type Mission } from "../../content";
+import CountUp from "../fx/CountUp";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import TiltCard from "../ui/TiltCard";
@@ -155,6 +156,44 @@ export default function MissionLog() {
           </Reveal>
         ))}
       </div>
+
+      {/* Side quests — freelance track record */}
+      <Reveal delay={120}>
+        <a
+          href={freelance.url}
+          target="_blank"
+          rel="noreferrer"
+          className="glass glow-border mt-8 flex flex-wrap items-center justify-between gap-5 rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-0.5"
+        >
+          <div className="min-w-52">
+            <h3 className="font-display text-lg font-bold">
+              ⚔️ Side Quests <span className="text-sm font-normal text-muted">— freelance</span>
+            </h3>
+            <p className="mt-1 max-w-md text-sm leading-relaxed text-muted">
+              Manual testing, automation assessments, and QA consulting for clients worldwide —
+              every quest rated a perfect score.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="text-center">
+              <p className="font-display text-2xl font-bold text-text">
+                <CountUp value={freelance.completedJobs} />
+              </p>
+              <p className="text-[10px] uppercase tracking-widest text-muted">quests done</p>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-2xl font-bold text-amber">★ {freelance.rating.toFixed(1)}</p>
+              <p className="text-[10px] uppercase tracking-widest text-muted">every rating</p>
+            </div>
+            <div className="text-center">
+              <p className="rounded-full bg-gradient-to-r from-violet to-cyan px-3 py-1 font-mono text-xs font-bold text-white">
+                {freelance.badge.toUpperCase()}
+              </p>
+              <p className="mt-1 text-[10px] uppercase tracking-widest text-muted">on Upwork ↗</p>
+            </div>
+          </div>
+        </a>
+      </Reveal>
 
       {openMission && <MissionModal mission={openMission} onClose={() => setOpenMission(null)} />}
     </Section>

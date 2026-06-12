@@ -58,6 +58,7 @@ export default function Footer() {
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">LinkedIn</a>
           <a href={profile.twitter} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">X / Twitter</a>
           <a href={profile.youtube} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">YouTube</a>
+          <a href={profile.upwork} target="_blank" rel="noreferrer" className="transition-colors hover:text-amber">Upwork</a>
           <a href={profile.azailabs} target="_blank" rel="noreferrer" className="transition-colors hover:text-violet">AZAI Labs</a>
           <a href={profile.azademy} target="_blank" rel="noreferrer" className="transition-colors hover:text-amber">AZADEMY</a>
           <a href={`mailto:${profile.email}`} className="transition-colors hover:text-cyan">Email</a>
