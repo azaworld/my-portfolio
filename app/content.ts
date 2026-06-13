@@ -34,10 +34,22 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: 7, suffix: "+", label: "Years in quality & delivery" },
+  { value: 8, suffix: "+", label: "Years in tech & delivery" },
   { value: 30, suffix: "+", label: "People led — eng, DevOps, design, marketing" },
-  { value: 3, suffix: "", label: "Client platforms running" },
-  { value: 10, suffix: "+", label: "Portals shipped to production" },
+  { value: 40, suffix: "+", label: "Clients & companies served" },
+  { value: 50, suffix: "+", label: "Projects & products shipped" },
+];
+
+// Full cumulative tally — rendered as the stat grid in Career Analytics.
+export const careerTotals = [
+  { value: 8, suffix: "+", label: "Years in tech & delivery" },
+  { value: 11, suffix: "", label: "Companies & roles" },
+  { value: 40, suffix: "+", label: "Clients & companies served" },
+  { value: 30, suffix: "+", label: "People led across teams" },
+  { value: 50, suffix: "+", label: "Projects & products shipped" },
+  { value: 23, suffix: "", label: "Freelance jobs · all ★5.0" },
+  { value: 7, suffix: "", label: "Industries shipped into" },
+  { value: 4, suffix: "", label: "Ventures founded" },
 ];
 
 // RPG character stats for the About section (0–100)

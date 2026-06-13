@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { careerAnalytics } from "../../content";
+import { careerAnalytics, careerTotals } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
+import CountUp from "../fx/CountUp";
 
 function useInView<T extends Element>(threshold = 0.35) {
   const ref = useRef<T>(null);
@@ -122,8 +123,22 @@ export default function CareerStats() {
   return (
     <Section id="stats" kicker="career analytics" title={<>By the <span className="text-aurora">Numbers</span></>}>
       <p className="-mt-4 mb-8 max-w-2xl text-sm text-muted">
-        Seven years, eleven roles, seven industries — here&apos;s the shape of the journey.
+        Eight years, eleven roles, seven industries — here&apos;s the shape of the journey.
       </p>
+
+      {/* Cumulative totals */}
+      <div className="mb-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {careerTotals.map((t, i) => (
+          <Reveal key={t.label} delay={(i % 4) * 80}>
+            <div className="glass h-full rounded-2xl p-5">
+              <p className="font-display text-3xl font-bold text-text">
+                <CountUp value={t.value} suffix={t.suffix} />
+              </p>
+              <p className="mt-1 text-xs leading-snug text-muted">{t.label}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
 
       <div className="grid gap-5 lg:grid-cols-2">
         <Reveal>
