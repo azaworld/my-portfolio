@@ -15,7 +15,7 @@ export default function Community() {
             <h3 className="font-mono text-xs uppercase tracking-[0.25em] text-cyan">🎓 Education</h3>
             <ul className="mt-5 space-y-5">
               {education.map((e) => (
-                <li key={e.school} className="border-l-2 border-white/10 pl-4">
+                <li key={`${e.school}-${e.detail}`} className="border-l-2 border-white/10 pl-4">
                   <p className="font-semibold leading-snug">{e.school}</p>
                   <p className="mt-0.5 text-sm text-muted">{e.detail}</p>
                   {e.period && <p className="mt-0.5 font-mono text-[10px] text-muted">{e.period}</p>}

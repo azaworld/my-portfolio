@@ -31,12 +31,12 @@ export default function Testimonials() {
         <span className="text-amber">{freelance.badge}</span> status earned.
       </p>
       <div
-        className="relative mx-auto max-w-2xl"
+        className="relative mx-auto max-w-2xl overflow-hidden px-1"
         style={{ perspective: "1200px" }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="relative h-64 sm:h-56">
+        <div className="relative h-72 overflow-hidden sm:h-56">
           {testimonials.map((t, i) => {
             const offset = ((i - index) % count + count) % count; // 0 = front
             const pos = offset === 0 ? 0 : offset === 1 ? 1 : -1;

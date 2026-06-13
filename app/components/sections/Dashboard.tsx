@@ -34,31 +34,33 @@ function Radial({ label, value }: { label: string; value: number }) {
   const c = 2 * Math.PI * r;
   return (
     <div ref={ref} className="flex flex-col items-center gap-2">
-      <svg viewBox="0 0 90 90" className="h-24 w-24 -rotate-90" role="img" aria-label={`${label}: ${value}%`}>
-        <circle cx="45" cy="45" r={r} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="7" />
-        <circle
-          cx="45"
-          cy="45"
-          r={r}
-          fill="none"
-          stroke="url(#radial-grad)"
-          strokeWidth="7"
-          strokeLinecap="round"
-          strokeDasharray={c}
-          strokeDashoffset={inView ? c * (1 - value / 100) : c}
-          style={{ transition: "stroke-dashoffset 1.6s cubic-bezier(0.22,1,0.36,1)" }}
-        />
-        <defs>
-          <linearGradient id="radial-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="var(--violet)" />
-            <stop offset="100%" stopColor="var(--cyan)" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <p className="-mt-[4.2rem] font-display text-lg font-bold">
-        <CountUp value={value} suffix="%" />
-      </p>
-      <p className="mt-8 text-center text-xs text-muted">{label}</p>
+      <div className="relative h-20 w-20 sm:h-24 sm:w-24">
+        <svg viewBox="0 0 90 90" className="h-full w-full -rotate-90" role="img" aria-label={`${label}: ${value}%`}>
+          <circle cx="45" cy="45" r={r} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="7" />
+          <circle
+            cx="45"
+            cy="45"
+            r={r}
+            fill="none"
+            stroke="url(#radial-grad)"
+            strokeWidth="7"
+            strokeLinecap="round"
+            strokeDasharray={c}
+            strokeDashoffset={inView ? c * (1 - value / 100) : c}
+            style={{ transition: "stroke-dashoffset 1.6s cubic-bezier(0.22,1,0.36,1)" }}
+          />
+          <defs>
+            <linearGradient id="radial-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="var(--violet)" />
+              <stop offset="100%" stopColor="var(--cyan)" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <p className="absolute inset-0 flex items-center justify-center font-display text-lg font-bold">
+          <CountUp value={value} suffix="%" />
+        </p>
+      </div>
+      <p className="text-center text-xs text-muted">{label}</p>
     </div>
   );
 }
@@ -147,7 +149,7 @@ export default function Dashboard() {
         <Reveal>
           <div className="glass rounded-2xl p-6">
             <h3 className="text-sm font-semibold">Delivery health</h3>
-            <div className="mt-4 flex justify-around">
+            <div className="mt-4 flex flex-wrap justify-center gap-x-2 gap-y-4 sm:justify-around">
               {dashboard.radials.map((r) => (
                 <Radial key={r.label} label={r.label} value={r.value} />
               ))}
