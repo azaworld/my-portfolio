@@ -6,13 +6,11 @@ import useKonami from "../fx/useKonami";
 
 const LINKS = [
   { label: "Origin", href: "#about" },
-  { label: "Skill Tree", href: "#skills" },
   { label: "Missions", href: "#missions" },
-  { label: "Dashboard", href: "#dashboard" },
+  { label: "Stats", href: "#stats" },
   { label: "Ventures", href: "#ventures" },
   { label: "AZADEMY", href: "#media" },
-  { label: "Audiobooks", href: "#audiobooks" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work With Me", href: "#services" },
 ];
 
 type Theme = "dark" | "light" | "crt";

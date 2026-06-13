@@ -702,6 +702,100 @@ export const dashboard = {
 };
 
 // ----------------------------------------------------------------------------
+// CAREER ANALYTICS — graphs that make the journey legible at a glance.
+// ----------------------------------------------------------------------------
+export const careerAnalytics = {
+  // Seniority climb — role level (1–11) by year, for the growth curve.
+  growth: [
+    { year: "2018", level: 1, label: "Freelance QA" },
+    { year: "2019", level: 2, label: "Jr. QA Engineer" },
+    { year: "2020", level: 3, label: "QA Engineer" },
+    { year: "2021", level: 4, label: "Augmented Sr. SQA" },
+    { year: "2022", level: 5, label: "Sr. Automation & Reliability" },
+    { year: "2023", level: 6, label: "QA Lead" },
+    { year: "2024", level: 8, label: "Automation Eng II · TPM" },
+    { year: "2025", level: 11, label: "Founder & CEO" },
+  ],
+  // Where the experience concentrates (relative weight, 0–100).
+  domains: [
+    { name: "QA & Test Automation", value: 100, color: "var(--cyan)" },
+    { name: "Program & Delivery Mgmt", value: 80, color: "var(--violet)" },
+    { name: "Performance & Reliability", value: 70, color: "var(--magenta)" },
+    { name: "Software Engineering", value: 65, color: "var(--amber)" },
+    { name: "Entrepreneurship & AI", value: 75, color: "#34d399" },
+  ],
+  // Industries shipped into — breadth of domain knowledge.
+  industries: [
+    { name: "Healthcare", icon: "🚑" },
+    { name: "Payments / Fintech", icon: "💳" },
+    { name: "Insurance", icon: "🛟" },
+    { name: "Telecom", icon: "📱" },
+    { name: "E-commerce", icon: "🛒" },
+    { name: "Civic / Gov", icon: "🏛️" },
+    { name: "AI / SaaS", icon: "🤖" },
+  ],
+};
+
+// ----------------------------------------------------------------------------
+// SERVICES — productized engagements (the "sell" layer).
+// ----------------------------------------------------------------------------
+export const services = [
+  {
+    icon: "🎯",
+    name: "Fractional TPM / Delivery Lead",
+    tagline: "I run your delivery so your team ships.",
+    points: [
+      "Roadmaps, standups, and a daily cadence that clears blockers",
+      "Cross-team coordination across eng, design, DevOps, and product",
+      "Honest stakeholder & CTO reporting — risk register included",
+    ],
+    ideal: "Startups scaling past 10 engineers who need execution, not more meetings.",
+    accent: "var(--violet)",
+  },
+  {
+    icon: "🤖",
+    name: "AI Agents — via AZAI Labs",
+    tagline: "Build with agents, not headcount.",
+    points: [
+      "Custom AI agents that automate quality, ops, and decisions",
+      "Agentic workflows wired into your existing stack",
+      "From proof-of-concept to production, with monitoring",
+    ],
+    ideal: "Teams that want to automate real work and move faster with confidence.",
+    accent: "var(--cyan)",
+  },
+  {
+    icon: "🧪",
+    name: "QA & Automation Framework Build",
+    tagline: "A test suite that catches bugs before users do.",
+    points: [
+      "Playwright + TypeScript framework built from scratch",
+      "API, web, and mobile coverage wired into CI/CD",
+      "Performance, security, and release-gate setup",
+    ],
+    ideal: "Products shipping without a safety net — or drowning in flaky tests.",
+    accent: "var(--magenta)",
+  },
+  {
+    icon: "🎙️",
+    name: "Hiring & Technical Interviews",
+    tagline: "I find the engineers who can actually do the work.",
+    points: [
+      "Run technical screens and live interviews for your roles",
+      "Scorecards and hiring signal you can trust",
+      "Interview-prep coaching for candidates (via AZADEMY)",
+    ],
+    ideal: "Founders and hiring managers who can't afford a bad senior hire.",
+    accent: "var(--amber)",
+  },
+];
+
+export const availability = {
+  status: "Open to select engagements",
+  note: "Fractional, advisory, or project-based — remote, worldwide.",
+};
+
+// ----------------------------------------------------------------------------
 // VENTURES — "founded worlds"
 // ----------------------------------------------------------------------------
 export const ventures = [

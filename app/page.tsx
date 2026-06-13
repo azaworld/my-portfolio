@@ -9,6 +9,8 @@ import About from "./components/sections/About";
 import SkillTree from "./components/sections/SkillTree";
 import MissionLog from "./components/sections/MissionLog";
 import Dashboard from "./components/sections/Dashboard";
+import CareerStats from "./components/sections/CareerStats";
+import Services from "./components/sections/Services";
 import Ventures from "./components/sections/Ventures";
 import Testimonials from "./components/sections/Testimonials";
 import Media from "./components/sections/Media";
@@ -31,10 +33,12 @@ export default function Home() {
         <SkillTree />
         <MissionLog />
         <Dashboard />
+        <CareerStats />
         <Ventures />
         <Testimonials />
         <Media />
         <Audiobooks />
+        <Services />
         <Contact />
       </main>
 

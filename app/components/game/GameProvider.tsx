@@ -79,10 +79,12 @@ const ALL_SECTIONS = [
   "skills",
   "missions",
   "dashboard",
+  "stats",
   "ventures",
   "testimonials",
   "media",
   "audiobooks",
+  "services",
   "contact",
 ];
 
