@@ -966,9 +966,27 @@ export const education = [
   },
   {
     icon: "🏫",
-    school: "Shahid Syed Nazrul Islam College",
-    detail: "HSC, Science · Grade 5.00",
-    period: "2014 — 2016",
+    school: "Shahid Syed Nazrul Islam College, Mymensingh",
+    detail: "Higher Secondary Certificate (HSC), Science · GPA 5.00",
+    period: "2016",
+  },
+  {
+    icon: "🏫",
+    school: "B.M. High School, Netrokona",
+    detail: "Secondary School Certificate (SSC) · GPA 5.00",
+    period: "2014",
+  },
+  {
+    icon: "🏅",
+    school: "B.M. High School, Netrokona",
+    detail: "Junior School Certificate (JSC) · GPA 5.00 · Govt. Talent Pool Scholarship",
+    period: "2012",
+  },
+  {
+    icon: "🏅",
+    school: "Kaitail Government Primary School, Netrokona",
+    detail: "Primary School Certificate (PSC) · Govt. Talent Pool Scholarship",
+    period: "2009",
   },
 ];
 

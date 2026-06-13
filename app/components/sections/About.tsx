@@ -192,9 +192,10 @@ export default function About() {
             </Reveal>
           ))}
           <Reveal delay={360}>
-            <p className="font-mono text-xs">
-              📍 {profile.location} · 🎙 Podcaster · 🤖 AI Tech Instructor · 🌱 Foundation founder
+            <p className="font-mono text-xs leading-relaxed">
+              👑 Founder · 🎙 Podcaster · 🎯 TPM · 🧠 Sr. Software Engineer · 🧪 QA Consultant · 🤖 AI Tech Instructor
             </p>
+            <p className="mt-1 font-mono text-xs text-muted">📍 {profile.location}</p>
           </Reveal>
         </div>
 
