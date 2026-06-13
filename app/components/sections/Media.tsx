@@ -19,14 +19,26 @@ export default function Media() {
 
   return (
     <Section id="media" kicker="academy & podcast" title={<><span className="text-aurora">AZADEMY</span></>}>
-      <p className="-mt-4 mb-8 max-w-2xl text-sm text-muted">
-        My academy where learning meets earning. Its podcast — <strong className="text-text">The AZA Execution Show</strong>{" "}
-        — runs real technical interviews from a hiring manager&apos;s seat, so you can see exactly how I
-        evaluate engineers and how strong candidates answer.{" "}
+      <p className="-mt-4 mb-5 max-w-2xl text-sm text-muted">
+        My academy where learning meets earning — CS, AI & tech, freelancing, landing remote jobs, and
+        real interviews with experts on how to give and take technical interviews.{" "}
         <a href={podcast.channel} target="_blank" rel="noreferrer" className="text-cyan hover:underline">
           Watch on YouTube ↗
         </a>
       </p>
+
+      {/* Podcast — coming soon */}
+      {podcast.comingSoon && (
+        <div className="mb-8 inline-flex flex-wrap items-center gap-3 rounded-xl border border-magenta/30 bg-magenta/10 px-4 py-2.5">
+          <span className="rounded-full bg-magenta/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-magenta">
+            🎙️ Coming {podcast.launch}
+          </span>
+          <span className="text-sm">
+            <strong className="text-text">{podcast.name}</strong>
+            <span className="text-muted"> — my new podcast on execution & building. Launching {podcast.launch}.</span>
+          </span>
+        </div>
+      )}
 
       <div className="grid gap-6 md:grid-cols-3">
         {media.map((item, i) => (

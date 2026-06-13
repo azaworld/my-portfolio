@@ -17,11 +17,12 @@ export const profile = {
   identity:
     "Founder & CEO @ AZAI Labs · TPM @ Platformz · Podcaster · AI Tech Instructor",
   pitch:
-    "The person who turns chaos into shipped products. I run delivery for three client platforms at Platformz, own quality at Kintsugi, and build AI companies on the side — AZAI Labs ships agents that do real work, and AZADEMY gets engineers hired.",
+    "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms, a Sr. Software Engineer & feature lead at Kintsugi, and I build companies — AZAI Labs ships AI products and augmented AI talent, while AZADEMY teaches engineers to land remote jobs and ace interviews.",
   email: "arifuzantor@gmail.com",
   linkedin: "https://linkedin.com/in/azantor",
   github: "https://github.com/azaworld",
   twitter: "https://x.com/azantor1",
+  facebook: "https://www.facebook.com/arifuzantor/",
   youtube: "https://www.youtube.com/@azademy",
   azailabs: "https://azailabs.dev",
   azademy: "https://azademy.org",
@@ -512,11 +513,11 @@ export const missions: Mission[] = [
     end: null,
     status: "ACTIVE",
     brief:
-      "Software engineering for an AI-powered sales tax automation platform — where a wrong number isn't a bug, it's a compliance problem.",
+      "Sr. Software Engineer & feature lead on an AI-powered sales-tax platform — owning the engineering process where a wrong number isn't a bug, it's a compliance problem.",
     objectives: [
-      "Own QA automation strategy across the platform — Playwright + TypeScript wired into CI",
+      "Feature lead — drive features end to end and own the engineering process",
+      "Playwright + TypeScript automation wired into CI",
       "Quality gates for AI-driven features where correctness is the product",
-      "{{ADD_KINTSUGI_DETAIL — e.g. key systems you cover, releases shipped}}",
     ],
     bossFight:
       "Testing AI-powered tax logic: outputs vary, regulations shift, and 'looks right' isn't good enough. Built verification approaches that hold the line on accuracy.",
@@ -882,7 +883,7 @@ export const ventures = [
     name: "AZAI Labs",
     tagline: "Build with agents, not headcount.",
     description:
-      "An AI agents lab that ships real work — practical agents automating quality, operations, and decision-making, plus agentic talent augmentation for teams that need to move faster. Founded 2025 · San Francisco HQ, remote-first from Dhaka. Founder & CEO.",
+      "An AI lab that ships real work — building AI products, delivering AI services, and placing augmented AI talent so teams move faster. Founded 2025 · San Francisco HQ, remote-first from Dhaka. Founder & CEO.",
     theme: "violet" as const,
     link: "https://azailabs.dev",
   },
@@ -890,7 +891,7 @@ export const ventures = [
     name: "AZADEMY",
     tagline: "Learning meets earning.",
     description:
-      "An academy built to get CS people hired — practical courses, AI & tech deep-dives, and career content that turns skills into offers. Founder.",
+      "An academy that teaches CS, AI & technology, freelancing, and how to land remote jobs — plus real interviews with experts on how to give and take technical interviews. Founder.",
     theme: "amber" as const,
     link: "https://azademy.org",
   },
@@ -923,7 +924,7 @@ export const ventures = [
 // AZADEMY social presence — shown under the Content & Media section
 export const azademySocials = [
   { label: "YouTube", url: "https://www.youtube.com/@azademy" },
-  { label: "Facebook", url: "https://facebook.com/azademy" },
+  { label: "Facebook", url: "https://www.facebook.com/azademyofficial/" },
   { label: "LinkedIn", url: "https://linkedin.com/in/azademy" },
   { label: "Instagram", url: "https://instagram.com/azademy" },
   { label: "X", url: "https://twitter.com/azademy" },
@@ -1122,6 +1123,8 @@ export const freelance = {
 // `id` is the YouTube video id — thumbnails and embeds are derived from it.
 export const podcast = {
   name: "The AZA Execution Show",
+  comingSoon: true,
+  launch: "June 20",
   channel: "https://www.youtube.com/@azademy",
   playlist: "https://www.youtube.com/watch?v=R3YDGEZrJoU&list=PLPKx9CSS1LOeUDRizH2Me0q01IkgKCwMR",
 };
