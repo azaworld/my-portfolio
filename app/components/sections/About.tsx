@@ -8,6 +8,16 @@ import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import { useGame } from "../game/GameProvider";
 
+// Roles shown as animated chips in the origin column.
+const roleBadges = [
+  { icon: "👑", label: "Founder", color: "var(--amber)" },
+  { icon: "🎙️", label: "Podcaster", color: "var(--magenta)" },
+  { icon: "🎯", label: "TPM", color: "var(--violet)" },
+  { icon: "🧠", label: "Sr. Software Engineer", color: "var(--cyan)" },
+  { icon: "🧪", label: "QA Consultant", color: "#34d399" },
+  { icon: "🤖", label: "AI Tech Instructor", color: "var(--violet)" },
+];
+
 // One quest-map card: click to expand its details with a smooth animation.
 function JourneyCard({
   step,
@@ -192,10 +202,22 @@ export default function About() {
             </Reveal>
           ))}
           <Reveal delay={360}>
-            <p className="font-mono text-xs leading-relaxed">
-              👑 Founder · 🎙 Podcaster · 🎯 TPM · 🧠 Sr. Software Engineer · 🧪 QA Consultant · 🤖 AI Tech Instructor
-            </p>
-            <p className="mt-1 font-mono text-xs text-muted">📍 {profile.location}</p>
+            <ul className="flex flex-wrap gap-2.5">
+              {roleBadges.map((r, i) => (
+                <li
+                  key={r.label}
+                  className="animate-fade-up glass flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5"
+                  style={{
+                    animationDelay: `${420 + i * 90}ms`,
+                    borderColor: `color-mix(in srgb, ${r.color} 40%, transparent)`,
+                    boxShadow: `0 0 0 0 ${r.color}`,
+                  }}
+                >
+                  <span aria-hidden>{r.icon}</span>
+                  <span style={{ color: r.color }}>{r.label}</span>
+                </li>
+              ))}
+            </ul>
           </Reveal>
         </div>
 
@@ -217,7 +239,7 @@ export default function About() {
               ))}
             </div>
             <p className="mt-5 border-t border-white/10 pt-4 font-mono text-[11px] text-muted">
-              CLASS: Technical Program Manager · SPEC: Cross-functional team builder
+              CLASS: Technical Project Manager · SPEC: Cross-functional team builder
             </p>
 
             <ul className="mt-4 space-y-2.5 border-t border-white/10 pt-4">
