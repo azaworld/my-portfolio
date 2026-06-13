@@ -10,7 +10,6 @@ const LINKS = [
   { label: "Stats", href: "#stats" },
   { label: "Ventures", href: "#ventures" },
   { label: "AZADEMY", href: "#media" },
-  { label: "Work With Me", href: "#services" },
 ];
 
 type Theme = "dark" | "light" | "crt";
@@ -98,6 +97,14 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          {/* Hire Me — the money button */}
+          <a
+            href="#services"
+            className="hidden rounded-lg bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-4 py-1.5 text-sm font-semibold text-white shadow-md shadow-violet/30 transition-all hover:bg-right sm:inline-block"
+          >
+            Hire Me
+          </a>
+
           {/* Sun/moon morphing toggle */}
           <button
             onClick={toggleTheme}
@@ -154,6 +161,13 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a
+            href="#services"
+            onClick={() => setMenuOpen(false)}
+            className="mt-1 rounded-xl bg-gradient-to-r from-violet via-magenta to-amber px-4 py-3 text-center text-sm font-semibold text-white"
+          >
+            Hire Me
+          </a>
         </div>
       )}
     </header>

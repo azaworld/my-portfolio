@@ -324,6 +324,55 @@ export const skillTree: SkillNode[] = [
     example: "iOS & Android on real devices — Appium, Xamarin Test Cloud, AWS Device Farm.",
   },
   {
+    id: "test-strategy",
+    name: "Test Strategy & Planning",
+    branch: "Delivery",
+    level: 5,
+    example: "Risk-based test plans, coverage strategy, and release gates — manual, smoke, regression, UAT.",
+  },
+  {
+    id: "bdd",
+    name: "BDD (Cucumber / Gherkin)",
+    branch: "Delivery",
+    level: 4,
+    example: "Behavior-driven specs that product, QA, and engineering all read the same way.",
+  },
+  {
+    id: "accessibility",
+    name: "Accessibility & Visual",
+    branch: "Delivery",
+    level: 4,
+    example: "WCAG-aligned accessibility checks and visual-regression testing (Applitools).",
+  },
+  {
+    id: "containers",
+    name: "Docker & CI/CD",
+    branch: "Delivery",
+    level: 4,
+    example: "Containerized test execution and pipelines — Jenkins, GitLab CI, Bitbucket, GitHub Actions, AWS.",
+  },
+  {
+    id: "languages",
+    name: "TypeScript · Python · Java",
+    branch: "Delivery",
+    level: 5,
+    example: "TypeScript and JavaScript daily; Python and Java for automation and tooling.",
+  },
+  {
+    id: "roadmapping",
+    name: "Roadmapping & Prioritization",
+    branch: "Leadership",
+    level: 4,
+    example: "Turn customer signal and constraints into a sequenced roadmap — what to build, kill, and ship next.",
+  },
+  {
+    id: "speaking",
+    name: "Speaking & Teaching",
+    branch: "Entrepreneurship",
+    level: 5,
+    example: "Courses, workshops, technical talks, podcast hosting, and event MC — making complex things land.",
+  },
+  {
     id: "product",
     name: "Product Strategy",
     branch: "Entrepreneurship",
@@ -742,15 +791,27 @@ export const careerAnalytics = {
 export const services = [
   {
     icon: "🎯",
-    name: "Fractional TPM / Delivery Lead",
-    tagline: "I run your delivery so your team ships.",
+    name: "TPM & Product Management",
+    tagline: "I turn roadmaps into shipped product.",
     points: [
-      "Roadmaps, standups, and a daily cadence that clears blockers",
-      "Cross-team coordination across eng, design, DevOps, and product",
-      "Honest stakeholder & CTO reporting — risk register included",
+      "Fractional TPM / delivery lead — standups, cadence, blocker-clearing",
+      "Product management — roadmap, prioritization, and customer-signal strategy",
+      "Cross-team coordination + honest stakeholder & CTO reporting",
     ],
     ideal: "Startups scaling past 10 engineers who need execution, not more meetings.",
     accent: "var(--violet)",
+  },
+  {
+    icon: "🧪",
+    name: "Sr. QA — Testing & Management",
+    tagline: "Quality engineering, end to end.",
+    points: [
+      "Manual + automation (Playwright/TS), API, security & performance testing",
+      "QA consultancy — test strategy, process, and release-gate setup",
+      "QA management — lead the team, own the quality bar, ship with confidence",
+    ],
+    ideal: "Products shipping without a safety net — or QA teams that need direction.",
+    accent: "var(--cyan)",
   },
   {
     icon: "🤖",
@@ -762,22 +823,22 @@ export const services = [
       "From proof-of-concept to production, with monitoring",
     ],
     ideal: "Teams that want to automate real work and move faster with confidence.",
-    accent: "var(--cyan)",
-  },
-  {
-    icon: "🧪",
-    name: "QA & Automation Framework Build",
-    tagline: "A test suite that catches bugs before users do.",
-    points: [
-      "Playwright + TypeScript framework built from scratch",
-      "API, web, and mobile coverage wired into CI/CD",
-      "Performance, security, and release-gate setup",
-    ],
-    ideal: "Products shipping without a safety net — or drowning in flaky tests.",
     accent: "var(--magenta)",
   },
   {
     icon: "🎙️",
+    name: "Instruction, Speaking & Hosting",
+    tagline: "I teach it, host it, and tell the story.",
+    points: [
+      "AI & tech courses and live workshops (via AZADEMY)",
+      "Podcast hosting & guesting — The AZA Execution Show",
+      "Event hosting / MC, technical talks, and interview-prep coaching",
+    ],
+    ideal: "Teams, communities, and events that want an engaging technical voice.",
+    accent: "var(--amber)",
+  },
+  {
+    icon: "🔍",
     name: "Hiring & Technical Interviews",
     tagline: "I find the engineers who can actually do the work.",
     points: [
@@ -786,7 +847,7 @@ export const services = [
       "Interview-prep coaching for candidates (via AZADEMY)",
     ],
     ideal: "Founders and hiring managers who can't afford a bad senior hire.",
-    accent: "var(--amber)",
+    accent: "#34d399",
   },
 ];
 
@@ -794,6 +855,14 @@ export const availability = {
   status: "Open to select engagements",
   note: "Fractional, advisory, or project-based — remote, worldwide.",
 };
+
+// Direct ways to hire — shown in the Hire hub.
+export const hireChannels = [
+  { icon: "⭐", label: "Hire on Upwork", sub: "Top Rated · see my gigs & reviews", href: "https://www.upwork.com/freelancers/~01b1ba72ba57683f43" },
+  { icon: "📧", label: "Email me", sub: "arifuzantor@gmail.com", href: "mailto:arifuzantor@gmail.com?subject=Let%27s%20work%20together" },
+  { icon: "💼", label: "LinkedIn", sub: "Connect & message", href: "https://linkedin.com/in/azantor" },
+  { icon: "🤖", label: "AZAI Labs", sub: "Hire the agency", href: "https://azailabs.dev" },
+];
 
 // ----------------------------------------------------------------------------
 // VENTURES — "founded worlds"
