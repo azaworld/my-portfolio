@@ -208,7 +208,7 @@ export default function Contact() {
                   <span aria-hidden>🌱</span> SSAS Foundation — ssasf.vercel.app
                 </a>
               </li>
-              {!profile.calendar.startsWith("{{") && (
+              {profile.calendar && (
                 <li>
                   <a href={profile.calendar} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
                     <span aria-hidden>📅</span> Book a call

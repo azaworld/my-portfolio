@@ -30,7 +30,7 @@ export const profile = {
   listen2aza: "https://www.youtube.com/@Listen2AZA",
   foundation: "https://ssasf.vercel.app",
   foundationFacebook: "https://www.facebook.com/asattarfoundation/",
-  calendar: "{{CALENDAR_BOOKING_LINK}}", // e.g. https://cal.com/yourname
+  calendar: "", // add a booking link (e.g. https://cal.com/yourname) to show a "Book a call" channel
   location: "Dhaka, Bangladesh",
 };
 
@@ -469,7 +469,7 @@ export const missions: Mission[] = [
     loot: [
       "AI agents in production doing real client work",
       "A team that ships — 2–10 people, zero bureaucracy",
-      "{{TRACTION_METRIC — e.g. clients served, agents deployed}}",
+      "AI products, services, and augmented talent under one roof",
     ],
     tech: ["AI Agents", "LLMs", "Computer Vision", "TypeScript", "Python", "AWS"],
   },
@@ -522,8 +522,8 @@ export const missions: Mission[] = [
     bossFight:
       "Testing AI-powered tax logic: outputs vary, regulations shift, and 'looks right' isn't good enough. Built verification approaches that hold the line on accuracy.",
     loot: [
-      "{{METRIC — e.g. escaped-defect rate, coverage}}",
-      "QA leadership across a high-stakes fintech domain",
+      "Features shipped with quality built into the engineering process",
+      "Engineering leadership across a high-stakes fintech domain",
     ],
     tech: ["Playwright", "TypeScript", "Postman", "CI/CD"],
   },
@@ -543,13 +543,13 @@ export const missions: Mission[] = [
       "Automation across insurance products for CFC, Tokio Marine Kiln, and American National (ANICO)",
       "Built and maintained automation frameworks with CI integration",
       "Quality engineering for regulated, high-stakes insurance workflows",
-      "{{ADD_DETAIL — key systems, coverage, or a metric}}",
+      "Regression and API automation suites maintained across multiple products",
     ],
     bossFight:
       "Insurance logic is unforgiving — premiums, claims, and compliance rules that have to be exactly right across three enterprise clients at once.",
     loot: [
       "Automation frameworks serving 3 enterprise insurance clients",
-      "{{METRIC — e.g. coverage or defect reduction}}",
+      "Reliable regression coverage across regulated workflows",
     ],
     tech: ["Test Automation", "CI/CD", "Insurance Domain", "API Testing"],
   },
