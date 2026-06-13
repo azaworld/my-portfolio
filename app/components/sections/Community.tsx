@@ -1,6 +1,6 @@
 "use client";
 
-import { education, volunteering } from "../../content";
+import { credentials, education, volunteering } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import TiltCard from "../ui/TiltCard";
@@ -21,6 +21,21 @@ export default function Community() {
                   {e.period && <p className="mt-0.5 font-mono text-[10px] text-muted">{e.period}</p>}
                 </li>
               ))}
+            </ul>
+
+            {/* Certifications */}
+            <h4 className="mt-7 font-mono text-xs uppercase tracking-[0.25em] text-cyan">📜 Certifications</h4>
+            <ul className="mt-3 space-y-2">
+              {credentials
+                .filter((c) => c.link)
+                .map((c) => (
+                  <li key={c.text} className="flex items-start gap-2 text-sm leading-relaxed text-muted">
+                    <span aria-hidden>{c.icon}</span>
+                    <a href={c.link} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan hover:underline">
+                      {c.text} ↗
+                    </a>
+                  </li>
+                ))}
             </ul>
           </div>
         </Reveal>
