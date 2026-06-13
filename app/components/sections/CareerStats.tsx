@@ -123,7 +123,7 @@ export default function CareerStats() {
   return (
     <Section id="stats" kicker="career analytics" title={<>By the <span className="text-aurora">Numbers</span></>}>
       <p className="-mt-4 mb-8 max-w-2xl text-sm text-muted">
-        Eight years, eleven roles, seven industries — here&apos;s the shape of the journey.
+        Six years, eleven roles, seven industries — here&apos;s the shape of the journey.
       </p>
 
       {/* Cumulative totals */}

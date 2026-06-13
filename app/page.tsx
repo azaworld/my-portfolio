@@ -8,6 +8,8 @@ import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import SkillTree from "./components/sections/SkillTree";
 import MissionLog from "./components/sections/MissionLog";
+import Projects from "./components/sections/Projects";
+import Community from "./components/sections/Community";
 import Dashboard from "./components/sections/Dashboard";
 import CareerStats from "./components/sections/CareerStats";
 import Services from "./components/sections/Services";
@@ -32,9 +34,11 @@ export default function Home() {
         <About />
         <SkillTree />
         <MissionLog />
+        <Projects />
         <Dashboard />
         <CareerStats />
         <Ventures />
+        <Community />
         <Testimonials />
         <Media />
         <Audiobooks />

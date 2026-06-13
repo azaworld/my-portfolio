@@ -34,7 +34,7 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: 8, suffix: "+", label: "Years in tech & delivery" },
+  { value: 6, suffix: "+", label: "Years in tech & delivery" },
   { value: 30, suffix: "+", label: "People led — eng, DevOps, design, marketing" },
   { value: 40, suffix: "+", label: "Clients & companies served" },
   { value: 50, suffix: "+", label: "Projects & products shipped" },
@@ -42,7 +42,7 @@ export const heroStats = [
 
 // Full cumulative tally — rendered as the stat grid in Career Analytics.
 export const careerTotals = [
-  { value: 8, suffix: "+", label: "Years in tech & delivery" },
+  { value: 6, suffix: "+", label: "Years in tech & delivery" },
   { value: 11, suffix: "", label: "Companies & roles" },
   { value: 40, suffix: "+", label: "Clients & companies served" },
   { value: 30, suffix: "+", label: "People led across teams" },
@@ -90,45 +90,19 @@ export type JourneyStep = {
 export const journey: JourneyStep[] = [
   {
     lv: 1,
-    year: "2018 — 2019",
+    year: "2020 — 2021",
     icon: "🎮",
-    title: "Side quests begin",
-    where: "Freelance QA — CarryBags Ltd, UK",
+    title: "Software QA Engineer (part-time)",
+    where: "CarryBags Ltd — London, UK",
     note: "First bugs busted, remote from Dhaka.",
     details: [
-      "Functional, usability, compatibility & performance testing across platforms",
-      "Manual mobile QA on Android & iOS — push notifications, location, device integrations",
-      "Regression discipline and stakeholder-ready bug reports",
+      "Led QA for key projects — testing workflows and team coordination",
+      "Manual mobile QA on Android & iOS, cross-device compatibility",
+      "Test cases from specs & user stories; regression discipline",
     ],
   },
   {
     lv: 2,
-    year: "2019 — 2020",
-    icon: "🐣",
-    title: "Jr. Software QA Engineer",
-    where: "Dynamic Solution Innovators",
-    note: "OPENCRVS — software that registers births and deaths.",
-    details: [
-      "Manual testing with TestRail, automation with Cypress",
-      "Quality planning for OPENCRVS and the Altech platform",
-      "Cross-browser coverage and CI practices",
-    ],
-  },
-  {
-    lv: 3,
-    year: "2020 — 2023",
-    icon: "🛡️",
-    title: "Software QA Engineer",
-    where: "REVE Systems",
-    note: "Sothik +60% performance · critical defects −30%.",
-    details: [
-      "Mobile testing speed up 40% — Android, iOS, Xamarin Test Cloud, AWS Device Farm",
-      "Security testing with OWASP ZAP, Burp Suite, and Kali Linux",
-      "Performance testing with JMeter and LoadRunner",
-    ],
-  },
-  {
-    lv: 4,
     year: "2021 — 2022",
     icon: "🌍",
     title: "Augmented Sr. SQA",
@@ -141,7 +115,20 @@ export const journey: JourneyStep[] = [
     ],
   },
   {
-    lv: 5,
+    lv: 3,
+    year: "2021 — 2022",
+    icon: "🐣",
+    title: "Jr. Software QA Engineer",
+    where: "Dynamic Solution Innovators",
+    note: "OpenCRVS, Movandi (5G), Altech — Cypress + CI/CD.",
+    details: [
+      "Manual testing with TestRail, automation with Cypress.io + CI/CD",
+      "QA across OpenCRVS, Movandi (5G mmWave), and Altech",
+      "Cross-browser coverage and continuous-integration practices",
+    ],
+  },
+  {
+    lv: 4,
     year: "2022 — 2023",
     icon: "💳",
     title: "Sr. Automation & Reliability Engineer",
@@ -151,6 +138,19 @@ export const journey: JourneyStep[] = [
       "CI/CD pipelines — Jenkins, GitLab CI, AWS CodePipeline",
       "Chaos engineering sessions + Prometheus/Grafana observability",
       "AWS + Terraform infrastructure automation; mentored junior engineers",
+    ],
+  },
+  {
+    lv: 5,
+    year: "2022 — 2023",
+    icon: "🛡️",
+    title: "Software QA Engineer",
+    where: "REVE Systems",
+    note: "Sothik +60% performance · critical defects −30%.",
+    details: [
+      "QA Lead for Sothik (Bangla grammar & spell checker), QA contributor on CBMS",
+      "Security testing with OWASP ZAP, Burp Suite, and Kali Linux",
+      "Performance testing with JMeter and LoadRunner",
     ],
   },
   {
@@ -670,8 +670,8 @@ export const missions: Mission[] = [
     role: "Software QA Engineer",
     org: "REVE Systems — Dhaka, Bangladesh (onsite)",
     short: "REVE Systems",
-    period: "Dec 2020 — Aug 2023",
-    start: 2020.9,
+    period: "Dec 2022 — Aug 2023",
+    start: 2022.9,
     end: 2023.6,
     status: "COMPLETE",
     brief:
@@ -698,9 +698,9 @@ export const missions: Mission[] = [
     role: "Jr. Software QA Engineer",
     org: "Dynamic Solution Innovators Ltd. — Dhaka, Bangladesh (onsite)",
     short: "DSI",
-    period: "Sept 2019 — Nov 2020",
-    start: 2019.7,
-    end: 2020.9,
+    period: "Sept 2021 — Nov 2022",
+    start: 2021.7,
+    end: 2022.9,
     status: "COMPLETE",
     brief:
       "Quality for OPENCRVS — open-source civil registration infrastructure used for the world's most vital records — plus the Altech platform.",
@@ -718,11 +718,11 @@ export const missions: Mission[] = [
     id: "carrybags",
     codename: "Operation First Blood",
     role: "Jr. Software QA Engineer (freelance)",
-    org: "CarryBags Ltd — Coventry, UK (remote)",
+    org: "CarryBags Ltd — London, UK (part-time, remote)",
     short: "CarryBags",
-    period: "July 2018 — Aug 2019",
-    start: 2018.5,
-    end: 2019.6,
+    period: "Jul 2020 — Aug 2021",
+    start: 2020.5,
+    end: 2021.6,
     status: "COMPLETE",
     brief: "The tutorial level — except the e-commerce revenue was real.",
     objectives: [
@@ -768,13 +768,11 @@ export const dashboard = {
 export const careerAnalytics = {
   // Seniority climb — role level (1–11) by year, for the growth curve.
   growth: [
-    { year: "2018", level: 1, label: "Freelance QA" },
-    { year: "2019", level: 2, label: "Jr. QA Engineer" },
-    { year: "2020", level: 3, label: "QA Engineer" },
-    { year: "2021", level: 4, label: "Augmented Sr. SQA" },
-    { year: "2022", level: 5, label: "Sr. Automation & Reliability" },
+    { year: "2020", level: 1, label: "QA (part-time)" },
+    { year: "2021", level: 3, label: "Sr. SQA · Jr. QA" },
+    { year: "2022", level: 5, label: "Reliability · QA" },
     { year: "2023", level: 6, label: "QA Lead" },
-    { year: "2024", level: 8, label: "Automation Eng II · TPM" },
+    { year: "2024", level: 9, label: "Automation Eng II · TPM" },
     { year: "2025", level: 11, label: "Founder & CEO" },
   ],
   // Where the experience concentrates (relative weight, 0–100).
@@ -952,6 +950,118 @@ export const credentials = [
     icon: "🐍",
     text: "Programming for Everybody (Python) — Coursera (2020)",
     link: "https://www.coursera.org/account/accomplishments/certificate/L83YBWRPB6GN",
+  },
+];
+
+// ----------------------------------------------------------------------------
+// EDUCATION & COMMUNITY — academic life and leadership beyond work.
+// ----------------------------------------------------------------------------
+export const education = [
+  {
+    icon: "🎓",
+    school: "Shahjalal University of Science and Technology",
+    detail: "B.Sc. Engineering — Computer Science & Engineering",
+    period: "",
+  },
+  {
+    icon: "🏫",
+    school: "Shahid Syed Nazrul Islam College",
+    detail: "HSC, Science · Grade 5.00",
+    period: "2014 — 2016",
+  },
+];
+
+export const volunteering = [
+  {
+    icon: "🔭",
+    role: "Founder",
+    org: "Telescope Team",
+    period: "2017 — Present",
+    note: "Empowering rural communities through education — teacher training, digital literacy, infrastructure, and scholarships at the grassroots level.",
+  },
+  {
+    icon: "🎤",
+    role: "Assistant IT Secretary",
+    org: "Shahjalal University Speakers' Club (SUSC)",
+    period: "University",
+    note: "Helped run the university's flagship public-speaking and debate community.",
+  },
+  {
+    icon: "🔬",
+    role: "Academic Coordinator",
+    org: "SUST Science Arena",
+    period: "University",
+    note: "Coordinated academic programs and science outreach on campus.",
+  },
+];
+
+// ----------------------------------------------------------------------------
+// PROJECTS — notable named builds across roles (from LinkedIn).
+// ----------------------------------------------------------------------------
+export const projects = [
+  {
+    name: "Sothik — Bangla Spell Checker",
+    org: "REVE Systems",
+    period: "2022 — Present",
+    blurb: "AI-powered Bengali grammar & spell checker — detects non-word and real-word errors and auto-suggests corrections. QA Lead.",
+    tags: ["AI/NLP", "Test Design", "QA Lead"],
+    link: "",
+  },
+  {
+    name: "Customs Bond Management System (CBMS)",
+    org: "REVE Systems",
+    period: "2022 — Present",
+    blurb: "Enterprise system for processing and monitoring customs-duty bond transactions. QA contributor.",
+    tags: ["Business Analysis", "QA Engineering"],
+    link: "",
+  },
+  {
+    name: "OpenCRVS",
+    org: "Dynamic Solution Innovators",
+    period: "2021 — 2022",
+    blurb: "Open-source civil registration — so every person on the planet is recognised and protected from birth.",
+    tags: ["Cypress", "Test Design", "Civic Tech"],
+    link: "https://www.opencrvs.org",
+  },
+  {
+    name: "Movandi",
+    org: "Dynamic Solution Innovators",
+    period: "2022",
+    blurb: "A leader in 5G mmWave technology, founded by former Broadcom pioneers. QA & test planning.",
+    tags: ["5G", "Test Planning"],
+    link: "",
+  },
+  {
+    name: "Altech",
+    org: "Dynamic Solution Innovators",
+    period: "2022",
+    blurb: "Clean, affordable energy for DR Congo — quality and test design across the platform.",
+    tags: ["Clean Energy", "Test Design"],
+    link: "",
+  },
+  {
+    name: "MyGP — Backend Automation",
+    org: "Grameenphone (via Miaki)",
+    period: "2024 — 2025",
+    blurb: "Built the complete backend automation framework for MyGP, the app of Bangladesh's largest mobile operator.",
+    tags: ["Playwright", "API Testing", "Framework Build"],
+    link: "",
+  },
+  {
+    name: "FUR4 Omnichannel Platform",
+    org: "Platformz",
+    period: "2024 — Present",
+    blurb: "Enterprise omnichannel pet-brand platform — 5 portals on a Magento core, plus a 60-day 3P EDI program.",
+    tags: ["TPM", "Magento", "EDI"],
+    link: "https://platformz.us/case-studies",
+  },
+  {
+    name: "SUST Attendance Management System",
+    org: "Shahjalal University of Science & Technology",
+    period: "2020",
+    blurb: "Intuitive attendance tracking for the university — real-time insights for a productive learning environment.",
+    tags: ["Web Dev", "QA Engineering"],
+    link: "",
   },
 ];
 

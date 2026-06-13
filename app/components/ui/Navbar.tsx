@@ -7,6 +7,7 @@ import useKonami from "../fx/useKonami";
 const LINKS = [
   { label: "Origin", href: "#about" },
   { label: "Missions", href: "#missions" },
+  { label: "Projects", href: "#projects" },
   { label: "Stats", href: "#stats" },
   { label: "Ventures", href: "#ventures" },
   { label: "AZADEMY", href: "#media" },
