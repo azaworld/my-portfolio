@@ -82,6 +82,7 @@ const ALL_SECTIONS = [
   "ventures",
   "testimonials",
   "media",
+  "audiobooks",
   "contact",
 ];
 

@@ -12,6 +12,7 @@ import Dashboard from "./components/sections/Dashboard";
 import Ventures from "./components/sections/Ventures";
 import Testimonials from "./components/sections/Testimonials";
 import Media from "./components/sections/Media";
+import Audiobooks from "./components/sections/Audiobooks";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 
@@ -33,6 +34,7 @@ export default function Home() {
         <Ventures />
         <Testimonials />
         <Media />
+        <Audiobooks />
         <Contact />
       </main>
 

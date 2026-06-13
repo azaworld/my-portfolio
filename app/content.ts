@@ -758,10 +758,15 @@ export const freelance = {
   ],
 };
 
-// Real interview & hiring videos from the AZADEMY playlist.
+// THE AZA EXECUTION SHOW — podcast: real hiring & interview videos from AZADEMY.
 // `id` is the YouTube video id — thumbnails and embeds are derived from it.
-export const mediaPlaylist =
-  "https://www.youtube.com/watch?v=R3YDGEZrJoU&list=PLPKx9CSS1LOeUDRizH2Me0q01IkgKCwMR";
+export const podcast = {
+  name: "The AZA Execution Show",
+  channel: "https://www.youtube.com/@azademy",
+  playlist: "https://www.youtube.com/watch?v=R3YDGEZrJoU&list=PLPKx9CSS1LOeUDRizH2Me0q01IkgKCwMR",
+};
+
+export const mediaPlaylist = podcast.playlist;
 
 export const media = [
   {
@@ -795,3 +800,35 @@ export const media = [
     description: "What hiring looks like from the Technical PM seat at a multi-million-dollar agency.",
   },
 ];
+
+// LISTEN2AZA — audiobook channel (Bengali narrations of books worth hearing).
+export const audiobooks = {
+  channel: "https://www.youtube.com/@Listen2AZA",
+  videos: [
+    {
+      id: "OO3LgrHlCzE",
+      title: "100 Great Marketing Ideas — Intro",
+      description: "Jim Blythe's marketing classic, narrated in Bangla. The series opener.",
+    },
+    {
+      id: "UF-vnkbHoQo",
+      title: "100 Great Marketing Ideas — #01",
+      description: "Idea 01: give the product away free — and why it works.",
+    },
+    {
+      id: "YOweMuiiVIk",
+      title: "100 Great Marketing Ideas — #02",
+      description: "Idea 02: make marketing fun. A Bangla audiobook chapter.",
+    },
+    {
+      id: "UJ_DkxCOqF4",
+      title: "The Productive Muslim — Before Sleep",
+      description: "Faris Mohammad's productivity book in Bangla — habits to remember before sleep.",
+    },
+    {
+      id: "Vmlt-chYycE",
+      title: "The Productive Muslim — Patience & Productivity",
+      description: "Building productivity through patience — a chapter narration.",
+    },
+  ],
+};
