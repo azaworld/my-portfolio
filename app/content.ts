@@ -15,7 +15,7 @@ export const profile = {
     "I solve blockers before breakfast",
   ],
   identity:
-    "Founder & CEO @ AZAI Labs · TPM @ Platformz · Podcaster · AI Tech Instructor",
+    "Founder & CEO @ AZAI Labs · Technical Project Manager @ Platformz · Sr. Software Engineer @ Kintsugi · QA Consultant · Podcaster · AI Tech Instructor",
   pitch:
     "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms, a Sr. Software Engineer & feature lead at Kintsugi, and I build companies — AZAI Labs ships AI products and augmented AI talent, while AZADEMY teaches engineers to land remote jobs and ace interviews.",
   email: "arifuzantor@gmail.com",

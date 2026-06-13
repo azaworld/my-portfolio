@@ -12,7 +12,7 @@ import { useGame } from "../game/GameProvider";
 const roleBadges = [
   { icon: "👑", label: "Founder", color: "var(--amber)" },
   { icon: "🎙️", label: "Podcaster", color: "var(--magenta)" },
-  { icon: "🎯", label: "TPM", color: "var(--violet)" },
+  { icon: "🎯", label: "Technical Project Manager", color: "var(--violet)" },
   { icon: "🧠", label: "Sr. Software Engineer", color: "var(--cyan)" },
   { icon: "🧪", label: "QA Consultant", color: "#34d399" },
   { icon: "🤖", label: "AI Tech Instructor", color: "var(--violet)" },

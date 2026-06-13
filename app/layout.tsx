@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Arifuzzaman “Antor” — Founder · TPM · Sr. Software Engineer",
+  title: "Arifuzzaman “Antor” — Founder · Technical Project Manager · Sr. Software Engineer",
   description:
     "The person who turns chaos into shipped products. Founder & CEO of AZAI Labs, Technical Project Manager at Platformz, Sr. Software Engineer at Kintsugi, podcaster, and AI tech instructor. Explore the interactive portfolio — earn XP while you're at it.",
 };
