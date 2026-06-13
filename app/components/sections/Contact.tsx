@@ -13,6 +13,8 @@ export default function Contact() {
   const [values, setValues] = useState({ name: "", email: "", quest: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const { unlock, burstConfetti, addXp } = useGame();
 
@@ -41,18 +43,45 @@ export default function Contact() {
     return e;
   };
 
-  const submit = (e: React.FormEvent) => {
+  // mailto fallback if the network request fails
+  const openMailFallback = () => {
+    const body = encodeURIComponent(`${values.quest}\n\n— ${values.name} (${values.email})`);
+    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(
+      "Quest invitation from " + values.name
+    )}&body=${body}`;
+  };
+
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
-    // No backend on a static site — opens the visitor's mail client pre-filled.
-    const body = encodeURIComponent(`${values.quest}\n\n— ${values.name} (${values.email})`);
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent("Quest invitation from " + values.name)}&body=${body}`;
-    setSent(true);
-    burstConfetti();
-    addXp(40, "quest-form");
+    setSending(true);
+    setFailed(false);
+    try {
+      // Delivered straight to my inbox via Formsubmit — no mail client needed.
+      const res = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          message: values.quest,
+          _subject: `Quest invitation from ${values.name}`,
+          _template: "box",
+          _captcha: "false",
+        }),
+      });
+      if (!res.ok) throw new Error("Network response was not ok");
+      setSent(true);
+      burstConfetti();
+      addXp(40, "quest-form");
+    } catch {
+      setFailed(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const field = (key: keyof typeof values) => ({
@@ -76,11 +105,14 @@ export default function Contact() {
             <p className="text-4xl" aria-hidden>🎉</p>
             <h3 className="font-display mt-3 text-xl font-bold">Quest accepted!</h3>
             <p className="mt-2 max-w-sm text-sm text-muted">
-              Your mail client should be open with everything pre-filled. Hit send and
-              I&apos;ll get back to you fast — usually before your next standup.
+              Your message just landed in my inbox. I&apos;ll get back to you fast —
+              usually before your next standup. ⚡
             </p>
             <button
-              onClick={() => setSent(false)}
+              onClick={() => {
+                setSent(false);
+                setValues({ name: "", email: "", quest: "" });
+              }}
               className="mt-5 text-sm text-cyan hover:underline"
             >
               Start another quest
@@ -112,11 +144,28 @@ export default function Contact() {
             <Magnetic>
               <button
                 type="submit"
-                className="rounded-xl bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet/30 transition-all hover:bg-right"
+                disabled={sending}
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet/30 transition-all hover:bg-right disabled:opacity-70"
               >
-                Send quest invitation ✦
+                {sending ? (
+                  <>
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden />
+                    Sending…
+                  </>
+                ) : (
+                  <>Send quest invitation ✦</>
+                )}
               </button>
             </Magnetic>
+            {failed && (
+              <p className="text-xs text-magenta">
+                Couldn&apos;t send just now —{" "}
+                <button type="button" onClick={openMailFallback} className="underline hover:text-cyan">
+                  email me directly instead
+                </button>
+                .
+              </p>
+            )}
           </form>
         )}
 
