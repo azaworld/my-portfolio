@@ -42,10 +42,10 @@ export const heroStats = [
 
 // RPG character stats for the About section (0–100)
 export const characterStats = [
-  { name: "Leadership", value: 92, color: "var(--violet)" },
-  { name: "Delivery", value: 95, color: "var(--cyan)" },
-  { name: "Communication", value: 90, color: "var(--magenta)" },
-  { name: "Vision", value: 88, color: "var(--amber)" },
+  { name: "Leadership", value: 96, color: "var(--violet)" },
+  { name: "Delivery", value: 98, color: "var(--cyan)" },
+  { name: "Communication", value: 95, color: "var(--magenta)" },
+  { name: "Vision", value: 97, color: "var(--amber)" },
 ];
 
 export const originStory = [
@@ -78,7 +78,7 @@ export type JourneyStep = {
 export const journey: JourneyStep[] = [
   {
     lv: 1,
-    year: "2018",
+    year: "2018 — 2019",
     icon: "🎮",
     title: "Side quests begin",
     where: "Freelance QA — CarryBags Ltd, UK",
@@ -91,7 +91,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 2,
-    year: "2019",
+    year: "2019 — 2020",
     icon: "🐣",
     title: "Jr. Software QA Engineer",
     where: "Dynamic Solution Innovators",
@@ -104,7 +104,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 3,
-    year: "2020",
+    year: "2020 — 2023",
     icon: "🛡️",
     title: "Software QA Engineer",
     where: "REVE Systems",
@@ -117,7 +117,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 4,
-    year: "2021",
+    year: "2021 — 2022",
     icon: "🌍",
     title: "Augmented Sr. SQA",
     where: "Intellex via TCS — US client",
@@ -130,7 +130,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 5,
-    year: "2022",
+    year: "2022 — 2023",
     icon: "💳",
     title: "Sr. Automation & Reliability Engineer",
     where: "Mastercard",
@@ -143,7 +143,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 6,
-    year: "2023",
+    year: "2023 — 2025",
     icon: "🚑",
     title: "QA Engineer I → QA Lead",
     where: "Kinetik — New York",
@@ -156,7 +156,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 7,
-    year: "2024",
+    year: "2024 — 2025",
     icon: "📱",
     title: "Software QA Engineer",
     where: "Grameenphone (via Miaki)",
@@ -169,7 +169,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 8,
-    year: "2024",
+    year: "2024 — 2026",
     icon: "🛟",
     title: "Software Automation Engineer II",
     where: "All Generation Tech — New York",
@@ -182,7 +182,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 9,
-    year: "2024",
+    year: "2024 — Present",
     icon: "🎯",
     title: "Technical Project Manager",
     where: "Platformz",
@@ -195,7 +195,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 10,
-    year: "2025",
+    year: "2025 — Present",
     icon: "🧠",
     title: "Sr. Software Engineer",
     where: "Kintsugi — San Francisco",
@@ -207,7 +207,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 11,
-    year: "2025",
+    year: "2025 — Present",
     icon: "👑",
     title: "Founder & CEO — New Game+",
     where: "AZAI Labs · AZADEMY · Listen2AZA · SSAS Foundation",
