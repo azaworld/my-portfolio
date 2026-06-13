@@ -78,7 +78,6 @@ function JourneyCard({
 }
 
 // The level-up journey: zigzag quest map with a glowing spine.
-// Consecutive `parallel` steps render side by side as simultaneous missions.
 function Journey() {
   const [openLv, setOpenLv] = useState<number | null>(null);
   const { addXp } = useGame();
@@ -88,18 +87,6 @@ function Journey() {
     addXp(5, `journey-${lv}`);
   };
 
-  // group steps into rows — pairs of parallel steps share one row
-  const rows: JourneyStep[][] = [];
-  for (let i = 0; i < journey.length; i++) {
-    if (journey[i].parallel && journey[i + 1]?.parallel) {
-      rows.push([journey[i], journey[i + 1]]);
-      i++;
-    } else {
-      rows.push([journey[i]]);
-    }
-  }
-
-  let singleIndex = 0;
   return (
     <div className="relative mt-16">
       <p className="font-mono text-xs uppercase tracking-[0.3em] text-cyan">quest map</p>
@@ -120,37 +107,8 @@ function Journey() {
         />
 
         <ol className="space-y-10">
-          {rows.map((row) => {
-            if (row.length === 2) {
-              const [a, b] = row;
-              return (
-                <li key={a.lv} className="relative">
-                  {/* energy orb where the track splits */}
-                  <span
-                    className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full border-2 border-amber bg-bg text-base shadow-[0_0_18px_var(--glow)] sm:left-1/2 sm:-translate-x-1/2"
-                    aria-hidden
-                  >
-                    ⚡
-                  </span>
-                  <p className="mb-5 ml-14 pt-2 sm:ml-0 sm:pt-12 sm:text-center">
-                    <span className="animate-pulse rounded-full border border-amber/40 bg-amber/10 px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-widest text-amber">
-                      ⫽ two missions — running in parallel
-                    </span>
-                  </p>
-                  <div className="ml-14 grid gap-5 sm:ml-0 sm:grid-cols-2 sm:gap-12">
-                    <Reveal variant="left" className="sm:pr-10">
-                      <JourneyCard step={a} open={openLv === a.lv} onToggle={() => toggle(a.lv)} />
-                    </Reveal>
-                    <Reveal variant="right" className="sm:pl-10">
-                      <JourneyCard step={b} open={openLv === b.lv} onToggle={() => toggle(b.lv)} />
-                    </Reveal>
-                  </div>
-                </li>
-              );
-            }
-
-            const step = row[0];
-            const left = singleIndex++ % 2 === 0;
+          {journey.map((step, i) => {
+            const left = i % 2 === 0;
             return (
               <li key={step.lv} className="relative sm:grid sm:grid-cols-2 sm:gap-12">
                 {/* node orb on the spine */}

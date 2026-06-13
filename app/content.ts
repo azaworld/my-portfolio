@@ -53,7 +53,7 @@ export const originStory = [
    blocked, which dependency is about to bite, and which conversation will unblock
    three engineers at once. That's the role I was built for.`,
   `Today I build companies and run delivery: founder & CEO of AZAI Labs, founder of
-   AZADEMY and Listen2AZA, TPM at Platformz, Software Engineer at Kintsugi — and I run the
+   AZADEMY and Listen2AZA, TPM at Platformz, Sr. Software Engineer at Kintsugi — and I run the
    Silent Sacrifice Abdus Sattar Foundation in honor of my father. The mission
    everywhere is the same: turn chaos into shipped products. Here's how the
    character leveled up:`,
@@ -156,25 +156,37 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 7,
-    year: "2025 —",
-    icon: "🧠",
-    title: "Software Engineer",
-    where: "Kintsugi — San Francisco",
-    note: "Engineering quality into AI-powered tax compliance.",
-    parallel: true,
+    year: "2024",
+    icon: "📱",
+    title: "Software QA Engineer",
+    where: "Grameenphone (via Miaki)",
+    note: "MyGP app — built the full backend automation framework.",
     details: [
-      "Playwright + TypeScript automation wired into CI",
-      "Quality gates for AI-driven features where correctness is the product",
+      "Designed and built the complete backend test framework for the MyGP app",
+      "End-to-end backend API automation with Playwright",
+      "Covered the full backend surface — reliable, repeatable regression runs",
     ],
   },
   {
     lv: 8,
-    year: "2024 —",
+    year: "2024",
+    icon: "🛟",
+    title: "Software Automation Engineer II",
+    where: "All Generation Tech — New York",
+    note: "Automation for global insurance clients — CFC, Tokio Marine Kiln, ANICO.",
+    details: [
+      "Test automation across insurance platforms for CFC, Tokio Marine Kiln, and American National (ANICO)",
+      "Built and maintained automation frameworks and CI integration",
+      "Quality engineering for regulated, high-stakes insurance workflows",
+    ],
+  },
+  {
+    lv: 9,
+    year: "2024",
     icon: "🎯",
     title: "Technical Project Manager",
     where: "Platformz",
     note: "3 client platforms · 30+ person team · with the CEO.",
-    parallel: true,
     details: [
       "FUR4 — 5 portals plus a 12-month EDI program shipped in ~60 days",
       "Rockerz and DMV Raw Feeders delivery end to end",
@@ -182,7 +194,19 @@ export const journey: JourneyStep[] = [
     ],
   },
   {
-    lv: 9,
+    lv: 10,
+    year: "2025",
+    icon: "🧠",
+    title: "Sr. Software Engineer",
+    where: "Kintsugi — San Francisco",
+    note: "Engineering quality into AI-powered tax compliance.",
+    details: [
+      "Playwright + TypeScript automation wired into CI",
+      "Quality gates for AI-driven features where correctness is the product",
+    ],
+  },
+  {
+    lv: 11,
     year: "2025",
     icon: "👑",
     title: "Founder & CEO — New Game+",
@@ -419,7 +443,7 @@ export const missions: Mission[] = [
   {
     id: "kintsugi",
     codename: "Operation Precision",
-    role: "Software Engineer",
+    role: "Sr. Software Engineer",
     org: "Kintsugi — San Francisco, USA (remote)",
     short: "Kintsugi",
     period: "Sept 2025 — Present",
@@ -440,6 +464,57 @@ export const missions: Mission[] = [
       "QA leadership across a high-stakes fintech domain",
     ],
     tech: ["Playwright", "TypeScript", "Postman", "CI/CD"],
+  },
+  {
+    id: "allgen",
+    codename: "Operation Underwriter",
+    role: "Software Automation Engineer II",
+    org: "All Generation Tech — New York, NY, USA (remote)",
+    short: "All Gen Tech",
+    period: "Feb 2024 — May 2026",
+    start: 2024.1,
+    end: 2026.4,
+    status: "COMPLETE",
+    brief:
+      "Test automation for global insurance platforms — serving CFC, Tokio Marine Kiln, and American National (ANICO), where a defect can mean a mis-paid claim.",
+    objectives: [
+      "Automation across insurance products for CFC, Tokio Marine Kiln, and American National (ANICO)",
+      "Built and maintained automation frameworks with CI integration",
+      "Quality engineering for regulated, high-stakes insurance workflows",
+      "{{ADD_DETAIL — key systems, coverage, or a metric}}",
+    ],
+    bossFight:
+      "Insurance logic is unforgiving — premiums, claims, and compliance rules that have to be exactly right across three enterprise clients at once.",
+    loot: [
+      "Automation frameworks serving 3 enterprise insurance clients",
+      "{{METRIC — e.g. coverage or defect reduction}}",
+    ],
+    tech: ["Test Automation", "CI/CD", "Insurance Domain", "API Testing"],
+  },
+  {
+    id: "grameenphone",
+    codename: "Operation Dialtone",
+    role: "Software QA Engineer",
+    org: "Grameenphone (via Miaki) — Dhaka, Bangladesh",
+    short: "Grameenphone",
+    period: "Feb 2024 — Mar 2025",
+    start: 2024.1,
+    end: 2025.2,
+    status: "COMPLETE",
+    brief:
+      "Backend quality for MyGP — the app for Bangladesh's largest mobile operator, used by millions. Built the entire backend automation framework from scratch.",
+    objectives: [
+      "Designed and built the complete backend test automation framework for the MyGP app",
+      "End-to-end backend API automation with Playwright",
+      "Covered the full backend surface for reliable, repeatable regression",
+    ],
+    bossFight:
+      "A telecom backend at national scale — millions of users, countless API flows — and no existing automation. Built the framework that tested all of it.",
+    loot: [
+      "Full backend automation framework for MyGP, built from zero",
+      "Reliable regression across the entire backend surface",
+    ],
+    tech: ["Playwright", "TypeScript", "API Testing", "Backend Automation"],
   },
   {
     id: "kinetik",

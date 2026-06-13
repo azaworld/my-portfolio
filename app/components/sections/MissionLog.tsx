@@ -8,11 +8,6 @@ import TiltCard from "../ui/TiltCard";
 import CountUp from "../fx/CountUp";
 import { useGame } from "../game/GameProvider";
 
-// Timeline chart bounds — extend END as time passes.
-const CHART_START = 2018;
-const CHART_END = 2026.6;
-const CHART_NOW = 2026.45;
-
 // Mission number = position from the oldest (M-01) to the newest.
 const missionNumber = (m: Mission) => missions.length - missions.indexOf(m);
 
@@ -102,110 +97,42 @@ function MissionModal({ mission, onClose }: { mission: Mission; onClose: () => v
   );
 }
 
-// Career at a glance: every mission as a bar on a shared time axis.
-// Overlapping bars make the parallel roles obvious. Click a bar → debrief.
+// Career path: a sequential, ordered progression of every role. Click a node
+// to open its debrief. Reads as a journey, not a calendar.
 function CareerTimeline({ onOpen }: { onOpen: (m: Mission) => void }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setInView(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
-  const span = CHART_END - CHART_START;
-  const pct = (v: number) => ((v - CHART_START) / span) * 100;
-  const years = Array.from({ length: 9 }, (_, i) => CHART_START + i);
-
+  // oldest → newest reads as a natural climb
+  const ordered = [...missions].reverse();
   return (
-    <div ref={ref} className="glass overflow-x-auto rounded-2xl p-5 sm:p-6">
+    <div className="glass overflow-x-auto rounded-2xl p-5 sm:p-6">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="text-sm font-semibold">Career at a glance</h3>
+        <h3 className="text-sm font-semibold">Career path</h3>
         <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-          click a bar to open its debrief
+          tap a step to open its debrief
         </p>
       </div>
 
-      <div className="mt-4 min-w-[560px]">
-        {/* year axis */}
-        <div className="relative ml-[7.5rem] h-5 border-b border-white/10">
-          {years.map((y) => (
-            <span
-              key={y}
-              className="absolute -translate-x-1/2 font-mono text-[10px] text-muted"
-              style={{ left: `${pct(y)}%` }}
+      <div className="no-scrollbar mt-5 flex gap-3 overflow-x-auto pb-1">
+        {ordered.map((m, i) => (
+          <div key={m.id} className="flex items-center gap-3">
+            <button
+              onClick={() => onOpen(m)}
+              title={`${m.codename} · ${m.role} · ${m.period}`}
+              className="group flex w-32 shrink-0 flex-col gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-3 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan/40"
             >
-              {y}
-            </span>
-          ))}
-        </div>
-
-        {/* rows */}
-        <div className="relative mt-1">
-          {/* now line */}
-          <div
-            className="absolute bottom-0 top-0 ml-[7.5rem] w-px border-l border-dashed border-cyan/50"
-            style={{ left: `calc(${pct(CHART_NOW)}% )` }}
-            aria-hidden
-          />
-          {missions.map((m, i) => {
-            const active = m.status === "ACTIVE";
-            const left = pct(m.start);
-            const width = Math.max(pct(m.end ?? CHART_NOW) - left, 2.5);
-            return (
-              <div key={m.id} className="flex items-center gap-3 py-1">
-                <span className="w-[6.75rem] shrink-0 truncate text-right font-mono text-[10px] text-muted">
-                  {m.short}
-                </span>
-                <div className="relative h-5 flex-1">
-                  <button
-                    onClick={() => onOpen(m)}
-                    aria-label={`${m.role} at ${m.short}, ${m.period} — open debrief`}
-                    title={`${m.codename} · ${m.role} · ${m.period}`}
-                    className={`absolute top-0.5 h-4 rounded-full transition-all duration-700 ease-out hover:!opacity-100 hover:shadow-[0_0_14px_var(--glow)] ${
-                      active
-                        ? "bg-gradient-to-r from-violet via-magenta to-cyan opacity-95"
-                        : "bg-white/20 opacity-80 hover:bg-white/30"
-                    }`}
-                    style={{
-                      left: `${left}%`,
-                      width: inView ? `${width}%` : "0%",
-                      transitionDelay: `${i * 90}ms`,
-                    }}
-                  >
-                    {active && (
-                      <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 animate-pulse rounded-full bg-cyan shadow-[0_0_10px_var(--cyan)]" aria-hidden />
-                    )}
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* legend */}
-        <div className="ml-[7.5rem] mt-3 flex gap-5 font-mono text-[10px] text-muted">
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-5 rounded-full bg-gradient-to-r from-violet to-cyan" aria-hidden /> active now
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-5 rounded-full bg-white/20" aria-hidden /> completed
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-3 border-l border-dashed border-cyan/50" aria-hidden /> today
-          </span>
-        </div>
+              <span className="flex items-center justify-between">
+                <span className="font-mono text-[9px] text-muted">{m.period.replace(" — Present", " →").replace(/ —.*/, "")}</span>
+                {m.status === "ACTIVE" && (
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan" aria-hidden />
+                )}
+              </span>
+              <span className="text-xs font-semibold leading-tight">{m.short}</span>
+              <span className="text-[10px] leading-tight text-cyan">{m.role}</span>
+            </button>
+            {i < ordered.length - 1 && (
+              <span className="text-muted" aria-hidden>→</span>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -271,38 +198,22 @@ export default function MissionLog() {
     unlock("deep-diver");
   };
 
-  const active = missions.filter((m) => m.status === "ACTIVE");
-  const completed = missions.filter((m) => m.status === "COMPLETE");
-
   return (
     <Section id="missions" kicker="quest journal" title={<>Mission <span className="text-aurora">Log</span></>}>
-      {/* Career timeline overview */}
+      {/* Career path overview */}
       <Reveal>
         <CareerTimeline onOpen={openDebrief} />
       </Reveal>
 
-      {/* Active missions */}
+      {/* All missions — newest first */}
       <Reveal>
-        <h3 className="mt-12 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-cyan">
-          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-cyan" aria-hidden />
-          active now — {active.length} missions in parallel
+        <h3 className="mt-12 font-mono text-xs uppercase tracking-[0.3em] text-muted">
+          every mission — newest first
         </h3>
       </Reveal>
-      <div className="mt-5 grid gap-6 lg:grid-cols-3">
-        {active.map((mission, i) => (
-          <MissionCard key={mission.id} mission={mission} onOpen={openDebrief} delay={i * 100} />
-        ))}
-      </div>
-
-      {/* Completed missions */}
-      <Reveal>
-        <h3 className="mt-14 font-mono text-xs uppercase tracking-[0.3em] text-muted">
-          ✓ completed — the road here
-        </h3>
-      </Reveal>
-      <div className="mt-5 grid gap-6 sm:grid-cols-2">
-        {completed.map((mission, i) => (
-          <MissionCard key={mission.id} mission={mission} onOpen={openDebrief} delay={(i % 2) * 100} />
+      <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {missions.map((mission, i) => (
+          <MissionCard key={mission.id} mission={mission} onOpen={openDebrief} delay={(i % 3) * 100} />
         ))}
       </div>
 
