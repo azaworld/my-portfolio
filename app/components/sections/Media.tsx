@@ -18,14 +18,14 @@ export default function Media() {
   };
 
   return (
-    <Section id="media" kicker="the podcast" title={<>The AZA <span className="text-aurora">Execution Show</span></>}>
+    <Section id="media" kicker="academy & podcast" title={<><span className="text-aurora">AZADEMY</span></>}>
       <p className="-mt-4 mb-8 max-w-2xl text-sm text-muted">
-        My podcast on{" "}
+        My academy where learning meets earning. Its podcast — <strong className="text-text">The AZA Execution Show</strong>{" "}
+        — runs real technical interviews from a hiring manager&apos;s seat, so you can see exactly how I
+        evaluate engineers and how strong candidates answer.{" "}
         <a href={podcast.channel} target="_blank" rel="noreferrer" className="text-cyan hover:underline">
-          AZADEMY
-        </a>{" "}
-        — real technical interviews from a hiring manager&apos;s seat. Watch how I evaluate engineers
-        and how strong candidates actually answer. Press play.
+          Watch on YouTube ↗
+        </a>
       </p>
 
       <div className="grid gap-6 md:grid-cols-3">

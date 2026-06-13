@@ -10,7 +10,7 @@ const LINKS = [
   { label: "Missions", href: "#missions" },
   { label: "Dashboard", href: "#dashboard" },
   { label: "Ventures", href: "#ventures" },
-  { label: "Show", href: "#media" },
+  { label: "AZADEMY", href: "#media" },
   { label: "Audiobooks", href: "#audiobooks" },
   { label: "Contact", href: "#contact" },
 ];
