@@ -758,26 +758,40 @@ export const freelance = {
   ],
 };
 
+// Real interview & hiring videos from the AZADEMY playlist.
+// `id` is the YouTube video id — thumbnails and embeds are derived from it.
+export const mediaPlaylist =
+  "https://www.youtube.com/watch?v=R3YDGEZrJoU&list=PLPKx9CSS1LOeUDRizH2Me0q01IkgKCwMR";
+
 export const media = [
   {
-    title: "Real Tech Interviews",
-    description:
-      "Live interview sessions with real engineers — see how technical interviews actually go, question by question, on AZADEMY.",
-    url: "https://www.youtube.com/@azademy",
-    duration: "Series",
+    id: "R3YDGEZrJoU",
+    title: "From Pakistan to USA — Cracking a Sr. Frontend Interview",
+    description: "How she became Upwork Top Rated Plus and landed a senior frontend role — a real interview, start to finish.",
   },
   {
-    title: "AI & Tech Builds",
-    description:
-      "Building AI products and agents in public — practical walkthroughs, not slideware. From the AZAI Labs trenches to your feed.",
-    url: "https://www.youtube.com/@azademy",
-    duration: "Series",
+    id: "R25fcu7VUzA",
+    title: "How to Crack a Developer Interview",
+    description: "A real interview run with a company owner and lead engineer — exactly what gets a candidate hired.",
   },
   {
-    title: "Learning Meets Earning",
-    description:
-      "Courses and career content engineered for one outcome: CS people getting hired. Skills in, offers out.",
-    url: "https://azademy.org",
-    duration: "Courses",
+    id: "vhY6eyOzqdY",
+    title: "The $300K Pitch — CBO Pitches Engineers to a TPM",
+    description: "How senior engineers get pitched to a Technical Project Manager. The hiring conversation from my side of the table.",
+  },
+  {
+    id: "LdV23LhHY7Q",
+    title: "Interviewing a Senior React Developer (7+ Years)",
+    description: "The questions most senior devs would fail — and what a strong answer actually sounds like.",
+  },
+  {
+    id: "6BuRm6zIY1E",
+    title: "A Top Rated Plus Freelancer Cracked My Interview",
+    description: "$300K+ earnings, 100% job success — watch how a top freelancer handles a real technical interview.",
+  },
+  {
+    id: "_WkcF2RXxSg",
+    title: "Behind a $2M Upwork Agency Interview — TPM View",
+    description: "What hiring looks like from the Technical PM seat at a multi-million-dollar agency.",
   },
 ];

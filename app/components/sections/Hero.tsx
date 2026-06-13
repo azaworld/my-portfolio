@@ -89,6 +89,14 @@ export default function Hero() {
               Hire Me
             </a>
           </Magnetic>
+          <a
+            href={profile.upwork}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-amber/40 bg-amber/10 px-4 py-3.5 text-sm font-medium text-amber transition-all hover:-translate-y-0.5 hover:bg-amber/20"
+          >
+            ⭐ Top Rated on Upwork
+          </a>
         </div>
 
         {/* Animated counters */}
