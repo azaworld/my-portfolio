@@ -1,12 +1,9 @@
 import type { NextConfig } from "next";
 
-// basePath is needed because GitHub Pages serves the site at
-// azaworld.github.io/my-portfolio (a subpath, not the domain root).
-const isCI = process.env.GITHUB_ACTIONS === "true";
-
+// Served at the root of the custom domain (azantor.xyz), so no basePath.
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isCI ? "/my-portfolio" : "",
+  basePath: "",
   images: { unoptimized: true },
 };
 
