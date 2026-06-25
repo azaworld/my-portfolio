@@ -4,6 +4,7 @@ import Confetti from "./components/game/Confetti";
 import CustomCursor from "./components/fx/CustomCursor";
 import Preloader from "./components/fx/Preloader";
 import Navbar from "./components/ui/Navbar";
+import BackToTop from "./components/ui/BackToTop";
 import Hero from "./components/sections/Hero";
 import TreeExperience from "./components/sections/TreeExperience";
 import About from "./components/sections/About";
@@ -51,6 +52,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <BackToTop />
     </GameProvider>
   );
 }

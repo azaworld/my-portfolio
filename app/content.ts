@@ -929,15 +929,15 @@ export const premium = {
 // TREE NAV — labels float on the interactive 3D tree; click scrolls to section.
 // ----------------------------------------------------------------------------
 export const treeNodes = [
-  { label: "Who Am I", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#missions" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#community" },
-  { label: "Ventures", href: "#ventures" },
-  { label: "Premium", href: "#premium" },
-  { label: "Follow Me", href: "#media" },
-  { label: "Contact", href: "#contact" },
+  { label: "Who Am I", href: "#about", teaser: "The origin story + RPG character stats" },
+  { label: "Skills", href: "#skills", teaser: "24-node skill tree across 3 branches" },
+  { label: "Experience", href: "#missions", teaser: "11 roles — Mastercard, Kintsugi, Platformz…" },
+  { label: "Projects", href: "#projects", teaser: "Sothik AI, OpenCRVS, 5G, MyGP & more" },
+  { label: "Education", href: "#community", teaser: "SUST + the academic ladder & community" },
+  { label: "Ventures", href: "#ventures", teaser: "AZAI Labs, AZADEMY, Listen2AZA, Foundation" },
+  { label: "Premium", href: "#premium", teaser: "VIP 1:1 mentorship & fractional slots" },
+  { label: "Follow Me", href: "#media", teaser: "AZADEMY interviews & audiobooks" },
+  { label: "Contact", href: "#contact", teaser: "Start a quest — straight to my inbox" },
 ];
 
 // ----------------------------------------------------------------------------
