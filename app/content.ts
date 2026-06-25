@@ -876,6 +876,71 @@ export const hireChannels = [
 ];
 
 // ----------------------------------------------------------------------------
+// PREMIUM — high-touch, limited-slot offerings (the "VIP" tier).
+// ----------------------------------------------------------------------------
+export const premium = {
+  tagline: "For the few who want me in their corner.",
+  intro:
+    "A limited number of premium slots each quarter — high-touch, senior, and outcome-obsessed. When good isn't enough and you need it shipped right.",
+  tiers: [
+    {
+      icon: "👑",
+      name: "1:1 Executive Mentorship",
+      price: "Private cohort",
+      points: [
+        "Weekly 1:1s on delivery, QA leadership, or breaking into remote/TPM roles",
+        "Direct line — async access between sessions",
+        "Personalized roadmap from where you are to where you want to be",
+      ],
+      highlight: true,
+    },
+    {
+      icon: "🚀",
+      name: "Fractional Delivery Partner",
+      price: "Retainer",
+      points: [
+        "I embed with your team as TPM / delivery lead",
+        "Own the cadence, clear the blockers, report to your board",
+        "Senior judgment on hiring, architecture calls, and release strategy",
+      ],
+      highlight: false,
+    },
+    {
+      icon: "🤖",
+      name: "AI Build Sprint — AZAI Labs",
+      price: "Project",
+      points: [
+        "From idea to a working AI agent / product in weeks, not quarters",
+        "Built, tested, and shipped with monitoring in place",
+        "Augmented AI talent on tap after launch",
+      ],
+      highlight: false,
+    },
+  ],
+  perks: [
+    "Priority response — within hours, not days",
+    "Direct access to me, not a queue",
+    "Senior-only — no handoffs to juniors",
+    "Outcome-based, with clear milestones",
+  ],
+};
+
+// ----------------------------------------------------------------------------
+// TREE NAV — labels float on the interactive 3D tree; click scrolls to section.
+// ----------------------------------------------------------------------------
+export const treeNodes = [
+  { label: "Who Am I", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#missions" },
+  { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#community" },
+  { label: "Ventures", href: "#ventures" },
+  { label: "Premium", href: "#premium" },
+  { label: "Follow Me", href: "#media" },
+  { label: "Contact", href: "#contact" },
+];
+
+// ----------------------------------------------------------------------------
 // VENTURES — "founded worlds"
 // ----------------------------------------------------------------------------
 export const ventures = [

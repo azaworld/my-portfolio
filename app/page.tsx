@@ -5,6 +5,7 @@ import CustomCursor from "./components/fx/CustomCursor";
 import Preloader from "./components/fx/Preloader";
 import Navbar from "./components/ui/Navbar";
 import Hero from "./components/sections/Hero";
+import TreeExperience from "./components/sections/TreeExperience";
 import About from "./components/sections/About";
 import SkillTree from "./components/sections/SkillTree";
 import MissionLog from "./components/sections/MissionLog";
@@ -13,6 +14,7 @@ import Community from "./components/sections/Community";
 import Dashboard from "./components/sections/Dashboard";
 import CareerStats from "./components/sections/CareerStats";
 import Services from "./components/sections/Services";
+import Premium from "./components/sections/Premium";
 import Ventures from "./components/sections/Ventures";
 import Testimonials from "./components/sections/Testimonials";
 import Media from "./components/sections/Media";
@@ -31,6 +33,7 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-6xl px-6">
         <Hero />
+        <TreeExperience />
         <About />
         <SkillTree />
         <MissionLog />
@@ -43,6 +46,7 @@ export default function Home() {
         <Media />
         <Audiobooks />
         <Services />
+        <Premium />
         <Contact />
       </main>
 

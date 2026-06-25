@@ -432,6 +432,17 @@ h3,
   box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6);
 }
 
+/* Floating 3D tree labels fade/pop in */
+.tree-label {
+  animation: pop-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tree-label {
+    animation: none;
+  }
+}
+
 /* HUD XP bar */
 .xp-fill {
   transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);

@@ -5,12 +5,12 @@ import { useGame } from "../game/GameProvider";
 import useKonami from "../fx/useKonami";
 
 const LINKS = [
+  { label: "Tree", href: "#tree" },
   { label: "Origin", href: "#about" },
   { label: "Missions", href: "#missions" },
   { label: "Projects", href: "#projects" },
-  { label: "Stats", href: "#stats" },
   { label: "Ventures", href: "#ventures" },
-  { label: "AZADEMY", href: "#media" },
+  { label: "Premium", href: "#premium" },
 ];
 
 type Theme = "dark" | "light" | "crt";
