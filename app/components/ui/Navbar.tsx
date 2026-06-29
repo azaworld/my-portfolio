@@ -125,6 +125,17 @@ export default function Navbar() {
             Hire Me
           </a>
 
+          {/* Mobile-only quick podcast button (visible without opening the menu) */}
+          <a
+            href="https://azapodcast.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="AZA Podcast"
+            className="hot-gradient whitespace-nowrap rounded-lg px-2.5 py-1.5 text-xs font-bold text-white sm:hidden"
+          >
+            🎙 Podcast
+          </a>
+
           {/* Sun/moon morphing toggle */}
           <button
             onClick={toggleTheme}
