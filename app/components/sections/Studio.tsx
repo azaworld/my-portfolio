@@ -52,7 +52,7 @@ export default function Studio() {
   return (
     <Section
       id="studio"
-      kicker="✦ aza folio · get yours"
+      kicker="✦ personal brand studio · get yours"
       title={
         <>
           Want a site <span className="text-aurora">like this?</span>
@@ -62,7 +62,7 @@ export default function Studio() {
       <p className="-mt-4 mb-4 max-w-2xl text-sm leading-relaxed text-muted">{studio.intro}</p>
       <p className="mb-8">
         <a href="/azafolio" className="inline-flex items-center gap-1 text-sm font-semibold text-cyan hover:underline">
-          Explore the full AZA Folio page →
+          Explore Personal Brand Studio →
         </a>
       </p>
 

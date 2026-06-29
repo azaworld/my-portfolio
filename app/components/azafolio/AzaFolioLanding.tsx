@@ -130,7 +130,7 @@ function OrderForm() {
           role: v.role,
           package: v.pkg,
           details: v.details,
-          _subject: `🛒 AZA Folio order — ${v.pkg} — ${v.name}`,
+          _subject: `🛒 Personal Brand Studio order — ${v.pkg} — ${v.name}`,
           _template: "box",
           _captcha: "false",
         }),
@@ -201,7 +201,7 @@ export default function AzaFolioLanding() {
       {/* Top bar */}
       <header className="glass sticky top-4 z-20 -mx-2 mt-4 flex items-center justify-between rounded-2xl px-4 py-3">
         <span className="font-display text-lg font-bold">
-          <span className="text-aurora">AZA</span> Folio
+          <span className="text-aurora">Personal Brand</span> Studio
         </span>
         <div className="flex items-center gap-2 text-sm">
           <a href="https://azantor.xyz" className="hidden text-muted transition-colors hover:text-text sm:inline">
@@ -216,11 +216,11 @@ export default function AzaFolioLanding() {
       {/* Hero */}
       <section className="py-16 text-center sm:py-24">
         <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-xs text-muted">
-          ✦ The site you&apos;re about to see the demo of is{" "}
+          ✦ This very site is a live demo —{" "}
           <a href="https://azantor.xyz" className="text-cyan hover:underline">azantor.xyz</a>
         </span>
         <h1 className="font-display animate-fade-up mt-6 text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl" style={{ animationDelay: "100ms" }}>
-          <span className="text-aurora">AZA</span> Folio
+          <span className="text-aurora">Personal Brand</span> Studio
         </h1>
         <p className="animate-fade-up mt-4 text-xl font-semibold text-text sm:text-2xl" style={{ animationDelay: "200ms" }}>
           {studio.tagline}
@@ -261,7 +261,7 @@ export default function AzaFolioLanding() {
           Where you land on the <span className="text-aurora">credibility ladder</span>
         </h2>
         <p className="mt-2 mb-10 text-center text-sm text-muted">
-          People decide in seconds. AZA Folio puts you at the top of the ladder.
+          People decide in seconds. Personal Brand Studio puts you at the top of the ladder.
         </p>
         <CredibilityClimb />
       </section>
@@ -269,7 +269,7 @@ export default function AzaFolioLanding() {
       {/* Why */}
       <section className="py-10">
         <h2 className="font-display text-center text-3xl font-bold">
-          Why <span className="text-aurora">AZA Folio</span>
+          Why <span className="text-aurora">Personal Brand Studio</span>
         </h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {studio.why.map((w) => (
@@ -285,7 +285,7 @@ export default function AzaFolioLanding() {
       {/* Comparison */}
       <section className="py-10">
         <h2 className="font-display text-center text-3xl font-bold">
-          AZA Folio vs <span className="text-aurora">the alternatives</span>
+          Personal Brand Studio vs <span className="text-aurora">the alternatives</span>
         </h2>
         <div className="mt-10 overflow-x-auto">
           <table className="w-full min-w-[560px] border-collapse text-sm">
@@ -295,7 +295,7 @@ export default function AzaFolioLanding() {
                 {studio.compare.cols.map((c) => (
                   <th
                     key={c}
-                    className={`p-3 text-center font-semibold ${c === "AZA Folio" ? "rounded-t-xl bg-cyan/10 text-cyan" : "text-muted"}`}
+                    className={`p-3 text-center font-semibold ${c === "Personal Brand Studio" ? "rounded-t-xl bg-cyan/10 text-cyan" : "text-muted"}`}
                   >
                     {c}
                   </th>
@@ -428,7 +428,7 @@ export default function AzaFolioLanding() {
       <section id="order" className="scroll-mt-24 py-10">
         <div className="glass glow-border rounded-2xl p-7 sm:p-10">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
-            Order your <span className="text-aurora">AZA Folio</span>
+            Order your <span className="text-aurora">Personal Brand Studio</span> site
           </h2>
           <p className="mt-2 max-w-md text-sm text-muted">
             Send your details and we&apos;ll reply within 24 hours. Prefer to chat? WhatsApp or LinkedIn us directly.
@@ -440,7 +440,7 @@ export default function AzaFolioLanding() {
             <a href={studio.linkedin} target="_blank" rel="noreferrer" className="glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors hover:text-cyan">
               💼 LinkedIn
             </a>
-            <a href={`mailto:${studio.email}?subject=AZA Folio%20order`} className="glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors hover:text-cyan">
+            <a href={`mailto:${studio.email}?subject=Personal%20Brand%20Studio%20order`} className="glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors hover:text-cyan">
               📧 Email
             </a>
           </div>
@@ -452,10 +452,10 @@ export default function AzaFolioLanding() {
 
       <footer className="border-t border-border pt-8 text-center text-sm text-muted">
         <p>
-          <span className="text-aurora">AZA</span> Folio · by{" "}
+          <span className="text-aurora">Personal Brand</span> Studio · by{" "}
           <a href="https://azantor.xyz" className="hover:text-cyan">Arifuzzaman Antor</a>
         </p>
-        <p className="mt-1 text-xs">Premium personal-brand sites · built &amp; shipped, worldwide.</p>
+        <p className="mt-1 text-xs">Premium personal-brand websites · built &amp; shipped, worldwide.</p>
       </footer>
     </div>
   );

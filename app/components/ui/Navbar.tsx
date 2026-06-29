@@ -14,7 +14,7 @@ const LINKS = [
 
 // Headline "hot" buttons — always visible, animated.
 const HOT = [
-  { label: "✦ AZA Folio", href: "/azafolio", external: false },
+  { label: "✦ Brand Studio", href: "/azafolio", external: false },
   { label: "🎙 AZA Podcast", href: "https://azapodcast.com", external: true },
 ];
 
@@ -105,7 +105,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Hot headline buttons — AZA Folio + Podcast */}
+          {/* Hot headline buttons — Personal Brand Studio + Podcast */}
           {HOT.map((b) => (
             <a
               key={b.href}
