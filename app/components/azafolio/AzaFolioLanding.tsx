@@ -238,6 +238,45 @@ export default function AzaFolioLanding() {
         </div>
       </section>
 
+      {/* Trust band — "is this authentic?" */}
+      <section className="py-6">
+        <div className="grid gap-5 sm:grid-cols-3">
+          {studio.trust.map((t) => (
+            <div key={t.title} className="glass rounded-2xl p-6 text-center">
+              <p className="text-3xl" aria-hidden>{t.icon}</p>
+              <h3 className="mt-3 font-semibold">{t.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted">{t.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Showcase — real, clickable proof */}
+      <section className="py-10">
+        <h2 className="font-display text-center text-3xl font-bold">
+          Real work, <span className="text-aurora">live</span>
+        </h2>
+        <p className="mt-2 text-center text-sm text-muted">
+          Don&apos;t take our word for it — open these and click around.
+        </p>
+        <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+          {studio.showcase.map((s) => (
+            <a
+              key={s.url}
+              href={s.url}
+              target="_blank"
+              rel="noreferrer"
+              className="glass glow-border group flex flex-col rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
+            >
+              <p className="font-display text-lg font-bold group-hover:text-cyan">{s.name}</p>
+              <p className="mt-0.5 text-xs font-medium text-cyan">{s.role}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{s.blurb}</p>
+              <span className="mt-4 text-sm font-semibold text-cyan">View live demo →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* Outcomes — what it gets you */}
       <section className="py-10">
         <h2 className="font-display text-center text-3xl font-bold">
@@ -423,6 +462,29 @@ export default function AzaFolioLanding() {
           ))}
         </div>
       </section>
+
+      {/* Client words — only renders when real quotes exist */}
+      {studio.clientQuotes.length > 0 && (
+        <section className="py-10">
+          <h2 className="font-display text-center text-3xl font-bold">
+            What clients <span className="text-aurora">say</span>
+          </h2>
+          <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+            {studio.clientQuotes.map((c) => (
+              <figure key={c.author} className="glass rounded-2xl p-6">
+                <blockquote className="text-sm leading-relaxed">
+                  <span className="text-aurora font-display text-2xl leading-none" aria-hidden>“</span>
+                  {c.quote}
+                </blockquote>
+                <figcaption className="mt-3">
+                  <span className="block text-sm font-semibold">{c.author}</span>
+                  <span className="block text-xs text-muted">{c.role}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Order */}
       <section id="order" className="scroll-mt-24 py-10">

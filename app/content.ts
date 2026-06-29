@@ -1013,6 +1013,8 @@ export const studio = {
     ],
   },
   faq: [
+    { q: "Is this legit — and is it really mine?", a: "100% yours. The site you're on right now is a live demo of our work. You get your own code, your own domain, and it's hosted on your account. Keep it forever, edit it anytime." },
+    { q: "There are tons of portfolio makers — why you?", a: "Most sell flat templates that look like everyone else. We design a bespoke, interactive, animated site around your story, write the words that actually sell you, and set up your domain — done for you. People screenshot and share it; they don't share templates." },
     { q: "Do I own the site?", a: "100%. It's deployed to your own domain and it's yours to keep — forever." },
     { q: "How long does it take?", a: "From 3–4 days (Spark) to about two weeks (Executive). You're in the loop the whole way." },
     { q: "What do you need from me?", a: "Your story, a few links, a photo, and your brand colors. We handle everything else." },
@@ -1020,6 +1022,25 @@ export const studio = {
     { q: "I don't have a domain yet.", a: "No problem — we'll help you get one and set it up. Domain + HTTPS is part of the service." },
     { q: "How does payment work?", a: "Flexible — we sort it on our first chat. bKash/bank locally; Wise, Stripe, or Upwork internationally." },
   ],
+  // Trust band — answers "is this authentic?" with things they can verify.
+  trust: [
+    { icon: "👁️", title: "See it, don't take our word", text: "This very site is the live demo. Click around — that's exactly the quality you get." },
+    { icon: "🔑", title: "100% yours, forever", text: "Your own code, your own domain, hosted on your account. No lock-in, no monthly trap." },
+    { icon: "🤝", title: "Real people behind it", text: "Built by a senior software engineer and a sales leader — so it works and it converts." },
+  ],
+  // Real, clickable proof — live sites we've built. Add new clients here.
+  showcase: [
+    {
+      name: "Arifuzzaman Antor",
+      role: "Founder · Technical Project Manager · Engineer",
+      url: "https://azantor.xyz",
+      blurb: "The flagship demo — 3D living résumé, gamified sections, fully interactive.",
+    },
+    // Add Sharif here once his site is public:
+    // { name: "Sharif Md. Abid", role: "HealthTech Sales & BD Expert · CEO", url: "https://...", blurb: "..." },
+  ],
+  // Real client words only — leave empty until you have genuine quotes + permission.
+  clientQuotes: [] as { quote: string; author: string; role: string }[],
 };
 
 export const premium = {
