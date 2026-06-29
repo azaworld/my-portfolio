@@ -64,7 +64,7 @@ export default function Footer() {
           <a href={profile.azailabs} target="_blank" rel="noreferrer" className="transition-colors hover:text-violet">AZAI Labs</a>
           <a href={profile.azademy} target="_blank" rel="noreferrer" className="transition-colors hover:text-amber">AZADEMY</a>
           <a href={profile.foundation} target="_blank" rel="noreferrer" className="transition-colors hover:text-[#34d399]">Foundation</a>
-          <a href="/azafolio" className="font-semibold text-cyan transition-colors hover:text-text">Personal Brand Studio ✦</a>
+          <a href="/personal-brand-studio" className="font-semibold text-cyan transition-colors hover:text-text">Personal Brand Studio ✦</a>
           <a href={`mailto:${profile.email}`} className="transition-colors hover:text-cyan">Email</a>
         </div>
 

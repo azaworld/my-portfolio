@@ -14,7 +14,7 @@ const LINKS = [
 
 // Headline "hot" buttons — always visible, animated.
 const HOT = [
-  { label: "✦ Brand Studio", href: "/azafolio", external: false },
+  { label: "✦ Brand Studio", href: "/personal-brand-studio", external: false },
   { label: "🎙 AZA Podcast", href: "https://azapodcast.com", external: true },
 ];
 

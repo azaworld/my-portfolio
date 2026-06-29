@@ -1,12 +1,19 @@
-import type { Metadata } from "next";
-import AzaFolioLanding from "../components/azafolio/AzaFolioLanding";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Personal Brand Studio — Premium personal-brand websites, built for you",
-  description:
-    "Personal Brand Studio builds bespoke, animated, premium personal-brand websites for doctors, consultants, founders, and executives. Custom domain, professional copywriting, and a standout interactive experience — shipped fast. Order yours.",
-};
+import { useEffect } from "react";
 
-export default function AzaFolioPage() {
-  return <AzaFolioLanding />;
+// Old route — kept as a redirect so previously shared links don't break.
+export default function AzaFolioRedirect() {
+  useEffect(() => {
+    window.location.replace("/personal-brand-studio");
+  }, []);
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center gap-3 px-6 text-center">
+      <p className="text-sm text-muted">Redirecting to Personal Brand Studio…</p>
+      <a href="/personal-brand-studio" className="text-cyan hover:underline">
+        Continue to Personal Brand Studio →
+      </a>
+    </main>
+  );
 }

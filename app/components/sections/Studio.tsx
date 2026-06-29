@@ -61,7 +61,7 @@ export default function Studio() {
     >
       <p className="-mt-4 mb-4 max-w-2xl text-sm leading-relaxed text-muted">{studio.intro}</p>
       <p className="mb-8">
-        <a href="/azafolio" className="inline-flex items-center gap-1 text-sm font-semibold text-cyan hover:underline">
+        <a href="/personal-brand-studio" className="inline-flex items-center gap-1 text-sm font-semibold text-cyan hover:underline">
           Explore Personal Brand Studio →
         </a>
       </p>
