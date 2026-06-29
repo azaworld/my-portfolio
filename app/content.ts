@@ -934,6 +934,7 @@ export const studio = {
         "Custom domain + HTTPS setup",
         "1 revision round",
       ],
+      outcome: "A site that finally does you justice.",
       highlight: false,
     },
     {
@@ -947,7 +948,9 @@ export const studio = {
         "Gamified sections + subtle 3D touches",
         "Professional copywriting & SEO",
         "Contact form to your inbox · 2 revisions",
+        "Animated stats, timeline & project showcase",
       ],
+      outcome: "The portfolio that gets you the callback.",
       highlight: true,
     },
     {
@@ -960,8 +963,10 @@ export const studio = {
         "Fully bespoke design + brand-strategy call",
         "Premium 3D interactive experience",
         "Pro copy, media embeds, the works",
-        "30-day support after launch",
+        "Press / speaking / ventures sections",
+        "30-day priority support after launch",
       ],
+      outcome: "A personal brand that opens doors at the top.",
       highlight: false,
     },
   ],
@@ -977,6 +982,43 @@ export const studio = {
     "I design & build your site",
     "Review rounds until it's perfect",
     "Deploy to your domain + handoff",
+  ],
+  // What it actually gets you — the "why buy" outcomes.
+  outcomes: [
+    { icon: "📈", title: "More callbacks", text: "Recruiters and clients judge you in seconds. Give them a reason to say yes." },
+    { icon: "🤝", title: "Instant trust", text: "Show up looking like the obvious choice — before the first call even starts." },
+    { icon: "💼", title: "Premium clients", text: "A premium presence attracts premium budgets. You stop competing on price." },
+    { icon: "🧲", title: "You get remembered", text: "Not one of 20 open tabs — the one person they screenshot and share." },
+    { icon: "⏱", title: "Zero hassle", text: "Design, copy, domain, hosting — all done for you. You just show up." },
+    { icon: "🌍", title: "Open to the world", text: "One link that works for any recruiter, client, or investor, anywhere." },
+  ],
+  // The "credibility climb" — animated bar graph (value 0–100).
+  ladder: [
+    { label: "CV / LinkedIn only", value: 32, note: "Easy to forget" },
+    { label: "DIY template site", value: 54, note: "Looks like everyone else" },
+    { label: "Generic freelancer", value: 72, note: "Works — but forgettable" },
+    { label: "ShipFolio", value: 100, note: "Unforgettable. You get remembered.", highlight: true },
+  ],
+  // ShipFolio vs the alternatives.
+  compare: {
+    cols: ["DIY template", "Hire an agency", "ShipFolio"],
+    rows: [
+      { feature: "Bespoke, one-of-a-kind design", template: "Generic", agency: "Yes ($$$$)", shipfolio: "Yes" },
+      { feature: "Interactive / 3D experience", template: "—", agency: "Maybe", shipfolio: "Yes" },
+      { feature: "Professional copywriting", template: "—", agency: "Add-on", shipfolio: "Included" },
+      { feature: "Custom domain + HTTPS, done for you", template: "DIY", agency: "Yes", shipfolio: "Yes" },
+      { feature: "Flawless on mobile", template: "Varies", agency: "Yes", shipfolio: "Yes" },
+      { feature: "Turnaround", template: "Your time", agency: "1–2 months", shipfolio: "3–14 days" },
+      { feature: "Starting price", template: "$0–20 + hours", agency: "$3k–10k+", shipfolio: "From $149 / ৳12k" },
+    ],
+  },
+  faq: [
+    { q: "Do I own the site?", a: "100%. It's deployed to your own domain and it's yours to keep — forever." },
+    { q: "How long does it take?", a: "From 3–4 days (Spark) to about two weeks (Executive). You're in the loop the whole way." },
+    { q: "What do you need from me?", a: "Your story, a few links, a photo, and your brand colors. We handle everything else." },
+    { q: "Can I update it later?", a: "Yes — edit it yourself, or grab a Care Plan and we keep it fresh for you." },
+    { q: "I don't have a domain yet.", a: "No problem — we'll help you get one and set it up. Domain + HTTPS is part of the service." },
+    { q: "How does payment work?", a: "Flexible — we sort it on our first chat. bKash/bank locally; Wise, Stripe, or Upwork internationally." },
   ],
 };
 

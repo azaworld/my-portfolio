@@ -1,11 +1,79 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import antorFace from "../../assets/arifuz.jpg";
 import { studio } from "../../content";
 
 const waLink = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(studio.whatsappText)}`;
+
+// Animated "credibility climb" bar graph — bars grow when scrolled into view.
+function CredibilityClimb() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className="glass rounded-2xl p-6 sm:p-8">
+      <div className="flex h-56 items-end justify-between gap-3 sm:gap-6">
+        {studio.ladder.map((b, i) => (
+          <div key={b.label} className="flex flex-1 flex-col items-center justify-end">
+            <span className={`mb-2 font-display text-sm font-bold ${b.highlight ? "text-cyan" : "text-muted"}`}>
+              {inView ? `${b.value}%` : ""}
+            </span>
+            <div
+              className={`w-full rounded-t-lg ${b.highlight ? "bg-gradient-to-t from-violet via-magenta to-cyan shadow-[0_0_24px_-4px_var(--glow)]" : "bg-white/12"}`}
+              style={{
+                height: inView ? `${(b.value / 100) * 190}px` : "0px",
+                transition: `height 1.1s cubic-bezier(0.22,1,0.36,1) ${i * 140}ms`,
+              }}
+            />
+            <span className={`mt-3 text-center text-xs ${b.highlight ? "font-semibold text-text" : "text-muted"}`}>{b.label}</span>
+            <span className="mt-0.5 text-center text-[10px] leading-tight text-muted">{b.note}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <div className="mx-auto mt-8 max-w-2xl space-y-3">
+      {studio.faq.map((f, i) => (
+        <div key={f.q} className="glass overflow-hidden rounded-xl">
+          <button
+            onClick={() => setOpen(open === i ? null : i)}
+            aria-expanded={open === i}
+            className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold"
+          >
+            {f.q}
+            <span className={`text-cyan transition-transform duration-300 ${open === i ? "rotate-45" : ""}`} aria-hidden>+</span>
+          </button>
+          <div className="grid transition-[grid-template-rows] duration-300 ease-out" style={{ gridTemplateRows: open === i ? "1fr" : "0fr" }}>
+            <div className="overflow-hidden">
+              <p className="px-5 pb-4 text-sm leading-relaxed text-muted">{f.a}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 // Team avatar: Antor's bundled photo; Sharif auto-loads /sharif.jpg (drop the
 // file in public/) and falls back to polished initials until it's there.
@@ -170,6 +238,34 @@ export default function ShipFolioLanding() {
         </div>
       </section>
 
+      {/* Outcomes — what it gets you */}
+      <section className="py-10">
+        <h2 className="font-display text-center text-3xl font-bold">
+          What a great site <span className="text-aurora">gets you</span>
+        </h2>
+        <p className="mt-2 text-center text-sm text-muted">A site isn&apos;t a cost. It&apos;s the thing that gets you the yes.</p>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {studio.outcomes.map((o) => (
+            <div key={o.title} className="glass rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1">
+              <p className="text-3xl" aria-hidden>{o.icon}</p>
+              <h3 className="mt-3 font-semibold">{o.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted">{o.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Credibility climb */}
+      <section className="py-10">
+        <h2 className="font-display text-center text-3xl font-bold">
+          Where you land on the <span className="text-aurora">credibility ladder</span>
+        </h2>
+        <p className="mt-2 mb-10 text-center text-sm text-muted">
+          People decide in seconds. ShipFolio puts you at the top of the ladder.
+        </p>
+        <CredibilityClimb />
+      </section>
+
       {/* Why */}
       <section className="py-10">
         <h2 className="font-display text-center text-3xl font-bold">
@@ -183,6 +279,40 @@ export default function ShipFolioLanding() {
               <p className="mt-1.5 text-sm leading-relaxed text-muted">{w.text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Comparison */}
+      <section className="py-10">
+        <h2 className="font-display text-center text-3xl font-bold">
+          ShipFolio vs <span className="text-aurora">the alternatives</span>
+        </h2>
+        <div className="mt-10 overflow-x-auto">
+          <table className="w-full min-w-[560px] border-collapse text-sm">
+            <thead>
+              <tr>
+                <th className="p-3 text-left font-medium text-muted"></th>
+                {studio.compare.cols.map((c) => (
+                  <th
+                    key={c}
+                    className={`p-3 text-center font-semibold ${c === "ShipFolio" ? "rounded-t-xl bg-cyan/10 text-cyan" : "text-muted"}`}
+                  >
+                    {c}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {studio.compare.rows.map((r) => (
+                <tr key={r.feature} className="border-t border-white/10">
+                  <td className="p-3 text-left text-muted">{r.feature}</td>
+                  <td className="p-3 text-center text-muted">{r.template}</td>
+                  <td className="p-3 text-center text-muted">{r.agency}</td>
+                  <td className="p-3 text-center font-medium text-text bg-cyan/[0.06]">{r.shipfolio}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -216,7 +346,10 @@ export default function ShipFolioLanding() {
                   </li>
                 ))}
               </ul>
-              <a href="#order" className={`mt-5 rounded-xl px-4 py-2.5 text-center text-sm font-semibold transition-all ${p.highlight ? "bg-gradient-to-r from-violet to-cyan text-white hover:opacity-90" : "glass hover:text-cyan"}`}>
+              <p className="mt-4 rounded-lg bg-white/[0.04] px-3 py-2 text-xs italic leading-snug text-cyan">
+                → {p.outcome}
+              </p>
+              <a href="#order" className={`mt-4 rounded-xl px-4 py-2.5 text-center text-sm font-semibold transition-all ${p.highlight ? "bg-gradient-to-r from-violet to-cyan text-white hover:opacity-90" : "glass hover:text-cyan"}`}>
                 Order {p.name}
               </a>
             </article>
@@ -245,6 +378,12 @@ export default function ShipFolioLanding() {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-10">
+        <h2 className="font-display text-center text-3xl font-bold">Questions, <span className="text-aurora">answered</span></h2>
+        <Faq />
       </section>
 
       {/* Team */}
