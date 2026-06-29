@@ -16,6 +16,7 @@ import Dashboard from "./components/sections/Dashboard";
 import CareerStats from "./components/sections/CareerStats";
 import Services from "./components/sections/Services";
 import Premium from "./components/sections/Premium";
+import Studio from "./components/sections/Studio";
 import Ventures from "./components/sections/Ventures";
 import Testimonials from "./components/sections/Testimonials";
 import Media from "./components/sections/Media";
@@ -48,6 +49,7 @@ export default function Home() {
         <Audiobooks />
         <Services />
         <Premium />
+        <Studio />
         <Contact />
       </main>
 

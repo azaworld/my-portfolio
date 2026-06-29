@@ -88,6 +88,7 @@ const ALL_SECTIONS = [
   "audiobooks",
   "services",
   "premium",
+  "studio",
   "contact",
 ];
 

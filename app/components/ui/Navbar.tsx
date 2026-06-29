@@ -11,6 +11,7 @@ const LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Ventures", href: "#ventures" },
   { label: "Premium", href: "#premium" },
+  { label: "Get a Site", href: "#studio" },
 ];
 
 type Theme = "dark" | "light" | "crt";

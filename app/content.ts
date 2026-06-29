@@ -879,6 +879,77 @@ export const hireChannels = [
 // ----------------------------------------------------------------------------
 // PREMIUM — high-touch, limited-slot offerings (the "VIP" tier).
 // ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// AZA STUDIO — productized "get a site like this" offering.
+// ----------------------------------------------------------------------------
+export const studio = {
+  brand: "AZA Studio",
+  tagline: "Want a site like this? I'll build you one.",
+  intro:
+    "Not a template — a bespoke, animated, premium personal-brand site built to make you the most impressive person in the room. The site you're on right now is the demo.",
+  whatsapp: "8801580497264",
+  whatsappText: "Hi Antor! I saw azantor.xyz and I'd like to order a portfolio site.",
+  linkedin: "https://linkedin.com/in/azantor",
+  email: "arifuzantor@gmail.com",
+  packages: [
+    {
+      name: "Spark",
+      forWho: "Students & engineers",
+      usd: "$149–249",
+      bdt: "৳12,000–18,000",
+      turnaround: "3–4 days",
+      points: [
+        "Clean, animated, fully responsive portfolio",
+        "Your content, photo & brand colors",
+        "Custom domain + HTTPS setup",
+        "1 revision round",
+      ],
+      highlight: false,
+    },
+    {
+      name: "Signature",
+      forWho: "Seniors, leads & PMs",
+      usd: "$399–699",
+      bdt: "৳30,000–50,000",
+      turnaround: "~1 week",
+      points: [
+        "Everything in Spark, leveled up",
+        "Gamified sections + subtle 3D touches",
+        "Professional copywriting & SEO",
+        "Contact form to your inbox · 2 revisions",
+      ],
+      highlight: true,
+    },
+    {
+      name: "Executive",
+      forWho: "Directors, CEOs, founders & C-suite",
+      usd: "$1,200+",
+      bdt: "৳1,00,000+",
+      turnaround: "~2 weeks",
+      points: [
+        "Fully bespoke design + brand-strategy call",
+        "Premium 3D interactive experience",
+        "Pro copy, media embeds, the works",
+        "30-day support after launch",
+      ],
+      highlight: false,
+    },
+  ],
+  carePlan: {
+    name: "Care Plan",
+    usd: "$40–120/mo",
+    bdt: "৳3,000–8,000/mo",
+    note: "Optional add-on — hosting, updates & tweaks whenever you need them.",
+  },
+  steps: [
+    "Pick a package & send your details",
+    "Quick discovery — I gather your story",
+    "I design & build your site",
+    "Review rounds until it's perfect",
+    "Deploy to your domain + handoff",
+  ],
+};
+
 export const premium = {
   tagline: "For the few who want me in their corner.",
   intro:
