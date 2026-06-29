@@ -8,10 +8,14 @@ const LINKS = [
   { label: "Tree", href: "#tree" },
   { label: "Origin", href: "#about" },
   { label: "Missions", href: "#missions" },
-  { label: "Projects", href: "#projects" },
   { label: "Ventures", href: "#ventures" },
   { label: "Premium", href: "#premium" },
-  { label: "AZA Folio", href: "/azafolio" },
+];
+
+// Headline "hot" buttons — always visible, animated.
+const HOT = [
+  { label: "✦ AZA Folio", href: "/azafolio", external: false },
+  { label: "🎙 AZA Podcast", href: "https://azapodcast.com", external: true },
 ];
 
 type Theme = "dark" | "light" | "crt";
@@ -84,7 +88,7 @@ export default function Navbar() {
           <span className="text-muted">.os</span>
         </a>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {LINKS.map((link) => (
             <a
               key={link.href}
@@ -101,10 +105,22 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          {/* Hot headline buttons — AZA Folio + Podcast */}
+          {HOT.map((b) => (
+            <a
+              key={b.href}
+              href={b.href}
+              {...(b.external ? { target: "_blank", rel: "noreferrer" } : {})}
+              className="hot-gradient hidden whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-bold text-white transition-transform hover:-translate-y-0.5 sm:inline-block"
+            >
+              {b.label}
+            </a>
+          ))}
+
           {/* Hire Me — the money button */}
           <a
             href="#services"
-            className="hidden rounded-lg bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-4 py-1.5 text-sm font-semibold text-white shadow-md shadow-violet/30 transition-all hover:bg-right sm:inline-block"
+            className="hidden whitespace-nowrap rounded-lg bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-3 py-1.5 text-xs font-semibold text-white shadow-md shadow-violet/30 transition-all hover:bg-right sm:inline-block"
           >
             Hire Me
           </a>
@@ -137,7 +153,7 @@ export default function Navbar() {
 
           {/* Mobile menu */}
           <button
-            className="rounded-lg p-2 text-muted transition-colors hover:text-text md:hidden"
+            className="rounded-lg p-2 text-muted transition-colors hover:text-text lg:hidden"
             onClick={() => setMenuOpen((o) => !o)}
             aria-expanded={menuOpen}
             aria-label="Toggle menu"
@@ -150,7 +166,7 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="menu-panel animate-pop-in absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[75] flex flex-col gap-1 rounded-2xl p-2 md:hidden">
+        <div className="menu-panel animate-pop-in absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[75] flex flex-col gap-1 rounded-2xl p-2 lg:hidden">
           {LINKS.map((link) => (
             <a
               key={link.href}
@@ -165,10 +181,21 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          {HOT.map((b) => (
+            <a
+              key={b.href}
+              href={b.href}
+              {...(b.external ? { target: "_blank", rel: "noreferrer" } : {})}
+              onClick={() => setMenuOpen(false)}
+              className="hot-gradient mt-1 rounded-xl px-4 py-3 text-center text-sm font-bold text-white"
+            >
+              {b.label}
+            </a>
+          ))}
           <a
             href="#services"
             onClick={() => setMenuOpen(false)}
-            className="mt-1 rounded-xl bg-gradient-to-r from-violet via-magenta to-amber px-4 py-3 text-center text-sm font-semibold text-white"
+            className="rounded-xl bg-gradient-to-r from-violet via-magenta to-amber px-4 py-3 text-center text-sm font-semibold text-white"
           >
             Hire Me
           </a>
