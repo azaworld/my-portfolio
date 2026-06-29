@@ -314,7 +314,7 @@ export default function ShipFolioLanding() {
       <footer className="border-t border-border pt-8 text-center text-sm text-muted">
         <p>
           <span className="text-aurora">Ship</span>Folio · by{" "}
-          <a href="https://azantor.xyz" className="hover:text-cyan">Arifuzzaman Antor</a> &amp; Sharif Md. Abid
+          <a href="https://azantor.xyz" className="hover:text-cyan">Arifuzzaman Antor</a>
         </p>
         <p className="mt-1 text-xs">Premium personal-brand sites · built &amp; shipped, worldwide.</p>
       </footer>
