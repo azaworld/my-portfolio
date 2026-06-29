@@ -880,17 +880,43 @@ export const hireChannels = [
 // PREMIUM — high-touch, limited-slot offerings (the "VIP" tier).
 // ----------------------------------------------------------------------------
 // ----------------------------------------------------------------------------
-// AZA STUDIO — productized "get a site like this" offering.
+// SHIPFOLIO — productized "get a site like this" offering (azantor.xyz/shipfolio).
 // ----------------------------------------------------------------------------
 export const studio = {
-  brand: "AZA Studio",
-  tagline: "Want a site like this? I'll build you one.",
+  brand: "ShipFolio",
+  tagline: "Premium personal-brand sites, built for you.",
   intro:
     "Not a template — a bespoke, animated, premium personal-brand site built to make you the most impressive person in the room. The site you're on right now is the demo.",
   whatsapp: "8801580497264",
-  whatsappText: "Hi Antor! I saw azantor.xyz and I'd like to order a portfolio site.",
+  whatsappText: "Hi! I saw azantor.xyz and I'd like to order a ShipFolio site.",
   linkedin: "https://linkedin.com/in/azantor",
   email: "arifuzantor@gmail.com",
+  // Why ShipFolio — shown as feature bullets on the product page.
+  why: [
+    { icon: "🎨", title: "Bespoke, not a template", text: "Designed around your story, role, and brand — no two are alike." },
+    { icon: "🕹️", title: "Interactive & gamified", text: "3D, animations, and playful touches that make people stop and screenshot." },
+    { icon: "📱", title: "Flawless on every device", text: "Mobile-first, fast, and Lighthouse-friendly out of the box." },
+    { icon: "🌐", title: "Your domain, fully set up", text: "Custom domain + HTTPS + contact form wired to your inbox. Done for you." },
+    { icon: "✍️", title: "Words that sell you", text: "Professional copywriting that turns your experience into offers." },
+    { icon: "⚡", title: "Shipped fast", text: "From a few days to two weeks — you stay in the loop the whole way." },
+  ],
+  // Founding team
+  team: [
+    {
+      name: "Arifuzzaman Antor",
+      role: "Product Builder",
+      bio: "Building and evolving the platform through innovation, technology, and continuous improvement.",
+      cred: "TPM · Sr. Software Engineer · Founder, AZAI Labs",
+      img: "antor",
+    },
+    {
+      name: "Sharif Md. Abid",
+      role: "Growth & Partnerships",
+      bio: "Driving business growth through sales, strategic partnerships, client acquisition, and long-term relationships.",
+      cred: "HealthTech Sales & BD Expert · 21+ years across emerging markets",
+      img: "sharif",
+    },
+  ],
   packages: [
     {
       name: "Spark",

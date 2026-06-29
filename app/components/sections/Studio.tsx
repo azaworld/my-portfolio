@@ -52,14 +52,19 @@ export default function Studio() {
   return (
     <Section
       id="studio"
-      kicker="✦ aza studio · get yours"
+      kicker="✦ shipfolio · get yours"
       title={
         <>
           Want a site <span className="text-aurora">like this?</span>
         </>
       }
     >
-      <p className="-mt-4 mb-8 max-w-2xl text-sm leading-relaxed text-muted">{studio.intro}</p>
+      <p className="-mt-4 mb-4 max-w-2xl text-sm leading-relaxed text-muted">{studio.intro}</p>
+      <p className="mb-8">
+        <a href="/shipfolio" className="inline-flex items-center gap-1 text-sm font-semibold text-cyan hover:underline">
+          Explore the full ShipFolio page →
+        </a>
+      </p>
 
       {/* Packages */}
       <div className="grid gap-6 lg:grid-cols-3">

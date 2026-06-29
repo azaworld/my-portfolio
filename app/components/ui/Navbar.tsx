@@ -11,7 +11,7 @@ const LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Ventures", href: "#ventures" },
   { label: "Premium", href: "#premium" },
-  { label: "Get a Site", href: "#studio" },
+  { label: "ShipFolio", href: "/shipfolio" },
 ];
 
 type Theme = "dark" | "light" | "crt";
@@ -60,7 +60,9 @@ export default function Navbar() {
 
   // Active-section highlighting
   useEffect(() => {
-    const sections = LINKS.map((l) => document.querySelector(l.href)).filter(Boolean) as Element[];
+    const sections = LINKS.filter((l) => l.href.startsWith("#"))
+      .map((l) => document.querySelector(l.href))
+      .filter(Boolean) as Element[];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
