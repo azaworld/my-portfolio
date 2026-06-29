@@ -889,7 +889,7 @@ export const studio = {
     "Not a template — a bespoke, animated, premium personal-brand site built to make you the most impressive person in the room. The site you're on right now is the demo.",
   whatsapp: "8801580497264",
   whatsappText: "Hi! I saw azantor.xyz and I'd like to order a ShipFolio site.",
-  linkedin: "https://linkedin.com/in/azantor",
+  linkedin: "https://www.linkedin.com/in/azantor/",
   email: "arifuzantor@gmail.com",
   // Why ShipFolio — shown as feature bullets on the product page.
   why: [
@@ -908,6 +908,8 @@ export const studio = {
       bio: "Building and evolving the platform through innovation, technology, and continuous improvement.",
       cred: "TPM · Sr. Software Engineer · Founder, AZAI Labs",
       img: "antor",
+      linkedin: "https://www.linkedin.com/in/azantor/",
+      whatsapp: "8801580497264",
     },
     {
       name: "Sharif Md. Abid",
@@ -915,6 +917,8 @@ export const studio = {
       bio: "Driving business growth through sales, strategic partnerships, client acquisition, and long-term relationships.",
       cred: "HealthTech Sales & BD Expert · 21+ years across emerging markets",
       img: "sharif",
+      linkedin: "https://www.linkedin.com/in/sharifabid/",
+      whatsapp: "8801771237891",
     },
   ],
   packages: [

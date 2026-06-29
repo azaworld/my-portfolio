@@ -7,8 +7,12 @@ import { studio } from "../../content";
 
 const waLink = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(studio.whatsappText)}`;
 
-// Team avatar: real photo for Antor, polished initials for anyone without a file yet.
+// Team avatar: Antor's bundled photo; Sharif auto-loads /sharif.jpg (drop the
+// file in public/) and falls back to polished initials until it's there.
 function Avatar({ img, name }: { img: string; name: string }) {
+  const [imgFailed, setImgFailed] = useState(false);
+  const initials = name.split(" ").map((w) => w[0]).slice(0, 2).join("");
+
   if (img === "antor") {
     return (
       <div className="portrait-duotone h-20 w-20 shrink-0 !rounded-full ring-2 ring-violet/60">
@@ -16,11 +20,20 @@ function Avatar({ img, name }: { img: string; name: string }) {
       </div>
     );
   }
-  // {{ Drop Sharif's photo at app/assets/sharif.jpg and swap this for an <Image>. }}
-  const initials = name.split(" ").map((w) => w[0]).slice(0, 2).join("");
   return (
-    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan to-violet font-display text-2xl font-bold text-white ring-2 ring-cyan/50">
-      {initials}
+    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-cyan/50">
+      <span className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-cyan to-violet font-display text-2xl font-bold text-white">
+        {initials}
+      </span>
+      {!imgFailed && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`/${img}.jpg`}
+          alt={name}
+          onError={() => setImgFailed(true)}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
     </div>
   );
 }
@@ -249,6 +262,24 @@ export default function ShipFolioLanding() {
               </div>
               <p className="mt-4 text-sm leading-relaxed text-muted">{m.bio}</p>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-muted">{m.cred}</p>
+              <div className="mt-4 flex gap-2">
+                <a
+                  href={m.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="glass rounded-lg px-3 py-1.5 text-xs text-muted transition-colors hover:text-cyan"
+                >
+                  💼 LinkedIn
+                </a>
+                <a
+                  href={`https://wa.me/${m.whatsapp}?text=${encodeURIComponent(studio.whatsappText)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg bg-[#25D366]/15 px-3 py-1.5 text-xs text-[#25D366] transition-colors hover:bg-[#25D366]/25"
+                >
+                  💬 WhatsApp
+                </a>
+              </div>
             </div>
           ))}
         </div>
