@@ -24,6 +24,7 @@ export const profile = {
   twitter: "https://x.com/azantor1",
   facebook: "https://www.facebook.com/arifuzantor/",
   youtube: "https://www.youtube.com/@azademy",
+  podcast: "https://azapodcast.com",
   azailabs: "https://azailabs.dev",
   azademy: "https://azademy.org",
   upwork: "https://www.upwork.com/freelancers/~01b1ba72ba57683f43",
@@ -961,12 +962,12 @@ export const ventures = [
     link: "https://azademy.org",
   },
   {
-    name: "AZADEMY Studio",
-    tagline: "Real interviews. Real builds. On camera.",
+    name: "AZA Execution Podcast",
+    tagline: "Ideas are cheap. Execution is everything.",
     description:
-      "The content arm of AZADEMY on YouTube — AI and tech build videos, plus real interview sessions with engineers showing how technical interviews actually go.",
+      "My podcast — long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done. Weekly, video & audio, Bangla & English. Episodes coming soon. Host & founder.",
     theme: "cyan" as const,
-    link: "https://www.youtube.com/@azademy",
+    link: "https://azapodcast.com",
   },
   {
     name: "Listen2AZA",
@@ -1027,7 +1028,7 @@ export const education = [
     icon: "🎓",
     school: "Shahjalal University of Science and Technology",
     detail: "B.Sc. Engineering — Computer Science & Engineering",
-    period: "",
+    period: "2017 — 2020",
   },
   {
     icon: "🏫",
@@ -1202,17 +1203,21 @@ export const freelance = {
   ],
 };
 
-// THE AZA EXECUTION SHOW — podcast: real hiring & interview videos from AZADEMY.
-// `id` is the YouTube video id — thumbnails and embeds are derived from it.
+// THE AZA EXECUTION PODCAST — my own show (azapodcast.com / @azapod).
 export const podcast = {
-  name: "The AZA Execution Show",
+  name: "AZA Execution Podcast",
+  tagline: "Ideas are cheap. Execution is everything.",
+  description:
+    "Long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done — across business, startups, tech, science, performance, and culture. Weekly, in video & audio, Bangla & English.",
   comingSoon: true,
-  launch: "June 20",
-  channel: "https://www.youtube.com/@azademy",
-  playlist: "https://www.youtube.com/watch?v=R3YDGEZrJoU&list=PLPKx9CSS1LOeUDRizH2Me0q01IkgKCwMR",
+  status: "Episodes coming soon — first conversations in production",
+  site: "https://azapodcast.com",
+  channel: "https://www.youtube.com/@azapod",
+  facebook: "https://www.facebook.com/azapod",
 };
 
-export const mediaPlaylist = podcast.playlist;
+// AZADEMY interview series (separate from the podcast).
+export const mediaPlaylist = "https://www.youtube.com/watch?v=R3YDGEZrJoU&list=PLPKx9CSS1LOeUDRizH2Me0q01IkgKCwMR";
 
 export const media = [
   {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { azademySocials, media, mediaPlaylist, podcast } from "../../content";
+import { azademySocials, media, mediaPlaylist, podcast, profile } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import TiltCard from "../ui/TiltCard";
@@ -22,23 +22,34 @@ export default function Media() {
       <p className="-mt-4 mb-5 max-w-2xl text-sm text-muted">
         My academy where learning meets earning — CS, AI & tech, freelancing, landing remote jobs, and
         real interviews with experts on how to give and take technical interviews.{" "}
-        <a href={podcast.channel} target="_blank" rel="noreferrer" className="text-cyan hover:underline">
+        <a href={profile.youtube} target="_blank" rel="noreferrer" className="text-cyan hover:underline">
           Watch on YouTube ↗
         </a>
       </p>
 
-      {/* Podcast — coming soon */}
-      {podcast.comingSoon && (
-        <div className="mb-8 inline-flex flex-wrap items-center gap-3 rounded-xl border border-magenta/30 bg-magenta/10 px-4 py-2.5">
+      {/* AZA Execution Podcast — coming soon */}
+      <div className="mb-8 rounded-2xl border border-magenta/30 bg-gradient-to-r from-magenta/10 to-violet/10 p-5">
+        <div className="flex flex-wrap items-center gap-3">
           <span className="rounded-full bg-magenta/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-magenta">
-            🎙️ Coming {podcast.launch}
+            🎙️ Coming soon
           </span>
-          <span className="text-sm">
-            <strong className="text-text">{podcast.name}</strong>
-            <span className="text-muted"> — my new podcast on execution & building. Launching {podcast.launch}.</span>
-          </span>
+          <strong className="text-text">{podcast.name}</strong>
         </div>
-      )}
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+          <span className="text-text">“{podcast.tagline}”</span> — {podcast.description}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2.5">
+          <a href={podcast.site} target="_blank" rel="noreferrer" className="rounded-full bg-gradient-to-r from-magenta to-violet px-4 py-1.5 text-xs font-semibold text-white transition-transform hover:scale-105">
+            azapodcast.com ↗
+          </a>
+          <a href={podcast.channel} target="_blank" rel="noreferrer" className="glass rounded-full px-4 py-1.5 text-xs text-muted transition-colors hover:text-magenta">
+            YouTube @azapod
+          </a>
+          <a href={podcast.facebook} target="_blank" rel="noreferrer" className="glass rounded-full px-4 py-1.5 text-xs text-muted transition-colors hover:text-magenta">
+            Facebook
+          </a>
+        </div>
+      </div>
 
       <div className="grid gap-6 md:grid-cols-3">
         {media.map((item, i) => (
