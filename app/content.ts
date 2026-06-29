@@ -883,12 +883,12 @@ export const hireChannels = [
 // SHIPFOLIO — productized "get a site like this" offering (azantor.xyz/shipfolio).
 // ----------------------------------------------------------------------------
 export const studio = {
-  brand: "ShipFolio",
+  brand: "AZA Folio",
   tagline: "Premium personal-brand sites, built for you.",
   intro:
     "Not a template — a bespoke, animated, premium personal-brand site built to make you the most impressive person in the room. The site you're on right now is the demo.",
   whatsapp: "8801580497264",
-  whatsappText: "Hi! I saw azantor.xyz and I'd like to order a ShipFolio site.",
+  whatsappText: "Hi! I saw azantor.xyz and I'd like to order an AZA Folio site.",
   linkedin: "https://www.linkedin.com/in/azantor/",
   email: "arifuzantor@gmail.com",
   // Why ShipFolio — shown as feature bullets on the product page.
@@ -997,11 +997,11 @@ export const studio = {
     { label: "CV / LinkedIn only", value: 32, note: "Easy to forget" },
     { label: "DIY template site", value: 54, note: "Looks like everyone else" },
     { label: "Generic freelancer", value: 72, note: "Works — but forgettable" },
-    { label: "ShipFolio", value: 100, note: "Unforgettable. You get remembered.", highlight: true },
+    { label: "AZA Folio", value: 100, note: "Unforgettable. You get remembered.", highlight: true },
   ],
   // ShipFolio vs the alternatives.
   compare: {
-    cols: ["DIY template", "Hire an agency", "ShipFolio"],
+    cols: ["DIY template", "Hire an agency", "AZA Folio"],
     rows: [
       { feature: "Bespoke, one-of-a-kind design", template: "Generic", agency: "Yes ($$$$)", shipfolio: "Yes" },
       { feature: "Interactive / 3D experience", template: "—", agency: "Maybe", shipfolio: "Yes" },

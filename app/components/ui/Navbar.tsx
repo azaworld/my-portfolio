@@ -11,7 +11,7 @@ const LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Ventures", href: "#ventures" },
   { label: "Premium", href: "#premium" },
-  { label: "ShipFolio", href: "/shipfolio" },
+  { label: "AZA Folio", href: "/azafolio" },
 ];
 
 type Theme = "dark" | "light" | "crt";
