@@ -925,8 +925,8 @@ export const studio = {
     {
       name: "Spark",
       forWho: "Students & engineers",
-      usd: "$149–249",
-      bdt: "৳12,000–18,000",
+      usd: "From $149",
+      bdt: "From ৳12,000",
       turnaround: "3–4 days",
       points: [
         "Clean, animated, fully responsive portfolio",
@@ -940,8 +940,8 @@ export const studio = {
     {
       name: "Signature",
       forWho: "Seniors, leads & PMs",
-      usd: "$399–699",
-      bdt: "৳30,000–50,000",
+      usd: "From $399",
+      bdt: "From ৳30,000",
       turnaround: "~1 week",
       points: [
         "Everything in Spark, leveled up",
@@ -956,8 +956,8 @@ export const studio = {
     {
       name: "Executive",
       forWho: "Directors, CEOs, founders & C-suite",
-      usd: "$1,200+",
-      bdt: "৳1,00,000+",
+      usd: "From $1,200",
+      bdt: "From ৳1,00,000",
       turnaround: "~2 weeks",
       points: [
         "Fully bespoke design + brand-strategy call",
@@ -972,8 +972,8 @@ export const studio = {
   ],
   carePlan: {
     name: "Care Plan",
-    usd: "$40–120/mo",
-    bdt: "৳3,000–8,000/mo",
+    usd: "From $40/mo",
+    bdt: "From ৳3,000/mo",
     note: "Optional add-on — hosting, updates & tweaks whenever you need them.",
   },
   steps: [
