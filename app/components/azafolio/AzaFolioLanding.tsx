@@ -289,7 +289,7 @@ export default function AzaFolioLanding() {
         <p className="mt-2 text-center text-sm text-muted">
           Don&apos;t take our word for it — open these and click around.
         </p>
-        <div className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {studio.showcase.map((s) => (
             <a
               key={s.url}

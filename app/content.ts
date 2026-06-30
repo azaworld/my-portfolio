@@ -1042,6 +1042,12 @@ export const studio = {
       url: "https://sharif-abid.xyz",
       blurb: "A premium personal brand for a 21-year sales & HealthTech leader — interactive, gamified, fully responsive.",
     },
+    {
+      name: "Timothy Munro Roberts",
+      role: "Technology Founder · Enterprise Architect · CEO, Platformz",
+      url: "https://timothymunroroberts.com",
+      blurb: "A bold, gamified personal brand for a 25-year tech founder & enterprise architect — fully interactive.",
+    },
   ],
   // Real client words only — leave empty until you have genuine quotes + permission.
   clientQuotes: [] as { quote: string; author: string; role: string }[],
