@@ -1041,6 +1041,21 @@ export const studio = {
   ],
   // Real client words only — leave empty until you have genuine quotes + permission.
   clientQuotes: [] as { quote: string; author: string; role: string }[],
+  // Who it's for — helps a visitor self-identify ("this is for me").
+  forWhom: [
+    { icon: "🩺", label: "Doctors & specialists" },
+    { icon: "💼", label: "Consultants & advisors" },
+    { icon: "🚀", label: "Founders & entrepreneurs" },
+    { icon: "👔", label: "C-suite & executives" },
+    { icon: "🎤", label: "Coaches & speakers" },
+    { icon: "📈", label: "Sales & business leaders" },
+  ],
+  // Risk reversal — lowers the fear of ordering.
+  guarantee:
+    "We revise until you're proud to share it. You own the site, the code, and the domain — forever. No lock-in, no monthly trap.",
+  // Honest positioning of value + scarcity (true for a small, senior team).
+  valueNote:
+    "One new client, callback, or deal usually wins back the cost many times over. We take a limited number of builds each month to keep every site premium.",
 };
 
 export const premium = {

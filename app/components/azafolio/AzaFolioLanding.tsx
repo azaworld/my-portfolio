@@ -207,8 +207,8 @@ export default function AzaFolioLanding() {
           <a href="https://azantor.xyz" className="hidden text-muted transition-colors hover:text-text sm:inline">
             ← Live demo
           </a>
-          <a href="#order" className="rounded-lg bg-gradient-to-r from-violet to-cyan px-4 py-1.5 font-semibold text-white">
-            Order
+          <a href="#packages" className="rounded-lg bg-gradient-to-r from-violet to-cyan px-4 py-1.5 font-semibold text-white">
+            Pick a package
           </a>
         </div>
       </header>
@@ -254,6 +254,21 @@ export default function AzaFolioLanding() {
               <h3 className="mt-3 font-semibold">{t.title}</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-muted">{t.text}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Who it's for — self-identify */}
+      <section className="py-10">
+        <h2 className="font-display text-center text-3xl font-bold">
+          Built for <span className="text-aurora">people like you</span>
+        </h2>
+        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-3">
+          {studio.forWhom.map((w) => (
+            <span key={w.label} className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm">
+              <span aria-hidden>{w.icon}</span>
+              {w.label}
+            </span>
           ))}
         </div>
       </section>
@@ -366,6 +381,7 @@ export default function AzaFolioLanding() {
       <section id="packages" className="scroll-mt-24 py-10">
         <h2 className="font-display text-center text-3xl font-bold">Pick your <span className="text-aurora">package</span></h2>
         <p className="mt-2 text-center text-sm text-muted">Transparent pricing — USD & BDT. No hidden fees.</p>
+        <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-cyan">{studio.valueNote}</p>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {studio.packages.map((p) => (
             <article
@@ -501,6 +517,9 @@ export default function AzaFolioLanding() {
           </h2>
           <p className="mt-2 max-w-md text-sm text-muted">
             Send your details and we&apos;ll reply within 24 hours. Prefer to chat? WhatsApp or LinkedIn us directly.
+          </p>
+          <p className="mt-3 inline-flex items-start gap-2 rounded-xl border border-[#34d399]/25 bg-[#34d399]/[0.07] px-4 py-2.5 text-sm leading-relaxed text-[#34d399]">
+            <span aria-hidden>✓</span> {studio.guarantee}
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a href={waLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-[#0b1026] transition-transform hover:-translate-y-0.5">
