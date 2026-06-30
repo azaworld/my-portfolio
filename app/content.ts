@@ -925,8 +925,8 @@ export const studio = {
     {
       name: "Spark",
       forWho: "Students & engineers",
-      usd: "From $149",
-      bdt: "From ৳12,000",
+      usd: "From $199",
+      bdt: "From ৳24,278",
       turnaround: "3–4 days",
       points: [
         "Clean, animated, fully responsive portfolio",
@@ -940,8 +940,8 @@ export const studio = {
     {
       name: "Signature",
       forWho: "Seniors, leads & PMs",
-      usd: "From $399",
-      bdt: "From ৳30,000",
+      usd: "From $499",
+      bdt: "From ৳60,878",
       turnaround: "~1 week",
       points: [
         "Everything in Spark, leveled up",
@@ -956,8 +956,8 @@ export const studio = {
     {
       name: "Executive",
       forWho: "Directors, CEOs, founders & C-suite",
-      usd: "From $1,200",
-      bdt: "From ৳1,00,000",
+      usd: "From $1,000",
+      bdt: "From ৳1,22,000",
       turnaround: "~2 weeks",
       points: [
         "Fully bespoke design + brand-strategy call",
@@ -1009,7 +1009,7 @@ export const studio = {
       { feature: "Custom domain + HTTPS, done for you", template: "DIY", agency: "Yes", shipfolio: "Yes" },
       { feature: "Flawless on mobile", template: "Varies", agency: "Yes", shipfolio: "Yes" },
       { feature: "Turnaround", template: "Your time", agency: "1–2 months", shipfolio: "3–14 days" },
-      { feature: "Starting price", template: "$0–20 + hours", agency: "$3k–10k+", shipfolio: "From $149 / ৳12k" },
+      { feature: "Starting price", template: "$0–20 + hours", agency: "$3k–10k+", shipfolio: "From $199 / ৳24k" },
     ],
   },
   faq: [
