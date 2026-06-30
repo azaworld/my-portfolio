@@ -1036,8 +1036,12 @@ export const studio = {
       url: "https://azantor.xyz",
       blurb: "The flagship demo — 3D living résumé, gamified sections, fully interactive.",
     },
-    // Add Sharif here once his site is public:
-    // { name: "Sharif Md. Abid", role: "HealthTech Sales & BD Expert · CEO", url: "https://...", blurb: "..." },
+    {
+      name: "Sharif Md. Abid",
+      role: "HealthTech Sales & BD Expert · CEO, Life Plus BD",
+      url: "https://sharif-abid.xyz",
+      blurb: "A premium personal brand for a 21-year sales & HealthTech leader — interactive, gamified, fully responsive.",
+    },
   ],
   // Real client words only — leave empty until you have genuine quotes + permission.
   clientQuotes: [] as { quote: string; author: string; role: string }[],
