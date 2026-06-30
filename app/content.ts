@@ -976,6 +976,11 @@ export const studio = {
     bdt: "From ৳3,000/mo",
     note: "Optional add-on — hosting, updates & tweaks whenever you need them.",
   },
+  custom: {
+    name: "Custom / Tailored",
+    note: "Need something beyond these packages? Tell us your exact requirements — special sections, niche features, integrations, or a unique design direction — and we'll scope and build it to fit. You get a custom quote, then the same done-for-you experience.",
+    cta: "Get a custom quote",
+  },
   steps: [
     "Pick a package & send your details",
     "Quick discovery — I gather your story",

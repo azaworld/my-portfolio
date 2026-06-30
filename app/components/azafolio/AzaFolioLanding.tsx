@@ -167,6 +167,7 @@ function OrderForm() {
             {p.name} — {p.usd}
           </option>
         ))}
+        <option value="Custom — to my requirements" className="bg-bg-elevated">Custom — built to my requirements</option>
         <option value="Not sure yet" className="bg-bg-elevated">Not sure — advise me</option>
       </select>
       <textarea
@@ -434,6 +435,19 @@ export default function AzaFolioLanding() {
             <span className="font-display text-xl font-bold text-amber">{studio.carePlan.usd}</span>
             <span className="block font-mono text-xs text-muted">{studio.carePlan.bdt}</span>
           </p>
+        </div>
+
+        {/* Custom / tailored option */}
+        <div className="glow-border mt-4 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-cyan/30 bg-cyan/[0.05] p-6">
+          <div className="max-w-xl">
+            <h3 className="font-semibold">
+              {studio.custom.name} <span className="text-xs font-normal text-muted">· built to your requirements</span>
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed text-muted">{studio.custom.note}</p>
+          </div>
+          <a href="#order" className="shrink-0 rounded-xl bg-gradient-to-r from-violet to-cyan px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90">
+            {studio.custom.cta} →
+          </a>
         </div>
       </section>
 
