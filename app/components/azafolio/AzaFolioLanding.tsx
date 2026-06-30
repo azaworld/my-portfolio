@@ -197,12 +197,12 @@ function OrderForm() {
 
 export default function AzaFolioLanding() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-6 pb-20">
+    <div id="top" className="mx-auto w-full max-w-5xl px-6 pb-20">
       {/* Top bar */}
       <header className="glass sticky top-4 z-20 -mx-2 mt-4 flex items-center justify-between rounded-2xl px-4 py-3">
-        <span className="font-display text-lg font-bold">
+        <a href="#top" aria-label="Back to top" className="font-display text-lg font-bold transition-opacity hover:opacity-80">
           <span className="text-aurora">Personal Brand</span> Studio
-        </span>
+        </a>
         <div className="flex items-center gap-2 text-sm">
           <a href="https://azantor.xyz" className="hidden text-muted transition-colors hover:text-text sm:inline">
             ← Live demo
