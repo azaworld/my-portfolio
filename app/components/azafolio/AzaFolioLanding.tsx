@@ -220,12 +220,20 @@ export default function AzaFolioLanding() {
           <a href="https://azantor.xyz" className="text-cyan hover:underline">azantor.xyz</a>
         </span>
         <p className="animate-fade-up mt-6 font-mono text-xs uppercase tracking-[0.3em] text-cyan" style={{ animationDelay: "80ms" }}>
-          Personal Brand Studio
+          Personal Brand Studio · done-for-you
         </p>
         <h1 className="font-display animate-fade-up mx-auto mt-3 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl" style={{ animationDelay: "100ms" }}>
           Want your own <span className="text-aurora">personal brand</span> — on a website that shows the whole you?
         </h1>
-        <p className="animate-fade-up mx-auto mt-5 max-w-2xl leading-relaxed text-muted" style={{ animationDelay: "300ms" }}>
+        {/* Plain one-line "what it is" — readable at a glance */}
+        <p className="animate-fade-up mx-auto mt-5 max-w-2xl text-lg font-semibold leading-snug text-text sm:text-xl" style={{ animationDelay: "200ms" }}>
+          We design &amp; build your personal website <span className="text-aurora">for you</span> — your story, work &amp; achievements in one premium site. You just pick a package; we customize everything and deliver it ready to share.
+        </p>
+        {/* Explicit target — so the right people instantly know it's for them */}
+        <p className="animate-fade-up mx-auto mt-3 text-sm font-medium text-muted" style={{ animationDelay: "260ms" }}>
+          For doctors · consultants · founders · executives &amp; professionals
+        </p>
+        <p className="animate-fade-up mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted" style={{ animationDelay: "320ms" }}>
           {studio.intro}
         </p>
         <div className="animate-fade-up mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-medium" style={{ animationDelay: "350ms" }}>
