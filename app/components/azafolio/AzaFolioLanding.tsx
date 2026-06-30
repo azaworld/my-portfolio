@@ -219,18 +219,25 @@ export default function AzaFolioLanding() {
           ✦ This very site is a live demo —{" "}
           <a href="https://azantor.xyz" className="text-cyan hover:underline">azantor.xyz</a>
         </span>
-        <h1 className="font-display animate-fade-up mt-6 text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl" style={{ animationDelay: "100ms" }}>
-          <span className="text-aurora">Personal Brand</span> Studio
-        </h1>
-        <p className="animate-fade-up mt-4 text-xl font-semibold text-text sm:text-2xl" style={{ animationDelay: "200ms" }}>
-          {studio.tagline}
+        <p className="animate-fade-up mt-6 font-mono text-xs uppercase tracking-[0.3em] text-cyan" style={{ animationDelay: "80ms" }}>
+          Personal Brand Studio
         </p>
+        <h1 className="font-display animate-fade-up mx-auto mt-3 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl" style={{ animationDelay: "100ms" }}>
+          Want your own <span className="text-aurora">personal brand</span> — on a website that shows the whole you?
+        </h1>
         <p className="animate-fade-up mx-auto mt-5 max-w-2xl leading-relaxed text-muted" style={{ animationDelay: "300ms" }}>
           {studio.intro}
         </p>
+        <div className="animate-fade-up mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-medium" style={{ animationDelay: "350ms" }}>
+          <span className="text-cyan">1 · Pick a package</span>
+          <span className="text-muted" aria-hidden>→</span>
+          <span className="text-cyan">2 · We customize everything to you</span>
+          <span className="text-muted" aria-hidden>→</span>
+          <span className="text-cyan">3 · Your site goes live</span>
+        </div>
         <div className="animate-fade-up mt-8 flex flex-wrap justify-center gap-4" style={{ animationDelay: "400ms" }}>
-          <a href="#order" className="rounded-xl bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet/30 transition-all hover:bg-right">
-            Order your site →
+          <a href="#packages" className="rounded-xl bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet/30 transition-all hover:bg-right">
+            Pick your package →
           </a>
           <a href="https://azantor.xyz" target="_blank" rel="noreferrer" className="glass glow-border rounded-xl px-7 py-3.5 text-sm font-semibold transition-colors hover:text-cyan">
             See the live demo
@@ -356,7 +363,7 @@ export default function AzaFolioLanding() {
       </section>
 
       {/* Packages */}
-      <section className="py-10">
+      <section id="packages" className="scroll-mt-24 py-10">
         <h2 className="font-display text-center text-3xl font-bold">Pick your <span className="text-aurora">package</span></h2>
         <p className="mt-2 text-center text-sm text-muted">Transparent pricing — USD & BDT. No hidden fees.</p>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
