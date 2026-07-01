@@ -44,12 +44,14 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     locale: "en_US",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Arifuzzaman “Antor” — portfolio" }],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
     creator: "@azantor1",
+    images: ["/og.png"],
   },
 };
 
