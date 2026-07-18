@@ -553,6 +553,9 @@ export default function AzaFolioLanding() {
             <a href={`mailto:${studio.email}?subject=Personal%20Brand%20Studio%20order`} className="glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors hover:text-cyan">
               📧 Email
             </a>
+            <a href="/proposal.pdf" target="_blank" rel="noreferrer" className="glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors hover:text-amber">
+              📄 Download proposal (PDF)
+            </a>
           </div>
           <div className="mt-6">
             <OrderForm />
@@ -566,6 +569,11 @@ export default function AzaFolioLanding() {
           <a href="https://azantor.xyz" className="hover:text-cyan">Arifuzzaman Antor</a>
         </p>
         <p className="mt-1 text-xs">Premium personal-brand websites · built &amp; shipped, worldwide.</p>
+        <p className="mt-2 text-xs">
+          <a href="/proposal.pdf" target="_blank" rel="noreferrer" className="text-cyan hover:underline">
+            📄 Client proposal (PDF)
+          </a>
+        </p>
       </footer>
     </div>
   );
