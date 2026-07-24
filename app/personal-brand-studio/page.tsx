@@ -16,11 +16,13 @@ export const metadata: Metadata = {
     url: URL,
     siteName: "Personal Brand Studio",
     type: "website",
+    images: [{ url: "/pbs-og.png", width: 1200, height: 630, alt: "Personal Brand Studio — premium personal-brand websites" }],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: ["/pbs-og.png"],
   },
 };
 
