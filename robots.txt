@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://azantor.xyz
+Sitemap: https://azantor.xyz/sitemap.xml
