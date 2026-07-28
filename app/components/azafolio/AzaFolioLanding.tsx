@@ -1,54 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import antorFace from "../../assets/arifuz.jpg";
 import { studio } from "../../content";
 
 const waLink = `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(studio.whatsappText)}`;
-
-// Animated "credibility climb" bar graph — bars grow when scrolled into view.
-function CredibilityClimb() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setInView(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.4 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className="glass rounded-2xl p-6 sm:p-8">
-      <div className="flex h-56 items-end justify-between gap-3 sm:gap-6">
-        {studio.ladder.map((b, i) => (
-          <div key={b.label} className="flex flex-1 flex-col items-center justify-end">
-            <span className={`mb-2 font-display text-sm font-bold ${b.highlight ? "text-cyan" : "text-muted"}`}>
-              {inView ? `${b.value}%` : ""}
-            </span>
-            <div
-              className={`w-full rounded-t-lg ${b.highlight ? "bg-gradient-to-t from-violet via-magenta to-cyan shadow-[0_0_24px_-4px_var(--glow)]" : "bg-white/12"}`}
-              style={{
-                height: inView ? `${(b.value / 100) * 190}px` : "0px",
-                transition: `height 1.1s cubic-bezier(0.22,1,0.36,1) ${i * 140}ms`,
-              }}
-            />
-            <span className={`mt-3 text-center text-xs ${b.highlight ? "font-semibold text-text" : "text-muted"}`}>{b.label}</span>
-            <span className="mt-0.5 text-center text-[10px] leading-tight text-muted">{b.note}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
@@ -75,8 +32,8 @@ function Faq() {
   );
 }
 
-// Team avatar: Antor's bundled photo; Sharif auto-loads /sharif.jpg (drop the
-// file in public/) and falls back to polished initials until it's there.
+// Team avatar: Antor's bundled photo; others load /<img>.jpg from public/
+// and fall back to polished initials.
 function Avatar({ img, name }: { img: string; name: string }) {
   const [imgFailed, setImgFailed] = useState(false);
   const initials = name.split(" ").map((w) => w[0]).slice(0, 2).join("");
@@ -204,92 +161,46 @@ export default function AzaFolioLanding() {
         <a href="#top" aria-label="Back to top" className="font-display text-lg font-bold transition-opacity hover:opacity-80">
           <span className="text-aurora">Personal Brand</span> Studio
         </a>
-        <div className="flex items-center gap-2 text-sm">
-          <a href="https://azantor.xyz" className="hidden text-muted transition-colors hover:text-text sm:inline">
-            ← Live demo
-          </a>
-          <a href="#packages" className="rounded-lg bg-gradient-to-r from-violet to-cyan px-4 py-1.5 font-semibold text-white">
-            Pick a package
-          </a>
-        </div>
+        <a href="#packages" className="rounded-lg bg-gradient-to-r from-violet to-cyan px-4 py-1.5 text-sm font-semibold text-white">
+          Pick a package
+        </a>
       </header>
 
-      {/* Hero */}
+      {/* Hero — one idea, three steps, two buttons */}
       <section className="py-16 text-center sm:py-24">
-        <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-xs text-muted">
-          ✦ This very site is a live demo —{" "}
-          <a href="https://azantor.xyz" className="text-cyan hover:underline">azantor.xyz</a>
-        </span>
-        <p className="animate-fade-up mt-6 font-mono text-xs uppercase tracking-[0.3em] text-cyan" style={{ animationDelay: "80ms" }}>
+        <p className="animate-fade-up font-mono text-xs uppercase tracking-[0.3em] text-cyan">
           Personal Brand Studio · done-for-you
         </p>
-        <h1 className="font-display animate-fade-up mx-auto mt-3 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl" style={{ animationDelay: "100ms" }}>
-          Want your own <span className="text-aurora">personal brand</span> — on a website that shows the whole you?
+        <h1 className="font-display animate-fade-up mx-auto mt-4 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl" style={{ animationDelay: "100ms" }}>
+          We build your <span className="text-aurora">personal website</span> — for you.
         </h1>
-        {/* Plain one-line "what it is" — readable at a glance */}
-        <p className="animate-fade-up mx-auto mt-5 max-w-2xl text-lg font-semibold leading-snug text-text sm:text-xl" style={{ animationDelay: "200ms" }}>
-          We design &amp; build your personal website <span className="text-aurora">for you</span> — your story, work &amp; achievements in one premium site. You just pick a package; we customize everything and deliver it ready to share.
+        <p className="animate-fade-up mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted" style={{ animationDelay: "200ms" }}>
+          Your story, work &amp; achievements in one premium site that makes people trust you in seconds.
+          For doctors, consultants, founders &amp; executives.
         </p>
-        {/* Explicit target — so the right people instantly know it's for them */}
-        <p className="animate-fade-up mx-auto mt-3 text-sm font-medium text-muted" style={{ animationDelay: "260ms" }}>
-          For doctors · consultants · founders · executives &amp; professionals
-        </p>
-        <p className="animate-fade-up mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted" style={{ animationDelay: "320ms" }}>
-          {studio.intro}
-        </p>
-        <div className="animate-fade-up mx-auto mt-6 flex max-w-2xl flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-medium" style={{ animationDelay: "350ms" }}>
+        <div className="animate-fade-up mx-auto mt-7 flex max-w-2xl flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-medium" style={{ animationDelay: "300ms" }}>
           <span className="text-cyan">1 · Pick a package</span>
           <span className="text-muted" aria-hidden>→</span>
-          <span className="text-cyan">2 · We customize everything to you</span>
+          <span className="text-cyan">2 · We build everything</span>
           <span className="text-muted" aria-hidden>→</span>
           <span className="text-cyan">3 · Your site goes live</span>
         </div>
-        <div className="animate-fade-up mt-8 flex flex-wrap justify-center gap-4" style={{ animationDelay: "400ms" }}>
+        <div className="animate-fade-up mt-9 flex flex-wrap justify-center gap-4" style={{ animationDelay: "400ms" }}>
           <a href="#packages" className="rounded-xl bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet/30 transition-all hover:bg-right">
             Pick your package →
           </a>
-          <a href="https://azantor.xyz" target="_blank" rel="noreferrer" className="glass glow-border rounded-xl px-7 py-3.5 text-sm font-semibold transition-colors hover:text-cyan">
-            See the live demo
+          <a href="#demos" className="glass glow-border rounded-xl px-7 py-3.5 text-sm font-semibold transition-colors hover:text-cyan">
+            See real examples
           </a>
         </div>
       </section>
 
-      {/* Trust band — "is this authentic?" */}
-      <section className="py-6">
-        <div className="grid gap-5 sm:grid-cols-3">
-          {studio.trust.map((t) => (
-            <div key={t.title} className="glass rounded-2xl p-6 text-center">
-              <p className="text-3xl" aria-hidden>{t.icon}</p>
-              <h3 className="mt-3 font-semibold">{t.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted">{t.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Who it's for — self-identify */}
-      <section className="py-10">
+      {/* Proof — real, clickable sites */}
+      <section id="demos" className="scroll-mt-24 py-10">
         <h2 className="font-display text-center text-3xl font-bold">
-          Built for <span className="text-aurora">people like you</span>
+          Real sites we <span className="text-aurora">built</span>
         </h2>
-        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-3">
-          {studio.forWhom.map((w) => (
-            <span key={w.label} className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm">
-              <span aria-hidden>{w.icon}</span>
-              {w.label}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Showcase — real, clickable proof */}
-      <section className="py-10">
-        <h2 className="font-display text-center text-3xl font-bold">
-          Real work, <span className="text-aurora">live</span>
-        </h2>
-        <p className="mt-2 text-center text-sm text-muted">
-          Don&apos;t take our word for it — open these and click around.
-        </p>
+        <p className="mt-2 text-center text-sm text-muted">Open one — this is the exact quality you get.</p>
         <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {studio.showcase.map((s) => (
             <a
@@ -302,44 +213,16 @@ export default function AzaFolioLanding() {
               <p className="font-display text-lg font-bold group-hover:text-cyan">{s.name}</p>
               <p className="mt-0.5 text-xs font-medium text-cyan">{s.role}</p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{s.blurb}</p>
-              <span className="mt-4 text-sm font-semibold text-cyan">View live demo →</span>
+              <span className="mt-4 text-sm font-semibold text-cyan">View live →</span>
             </a>
           ))}
         </div>
       </section>
 
-      {/* Outcomes — what it gets you */}
+      {/* Why us — the one reasons section */}
       <section className="py-10">
         <h2 className="font-display text-center text-3xl font-bold">
-          What a great site <span className="text-aurora">gets you</span>
-        </h2>
-        <p className="mt-2 text-center text-sm text-muted">A site isn&apos;t a cost. It&apos;s the thing that gets you the yes.</p>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {studio.outcomes.map((o) => (
-            <div key={o.title} className="glass rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1">
-              <p className="text-3xl" aria-hidden>{o.icon}</p>
-              <h3 className="mt-3 font-semibold">{o.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted">{o.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Credibility climb */}
-      <section className="py-10">
-        <h2 className="font-display text-center text-3xl font-bold">
-          Where you land on the <span className="text-aurora">credibility ladder</span>
-        </h2>
-        <p className="mt-2 mb-10 text-center text-sm text-muted">
-          People decide in seconds. Personal Brand Studio puts you at the top of the ladder.
-        </p>
-        <CredibilityClimb />
-      </section>
-
-      {/* Why */}
-      <section className="py-10">
-        <h2 className="font-display text-center text-3xl font-bold">
-          Why <span className="text-aurora">Personal Brand Studio</span>
+          Why <span className="text-aurora">us</span>
         </h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {studio.why.map((w) => (
@@ -352,50 +235,15 @@ export default function AzaFolioLanding() {
         </div>
       </section>
 
-      {/* Comparison */}
-      <section className="py-10">
-        <h2 className="font-display text-center text-3xl font-bold">
-          Personal Brand Studio vs <span className="text-aurora">the alternatives</span>
-        </h2>
-        <div className="mt-10 overflow-x-auto">
-          <table className="w-full min-w-[560px] border-collapse text-sm">
-            <thead>
-              <tr>
-                <th className="p-3 text-left font-medium text-muted"></th>
-                {studio.compare.cols.map((c) => (
-                  <th
-                    key={c}
-                    className={`p-3 text-center font-semibold ${c === "Personal Brand Studio" ? "rounded-t-xl bg-cyan/10 text-cyan" : "text-muted"}`}
-                  >
-                    {c}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {studio.compare.rows.map((r) => (
-                <tr key={r.feature} className="border-t border-white/10">
-                  <td className="p-3 text-left text-muted">{r.feature}</td>
-                  <td className="p-3 text-center text-muted">{r.template}</td>
-                  <td className="p-3 text-center text-muted">{r.agency}</td>
-                  <td className="p-3 text-center font-medium text-text bg-cyan/[0.06]">{r.shipfolio}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Packages */}
+      {/* Packages — simple and scannable */}
       <section id="packages" className="scroll-mt-24 py-10">
         <h2 className="font-display text-center text-3xl font-bold">Pick your <span className="text-aurora">package</span></h2>
-        <p className="mt-2 text-center text-sm text-muted">Transparent pricing — USD & BDT. No hidden fees.</p>
-        <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-cyan">{studio.valueNote}</p>
+        <p className="mt-2 text-center text-sm text-muted">One clear price. Everything done for you. No hidden fees.</p>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {studio.packages.map((p) => (
             <article
               key={p.name}
-              className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-6 ${
+              className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-7 ${
                 p.highlight ? "border-2 border-cyan/50 bg-cyan/[0.05]" : "glass"
               }`}
             >
@@ -404,54 +252,39 @@ export default function AzaFolioLanding() {
                   Most popular
                 </span>
               )}
-              <h3 className="font-display text-xl font-bold">{p.name}</h3>
-              <p className="mt-0.5 text-xs text-muted">{p.forWho}</p>
-              <p className="mt-4 font-display text-2xl font-bold text-cyan">{p.usd}</p>
-              <p className="font-mono text-xs text-muted">{p.bdt}</p>
-              <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted">⏱ {p.turnaround}</p>
-              <ul className="mt-4 flex-1 space-y-2">
+              <h3 className="font-display text-2xl font-bold">{p.name}</h3>
+              <p className="mt-1 text-sm text-muted">{p.forWho}</p>
+              <p className="mt-5 font-display text-4xl font-bold text-cyan">{p.usd.replace("From ", "")}</p>
+              <p className="mt-0.5 text-sm text-muted">{p.bdt.replace("From ", "")} · ready in {p.turnaround}</p>
+              <ul className="mt-6 flex-1 space-y-3">
                 {p.points.map((pt) => (
-                  <li key={pt} className="flex gap-2 text-sm leading-relaxed text-muted">
-                    <span className="text-cyan" aria-hidden>▸</span>
+                  <li key={pt} className="flex gap-2.5 text-sm leading-relaxed">
+                    <span className="text-cyan" aria-hidden>✓</span>
                     {pt}
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 rounded-lg bg-white/[0.04] px-3 py-2 text-xs italic leading-snug text-cyan">
-                → {p.outcome}
-              </p>
-              <a href="#order" className={`mt-4 rounded-xl px-4 py-2.5 text-center text-sm font-semibold transition-all ${p.highlight ? "bg-gradient-to-r from-violet to-cyan text-white hover:opacity-90" : "glass hover:text-cyan"}`}>
-                Order {p.name}
+              <a href="#order" className={`mt-7 rounded-xl px-4 py-3 text-center text-sm font-semibold transition-all ${p.highlight ? "bg-gradient-to-r from-violet to-cyan text-white hover:opacity-90" : "glass hover:text-cyan"}`}>
+                Choose {p.name}
               </a>
             </article>
           ))}
         </div>
-        <div className="glass mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl p-6">
-          <div>
-            <h3 className="font-semibold">{studio.carePlan.name} <span className="text-xs font-normal text-muted">· optional add-on</span></h3>
-            <p className="mt-1 text-sm text-muted">{studio.carePlan.note}</p>
-          </div>
-          <p className="text-right">
-            <span className="font-display text-xl font-bold text-amber">{studio.carePlan.usd}</span>
-            <span className="block font-mono text-xs text-muted">{studio.carePlan.bdt}</span>
-          </p>
-        </div>
 
-        {/* Custom / tailored option */}
-        <div className="glow-border mt-4 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-cyan/30 bg-cyan/[0.05] p-6">
-          <div className="max-w-xl">
-            <h3 className="font-semibold">
-              {studio.custom.name} <span className="text-xs font-normal text-muted">· built to your requirements</span>
-            </h3>
-            <p className="mt-1 text-sm leading-relaxed text-muted">{studio.custom.note}</p>
-          </div>
-          <a href="#order" className="shrink-0 rounded-xl bg-gradient-to-r from-violet to-cyan px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90">
-            {studio.custom.cta} →
+        {/* Custom + care plan — one quiet strip */}
+        <div className="glass mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl p-6 text-sm">
+          <p className="text-muted">
+            <span className="font-semibold text-text">Need something different?</span>{" "}
+            We also build fully custom sites to your exact requirements — and an optional{" "}
+            <span className="text-amber">Care Plan ({studio.carePlan.usd.toLowerCase()})</span> keeps your site updated for you.
+          </p>
+          <a href="#order" className="shrink-0 rounded-xl bg-gradient-to-r from-violet to-cyan px-5 py-2.5 font-semibold text-white transition-opacity hover:opacity-90">
+            Get a custom quote →
           </a>
         </div>
       </section>
 
-      {/* How it works */}
+      {/* How it works — one compact row */}
       <section className="py-10">
         <h2 className="font-display text-center text-3xl font-bold">How it <span className="text-aurora">works</span></h2>
         <ol className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -535,10 +368,10 @@ export default function AzaFolioLanding() {
       <section id="order" className="scroll-mt-24 py-10">
         <div className="glass glow-border rounded-2xl p-7 sm:p-10">
           <h2 className="font-display text-2xl font-bold sm:text-3xl">
-            Order your <span className="text-aurora">Personal Brand Studio</span> site
+            Order your <span className="text-aurora">site</span>
           </h2>
           <p className="mt-2 max-w-md text-sm text-muted">
-            Send your details and we&apos;ll reply within 24 hours. Prefer to chat? WhatsApp or LinkedIn us directly.
+            Send your details and we&apos;ll reply within 24 hours — or just message us directly.
           </p>
           <p className="mt-3 inline-flex items-start gap-2 rounded-xl border border-[#34d399]/25 bg-[#34d399]/[0.07] px-4 py-2.5 text-sm leading-relaxed text-[#34d399]">
             <span aria-hidden>✓</span> {studio.guarantee}
