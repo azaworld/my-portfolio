@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useGame } from "../game/GameProvider";
+import { useSectionViewer } from "./SectionViewer";
 import useKonami from "../fx/useKonami";
 
 const LINKS = [
@@ -25,6 +26,13 @@ export default function Navbar() {
   const [theme, setTheme] = useState<Theme>("dark");
   const [menuOpen, setMenuOpen] = useState(false);
   const { unlock } = useGame();
+  const { openView } = useSectionViewer();
+
+  // Click-to-view: open the section in an overlay instead of jumping down.
+  const handleNav = (href: string) => (e: React.MouseEvent) => {
+    setMenuOpen(false);
+    if (openView(href)) e.preventDefault();
+  };
 
   // Restore saved theme
   useEffect(() => {
@@ -93,6 +101,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              onClick={handleNav(link.href)}
               className={`rounded-lg px-3 py-1.5 text-sm transition-all ${
                 active === link.href
                   ? "bg-white/10 font-medium text-text"
@@ -120,6 +129,7 @@ export default function Navbar() {
           {/* Hire Me — the money button */}
           <a
             href="#services"
+            onClick={handleNav("#services")}
             className="hidden whitespace-nowrap rounded-lg bg-gradient-to-r from-violet via-magenta to-amber bg-[length:200%_auto] px-3 py-1.5 text-xs font-semibold text-white shadow-md shadow-violet/30 transition-all hover:bg-right sm:inline-block"
           >
             Hire Me
@@ -182,7 +192,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={() => setMenuOpen(false)}
+              onClick={handleNav(link.href)}
               className={`rounded-xl px-4 py-3 text-sm transition-colors ${
                 active === link.href
                   ? "bg-white/10 font-medium text-text"
@@ -205,7 +215,7 @@ export default function Navbar() {
           ))}
           <a
             href="#services"
-            onClick={() => setMenuOpen(false)}
+            onClick={handleNav("#services")}
             className="rounded-xl bg-gradient-to-r from-violet via-magenta to-amber px-4 py-3 text-center text-sm font-semibold text-white"
           >
             Hire Me
