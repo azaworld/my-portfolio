@@ -1,16 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import portrait from "../assets/arifuz.jpg";
 
-// Simple client-side passcode gate — appropriate for a privately shared link
-// on a static host (share the passcode along with the URL).
-const PASSCODE = "antor1997";
-
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="grid gap-1 border-b border-white/[0.07] py-3 sm:grid-cols-[180px_1fr] sm:gap-4">
+    <div className="grid gap-1 border-b border-white/[0.07] py-3 sm:grid-cols-[190px_1fr] sm:gap-4">
       <p className="text-xs font-semibold uppercase tracking-wider text-muted">{label}</p>
       <p className="text-sm leading-relaxed">{children}</p>
     </div>
@@ -27,53 +22,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 export default function BiodataClient() {
-  const [code, setCode] = useState("");
-  const [unlocked, setUnlocked] = useState(false);
-  const [error, setError] = useState(false);
-
-  // Remember unlock for the session
-  useEffect(() => {
-    if (sessionStorage.getItem("biodata-unlocked") === "1") setUnlocked(true);
-  }, []);
-
-  const tryUnlock = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (code.trim() === PASSCODE) {
-      sessionStorage.setItem("biodata-unlocked", "1");
-      setUnlocked(true);
-    } else {
-      setError(true);
-    }
-  };
-
-  if (!unlocked) {
-    return (
-      <main className="flex min-h-screen flex-col items-center justify-center px-6">
-        <div className="glass w-full max-w-sm rounded-2xl p-8 text-center">
-          <p className="text-3xl" aria-hidden>🔒</p>
-          <h1 className="font-display mt-3 text-xl font-bold">Private page</h1>
-          <p className="mt-2 text-sm text-muted">
-            This page is shared privately. Enter the passcode you received with the link.
-          </p>
-          <form onSubmit={tryUnlock} className="mt-5 space-y-3">
-            <input
-              type="password"
-              value={code}
-              onChange={(e) => { setCode(e.target.value); setError(false); }}
-              placeholder="Passcode"
-              className="glass w-full rounded-xl px-4 py-3 text-center text-sm outline-none focus:border-cyan"
-              autoFocus
-            />
-            <button type="submit" className="w-full rounded-xl bg-gradient-to-r from-violet to-cyan px-4 py-3 text-sm font-semibold text-white">
-              Unlock
-            </button>
-            {error && <p className="text-xs text-magenta">Incorrect passcode.</p>}
-          </form>
-        </div>
-      </main>
-    );
-  }
-
   return (
     <main className="mx-auto w-full max-w-2xl px-6 py-14">
       {/* Header */}
@@ -85,6 +33,10 @@ export default function BiodataClient() {
           Arifuz Zaman <span className="text-aurora">Antor</span>
         </h1>
         <p className="mt-1 font-mono text-xs uppercase tracking-[0.3em] text-muted">Biodata</p>
+        <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-muted">
+          Founder, engineer, and delivery leader from a respectable Muslim family — building companies,
+          teaching technology, and running a charitable foundation in honor of his father.
+        </p>
       </header>
 
       <Section title="Personal Information">
@@ -95,13 +47,40 @@ export default function BiodataClient() {
         </Row>
         <Row label="Date of Birth">June 20, 1997</Row>
         <Row label="Height">5 feet 8 inches</Row>
+        <Row label="Marital Status">Single (never married)</Row>
         <Row label="Nationality">Bangladeshi</Row>
-        <Row label="Religion">Muslim</Row>
-        <Row label="Profession">
-          Founder &amp; CEO, AZAI Labs · Technical Project Manager, Platformz · Sr. Software Engineer, Kintsugi
+        <Row label="Religion">Islam</Row>
+        <Row label="Home District">Netrokona</Row>
+        <Row label="Present City">Dhaka, Bangladesh</Row>
+      </Section>
+
+      <Section title="Profession & Career">
+        <Row label="Current Roles">
+          Founder &amp; CEO — <a href="https://azailabs.dev" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZAI Labs</a> (AI products &amp; services) ·
+          Technical Project Manager — <a href="https://platformz.us" target="_blank" rel="noreferrer" className="text-cyan hover:underline">Platformz</a> (US) ·
+          Sr. Software Engineer — Kintsugi (San Francisco, remote)
         </Row>
-        <Row label="Email">
-          <a href="mailto:arifuzantor@gmail.com" className="text-cyan hover:underline">arifuzantor@gmail.com</a>
+        <Row label="Experience">
+          6+ years across software engineering, QA &amp; delivery leadership — including Mastercard,
+          Grameenphone (MyGP), Kinetik (New York), and global insurance clients. Leads a 30+ person
+          cross-functional team at Platformz.
+        </Row>
+        <Row label="Freelance Record">
+          Upwork <span className="text-amber">Top Rated</span> — 23 completed jobs, every one rated ★5.0
+        </Row>
+        <Row label="Ventures Founded">
+          <a href="https://azailabs.dev" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZAI Labs</a> ·{" "}
+          <a href="https://azademy.org" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZADEMY</a> (tech academy) ·{" "}
+          <a href="https://azapodcast.com" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZA Execution Podcast</a> ·{" "}
+          Listen2AZA (audiobooks)
+        </Row>
+        <Row label="Community & Faith">
+          Founder &amp; runner of the{" "}
+          <a href="https://ssasf.vercel.app" target="_blank" rel="noreferrer" className="text-cyan hover:underline">
+            Silent Sacrifice Abdus Sattar Foundation
+          </a>{" "}
+          in honor of his father — scholarships, free mentorship, Quran education (60+ students in year one),
+          support for struggling families &amp; cancer patients.
         </Row>
       </Section>
 
@@ -112,16 +91,13 @@ export default function BiodataClient() {
         <Row label="Mother">
           Sheikh Kohinoor Akter Talukdar <span className="text-muted">(Housewife)</span>
         </Row>
-        <Row label="Family Background">Respectable and educated Muslim family</Row>
-      </Section>
-
-      <Section title="Siblings">
         <Row label="Brother">
           Sharifuz Zaman <span className="text-muted">(B.Sc. in CSE — 3rd Year, Sonargaon University)</span>
         </Row>
         <Row label="Sister">
           Suborna Asha <span className="text-muted">(B.Sc. in CSE — 2nd Year, Northern University Bangladesh)</span>
         </Row>
+        <Row label="Family Background">Respectable and educated Muslim family</Row>
       </Section>
 
       <Section title="Educational Background">
@@ -142,6 +118,27 @@ export default function BiodataClient() {
         </Row>
         <Row label="PSC">
           Kaitail Government Primary School, Netrokona <span className="text-muted">· 2009 · Govt. Talent Pool Scholarship</span>
+        </Row>
+        <Row label="Certifications">
+          Machine Learning Specialization — Coursera (2020) · Programming for Everybody (Python) — Coursera (2020)
+        </Row>
+      </Section>
+
+      <Section title="Contact & Links">
+        <Row label="Email">
+          <a href="mailto:arifuzantor@gmail.com" className="text-cyan hover:underline">arifuzantor@gmail.com</a>
+        </Row>
+        <Row label="WhatsApp">
+          <a href="https://wa.me/8801580497264" target="_blank" rel="noreferrer" className="text-cyan hover:underline">+880 1580 497264</a>
+        </Row>
+        <Row label="Portfolio">
+          <a href="https://azantor.xyz" className="text-cyan hover:underline">azantor.xyz</a>
+        </Row>
+        <Row label="LinkedIn">
+          <a href="https://linkedin.com/in/azantor" target="_blank" rel="noreferrer" className="text-cyan hover:underline">linkedin.com/in/azantor</a>
+        </Row>
+        <Row label="Résumé">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="text-cyan hover:underline">azantor.xyz/resume.pdf</a>
         </Row>
       </Section>
 
