@@ -47,7 +47,6 @@ export default function BiodataClient() {
         </Row>
         <Row label="Date of Birth">June 20, 1997</Row>
         <Row label="Height">5 feet 8 inches</Row>
-        <Row label="Marital Status">Single (never married)</Row>
         <Row label="Nationality">Bangladeshi</Row>
         <Row label="Religion">Islam</Row>
         <Row label="Home District">Netrokona</Row>
