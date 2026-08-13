@@ -6,6 +6,7 @@ import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import TiltCard from "../ui/TiltCard";
 import CountUp from "../fx/CountUp";
+import CareerLadder from "./CareerLadder";
 import { useGame } from "../game/GameProvider";
 
 // Mission number = position from the oldest (M-01) to the newest.
@@ -97,47 +98,6 @@ function MissionModal({ mission, onClose }: { mission: Mission; onClose: () => v
   );
 }
 
-// Career path: a sequential, ordered progression of every role. Click a node
-// to open its debrief. Reads as a journey, not a calendar.
-function CareerTimeline({ onOpen }: { onOpen: (m: Mission) => void }) {
-  // oldest → newest reads as a natural climb
-  const ordered = [...missions].reverse();
-  return (
-    <div className="glass overflow-x-auto rounded-2xl p-5 sm:p-6">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="text-sm font-semibold">Career path</h3>
-        <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
-          tap a step to open its debrief
-        </p>
-      </div>
-
-      <div className="no-scrollbar mt-5 flex gap-3 overflow-x-auto pb-1">
-        {ordered.map((m, i) => (
-          <div key={m.id} className="flex items-center gap-3">
-            <button
-              onClick={() => onOpen(m)}
-              title={`${m.codename} · ${m.role} · ${m.period}`}
-              className="group flex w-32 shrink-0 flex-col gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-3 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan/40"
-            >
-              <span className="flex items-center justify-between">
-                <span className="font-mono text-[9px] text-muted">{m.period.replace(" — Present", " →").replace(/ —.*/, "")}</span>
-                {m.status === "ACTIVE" && (
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan" aria-hidden />
-                )}
-              </span>
-              <span className="text-xs font-semibold leading-tight">{m.short}</span>
-              <span className="text-[10px] leading-tight text-cyan">{m.role}</span>
-            </button>
-            {i < ordered.length - 1 && (
-              <span className="text-muted" aria-hidden>→</span>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function MissionCard({ mission, onOpen, delay }: { mission: Mission; onOpen: (m: Mission) => void; delay: number }) {
   return (
     <Reveal delay={delay}>
@@ -200,9 +160,11 @@ export default function MissionLog() {
 
   return (
     <Section id="missions" kicker="quest journal" title={<>Mission <span className="text-aurora">Log</span></>}>
-      {/* Career path overview */}
+      {/* Career ladder — visual progression */}
       <Reveal>
-        <CareerTimeline onOpen={openDebrief} />
+        <div className="glass rounded-2xl p-6 sm:p-8">
+          <CareerLadder onMissionOpen={openDebrief} />
+        </div>
       </Reveal>
 
       {/* All missions — newest first */}
