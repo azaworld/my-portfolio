@@ -29,8 +29,9 @@ export default function CustomCursor() {
     };
 
     const loop = () => {
-      x += (mx - x) * 0.18;
-      y += (my - y) * 0.18;
+      // snappier follow — smooth but never laggy
+      x += (mx - x) * 0.38;
+      y += (my - y) * 0.38;
       orb.style.transform = `translate(${x - 11}px, ${y - 11}px)`;
       raf = requestAnimationFrame(loop);
     };

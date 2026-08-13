@@ -221,7 +221,7 @@ function Scene({ onPick, mobile }: { onPick: (href: string) => void; mobile: boo
   useFrame((state) => {
     if (!group.current) return;
     const target = state.pointer.x * 0.25;
-    group.current.rotation.y += (target - group.current.rotation.y) * 0.025;
+    group.current.rotation.y += (target - group.current.rotation.y) * 0.06;
   });
 
   return (
@@ -250,7 +250,9 @@ function Scene({ onPick, mobile }: { onPick: (href: string) => void; mobile: boo
         minPolarAngle={Math.PI / 3.2}
         maxPolarAngle={Math.PI / 1.95}
         autoRotate
-        autoRotateSpeed={0.45}
+        autoRotateSpeed={1.15}
+        enableDamping
+        dampingFactor={0.08}
       />
     </>
   );

@@ -13,6 +13,16 @@ const LINKS = [
   { label: "Premium", href: "#premium" },
 ];
 
+// Secondary sections — live in the "More ▾" dropdown (desktop) and the mobile menu.
+const MORE_LINKS = [
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#community" },
+  { label: "Follow Me", href: "#media" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
+];
+
 // Headline "hot" buttons — always visible, animated.
 const HOT = [
   { label: "✦ Brand Studio", href: "/personal-brand-studio", external: false },
@@ -25,14 +35,26 @@ export default function Navbar() {
   const [active, setActive] = useState("");
   const [theme, setTheme] = useState<Theme>("dark");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const { unlock } = useGame();
   const { openView } = useSectionViewer();
 
   // Click-to-view: open the section in an overlay instead of jumping down.
   const handleNav = (href: string) => (e: React.MouseEvent) => {
     setMenuOpen(false);
+    setMoreOpen(false);
     if (openView(href)) e.preventDefault();
   };
+
+  // Close the More dropdown on outside click
+  useEffect(() => {
+    if (!moreOpen) return;
+    const onDoc = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest("[data-more-menu]")) setMoreOpen(false);
+    };
+    document.addEventListener("click", onDoc);
+    return () => document.removeEventListener("click", onDoc);
+  }, [moreOpen]);
 
   // Restore saved theme
   useEffect(() => {
@@ -111,6 +133,45 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* More ▾ dropdown */}
+          <div className="relative" data-more-menu>
+            <button
+              onClick={() => setMoreOpen((o) => !o)}
+              aria-expanded={moreOpen}
+              aria-haspopup="menu"
+              className={`flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm transition-all ${
+                moreOpen ? "bg-white/10 font-medium text-text" : "text-muted hover:text-text"
+              }`}
+            >
+              More
+              <svg
+                viewBox="0 0 24 24"
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`}
+                fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            {moreOpen && (
+              <div
+                role="menu"
+                className="menu-panel animate-pop-in absolute right-0 top-[calc(100%+0.6rem)] z-[80] flex w-44 flex-col gap-0.5 rounded-xl p-1.5"
+              >
+                {MORE_LINKS.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    role="menuitem"
+                    onClick={handleNav(link.href)}
+                    className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-white/10 hover:text-text"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="flex items-center gap-2">
@@ -188,7 +249,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="menu-panel animate-pop-in absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[75] flex flex-col gap-1 rounded-2xl p-2 lg:hidden">
-          {LINKS.map((link) => (
+          {[...LINKS, ...MORE_LINKS].map((link) => (
             <a
               key={link.href}
               href={link.href}

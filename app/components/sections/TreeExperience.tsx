@@ -6,6 +6,7 @@ import Section from "../ui/Section";
 import { treeNodes } from "../../content";
 import { useGame } from "../game/GameProvider";
 import TreeErrorBoundary from "../tree/TreeErrorBoundary";
+import LifeGraph from "./LifeGraph";
 
 // Heavy 3D scene — loaded only on the client, only when this section mounts.
 const TreeScene = dynamic(() => import("../tree/TreeScene"), {
@@ -59,6 +60,9 @@ export default function TreeExperience() {
           <TreeScene onPick={pick} />
         </TreeErrorBoundary>
       </div>
+
+      {/* Life story graph — the whole climb, year by year, at a glance */}
+      <LifeGraph />
 
       {/* Always-available quick nav under the canvas (mobile-friendly + a11y) */}
       <ul className="mt-5 flex flex-wrap justify-center gap-2">
