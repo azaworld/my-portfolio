@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "Dhaka Bangladesh", "Bangladesh QA engineer", "remote QA engineer", "portfolio",
   ],
   alternates: { canonical: SITE },
+  verification: { google: "4_QPKf66tjxOZWZ0jsCfwbT4nyJNhhI1iXMGUeYVHC0" },
   robots: {
     index: true,
     follow: true,
