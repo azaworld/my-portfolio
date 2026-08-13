@@ -190,9 +190,9 @@ export default function Hero() {
           </div>
           {/* Social links — right under the face, impossible to miss */}
           <SocialRow />
-          {/* AI companion bot — peeks beside the portrait */}
-          <div className="absolute -bottom-2 -left-4 opacity-90" title="antor.os AI companion">
-            <AIBot size={92} />
+          {/* AI companion bot — peeks over the top-right corner, never blocks clicks */}
+          <div className="pointer-events-none absolute -top-10 right-2 opacity-90" title="antor.os AI companion">
+            <AIBot size={88} />
           </div>
         </div>
       </div>

@@ -27,18 +27,52 @@ export default function Media() {
         </a>
       </p>
 
-      {/* AZA Execution Podcast — coming soon */}
+      {/* AZA Execution Podcast — live */}
       <div className="mb-8 rounded-2xl border border-magenta/30 bg-gradient-to-r from-magenta/10 to-violet/10 p-5">
         <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-full bg-magenta/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-magenta">
-            🎙️ Coming soon
+          <span className="flex items-center gap-1.5 rounded-full bg-magenta/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-magenta">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red-500" aria-hidden />
+            🎙️ Now streaming
           </span>
           <strong className="text-text">{podcast.name}</strong>
         </div>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
           <span className="text-text">“{podcast.tagline}”</span> — {podcast.description}
         </p>
-        <div className="mt-3 flex flex-wrap gap-2.5">
+
+        {/* Latest episodes — tap to play right here */}
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          {podcast.episodes.map((ep) => (
+            <button
+              key={ep.id}
+              onClick={() => play(ep)}
+              className="group overflow-hidden rounded-xl border border-white/10 bg-black/30 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-magenta/50"
+              aria-label={`Play episode: ${ep.title}`}
+            >
+              <div className="relative aspect-video overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://i.ytimg.com/vi/${ep.id}/hqdefault.jpg`}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" aria-hidden />
+                <span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 backdrop-blur transition-transform duration-300 group-hover:scale-110">
+                  <svg viewBox="0 0 24 24" className="ml-0.5 h-5 w-5 fill-white" aria-hidden>
+                    <path d="M8 5.14v14l11-7-11-7z" />
+                  </svg>
+                </span>
+                <span className="absolute bottom-1.5 right-1.5 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[10px] text-white">
+                  ▶ episode
+                </span>
+              </div>
+              <p className="p-3 text-xs font-semibold leading-snug">{ep.title}</p>
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2.5">
           <a href={podcast.site} target="_blank" rel="noreferrer" className="rounded-full bg-gradient-to-r from-magenta to-violet px-4 py-1.5 text-xs font-semibold text-white transition-transform hover:scale-105">
             azapodcast.com ↗
           </a>

@@ -1289,7 +1289,7 @@ export const ventures = [
     name: "AZA Execution Podcast",
     tagline: "Ideas are cheap. Execution is everything.",
     description:
-      "My podcast — long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done. Weekly, video & audio, Bangla & English. Episodes coming soon. Host & founder.",
+      "My podcast — long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done. Weekly, video & audio, Bangla & English. Now streaming. Host & founder.",
     theme: "cyan" as const,
     link: "https://azapodcast.com",
     icon: "🎙️",
@@ -1603,11 +1603,28 @@ export const podcast = {
   tagline: "Ideas are cheap. Execution is everything.",
   description:
     "Long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done — across business, startups, tech, science, performance, and culture. Weekly, in video & audio, Bangla & English.",
-  comingSoon: true,
-  status: "Episodes coming soon — first conversations in production",
+  comingSoon: false,
+  status: "Live — now streaming",
   site: "https://azapodcast.com",
   channel: "https://www.youtube.com/@azapod",
   facebook: "https://www.facebook.com/azapod",
+  episodes: [
+    {
+      id: "2UdL9zfAXUk",
+      title: "AZA Execution Podcast Is Here — Official Launch",
+      description: "Ideas are cheap. Execution is everything. The official launch — what the show is and why it exists.",
+    },
+    {
+      id: "v2OqdZCJuWY",
+      title: "How to Build a Career in Software QA — Automation, AI & Networking",
+      description: "With Hiro Mia (BRAC IT) — the software QA career playbook: automation, AI, and networking.",
+    },
+    {
+      id: "lxa1UglTbIw",
+      title: "The B2B Career Playbook — 22 Years of Execution & Enterprise Sales",
+      description: "With Sharif Md. Abid — leadership, enterprise sales, and lessons from 22 years of execution.",
+    },
+  ],
 };
 
 // AZADEMY interview series (separate from the podcast).
