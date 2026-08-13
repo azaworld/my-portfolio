@@ -292,6 +292,42 @@ h3,
   75% { transform: translateX(5px); }
 }
 
+/* AI bot — eyes blink by squashing vertically (like real eyelids) */
+@keyframes eye-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  93%, 97% { transform: scaleY(0.08); }
+}
+
+/* AI bot — head gently bobs */
+@keyframes bot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* AI bot — antenna light pulses */
+@keyframes antenna-glow {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 4px #22D3EE); }
+  50% { opacity: 0.4; filter: drop-shadow(0 0 12px #22D3EE); }
+}
+
+/* Scanning beam sweeping across the visor */
+@keyframes visor-scan {
+  0%, 100% { transform: translateX(-26px); opacity: 0; }
+  20%, 80% { opacity: 0.85; }
+  50% { transform: translateX(26px); }
+}
+
+/* Welcome letters cascade in */
+@keyframes welcome-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.9); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+.animate-eye-blink { animation: eye-blink 3.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.animate-bot-bob { animation: bot-bob 3s ease-in-out infinite; }
+.animate-antenna-glow { animation: antenna-glow 1.6s ease-in-out infinite; }
+.animate-visor-scan { animation: visor-scan 2.6s ease-in-out infinite; }
+
 .animate-fade-up { animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .animate-pop-in { animation: pop-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }

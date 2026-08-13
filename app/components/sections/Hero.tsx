@@ -5,6 +5,7 @@ import portrait from "../../assets/arifuz.jpg";
 import { profile, heroStats } from "../../content";
 import ParticleField from "../fx/ParticleField";
 import Typewriter from "../fx/Typewriter";
+import AIBot from "../fx/AIBot";
 import Magnetic from "../fx/Magnetic";
 import CountUp from "../fx/CountUp";
 
@@ -113,11 +114,15 @@ export default function Hero() {
         </div>
 
         {/* Portrait — desktop right column */}
-        <div className="animate-fade-up hidden justify-center lg:flex" style={{ animationDelay: "600ms" }}>
+        <div className="animate-fade-up relative hidden justify-center lg:flex" style={{ animationDelay: "600ms" }}>
           <div className="portrait-frame animate-float-slow w-full max-w-sm">
             <div className="portrait-duotone">
               <Image src={portrait} alt="Portrait of Arifuzzaman Antor" priority className="h-auto w-full" />
             </div>
+          </div>
+          {/* AI companion bot — peeks beside the portrait */}
+          <div className="absolute -bottom-6 -left-4 opacity-90" title="antor.os AI companion">
+            <AIBot size={92} />
           </div>
         </div>
       </div>
