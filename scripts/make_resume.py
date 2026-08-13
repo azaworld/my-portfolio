@@ -138,9 +138,9 @@ story += [Paragraph(
 
 # ---- Skills tag cloud ----
 story += [Paragraph("Tools &amp; Technologies", h_s)]
-tags = ["Playwright", "TypeScript", "Appium", "Cypress", "Python", "Java", "Postman", "AWS",
-        "Docker", "Jenkins", "GitLab CI", "GitHub Actions", "JMeter", "k6", "OWASP ZAP", "Burp Suite",
-        "Magento", "EDI", "Prometheus", "Grafana", "Terraform", "Cucumber/Gherkin", "Applitools", "LLM Agents"]
+tags = ["Playwright", "TypeScript", "Cypress", "Appium", "k6", "JMeter", "OWASP ZAP", "Burp Suite",
+        "Docker", "GitHub Actions", "AWS", "Jenkins", "GitLab CI", "Postman", "Grafana", "InfluxDB",
+        "Next.js", "React", "Python", "Java", "C++", "PHP", "Magento", "EDI", "Terraform", "LLM Agents"]
 tag_cols = 8
 tag_rows = [tags[i:i+tag_cols] for i in range(0, len(tags), tag_cols)]
 tt = Table([[Paragraph(t, tagtxt) for t in r] + [""]*(tag_cols-len(r)) for r in tag_rows], colWidths=[W/tag_cols]*tag_cols)

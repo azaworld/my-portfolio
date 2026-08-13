@@ -275,15 +275,15 @@ export const skillTree: SkillNode[] = [
     branch: "Leadership",
     level: 5,
     example:
-      "Lead a 30+ person team across engineering, DevOps, design, leads, and marketing — one daily delivery cadence spanning retail, EDI, integration, fulfillment, and internal engineering.",
+      "Led 30+ person team across FE, BE, DevOps, design, QA, marketing & HubSpot at Platformz — CEO, CTO, CFO, CMO & board reporting on one daily delivery cadence.",
   },
   {
     id: "stakeholder",
-    name: "Stakeholder & CTO Reporting",
+    name: "Stakeholder & Board Reporting",
     branch: "Leadership",
-    level: 4,
+    level: 5,
     example:
-      "Run the delivery side of Platformz directly with the CEO — roadmap progress, risk register, client-facing status, and the honest version of 'are we on track?'",
+      "CEO, CTO, CFO, CMO & Board of Directors reporting at Platformz — roadmap, risk register, delivery status, and P&L alignment. Direct delivery partnership with the CEO.",
   },
   {
     id: "risk-escalation",
@@ -305,7 +305,23 @@ export const skillTree: SkillNode[] = [
     branch: "Delivery",
     level: 5,
     example:
-      "Built the QA discipline from scratch — automation frameworks, release gates, and zero-surprise launch days.",
+      "Built QA disciplines from scratch across Kinetik, MyGP, and Platformz — automation frameworks, release gates, and zero-surprise launch days including the Kinetik Health App to App Store & Google Play.",
+  },
+  {
+    id: "playwright",
+    name: "Playwright Automation",
+    branch: "Delivery",
+    level: 5,
+    example:
+      "Playwright + TypeScript across 5+ production projects — EcomTestPilot (Docker + AWS, every 15 min), FirstTrip (full POM framework), FUR4 API suite, Kinetik healthcare flows, Adobe Project Neo, and Kintsugi AI tax platform. github.com/azaworld.",
+  },
+  {
+    id: "cypress",
+    name: "Cypress Automation",
+    branch: "Delivery",
+    level: 5,
+    example:
+      "Cypress across 7+ repos — OpenCRVS civil registration (UN-backed), Target app, Cypress Cloud parallel runs, CI/CD recording. github.com/azaworld/CypressCloudProject, azaworld/OpenCRVS-Cypress, azaworld/Target_App_Cypress.",
   },
   {
     id: "reliability",
@@ -313,42 +329,47 @@ export const skillTree: SkillNode[] = [
     branch: "Delivery",
     level: 4,
     example:
-      "SRE practice at Mastercard — chaos engineering sessions, Prometheus + Grafana observability, Terraform-provisioned AWS infrastructure, and incident-response playbooks for critical payment systems.",
+      "SRE at Mastercard — chaos engineering, Prometheus + Grafana observability, Terraform AWS, incident-response playbooks. Also InfluxDB + Grafana real-time dashboards for k6 load tests at Platformz.",
   },
   {
     id: "api-testing",
     name: "API & Integration Testing",
     branch: "Delivery",
     level: 5,
-    example: "Postman, REST Assured, GraphQL — plus Magento ↔ QuickBooks/ShipBob/Mailchimp data-sync validation.",
+    example:
+      "Postman, REST Assured, GraphQL load testing (k6-graphql-loadtesting repo) — plus Magento ↔ QuickBooks/ShipBob/Mailchimp data-sync and AWS Lambda/SQS/S3 API validation at Kinetik.",
   },
   {
     id: "performance",
-    name: "Performance & Load",
+    name: "Performance & Load Testing",
     branch: "Delivery",
     level: 5,
-    example: "JMeter, k6, Locust, LoadRunner, Gatling — wired into nightly CI pipelines.",
+    example:
+      "k6 (Fur4-Load-Testing-K6 + k6-graphql-loadtesting repos on GitHub), JMeter, LoadRunner, Locust — smoke, load, stress, spike & soak profiles with InfluxDB + Grafana dashboards and HTML stakeholder reports.",
   },
   {
     id: "security-testing",
     name: "Security Testing",
     branch: "Delivery",
     level: 4,
-    example: "OWASP ZAP, Burp Suite, and Kali Linux scans baked into release gates.",
+    example:
+      "OWASP ZAP, Burp Suite, and Kali Linux — baked into release gates at Platformz (all portals), REVE Systems (Sothik govt. spell checker, CBMS), and Kinetik healthcare platform.",
   },
   {
     id: "mobile-qa",
-    name: "Mobile QA",
+    name: "Mobile QA & Appium",
     branch: "Delivery",
     level: 5,
-    example: "iOS & Android on real devices — Appium, Xamarin Test Cloud, AWS Device Farm.",
+    example:
+      "Appium iOS & Android automation at Kinetik — led QA from manual through Appium automation to production App Store & Google Play publish (Kinetik Health App). Also Xamarin Test Cloud and AWS Device Farm.",
   },
   {
     id: "test-strategy",
     name: "Test Strategy & Planning",
     branch: "Delivery",
     level: 5,
-    example: "Risk-based test plans, coverage strategy, and release gates — manual, smoke, regression, UAT.",
+    example:
+      "Risk-based test plans, coverage strategy, release gates — manual, smoke, regression, UAT. Delivered test strategies for 2 Bangladesh government systems (Sothik, CBMS), UN-backed OpenCRVS, and enterprise platforms.",
   },
   {
     id: "bdd",
@@ -366,17 +387,35 @@ export const skillTree: SkillNode[] = [
   },
   {
     id: "containers",
-    name: "Docker & CI/CD",
+    name: "Docker · GitHub Actions · CI/CD",
     branch: "Delivery",
-    level: 4,
-    example: "Containerized test execution and pipelines — Jenkins, GitLab CI, Bitbucket, GitHub Actions, AWS.",
+    level: 5,
+    example:
+      "Docker + docker-compose for containerized Playwright test execution (playwright-e2e-docker-aws repo); GitHub Actions CI/CD across 10+ repos; Jenkins, GitLab CI, Bitbucket, AWS CodePipeline. PM2 for scheduled AWS runs.",
   },
   {
     id: "languages",
-    name: "TypeScript · Python · Java",
+    name: "TypeScript · JS · Python · Java · C++",
     branch: "Delivery",
     level: 5,
-    example: "TypeScript and JavaScript daily; Python and Java for automation and tooling.",
+    example:
+      "TypeScript daily (Playwright, Next.js); JavaScript (k6, Cypress, Node/Express); Python (ML, automation, scripting — Cancer Prediction ML repo, login app); Java (automation); C++ (competitive programming — Codeforces, LeetCode repos). PHP (SUST Attendance System).",
+  },
+  {
+    id: "ml-ai",
+    name: "Machine Learning & AI Dev",
+    branch: "Delivery",
+    level: 4,
+    example:
+      "Cancer Prediction System using ML (Python/Jupyter — Breast Cancer attribute analysis & prediction); GenAI API experiments (LLM endpoints, Node + React); DailyPlanAI (AI-powered daily planner). Founder of AZAI Labs — AI agents in production. github.com/azaworld/Cancer-Prediction-System-using-Machine-Learning.",
+  },
+  {
+    id: "web-dev",
+    name: "Next.js · React · Three.js",
+    branch: "Delivery",
+    level: 4,
+    example:
+      "Built azantor.xyz (Next.js 16, Three.js, GSAP, Tailwind CSS v4 — this very site), timothymunroroberts.com, sharif-abid.xyz, and builtbeforecloud — full-stack TypeScript apps deployed on GitHub Pages & Vercel. Also React + Vite for API-GenAI experiments.",
   },
   {
     id: "roadmapping",
@@ -1139,7 +1178,7 @@ export const premium = {
 // ----------------------------------------------------------------------------
 export const treeNodes = [
   { label: "Who Am I", href: "#about", teaser: "The origin story + RPG character stats" },
-  { label: "Skills", href: "#skills", teaser: "24-node skill tree across 3 branches" },
+  { label: "Skills", href: "#skills", teaser: "28-node skill tree across 3 branches" },
   { label: "Experience", href: "#missions", teaser: "11 roles — Mastercard, Kintsugi, Platformz…" },
   { label: "Projects", href: "#projects", teaser: "FUR4 E2E on AWS, k6 load tests, FirstTrip, Adobe Neo, MyGP & more" },
   { label: "Education", href: "#community", teaser: "SUST + the academic ladder & community" },
