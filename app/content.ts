@@ -253,6 +253,7 @@ export type SkillNode = {
 };
 
 export const skillTree: SkillNode[] = [
+  // ─────────────────────────── LEADERSHIP (12) ───────────────────────────
   {
     id: "program-mgmt",
     name: "Program Management",
@@ -263,11 +264,11 @@ export const skillTree: SkillNode[] = [
   },
   {
     id: "agile",
-    name: "Agile / Kanban",
-    branch: "Delivery",
+    name: "Agile · Scrum · Kanban",
+    branch: "Leadership",
     level: 5,
     example:
-      "Flow-based delivery: WIP limits, cycle-time tracking, and blocker triage that kept releases predictable without sprint theater.",
+      "Flow-based delivery: WIP limits, cycle-time tracking, and blocker triage that kept releases predictable without sprint theater — one daily cadence across 30+ people.",
   },
   {
     id: "cross-team",
@@ -275,15 +276,39 @@ export const skillTree: SkillNode[] = [
     branch: "Leadership",
     level: 5,
     example:
-      "Led 30+ person team across FE, BE, DevOps, design, QA, marketing & HubSpot at Platformz — CEO, CTO, CFO, CMO & board reporting on one daily delivery cadence.",
+      "Led 30+ person team across FE, BE, DevOps, design, QA, marketing & HubSpot at Platformz — retail, EDI, integration, fulfillment, and engineering on one delivery cadence.",
   },
   {
     id: "stakeholder",
-    name: "Stakeholder & Board Reporting",
+    name: "C-Suite & Board Reporting",
     branch: "Leadership",
     level: 5,
     example:
       "CEO, CTO, CFO, CMO & Board of Directors reporting at Platformz — roadmap, risk register, delivery status, and P&L alignment. Direct delivery partnership with the CEO.",
+  },
+  {
+    id: "qa-team-leadership",
+    name: "QA Team Leadership",
+    branch: "Leadership",
+    level: 5,
+    example:
+      "QA lead at Kinetik (Health App to both app stores), QA Lead for Sothik at REVE, and QA ownership across all Platformz portals — built the discipline, led the people, owned the quality bar.",
+  },
+  {
+    id: "client-vendor",
+    name: "Client & Vendor Management",
+    branch: "Leadership",
+    level: 5,
+    example:
+      "Managed EDI vendors and retailer requirements across Amazon, Walmart, Target & Chewy; client-facing delivery for FUR4, Rockerz & DMV; 40+ clients served across roles and freelance.",
+  },
+  {
+    id: "remote-teams",
+    name: "Remote & Distributed Teams",
+    branch: "Leadership",
+    level: 5,
+    example:
+      "6 years leading and delivering across timezones — Dhaka ↔ New York ↔ San Francisco ↔ London. Remote-first at Kinetik, Mastercard, Kintsugi, Platformz, and my own companies.",
   },
   {
     id: "risk-escalation",
@@ -297,8 +322,34 @@ export const skillTree: SkillNode[] = [
     name: "Hiring & Mentoring",
     branch: "Leadership",
     level: 4,
-    example: "Mentored juniors at Mastercard; built and grew teams up to the 30+ person org at Platformz.",
+    example:
+      "Mentored juniors at Mastercard; built and grew teams up to the 30+ person org at Platformz; run technical screens and live interviews for client roles.",
   },
+  {
+    id: "roadmapping",
+    name: "Roadmapping & Prioritization",
+    branch: "Leadership",
+    level: 4,
+    example: "Turn customer signal and constraints into a sequenced roadmap — what to build, kill, and ship next.",
+  },
+  {
+    id: "incident-mgmt",
+    name: "Incident & Crisis Management",
+    branch: "Leadership",
+    level: 4,
+    example:
+      "Authored incident-response & disaster-recovery playbooks at Mastercard; on-call for critical payment systems; production-health ownership (GOD portal) at Platformz.",
+  },
+  {
+    id: "process-docs",
+    name: "Process & Documentation",
+    branch: "Leadership",
+    level: 4,
+    example:
+      "Detailed test plans (DSI), full process documentation for government systems (CBMS), delivery runbooks and QA architecture docs adopted org-wide at Kinetik.",
+  },
+
+  // ─────────────────────────── DELIVERY (12) ───────────────────────────
   {
     id: "qa-release",
     name: "QA & Release Management",
@@ -306,6 +357,14 @@ export const skillTree: SkillNode[] = [
     level: 5,
     example:
       "Built QA disciplines from scratch across Kinetik, MyGP, and Platformz — automation frameworks, release gates, and zero-surprise launch days including the Kinetik Health App to App Store & Google Play.",
+  },
+  {
+    id: "test-strategy",
+    name: "Test Strategy & Planning",
+    branch: "Delivery",
+    level: 5,
+    example:
+      "Risk-based test plans, coverage strategy, release gates — manual, smoke, regression, UAT. Delivered test strategies for 2 Bangladesh government systems (Sothik, CBMS), UN-backed OpenCRVS, and enterprise platforms.",
   },
   {
     id: "playwright",
@@ -324,12 +383,12 @@ export const skillTree: SkillNode[] = [
       "Cypress across 7+ repos — OpenCRVS civil registration (UN-backed), Target app, Cypress Cloud parallel runs, CI/CD recording. github.com/azaworld/CypressCloudProject, azaworld/OpenCRVS-Cypress, azaworld/Target_App_Cypress.",
   },
   {
-    id: "reliability",
-    name: "Reliability & Chaos Engineering",
+    id: "mobile-qa",
+    name: "Mobile QA & Appium",
     branch: "Delivery",
-    level: 4,
+    level: 5,
     example:
-      "SRE at Mastercard — chaos engineering, Prometheus + Grafana observability, Terraform AWS, incident-response playbooks. Also InfluxDB + Grafana real-time dashboards for k6 load tests at Platformz.",
+      "Appium iOS & Android automation at Kinetik — led QA from manual through Appium automation to production App Store & Google Play publish (Kinetik Health App). Also Xamarin Test Cloud and AWS Device Farm.",
   },
   {
     id: "api-testing",
@@ -348,44 +407,6 @@ export const skillTree: SkillNode[] = [
       "k6 (Fur4-Load-Testing-K6 + k6-graphql-loadtesting repos on GitHub), JMeter, LoadRunner, Locust — smoke, load, stress, spike & soak profiles with InfluxDB + Grafana dashboards and HTML stakeholder reports.",
   },
   {
-    id: "security-testing",
-    name: "Security Testing",
-    branch: "Delivery",
-    level: 4,
-    example:
-      "OWASP ZAP, Burp Suite, and Kali Linux — baked into release gates at Platformz (all portals), REVE Systems (Sothik govt. spell checker, CBMS), and Kinetik healthcare platform.",
-  },
-  {
-    id: "mobile-qa",
-    name: "Mobile QA & Appium",
-    branch: "Delivery",
-    level: 5,
-    example:
-      "Appium iOS & Android automation at Kinetik — led QA from manual through Appium automation to production App Store & Google Play publish (Kinetik Health App). Also Xamarin Test Cloud and AWS Device Farm.",
-  },
-  {
-    id: "test-strategy",
-    name: "Test Strategy & Planning",
-    branch: "Delivery",
-    level: 5,
-    example:
-      "Risk-based test plans, coverage strategy, release gates — manual, smoke, regression, UAT. Delivered test strategies for 2 Bangladesh government systems (Sothik, CBMS), UN-backed OpenCRVS, and enterprise platforms.",
-  },
-  {
-    id: "bdd",
-    name: "BDD (Cucumber / Gherkin)",
-    branch: "Delivery",
-    level: 4,
-    example: "Behavior-driven specs that product, QA, and engineering all read the same way.",
-  },
-  {
-    id: "accessibility",
-    name: "Accessibility & Visual",
-    branch: "Delivery",
-    level: 4,
-    example: "WCAG-aligned accessibility checks and visual-regression testing (Applitools).",
-  },
-  {
     id: "containers",
     name: "Docker · GitHub Actions · CI/CD",
     branch: "Delivery",
@@ -399,30 +420,81 @@ export const skillTree: SkillNode[] = [
     branch: "Delivery",
     level: 5,
     example:
-      "TypeScript daily (Playwright, Next.js); JavaScript (k6, Cypress, Node/Express); Python (ML, automation, scripting — Cancer Prediction ML repo, login app); Java (automation); C++ (competitive programming — Codeforces, LeetCode repos). PHP (SUST Attendance System).",
+      "TypeScript daily (Playwright, Next.js); JavaScript (k6, Cypress, Node/Express); Python (ML, automation, scripting); Java (automation); C++ (competitive programming — Codeforces, LeetCode repos). PHP (SUST Attendance System).",
+  },
+  {
+    id: "security-testing",
+    name: "Security Testing",
+    branch: "Delivery",
+    level: 4,
+    example:
+      "OWASP ZAP, Burp Suite, and Kali Linux — baked into release gates at Platformz (all portals), REVE Systems (Sothik govt. spell checker, CBMS), and Kinetik healthcare platform.",
+  },
+  {
+    id: "reliability",
+    name: "Reliability & Chaos Engineering",
+    branch: "Delivery",
+    level: 4,
+    example:
+      "SRE at Mastercard — chaos engineering, Prometheus + Grafana observability, Terraform AWS, incident-response playbooks. Also InfluxDB + Grafana real-time dashboards for k6 load tests at Platformz.",
+  },
+  {
+    id: "bdd-accessibility",
+    name: "BDD · Accessibility · Visual QA",
+    branch: "Delivery",
+    level: 4,
+    example:
+      "Cucumber/Gherkin behavior-driven specs that product, QA, and engineering all read the same way; WCAG-aligned accessibility checks; visual-regression testing with Applitools.",
+  },
+
+  // ─────────────────────── ENTREPRENEURSHIP (12) ───────────────────────
+  {
+    id: "entrepreneurship",
+    name: "Company Building",
+    branch: "Entrepreneurship",
+    level: 5,
+    example:
+      "Founder & CEO of AZAI Labs — an AI agents lab shipping practical automation for quality, operations, and decision-making (build with agents, not headcount) — and founder of AZADEMY, Listen2AZA, and the SSAS Foundation.",
+  },
+  {
+    id: "ai-agents",
+    name: "AI Agents & Automation",
+    branch: "Entrepreneurship",
+    level: 5,
+    example:
+      "AZAI Labs ships AI agents doing real client work — agentic workflows wired into existing stacks, from proof-of-concept to production with monitoring. Build with agents, not headcount.",
   },
   {
     id: "ml-ai",
     name: "Machine Learning & AI Dev",
-    branch: "Delivery",
+    branch: "Entrepreneurship",
     level: 4,
     example:
-      "Cancer Prediction System using ML (Python/Jupyter — Breast Cancer attribute analysis & prediction); GenAI API experiments (LLM endpoints, Node + React); DailyPlanAI (AI-powered daily planner). Founder of AZAI Labs — AI agents in production. github.com/azaworld/Cancer-Prediction-System-using-Machine-Learning.",
+      "Cancer Prediction System using ML (Python/Jupyter — Breast Cancer attribute analysis & prediction); GenAI API experiments (LLM endpoints, Node + React); DailyPlanAI (AI-powered daily planner). Coursera ML Specialization.",
   },
   {
     id: "web-dev",
     name: "Next.js · React · Three.js",
-    branch: "Delivery",
+    branch: "Entrepreneurship",
     level: 4,
     example:
-      "Built azantor.xyz (Next.js 16, Three.js, GSAP, Tailwind CSS v4 — this very site), timothymunroroberts.com, sharif-abid.xyz, and builtbeforecloud — full-stack TypeScript apps deployed on GitHub Pages & Vercel. Also React + Vite for API-GenAI experiments.",
+      "Built azantor.xyz (Next.js 16, Three.js, GSAP, Tailwind CSS v4 — this very site), timothymunroroberts.com, sharif-abid.xyz, and builtbeforecloud — full-stack TypeScript apps deployed on GitHub Pages & Vercel.",
   },
   {
-    id: "roadmapping",
-    name: "Roadmapping & Prioritization",
-    branch: "Leadership",
-    level: 4,
-    example: "Turn customer signal and constraints into a sequenced roadmap — what to build, kill, and ship next.",
+    id: "brand-studio",
+    name: "Personal Brand Studio",
+    branch: "Entrepreneurship",
+    level: 5,
+    example:
+      "Founded Personal Brand Studio — bespoke, animated personal-brand websites for doctors, founders, and executives. Three live client sites shipped: azantor.xyz, sharif-abid.xyz, timothymunroroberts.com.",
+  },
+  {
+    id: "freelancing",
+    name: "Freelancing & Client Success",
+    branch: "Entrepreneurship",
+    level: 5,
+    example:
+      "Upwork Top Rated — 23 completed jobs, every single one rated ★5.0. Endorsed for reliability, professionalism, and accountability. QA consulting, automation assessments, and testing for clients worldwide.",
   },
   {
     id: "speaking",
@@ -432,28 +504,28 @@ export const skillTree: SkillNode[] = [
     example: "Courses, workshops, technical talks, podcast hosting, and event MC — making complex things land.",
   },
   {
-    id: "product",
-    name: "Product Strategy",
-    branch: "Entrepreneurship",
-    level: 4,
-    example:
-      "Shaped roadmaps from customer signal: what to build, what to kill, and what to ship next quarter.",
-  },
-  {
-    id: "entrepreneurship",
-    name: "Entrepreneurship",
-    branch: "Entrepreneurship",
-    level: 4,
-    example:
-      "Founder & CEO of AZAI Labs — an AI agents lab shipping practical automation for quality, operations, and decision-making (build with agents, not headcount) — and founder of AZADEMY.",
-  },
-  {
     id: "ai-instruction",
     name: "AI Instruction",
     branch: "Entrepreneurship",
     level: 4,
     example:
       "Founder of AZADEMY — 'learning meets earning': practical AI & tech courses, build videos, and real interview sessions engineered to get CS people hired.",
+  },
+  {
+    id: "podcasting",
+    name: "Podcasting & Media",
+    branch: "Entrepreneurship",
+    level: 4,
+    example:
+      "Host & founder of the AZA Execution Podcast (azapodcast.com) — long-form conversations on how world-class work gets done. Plus two YouTube channels: AZADEMY (interviews) and Listen2AZA (audiobooks).",
+  },
+  {
+    id: "product",
+    name: "Product Strategy",
+    branch: "Entrepreneurship",
+    level: 4,
+    example:
+      "Shaped roadmaps from customer signal: what to build, what to kill, and what to ship next quarter — across AZAI Labs products and client platforms.",
   },
   {
     id: "content-storytelling",
@@ -467,7 +539,8 @@ export const skillTree: SkillNode[] = [
     name: "Community & Impact",
     branch: "Entrepreneurship",
     level: 4,
-    example: "Run the SSAS Foundation — scholarships, mentorship, and 60+ Quran students in year one.",
+    example:
+      "Run the SSAS Foundation — scholarships, mentorship, and 60+ Quran students in year one. Founder of Telescope Team, empowering rural communities through education since 2017.",
   },
 ];
 
@@ -1178,7 +1251,7 @@ export const premium = {
 // ----------------------------------------------------------------------------
 export const treeNodes = [
   { label: "Who Am I", href: "#about", teaser: "The origin story + RPG character stats" },
-  { label: "Skills", href: "#skills", teaser: "28-node skill tree across 3 branches" },
+  { label: "Skills", href: "#skills", teaser: "36-node skill tree · 12 per branch" },
   { label: "Experience", href: "#missions", teaser: "11 roles — Mastercard, Kintsugi, Platformz…" },
   { label: "Projects", href: "#projects", teaser: "FUR4 E2E on AWS, k6 load tests, FirstTrip, Adobe Neo, MyGP & more" },
   { label: "Education", href: "#community", teaser: "SUST + the academic ladder & community" },
