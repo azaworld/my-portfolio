@@ -94,8 +94,8 @@ job("Technical Project Manager", "Platformz — platformz.us", "Sep 2024 – Pre
     "FUR4: enterprise omnichannel pet-brand platform — five portals on a Magento core; live on Chewy, Amazon, Walmart, eBay &amp; Macy's.",
     "Delivered a 3P hybrid EDI program across five enterprise partners in <b>~60 days</b> — a typical 12+ month scope.",
 ])
-job("Sr. Software Engineer (Feature Lead)", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Aug 2026", [
-    "Owned features end to end on an AI-powered sales-tax platform where correctness is the product.",
+job("Sr. Software QA Engineer · SDET", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Aug 2026", [
+    "Quality engineering and SDET on an AI-powered sales-tax platform where correctness is the product.",
     "Playwright + TypeScript automation wired into CI; quality gates for AI-driven features.",
 ])
 job("Software Automation Engineer II", "All Generation Tech — New York, USA (remote)", "Feb 2024 – May 2026", [
@@ -134,7 +134,7 @@ story += [Paragraph(
     "scratch for Bangladesh's largest mobile operator (Grameenphone/MyGP) and a healthcare platform moving real "
     "patients (Kinetik), then automated global insurance platforms at All Generation Tech. Since 2024 he has run "
     "delivery for three client platforms as Technical Project Manager at Platformz — leading a 30+ person team and "
-    "compressing a 12-month EDI program into ~60 days. He also led features at Kintsugi (AI-powered tax compliance) "
+    "compressing a 12-month EDI program into ~60 days. He also served as Sr. SDET at Kintsugi (AI-powered tax compliance) "
     "through August 2026, and is founder &amp; CEO of AZAI Labs, AZADEMY, Listen2AZA, and the Silent Sacrifice "
     "Abdus Sattar Foundation in honor of his father.", body)]
 

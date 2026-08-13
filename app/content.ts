@@ -211,9 +211,9 @@ export const journey: JourneyStep[] = [
     lv: 10,
     year: "Sept 2025 — Aug 2026",
     icon: "🧠",
-    title: "Sr. Software Engineer",
+    title: "Sr. Software QA Engineer · SDET",
     where: "Kintsugi — San Francisco",
-    note: "Engineering quality into AI-powered tax compliance.",
+    note: "Quality engineering & SDET for AI-powered tax compliance.",
     details: [
       "Playwright + TypeScript automation wired into CI",
       "Quality gates for AI-driven features where correctness is the product",
@@ -506,7 +506,7 @@ export const missions: Mission[] = [
   {
     id: "kintsugi",
     codename: "Operation Precision",
-    role: "Sr. Software Engineer",
+    role: "Sr. Software QA Engineer · SDET",
     org: "Kintsugi — San Francisco, USA (remote)",
     short: "Kintsugi",
     period: "Sept 2025 — Aug 2026",
@@ -514,7 +514,7 @@ export const missions: Mission[] = [
     end: 2026.6,
     status: "COMPLETE",
     brief:
-      "Sr. Software Engineer & feature lead on an AI-powered sales-tax platform — owning the engineering process where a wrong number isn't a bug, it's a compliance problem.",
+      "Sr. Software QA Engineer & SDET on an AI-powered sales-tax platform — owning quality engineering where a wrong number isn't a bug, it's a compliance problem.",
     objectives: [
       "Feature lead — drive features end to end and own the engineering process",
       "Playwright + TypeScript automation wired into CI",
