@@ -48,7 +48,7 @@ story, W = [], doc.width
 story += [Paragraph("ARIFUZZAMAN “ANTOR”", name_s)]
 story += [Paragraph(
     "Founder &amp; CEO, AZAI Labs · Technical Project Manager, Platformz · "
-    "Sr. Software Engineer, Kintsugi · QA &amp; Delivery Leader", role_s), Spacer(1, 3)]
+    "QA &amp; Delivery Leader", role_s), Spacer(1, 3)]
 story += [Paragraph(
     "Dhaka, Bangladesh (remote worldwide) · WhatsApp +880 1580 497264 · arifuzantor@gmail.com<br/>"
     "linkedin.com/in/azantor · github.com/azaworld · azantor.xyz", cont_s)]
@@ -60,10 +60,9 @@ story += [Paragraph(
     "Delivery leader and engineer who turns chaos into shipped products. Technical Project Manager at "
     "Platformz, running three client platforms with a <b>30+ person cross-functional team</b> — including a "
     "3P hybrid EDI program across five enterprise partners (Amazon, Walmart, Target, Chewy) compressed from a "
-    "12+ month timeline into <b>~60 days</b>. Sr. Software Engineer &amp; feature lead at Kintsugi, an AI-powered "
-    "sales-tax platform where correctness is the product. Founder &amp; CEO of <b>AZAI Labs</b> (AI agents doing "
+    "12+ month timeline into <b>~60 days</b>. Founder &amp; CEO of <b>AZAI Labs</b> (AI agents doing "
     "real client work) and founder of <b>AZADEMY</b>. Six years across QA, automation, reliability, and program "
-    "delivery for Mastercard, Grameenphone, Kinetik, and global insurance carriers — Upwork Top Rated, "
+    "delivery for Mastercard, Grameenphone, Kinetik, Kintsugi, and global insurance carriers — Upwork Top Rated, "
     "<b>23 jobs, all ★ 5.0</b>.", body)]
 
 # ---- Core Competencies ----
@@ -95,8 +94,8 @@ job("Technical Project Manager", "Platformz — platformz.us", "Sep 2024 – Pre
     "FUR4: enterprise omnichannel pet-brand platform — five portals on a Magento core; live on Chewy, Amazon, Walmart, eBay &amp; Macy's.",
     "Delivered a 3P hybrid EDI program across five enterprise partners in <b>~60 days</b> — a typical 12+ month scope.",
 ])
-job("Sr. Software Engineer (Feature Lead)", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Present", [
-    "Own features end to end on an AI-powered sales-tax platform where correctness is the product.",
+job("Sr. Software Engineer (Feature Lead)", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Aug 2026", [
+    "Owned features end to end on an AI-powered sales-tax platform where correctness is the product.",
     "Playwright + TypeScript automation wired into CI; quality gates for AI-driven features.",
 ])
 job("Software Automation Engineer II", "All Generation Tech — New York, USA (remote)", "Feb 2024 – May 2026", [
@@ -135,8 +134,9 @@ story += [Paragraph(
     "scratch for Bangladesh's largest mobile operator (Grameenphone/MyGP) and a healthcare platform moving real "
     "patients (Kinetik), then automated global insurance platforms at All Generation Tech. Since 2024 he has run "
     "delivery for three client platforms as Technical Project Manager at Platformz — leading a 30+ person team and "
-    "compressing a 12-month EDI program into ~60 days — while feature-leading at Kintsugi and founding AZAI Labs, "
-    "AZADEMY, Listen2AZA, and the Silent Sacrifice Abdus Sattar Foundation in honor of his father.", body)]
+    "compressing a 12-month EDI program into ~60 days. He also led features at Kintsugi (AI-powered tax compliance) "
+    "through August 2026, and is founder &amp; CEO of AZAI Labs, AZADEMY, Listen2AZA, and the Silent Sacrifice "
+    "Abdus Sattar Foundation in honor of his father.", body)]
 
 # ---- Skills tag cloud ----
 story += [Paragraph("Tools &amp; Technologies", h_s)]

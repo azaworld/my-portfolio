@@ -15,9 +15,9 @@ export const profile = {
     "I solve blockers before breakfast",
   ],
   identity:
-    "Founder & CEO @ AZAI Labs · Technical Project Manager @ Platformz · Sr. Software Engineer @ Kintsugi · QA Consultant · Podcaster · AI Tech Instructor",
+    "Founder & CEO @ AZAI Labs · Technical Project Manager @ Platformz · QA & Delivery Leader · Podcaster · AI Tech Instructor",
   pitch:
-    "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms, a Sr. Software Engineer & feature lead at Kintsugi, and I build companies — AZAI Labs ships AI products and augmented AI talent, while AZADEMY teaches engineers to land remote jobs and ace interviews.",
+    "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms, and I build companies — AZAI Labs ships AI products and augmented AI talent, while AZADEMY teaches engineers to land remote jobs and ace interviews.",
   email: "arifuzantor@gmail.com",
   linkedin: "https://linkedin.com/in/azantor",
   github: "https://github.com/azaworld",
@@ -67,7 +67,7 @@ export const originStory = [
    blocked, which dependency is about to bite, and which conversation will unblock
    three engineers at once. That's the role I was built for.`,
   `Today I build companies and run delivery: founder & CEO of AZAI Labs, founder of
-   AZADEMY and Listen2AZA, TPM at Platformz, Sr. Software Engineer at Kintsugi — and I run the
+   AZADEMY and Listen2AZA, TPM at Platformz — and I run the
    Silent Sacrifice Abdus Sattar Foundation in honor of my father. The mission
    everywhere is the same: turn chaos into shipped products. Here's how the
    character leveled up:`,
@@ -209,7 +209,7 @@ export const journey: JourneyStep[] = [
   },
   {
     lv: 10,
-    year: "2025 — Present",
+    year: "Sept 2025 — Aug 2026",
     icon: "🧠",
     title: "Sr. Software Engineer",
     where: "Kintsugi — San Francisco",
@@ -509,10 +509,10 @@ export const missions: Mission[] = [
     role: "Sr. Software Engineer",
     org: "Kintsugi — San Francisco, USA (remote)",
     short: "Kintsugi",
-    period: "Sept 2025 — Present",
+    period: "Sept 2025 — Aug 2026",
     start: 2025.7,
-    end: null,
-    status: "ACTIVE",
+    end: 2026.6,
+    status: "COMPLETE",
     brief:
       "Sr. Software Engineer & feature lead on an AI-powered sales-tax platform — owning the engineering process where a wrong number isn't a bug, it's a compliance problem.",
     objectives: [
