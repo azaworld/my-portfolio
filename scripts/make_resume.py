@@ -57,13 +57,13 @@ story += [Spacer(1, 4), HRFlowable(width="100%", thickness=1.2, color=VIOLET)]
 # ---- Executive Summary ----
 story += [Paragraph("Executive Summary", h_s)]
 story += [Paragraph(
-    "Delivery leader and engineer who turns chaos into shipped products. Technical Project Manager at "
-    "Platformz, running three client platforms with a <b>30+ person cross-functional team</b> — including a "
-    "3P hybrid EDI program across five enterprise partners (Amazon, Walmart, Target, Chewy) compressed from a "
-    "12+ month timeline into <b>~60 days</b>. Founder &amp; CEO of <b>AZAI Labs</b> (AI agents doing "
-    "real client work) and founder of <b>AZADEMY</b>. Six years across QA, automation, reliability, and program "
-    "delivery for Mastercard, Grameenphone, Kinetik, Kintsugi, and global insurance carriers — Upwork Top Rated, "
-    "<b>23 jobs, all ★ 5.0</b>.", body)]
+    "Delivery leader and QA engineer who turns chaos into shipped products. Technical Project Manager at "
+    "Platformz, running three enterprise client platforms (FUR4, Rockerz, DMV Raw Feeders) with a <b>30+ person "
+    "cross-functional team</b> — full QA ownership (automation, manual, security, load/performance) across all portals, "
+    "a 3P hybrid EDI program delivered in <b>~60 days</b>, and CEO/CTO/CFO/CMO &amp; Board reporting. "
+    "Founder &amp; CEO of <b>AZAI Labs</b> (AI agents doing real client work) and founder of <b>AZADEMY</b>. "
+    "Six years across QA, SDET, reliability, and program delivery for Mastercard, Grameenphone, Kinetik, Kintsugi, "
+    "and global insurance carriers — Upwork Top Rated, <b>23 jobs, all ★ 5.0</b>.", body)]
 
 # ---- Core Competencies ----
 story += [Paragraph("Core Competencies", h_s)]
@@ -90,9 +90,11 @@ job("Founder &amp; Chief Executive Officer", "AZAI Labs — San Francisco, USA (
     "Own product, clients, hiring, and vision; also founder of AZADEMY (tech education) and host of the AZA Execution Podcast.",
 ])
 job("Technical Project Manager", "Platformz — platformz.us", "Sep 2024 – Present", [
-    "Run delivery for three client platforms alongside the CEO, leading a <b>30+ person team</b> across engineering, DevOps, design, and marketing.",
-    "FUR4: enterprise omnichannel pet-brand platform — five portals on a Magento core; live on Chewy, Amazon, Walmart, eBay &amp; Macy's.",
-    "Delivered a 3P hybrid EDI program across five enterprise partners in <b>~60 days</b> — a typical 12+ month scope.",
+    "Single point of delivery accountability for 3 enterprise platforms alongside the CEO — leading 30+ person team: FE, BE, DevOps, design, QA, marketing &amp; HubSpot.",
+    "<b>FUR4 (fur4.com)</b>: 5 portals (DTC, dealer.fur4.com, refer.fur4.com, GOD ops, AI tower) on Magento + React + GraphQL; live on Chewy, Amazon, Walmart, eBay &amp; Macy's; 3P EDI program delivered in <b>~60 days</b>.",
+    "<b>Rockerz (rockerz.com)</b>: 4-zone product configurator, DTC, dealer &amp; referral portals. <b>DMV Raw Feeders (dmvrawfeeders.com)</b>: zone-based delivery routing, subscriptions &amp; referral portal.",
+    "Full QA across all portals — automation (Playwright/TS), manual, security (OWASP ZAP/Burp Suite), load &amp; performance (JMeter/k6).",
+    "CEO, CTO, CFO, CMO &amp; Board of Directors reporting — roadmap, risk register, delivery status &amp; P&amp;L alignment.",
 ])
 job("Sr. Software QA Engineer · SDET", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Aug 2026", [
     "Quality engineering and SDET on an AI-powered sales-tax platform where correctness is the product.",
@@ -157,7 +159,7 @@ story += [Spacer(1, 1), tt]
 # ---- Key Projects ----
 story += [Paragraph("Key Projects", h_s)]
 proj_rows = [
-    [("FUR4 Omnichannel Platform", "Platformz · 2024–Present", "5-portal Magento core live on Chewy, Amazon, Walmart, eBay & Macy's; 60-day 3P EDI program."),
+    [("FUR4 · Rockerz · DMV Raw Feeders", "Platformz · 2024–Present", "Three enterprise platforms live in production. Full QA — automation (Playwright/TS), manual, security (OWASP ZAP), load & perf (JMeter/k6) — across all portals. 60-day 3P EDI program. CEO/CTO/CFO/CMO & board reporting."),
      ("MyGP Backend Automation", "Grameenphone · 2024–2025", "Built the complete backend test-automation framework for Bangladesh's largest mobile operator app.")],
     [("Sothik — Bangla Spell Checker", "REVE Systems · 2022–Present", "AI-powered Bengali grammar & spell checker — QA Lead; performance up 60%, defects down 30%."),
      ("OpenCRVS", "Dynamic Solution Innovators · 2021–2022", "Open-source civil registration so every person on the planet is recognised from birth — Cypress test design.")],
