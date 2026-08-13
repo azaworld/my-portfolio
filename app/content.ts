@@ -828,12 +828,12 @@ export const dashboard = {
 export const careerAnalytics = {
   // Seniority climb — role level (1–11) by year, for the growth curve.
   growth: [
-    { year: "2020", level: 1, label: "QA (part-time)" },
-    { year: "2021", level: 3, label: "Sr. SQA · Jr. QA" },
-    { year: "2022", level: 5, label: "Reliability · QA" },
-    { year: "2023", level: 6, label: "QA Lead" },
-    { year: "2024", level: 9, label: "Automation Eng II · TPM" },
-    { year: "2025", level: 11, label: "Founder & CEO" },
+    { year: "2020", level: 1, label: "QA (part-time)", icon: "🎮", color: "bg-blue-400" },
+    { year: "2021", level: 3, label: "Sr. SQA · Jr. QA", icon: "🌍", color: "bg-cyan-400" },
+    { year: "2022", level: 5, label: "Reliability · QA", icon: "💳", color: "bg-violet-400" },
+    { year: "2023", level: 6, label: "QA Lead", icon: "🚑", color: "bg-magenta-400" },
+    { year: "2024", level: 9, label: "Automation Eng II · TPM", icon: "🎯", color: "bg-amber-400" },
+    { year: "2025", level: 11, label: "Founder & CEO", icon: "👑", color: "bg-emerald-400" },
   ],
   // Where the experience concentrates (relative weight, 0–100).
   domains: [
@@ -1199,6 +1199,8 @@ export const ventures = [
       "An AI lab that ships real work — building AI products, delivering AI services, and placing augmented AI talent so teams move faster. Founded 2025 · San Francisco HQ, remote-first from Dhaka. Founder & CEO.",
     theme: "violet" as const,
     link: "https://azailabs.dev",
+    icon: "🤖",
+    stat: "AI agents in production",
   },
   {
     name: "AZADEMY",
@@ -1207,6 +1209,8 @@ export const ventures = [
       "An academy that teaches CS, AI & technology, freelancing, and how to land remote jobs — plus real interviews with experts on how to give and take technical interviews. Founder.",
     theme: "amber" as const,
     link: "https://azademy.org",
+    icon: "🎓",
+    stat: "Real interview sessions",
   },
   {
     name: "AZA Execution Podcast",
@@ -1215,6 +1219,8 @@ export const ventures = [
       "My podcast — long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done. Weekly, video & audio, Bangla & English. Episodes coming soon. Host & founder.",
     theme: "cyan" as const,
     link: "https://azapodcast.com",
+    icon: "🎙️",
+    stat: "Long-form builder stories",
   },
   {
     name: "Listen2AZA",
@@ -1223,6 +1229,8 @@ export const ventures = [
       "An audiobook channel on YouTube — narrated books and stories for people who'd rather listen than scroll. Founder.",
     theme: "magenta" as const,
     link: "https://www.youtube.com/@Listen2AZA",
+    icon: "📚",
+    stat: "Audiobooks in Bangla & English",
   },
   {
     name: "Silent Sacrifice Abdus Sattar Foundation",
@@ -1231,6 +1239,8 @@ export const ventures = [
       "A foundation honoring my father, Sheikh Abdus Sattar — scholarships, free mentorship and internships, Quran education, support for struggling families and cancer patients, feeding the hungry, and tree plantation. 60+ Quran students in Ramadan 2025, 60 students mentored in year one.",
     theme: "emerald" as const,
     link: "https://ssasf.vercel.app",
+    icon: "❤️",
+    stat: "60+ Quran students, year 1",
   },
 ];
 
@@ -1338,6 +1348,7 @@ export const projects = [
     blurb: "Production-grade Playwright E2E test suite for fur4.com and refer.fur4.com — Dockerized, deployed on AWS EC2, scheduled every 15 min via PM2. Covers homepage integrity, referral & dealer CTAs, registration forms, social login (Google, Facebook, LinkedIn), product rendering, cart & guest checkout. Microsoft Teams webhook notifications on failure.",
     tags: ["Playwright", "TypeScript", "Docker", "AWS EC2", "CI/CD", "E2E Testing"],
     link: "https://github.com/azaworld/playwright-e2e-docker-aws",
+    icon: "🎬",
   },
   {
     name: "FUR4 k6 Load Testing Suite",
@@ -1346,6 +1357,7 @@ export const projects = [
     blurb: "k6 load-testing framework for FUR4's GraphQL API — smoke, load, stress, spike & soak profiles. InfluxDB + Grafana real-time dashboards, HTML stakeholder reports, AWS EC2 deployment, GitHub Actions CI/CD, and Microsoft Teams notifications.",
     tags: ["k6", "GraphQL", "Load Testing", "InfluxDB", "Grafana", "AWS", "CI/CD"],
     link: "https://github.com/azaworld/Fur4-Load-Testing-K6",
+    icon: "📊",
   },
   {
     name: "k6 GraphQL Load Testing Framework",
@@ -1354,6 +1366,7 @@ export const projects = [
     blurb: "Reusable, production-grade GraphQL load testing framework with Docker, AWS EC2 deployment, GitHub Actions CI/CD, HTML pie-chart reports, and Microsoft Teams webhook alerts. Covers mutations and queries with flexible load profiles.",
     tags: ["k6", "GraphQL", "Docker", "AWS", "GitHub Actions", "Performance Testing"],
     link: "https://github.com/azaworld/k6-graphql-loadtesting",
+    icon: "⚡",
   },
   {
     name: "FirstTrip Playwright QA Framework",
@@ -1362,6 +1375,7 @@ export const projects = [
     blurb: "Full Page Object Model automation framework in Playwright + TypeScript for FirstTrip's flight search platform. Covers flight search, airline filtering, price comparison, sign-in modal verification, and screenshot reporting — wired into GitHub Actions CI.",
     tags: ["Playwright", "TypeScript", "POM", "GitHub Actions", "QA Framework"],
     link: "https://github.com/azaworld/firsttrip-playwright-qa-automation",
+    icon: "✈️",
   },
   {
     name: "Adobe Project Neo — Playwright E2E",
@@ -1370,6 +1384,7 @@ export const projects = [
     blurb: "Playwright + TypeScript E2E automation suite for Adobe Project Neo — Adobe's AI-powered 3D design tool. Covers core user flows with GitHub Actions CI/CD integration.",
     tags: ["Playwright", "TypeScript", "GitHub Actions", "Adobe", "3D Design"],
     link: "https://github.com/azaworld/Adobe-Project-Neo-Playwright",
+    icon: "🎨",
   },
   {
     name: "Cypress Cloud — Parallel CI Project",
@@ -1378,6 +1393,7 @@ export const projects = [
     blurb: "Cypress Cloud project demonstrating parallel test execution, Cypress Cloud recording & run analytics, and full GitHub Actions CI integration — a reference implementation for teams scaling their test suite.",
     tags: ["Cypress", "Cypress Cloud", "GitHub Actions", "Parallel Testing", "CI/CD"],
     link: "https://github.com/azaworld/CypressCloudProject",
+    icon: "🌳",
   },
   {
     name: "FUR4 Omnichannel Platform",
@@ -1386,6 +1402,7 @@ export const projects = [
     blurb: "Enterprise pet-brand ecosystem — DTC (fur4.com), dealer portal (dealer.fur4.com), referral portal (refer.fur4.com), GOD ops dashboard & AI ops tower on Magento + React + GraphQL. Full QA: Playwright automation, manual, security (OWASP ZAP), load & performance (JMeter/k6). 60-day 3P EDI program across Amazon, Walmart, Target, Chewy, eBay & Macy's.",
     tags: ["TPM", "QA Automation", "Security Testing", "Load Testing", "Magento", "EDI", "React"],
     link: "https://platformz.us/projects/fur4",
+    icon: "🐾",
   },
   {
     name: "Rockerz Skate Platform",
@@ -1394,6 +1411,7 @@ export const projects = [
     blurb: "Precision skate-guard platform — 4-zone live product color configurator, DTC, dealer portal, dealer-locator & referral portals on Magento + React + AWS. Full QA: automation, manual, security, load & performance across all portals.",
     tags: ["TPM", "QA Automation", "Manual QA", "Performance Testing", "Magento", "React"],
     link: "https://rockerz.com",
+    icon: "🛼",
   },
   {
     name: "DMV Raw Feeders Platform",
