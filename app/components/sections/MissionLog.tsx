@@ -6,7 +6,6 @@ import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import TiltCard from "../ui/TiltCard";
 import CountUp from "../fx/CountUp";
-import CareerLadder from "./CareerLadder";
 import { useGame } from "../game/GameProvider";
 
 // Mission number = position from the oldest (M-01) to the newest.
@@ -160,20 +159,14 @@ export default function MissionLog() {
 
   return (
     <Section id="missions" kicker="quest journal" title={<>Mission <span className="text-aurora">Log</span></>}>
-      {/* Career ladder — visual progression */}
+      {/* All missions — newest first. The year-by-year climb lives in the
+          Life Graph under the tree; this is the detail layer. */}
       <Reveal>
-        <div className="glass rounded-2xl p-6 sm:p-8">
-          <CareerLadder onMissionOpen={openDebrief} />
-        </div>
+        <p className="-mt-4 mb-6 max-w-xl text-sm text-muted">
+          Tap any mission for the full debrief — objectives, boss fight, and loot.
+        </p>
       </Reveal>
-
-      {/* All missions — newest first */}
-      <Reveal>
-        <h3 className="mt-12 font-mono text-xs uppercase tracking-[0.3em] text-muted">
-          every mission — newest first
-        </h3>
-      </Reveal>
-      <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {missions.map((mission, i) => (
           <MissionCard key={mission.id} mission={mission} onOpen={openDebrief} delay={(i % 3) * 100} />
         ))}

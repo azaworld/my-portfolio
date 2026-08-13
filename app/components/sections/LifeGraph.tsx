@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Reveal from "../fx/Reveal";
 
 // Full life story, year by year — an ascending staircase you can read at a glance.
-// Each step = one chapter. Desktop: SVG staircase. It scrolls horizontally on
-// small screens so nothing is ever cramped.
+// Animated: the line draws itself bottom→top, each step rises in, and a glowing
+// orb continuously climbs the staircase. Scrolls horizontally on small screens.
 const STORY = [
   { year: "2020", icon: "🎮", role: "QA Engineer (part-time)", org: "CarryBags · London", lv: 1 },
   { year: "2021", icon: "🌍", role: "Augmented Sr. SQA", org: "Intellex via TCS · US", lv: 2 },
@@ -28,7 +28,6 @@ const COLORS = [
 export default function LifeGraph() {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
-  const [picked, setPicked] = useState<number | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -41,14 +40,17 @@ export default function LifeGraph() {
     return () => obs.disconnect();
   }, []);
 
-  // Staircase geometry
+  // Staircase geometry — taller canvas so labels never touch the year axis,
+  // wider side padding so edge labels never clip.
   const n = STORY.length;
   const W = 1080;
-  const H = 340;
+  const H = 390;
   const PAD = 46;
   const stepW = (W - PAD * 2) / (n - 1);
-  const stepH = (H - 130) / (n - 1);
-  const pt = (i: number) => ({ x: PAD + i * stepW, y: H - 74 - i * stepH });
+  const stepH = (H - 200) / (n - 1);
+  const pt = (i: number) => ({ x: PAD + i * stepW, y: H - 116 - i * stepH });
+  // keep edge labels inside the canvas
+  const labelX = (x: number) => Math.min(Math.max(x, 84), W - 84);
 
   // staircase path: horizontal run then rise
   let path = `M ${pt(0).x} ${pt(0).y}`;
@@ -65,7 +67,7 @@ export default function LifeGraph() {
           <div>
             <h3 className="text-sm font-semibold sm:text-base">📈 The full story — year by year</h3>
             <p className="mt-1 text-xs text-muted sm:text-sm">
-              11 chapters, 2020 → today. Tap a step for the details.
+              11 chapters, 2020 → today. Watch the climb — bottom to top.
             </p>
           </div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">level 1 → 11</p>
@@ -74,7 +76,7 @@ export default function LifeGraph() {
         <div className="no-scrollbar -mx-5 mt-4 overflow-x-auto px-5 sm:mx-0 sm:px-0">
           <svg
             viewBox={`0 0 ${W} ${H}`}
-            className="min-w-[760px] sm:min-w-0 sm:w-full"
+            className="min-w-[820px] sm:min-w-0 sm:w-full"
             role="img"
             aria-label="Career staircase from QA Engineer in 2020 to Founder & CEO in 2025"
           >
@@ -88,17 +90,21 @@ export default function LifeGraph() {
                 <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.22" />
                 <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
               </linearGradient>
+              <radialGradient id="climber-glow">
+                <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#22D3EE" stopOpacity="0" />
+              </radialGradient>
             </defs>
 
             {/* area under the staircase */}
             <path
-              d={`${path} L ${pt(n - 1).x} ${H - 20} L ${pt(0).x} ${H - 20} Z`}
+              d={`${path} L ${pt(n - 1).x} ${H - 44} L ${pt(0).x} ${H - 44} Z`}
               fill="url(#life-fill)"
               opacity={inView ? 1 : 0}
               style={{ transition: "opacity 1.2s ease 0.6s" }}
             />
 
-            {/* the climbing line — draws itself in */}
+            {/* the climbing line — draws itself in, bottom to top */}
             <path
               d={path}
               fill="none"
@@ -109,36 +115,49 @@ export default function LifeGraph() {
               pathLength={1}
               strokeDasharray={1}
               strokeDashoffset={inView ? 0 : 1}
-              style={{ transition: "stroke-dashoffset 2.2s cubic-bezier(0.5, 0, 0.2, 1) 0.2s" }}
+              style={{ transition: "stroke-dashoffset 2.4s cubic-bezier(0.5, 0, 0.2, 1) 0.2s" }}
             />
+
+            {/* glowing orb forever climbing the stairs, bottom → top */}
+            {inView && (
+              <g>
+                <circle r="14" fill="url(#climber-glow)">
+                  <animateMotion dur="8s" repeatCount="indefinite" path={path} keyPoints="0;1" keyTimes="0;1" calcMode="linear" />
+                </circle>
+                <circle r="5" fill="#22D3EE">
+                  <animateMotion dur="8s" repeatCount="indefinite" path={path} keyPoints="0;1" keyTimes="0;1" calcMode="linear" />
+                </circle>
+              </g>
+            )}
 
             {STORY.map((s, i) => {
               const p = pt(i);
               const above = i % 2 === 0;
-              const open = picked === i;
+              const lx = labelX(p.x);
               return (
                 <g
                   key={i}
                   opacity={inView ? 1 : 0}
-                  style={{ transition: `opacity 0.5s ease ${0.35 + i * 0.14}s`, cursor: "pointer" }}
-                  onClick={() => setPicked(open ? null : i)}
+                  style={{
+                    transform: inView ? "translateY(0)" : "translateY(26px)",
+                    transition: `opacity 0.55s ease ${0.3 + i * 0.16}s, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${0.3 + i * 0.16}s`,
+                  }}
                 >
                   {/* node */}
-                  <circle cx={p.x} cy={p.y} r={open ? 17 : 14} fill="#0B1026" stroke={COLORS[i]} strokeWidth="2.5" />
+                  <circle cx={p.x} cy={p.y} r={14} fill="#0B1026" stroke={COLORS[i]} strokeWidth="2.5" />
                   <text x={p.x} y={p.y + 5} textAnchor="middle" fontSize="14">{s.icon}</text>
 
-                  {/* year — always visible under the node */}
-                  <text x={p.x} y={H - 40} textAnchor="middle" fontSize="12.5" fontWeight="700" fill={COLORS[i]}>
+                  {/* year + level — fixed rows at the bottom, clear of all labels */}
+                  <text x={p.x} y={H - 20} textAnchor="middle" fontSize="12.5" fontWeight="700" fill={COLORS[i]}>
                     {s.year}
                   </text>
-                  {/* level badge */}
-                  <text x={p.x} y={H - 24} textAnchor="middle" fontSize="9.5" fill="#8B93B0" fontFamily="monospace">
+                  <text x={p.x} y={H - 5} textAnchor="middle" fontSize="9.5" fill="#8B93B0" fontFamily="monospace">
                     lv {s.lv}
                   </text>
 
                   {/* role + org — alternate above/below the step to avoid overlap */}
                   <text
-                    x={p.x}
+                    x={lx}
                     y={above ? p.y - 40 : p.y + 34}
                     textAnchor="middle"
                     fontSize="11"
@@ -148,7 +167,7 @@ export default function LifeGraph() {
                     {s.role}
                   </text>
                   <text
-                    x={p.x}
+                    x={lx}
                     y={above ? p.y - 27 : p.y + 47}
                     textAnchor="middle"
                     fontSize="9.5"

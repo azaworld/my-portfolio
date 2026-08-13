@@ -5,6 +5,10 @@ import { dashboard } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
 import CountUp from "../fx/CountUp";
+import AIBot from "../fx/AIBot";
+
+// Icons for the counters — instantly readable, no reading required.
+const COUNTER_ICONS = ["🎙️", "🧹", "🚀", "👥"];
 
 // Generic "animate when visible" hook for the SVG charts.
 function useInView<T extends Element>() {
@@ -127,19 +131,34 @@ function BlockerBars({ bars }: { bars: { label: string; value: number }[] }) {
 export default function Dashboard() {
   return (
     <Section id="dashboard" kicker="live ops" title={<>Leadership <span className="text-aurora">Dashboard</span></>}>
-      <p className="-mt-4 mb-8 max-w-xl text-sm text-muted">
-        What a week of my work actually looks like — rendered the way I think about it.
-      </p>
+      <div className="-mt-4 mb-8 flex items-center gap-4">
+        <p className="max-w-xl text-sm text-muted">
+          What a week of my work actually looks like — rendered the way I think about it.
+          Mission control, staffed by one very caffeinated TPM.
+        </p>
+        <div className="hidden shrink-0 sm:block" aria-hidden>
+          <AIBot size={64} />
+        </div>
+      </div>
 
-      <div className="grid gap-5 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {/* Counters */}
         {dashboard.counters.map((c, i) => (
           <Reveal key={c.label} delay={i * 90}>
-            <div className="glass rounded-2xl p-5">
-              <p className="font-display text-3xl font-bold text-text">
-                <CountUp value={c.value} suffix={c.suffix} />
-              </p>
-              <p className="mt-1 text-xs text-muted">{c.label}</p>
+            <div className="glass group flex items-center gap-4 rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-0.5">
+              <span
+                className="animate-float-slow text-3xl"
+                style={{ animationDelay: `${-i * 1.6}s` }}
+                aria-hidden
+              >
+                {COUNTER_ICONS[i] ?? "📌"}
+              </span>
+              <div>
+                <p className="font-display text-3xl font-bold text-text">
+                  <CountUp value={c.value} suffix={c.suffix} />
+                </p>
+                <p className="mt-1 text-xs text-muted">{c.label}</p>
+              </div>
             </div>
           </Reveal>
         ))}
