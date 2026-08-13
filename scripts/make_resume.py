@@ -106,22 +106,22 @@ job("Software Automation Engineer II", "All Generation Tech — New York, USA (r
 job("Software QA Engineer", "Grameenphone (via Miaki) — Dhaka", "Feb 2024 – Mar 2025", [
     "Designed and built the complete backend test-automation framework for MyGP — Bangladesh's largest mobile operator app — from zero.",
 ])
-job("QA Engineer I → QA Lead", "Kinetik — New York, USA (remote)", "Sep 2023 – Sep 2025", [
-    "Owned release quality for a healthcare platform moving real patients — API automation with Playwright/Postman in TypeScript, AWS (Lambda, SQS, S3).",
-    "Zero-surprise weekly launches across three product lines; QA architecture adopted org-wide.",
+job("QA Engineer I", "Kinetik — Long Island City, New York, USA (remote)", "Sep 2023 – Sep 2025", [
+    "QA lead for the <b>Kinetik Health App</b> (iOS &amp; Android, App Store &amp; Google Play) — NEMT member app; 26,840+ pilot rides, 1.5M+ members across 44 states. Full lifecycle: manual, Playwright/TS API automation (AWS Lambda, SQS, S3), <b>Appium mobile automation</b>, load testing.",
+    "Zero-surprise weekly launches across Trip Scheduler, Trip Assistant &amp; RCM; QA architecture adopted org-wide.",
 ])
 job("Sr. Software Automation &amp; Reliability Engineer", "Mastercard — remote", "Feb 2022 – Aug 2023", [
     "Chaos engineering, observability (Prometheus/Grafana), and AWS + Terraform infrastructure automation for payment-critical systems.",
     "Built CI/CD pipelines (Jenkins, GitLab CI); authored incident-response &amp; DR playbooks; mentored junior engineers.",
 ])
-job("Software QA Engineer", "REVE Systems — Dhaka", "Dec 2022 – Aug 2023", [
-    "QA lead for Sothik (Bangla AI spell checker): performance up <b>60%</b>, critical defects down <b>30%</b>; security testing with OWASP ZAP &amp; Burp Suite.",
+job("Software QA Engineer &amp; Lead", "REVE Systems — Dhaka", "Dec 2022 – Aug 2023", [
+    "QA Lead for <b>Sothik</b> (spell.bangla.gov.bd) — Bangladesh govt. official Bangla spell checker (Bangla Academy): performance up <b>60%</b>, defects down <b>30%</b>. QA Engineer for <b>CBMS</b> (cbc.gov.bd) — govt. Customs Bond system. Security (OWASP ZAP, Burp Suite, Kali Linux), performance (JMeter, LoadRunner), mobile (Xamarin, AWS Device Farm).",
 ])
 job("Augmented Sr. Software QA Engineer", "Intellex via TCS — US client, global Magento (4 regions)", "2021 – 2022", [
     "2FA/verification flows (Twilio, SendGrid); multi-currency &amp; multi-language commerce validation across USA, UK, Canada &amp; Europe; Magento ↔ QuickBooks/ShipBob/Mailchimp integrations.",
 ])
-job("Jr. Software QA Engineer", "Dynamic Solution Innovators — Dhaka", "2021 – 2022", [
-    "Manual testing (TestRail) and Cypress + CI/CD automation across OpenCRVS (civil registration), Movandi (5G mmWave), and Altech.",
+job("Jr. Software QA Engineer", "Dynamic Solution Innovators — Dhaka", "Sep 2021 – Nov 2022", [
+    "Cypress automation for <b>OpenCRVS</b> (UN-backed civil registration) + manual QA for <b>IPEMIS</b> (Bangladesh govt. Integrated Primary Education MIS, Dept. of Primary Education). Also QA for Movandi (5G mmWave) and Altech (clean energy, DR Congo).",
 ])
 job("Software QA Engineer (part-time)", "CarryBags Ltd — London, UK (remote)", "2020 – 2021", [
     "First professional QA role — manual mobile QA on Android &amp; iOS, cross-device compatibility, and test cases from specs &amp; user stories.",
@@ -130,21 +130,17 @@ job("Software QA Engineer (part-time)", "CarryBags Ltd — London, UK (remote)",
 # ---- Career Story ----
 story += [Paragraph("Career Story", h_s)]
 story += [Paragraph(
-    "Antor started in 2020 doing part-time mobile QA for a London retailer, then spent two years on global Magento "
-    "commerce (Intellex/TCS) and civil-registration &amp; 5G systems (DSI) before moving into reliability engineering "
-    "at Mastercard — chaos engineering and AWS/Terraform automation for payment-critical systems. He built QA from "
-    "scratch for Bangladesh's largest mobile operator (Grameenphone/MyGP) and a healthcare platform moving real "
-    "patients (Kinetik), then automated global insurance platforms at All Generation Tech. Since 2024 he has run "
-    "delivery for three client platforms as Technical Project Manager at Platformz — leading a 30+ person team and "
-    "compressing a 12-month EDI program into ~60 days. He also served as Sr. SDET at Kintsugi (AI-powered tax compliance) "
-    "through August 2026, and is founder &amp; CEO of AZAI Labs, AZADEMY, Listen2AZA, and the Silent Sacrifice "
-    "Abdus Sattar Foundation in honor of his father.", body)]
+    "From mobile QA in 2020 (CarryBags) → global Magento commerce (TCS) → civil registration &amp; 5G (DSI, incl. "
+    "OpenCRVS + IPEMIS govt. platforms) → govt. Bangla spell checker &amp; Customs Bond system (REVE) → chaos "
+    "engineering at Mastercard → Kinetik Health App (Appium + Playwright, iOS/Android publish, NEMT) → MyGP backend "
+    "framework (Grameenphone) → global insurance automation (All Gen Tech) → Sr. SDET at Kintsugi → TPM at Platformz "
+    "(FUR4, Rockerz, DMV — 30+ team, board reporting) → Founder &amp; CEO, AZAI Labs + AZADEMY.", body)]
 
 # ---- Skills tag cloud ----
 story += [Paragraph("Tools &amp; Technologies", h_s)]
-tags = ["Playwright", "TypeScript", "Python", "Java", "Postman", "Cypress", "AWS", "Terraform",
+tags = ["Playwright", "TypeScript", "Appium", "Cypress", "Python", "Java", "Postman", "AWS",
         "Docker", "Jenkins", "GitLab CI", "GitHub Actions", "JMeter", "k6", "OWASP ZAP", "Burp Suite",
-        "Magento", "EDI", "Prometheus", "Grafana", "Appium", "Cucumber/Gherkin", "Applitools", "LLM Agents"]
+        "Magento", "EDI", "Prometheus", "Grafana", "Terraform", "Cucumber/Gherkin", "Applitools", "LLM Agents"]
 tag_cols = 8
 tag_rows = [tags[i:i+tag_cols] for i in range(0, len(tags), tag_cols)]
 tt = Table([[Paragraph(t, tagtxt) for t in r] + [""]*(tag_cols-len(r)) for r in tag_rows], colWidths=[W/tag_cols]*tag_cols)
