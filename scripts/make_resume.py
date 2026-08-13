@@ -47,8 +47,8 @@ story, W = [], doc.width
 # ---- Header ----
 story += [Paragraph("ARIFUZZAMAN “ANTOR”", name_s)]
 story += [Paragraph(
-    "Founder &amp; CEO, AZAI Labs · Technical Project Manager, Platformz · "
-    "QA &amp; Delivery Leader", role_s), Spacer(1, 3)]
+    "Founder &amp; CEO, AZAI Labs · Co-Founder &amp; CTO, Upward · "
+    "Technical Project Manager, Platformz · QA &amp; Delivery Leader", role_s), Spacer(1, 3)]
 story += [Paragraph(
     "Dhaka, Bangladesh (remote worldwide) · WhatsApp +880 1580 497264 · arifuzantor@gmail.com<br/>"
     "linkedin.com/in/azantor · github.com/azaworld · azantor.xyz", cont_s)]
@@ -85,9 +85,11 @@ def job(title, org, period, bullets):
     for b in bullets:
         story.append(Paragraph(b, bullet, bulletText="–"))
 
+job("Co-Founder &amp; Chief Technology Officer", "Upward — upwardbd.com · Dhaka", "2026 – Present", [
+    "Co-founded an AI-powered business-growth partner — 4 divisions, 8 AI-powered services (media, marketing, technology &amp; healthcare); own the technology end to end as CTO.",
+])
 job("Founder &amp; Chief Executive Officer", "AZAI Labs — San Francisco, USA (remote-first)", "2025 – Present", [
-    "Founded an AI agents lab shipping practical automation for quality, operations, and decision-making — agents in production doing real client work.",
-    "Own product, clients, hiring, and vision; also founder of AZADEMY (tech education) and host of the AZA Execution Podcast.",
+    "Founded an AI agents lab shipping practical automation — agents in production doing real client work. Also founder of AZADEMY (tech education) and host of the AZA Execution Podcast.",
 ])
 job("Technical Project Manager", "Platformz — platformz.us", "Sep 2024 – Present", [
     "Single point of delivery accountability for 3 enterprise platforms alongside the CEO — leading 30+ person team: FE, BE, DevOps, design, QA, marketing &amp; HubSpot.",
@@ -130,17 +132,16 @@ job("Software QA Engineer (part-time)", "CarryBags Ltd — London, UK (remote)",
 # ---- Career Story ----
 story += [Paragraph("Career Story", h_s)]
 story += [Paragraph(
-    "From mobile QA in 2020 (CarryBags) → global Magento commerce (TCS) → civil registration &amp; 5G (DSI, incl. "
-    "OpenCRVS + IPEMIS govt. platforms) → govt. Bangla spell checker &amp; Customs Bond system (REVE) → chaos "
-    "engineering at Mastercard → Kinetik Health App (Appium + Playwright, iOS/Android publish, NEMT) → MyGP backend "
-    "framework (Grameenphone) → global insurance automation (All Gen Tech) → Sr. SDET at Kintsugi → TPM at Platformz "
-    "(FUR4, Rockerz, DMV — 30+ team, board reporting) → Founder &amp; CEO, AZAI Labs + AZADEMY.", body)]
+    "From mobile QA in 2020 (CarryBags) → global Magento commerce (TCS) → OpenCRVS + IPEMIS (DSI) → govt. Bangla "
+    "spell checker &amp; CBMS (REVE) → chaos engineering at Mastercard → Kinetik Health App (Appium, iOS/Android "
+    "publish) → MyGP backend framework → insurance automation (All Gen Tech) → Sr. SDET at Kintsugi → TPM at "
+    "Platformz → Founder &amp; CEO, AZAI Labs → Co-Founder &amp; CTO, Upward.", body)]
 
 # ---- Skills tag cloud ----
 story += [Paragraph("Tools &amp; Technologies", h_s)]
 tags = ["Playwright", "TypeScript", "Cypress", "Appium", "k6", "JMeter", "OWASP ZAP", "Burp Suite",
-        "Docker", "GitHub Actions", "AWS", "Jenkins", "GitLab CI", "Postman", "Grafana", "InfluxDB",
-        "Next.js", "React", "Python", "Java", "C++", "PHP", "Magento", "EDI", "Terraform", "LLM Agents"]
+        "Docker", "GitHub Actions", "AWS", "Jenkins", "GitLab CI", "Postman", "Grafana", "Terraform",
+        "Next.js", "React", "Python", "Java", "C++", "Magento", "EDI", "LLM Agents"]
 tag_cols = 8
 tag_rows = [tags[i:i+tag_cols] for i in range(0, len(tags), tag_cols)]
 tt = Table([[Paragraph(t, tagtxt) for t in r] + [""]*(tag_cols-len(r)) for r in tag_rows], colWidths=[W/tag_cols]*tag_cols)
@@ -187,7 +188,7 @@ hl = Table([[Paragraph("<b>60 days</b><br/><font size=7.3 color=#5A5F6B>12-month
              Paragraph("<b>30+</b><br/><font size=7.3 color=#5A5F6B>people led across 3 platforms</font>", body),
              Paragraph("<b>50+</b><br/><font size=7.3 color=#5A5F6B>projects &amp; products shipped</font>", body),
              Paragraph("<b>23 · ★5.0</b><br/><font size=7.3 color=#5A5F6B>Upwork jobs · Top Rated</font>", body),
-             Paragraph("<b>4</b><br/><font size=7.3 color=#5A5F6B>ventures founded</font>", body)]],
+             Paragraph("<b>5</b><br/><font size=7.3 color=#5A5F6B>ventures founded</font>", body)]],
            colWidths=[W/5]*5)
 hl.setStyle(TableStyle([("BOX",(0,0),(-1,-1),0.5,LINE),("INNERGRID",(0,0),(-1,-1),0.4,LINE),
                         ("LEFTPADDING",(0,0),(-1,-1),8),("TOPPADDING",(0,0),(-1,-1),6),("BOTTOMPADDING",(0,0),(-1,-1),6),
@@ -196,13 +197,13 @@ story += [hl]
 
 # ---- Client Voice ----
 story += [Paragraph("Client Voice", h_s)]
-quote_s = S("quote", fontName="Helvetica-Oblique", fontSize=8.6, leading=12, textColor=INK)
-attr_s  = S("attr", fontName="Helvetica-Bold", fontSize=7.6, leading=10, textColor=VIOLET, spaceBefore=3)
+quote_s = S("quote", fontName="Helvetica-Oblique", fontSize=8.0, leading=10.6, textColor=INK)
+attr_s  = S("attr", fontName="Helvetica-Bold", fontSize=7.4, leading=9.4, textColor=VIOLET, spaceBefore=2)
 def quote_cell(text, attr):
     return [Paragraph(f"“{text}”", quote_s), Paragraph(f"— {attr}", attr_s)]
 quotes = [
-    ("Arifuz is now our cooperant with whom we have been working for a long time. He is very reliable, proactive, helps us with his critical thinking and always delivers.", "GameFlix, long-term client · Upwork ★5.0"),
-    ("Our experience working with Arifuz is excellent. He is responsible and professional, gives clear feedback, and is always on time. We will continue our cooperation.", "Grameenphone project, SIM testing client · Upwork ★5.0"),
+    ("Very reliable, proactive, helps us with his critical thinking and always delivers.", "GameFlix, long-term client · Upwork ★5.0"),
+    ("Responsible and professional, gives clear feedback, and is always on time.", "Grameenphone project client · Upwork ★5.0"),
 ]
 qt = Table([[quote_cell(*quotes[0]), quote_cell(*quotes[1])]], colWidths=[W/2]*2)
 qt.setStyle(TableStyle([
@@ -210,7 +211,7 @@ qt.setStyle(TableStyle([
     ("BACKGROUND",(0,0),(-1,-1), TAGBG),
     ("LEFTPADDING",(0,0),(0,-1),12),("LEFTPADDING",(1,0),(1,-1),16),
     ("RIGHTPADDING",(0,0),(-1,-1),12),
-    ("TOPPADDING",(0,0),(-1,-1),8),("BOTTOMPADDING",(0,0),(-1,-1),8),
+    ("TOPPADDING",(0,0),(-1,-1),6),("BOTTOMPADDING",(0,0),(-1,-1),6),
 ]))
 story += [qt]
 

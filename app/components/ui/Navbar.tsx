@@ -25,7 +25,7 @@ const MORE_LINKS = [
 
 // Headline "hot" buttons — always visible, animated.
 const HOT = [
-  { label: "✦ Brand Studio", href: "/personal-brand-studio", external: false },
+  { label: "✦ Get a Site Like This", href: "/personal-brand-studio", external: false },
   { label: "🎙 AZA Podcast", href: "https://azapodcast.com", external: true },
 ];
 
@@ -111,14 +111,14 @@ export default function Navbar() {
 
   return (
     // the fixed header is the containing block for the absolute dropdown panel
-    <header className="glass fixed left-1/2 top-4 z-[70] w-[calc(100%-2rem)] max-w-4xl -translate-x-1/2 rounded-2xl px-4 shadow-lg">
+    <header className="glass fixed left-1/2 top-4 z-[70] w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 rounded-2xl px-4 shadow-lg">
       <nav className="flex items-center justify-between py-3" aria-label="Main">
         <a href="#top" className="font-display text-sm font-bold tracking-tight">
           <span className="text-aurora">ANTOR</span>
           <span className="text-muted">.os</span>
         </a>
 
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {LINKS.map((link) => (
             <a
               key={link.href}
@@ -235,7 +235,7 @@ export default function Navbar() {
 
           {/* Mobile menu */}
           <button
-            className="rounded-lg p-2 text-muted transition-colors hover:text-text lg:hidden"
+            className="rounded-lg p-2 text-muted transition-colors hover:text-text xl:hidden"
             onClick={() => setMenuOpen((o) => !o)}
             aria-expanded={menuOpen}
             aria-label="Toggle menu"
@@ -248,7 +248,7 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="menu-panel animate-pop-in absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[75] flex flex-col gap-1 rounded-2xl p-2 lg:hidden">
+        <div className="menu-panel animate-pop-in absolute left-0 right-0 top-[calc(100%+0.5rem)] z-[75] flex flex-col gap-1 rounded-2xl p-2 xl:hidden">
           {[...LINKS, ...MORE_LINKS].map((link) => (
             <a
               key={link.href}

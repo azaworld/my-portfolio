@@ -18,11 +18,12 @@ const STORY = [
   { year: "2024", icon: "🎯", role: "Technical Project Manager", org: "Platformz", lv: 9 },
   { year: "2025", icon: "🧠", role: "Sr. SDET", org: "Kintsugi · SF", lv: 10 },
   { year: "2025", icon: "👑", role: "Founder & CEO", org: "AZAI Labs · AZADEMY", lv: 11 },
+  { year: "2026", icon: "🚀", role: "Co-Founder & CTO", org: "Upward · upwardbd.com", lv: 12 },
 ];
 
 const COLORS = [
   "#64748B", "#6366F1", "#14B8A6", "#3B82F6", "#F43F5E", "#EC4899",
-  "#10B981", "#F59E0B", "#22D3EE", "#BE185D", "#7C3AED",
+  "#10B981", "#F59E0B", "#22D3EE", "#BE185D", "#7C3AED", "#38BDF8",
 ];
 
 export default function LifeGraph() {
@@ -67,10 +68,10 @@ export default function LifeGraph() {
           <div>
             <h3 className="text-sm font-semibold sm:text-base">📈 The full story — year by year</h3>
             <p className="mt-1 text-xs text-muted sm:text-sm">
-              11 chapters, 2020 → today. Watch the climb — bottom to top.
+              12 chapters, 2020 → today. Watch the climb — bottom to top.
             </p>
           </div>
-          <p className="font-mono text-[10px] uppercase tracking-widest text-muted">level 1 → 11</p>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted">level 1 → 12</p>
         </div>
 
         <div className="no-scrollbar -mx-5 mt-4 overflow-x-auto px-5 sm:mx-0 sm:px-0">
@@ -78,7 +79,7 @@ export default function LifeGraph() {
             viewBox={`0 0 ${W} ${H}`}
             className="min-w-[820px] sm:min-w-0 sm:w-full"
             role="img"
-            aria-label="Career staircase from QA Engineer in 2020 to Founder & CEO in 2025"
+            aria-label="Career staircase from QA Engineer in 2020 to Co-Founder & CTO of Upward in 2026"
           >
             <defs>
               <linearGradient id="life-line" x1="0" y1="1" x2="1" y2="0">

@@ -123,7 +123,15 @@ function MissionCard({ mission, onOpen, delay }: { mission: Mission; onOpen: (m:
           <h3 className="font-display mt-4 text-xl font-bold">{mission.codename}</h3>
           <p className="mt-1 text-sm font-medium text-cyan">{mission.role}</p>
           <p className="text-xs text-muted">{mission.org}</p>
-          <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">{mission.brief}</p>
+          {/* Top outcomes as scannable bullets — the essay lives in the debrief */}
+          <ul className="mt-4 flex-1 space-y-1.5">
+            {mission.loot.slice(0, 3).map((l) => (
+              <li key={l} className="flex gap-2 text-xs leading-relaxed text-muted">
+                <span className="mt-0.5 shrink-0 text-amber" aria-hidden>◆</span>
+                <span>{l}</span>
+              </li>
+            ))}
+          </ul>
           {mission.tech && (
             <ul className="mt-4 flex flex-wrap gap-1.5">
               {mission.tech.slice(0, 4).map((t) => (

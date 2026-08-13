@@ -15,9 +15,9 @@ export const profile = {
     "I solve blockers before breakfast",
   ],
   identity:
-    "Founder & CEO @ AZAI Labs · Technical Project Manager @ Platformz · QA & Delivery Leader · Podcaster · AI Tech Instructor",
+    "Founder & CEO @ AZAI Labs · Co-Founder & CTO @ Upward · Technical Project Manager @ Platformz · QA & Delivery Leader · Podcaster",
   pitch:
-    "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms, and I build companies — AZAI Labs ships AI products and augmented AI talent, while AZADEMY teaches engineers to land remote jobs and ace interviews.",
+    "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms, and I build companies — AZAI Labs ships AI products and augmented AI talent, Upward (upwardbd.com) is the AI-powered growth partner I co-founded as CTO, and AZADEMY teaches engineers to land remote jobs and ace interviews.",
   email: "arifuzantor@gmail.com",
   linkedin: "https://linkedin.com/in/azantor",
   github: "https://github.com/azaworld",
@@ -45,13 +45,13 @@ export const heroStats = [
 // Full cumulative tally — rendered as the stat grid in Career Analytics.
 export const careerTotals = [
   { value: 6, suffix: "+", label: "Years in tech & delivery" },
-  { value: 11, suffix: "", label: "Companies & roles" },
+  { value: 12, suffix: "", label: "Companies & roles" },
   { value: 40, suffix: "+", label: "Clients & companies served" },
   { value: 30, suffix: "+", label: "People led across teams" },
   { value: 50, suffix: "+", label: "Projects & products shipped" },
   { value: 23, suffix: "", label: "Freelance jobs · all ★5.0" },
   { value: 7, suffix: "", label: "Industries shipped into" },
-  { value: 4, suffix: "", label: "Ventures founded" },
+  { value: 5, suffix: "", label: "Ventures founded" },
 ];
 
 // RPG character stats for the About section (0–100)
@@ -237,6 +237,19 @@ export const journey: JourneyStep[] = [
       "AZADEMY — learning meets earning for CS careers",
       "Listen2AZA — audiobooks people press play on",
       "Silent Sacrifice Abdus Sattar Foundation — scholarships, mentorship, Quran education",
+    ],
+  },
+  {
+    lv: 12,
+    year: "2026 — Present",
+    icon: "🚀",
+    title: "Co-Founder & CTO",
+    where: "Upward — upwardbd.com",
+    note: "AI-powered business-growth partner · 4 divisions · 8 AI services.",
+    details: [
+      "Co-founded Upward — one integrated growth partner replacing ten scattered vendors",
+      "Own the technology: platform, AI services, and engineering across all divisions",
+      "4 divisions, 8 AI-powered services — media, marketing, technology & healthcare",
     ],
   },
 ];
@@ -565,6 +578,33 @@ export type Mission = {
 };
 
 export const missions: Mission[] = [
+  {
+    id: "upward",
+    codename: "Operation Upward",
+    role: "Co-Founder & CTO",
+    org: "Upward — upwardbd.com · Dhaka, Bangladesh",
+    short: "Upward",
+    period: "2026 — Present",
+    start: 2026.0,
+    end: null,
+    status: "ACTIVE",
+    brief:
+      "Co-founded Upward — an AI-powered business-growth partner: four divisions and eight AI-powered services (media, marketing, technology, healthcare) under one roof. As CTO, I own the technology end to end.",
+    objectives: [
+      "Own the technology: platform architecture, AI services, and engineering across all four divisions",
+      "Build and ship the 8 AI-powered services — media, marketing, technology & healthcare",
+      "Position Upward as one integrated growth partner replacing ten scattered vendors",
+      "Co-lead the company with Co-CEO Sharif Md. Abid",
+    ],
+    bossFight:
+      "Building a multi-division services company and its technology platform at the same time — while running delivery for three other client platforms. Ruthless prioritization, daily cadence, agents doing the heavy lifting.",
+    loot: [
+      "Upward live at upwardbd.com — 4 divisions, 8 AI services",
+      "One integrated growth partner replacing ten vendors",
+      "Technology org designed to build with agents, not headcount",
+    ],
+    tech: ["AI Agents", "Next.js", "TypeScript", "LLMs", "AWS", "HubSpot"],
+  },
   {
     id: "azailabs",
     codename: "Operation Genesis",
@@ -907,6 +947,7 @@ export const careerAnalytics = {
     { year: "2023", level: 6, label: "QA Lead", icon: "🚑", color: "bg-magenta-400" },
     { year: "2024", level: 9, label: "Automation Eng II · TPM", icon: "🎯", color: "bg-amber-400" },
     { year: "2025", level: 11, label: "Founder & CEO", icon: "👑", color: "bg-emerald-400" },
+    { year: "2026", level: 12, label: "Co-Founder & CTO, Upward", icon: "🚀", color: "bg-sky-400" },
   ],
   // Where the experience concentrates (relative weight, 0–100).
   domains: [
@@ -1252,7 +1293,7 @@ export const premium = {
 export const treeNodes = [
   { label: "Who Am I", href: "#about", teaser: "The origin story + RPG character stats" },
   { label: "Skills", href: "#skills", teaser: "36-node skill tree · 12 per branch" },
-  { label: "Experience", href: "#missions", teaser: "11 roles — Mastercard, Kintsugi, Platformz…" },
+  { label: "Experience", href: "#missions", teaser: "12 roles — Mastercard, Kintsugi, Platformz, Upward…" },
   { label: "Projects", href: "#projects", teaser: "FUR4 E2E on AWS, k6 load tests, FirstTrip, Adobe Neo, MyGP & more" },
   { label: "Education", href: "#community", teaser: "SUST + the academic ladder & community" },
   { label: "Ventures", href: "#ventures", teaser: "AZAI Labs, AZADEMY, Listen2AZA, Foundation" },
@@ -1265,6 +1306,16 @@ export const treeNodes = [
 // VENTURES — "founded worlds"
 // ----------------------------------------------------------------------------
 export const ventures = [
+  {
+    name: "Upward",
+    tagline: "One growth partner. Not ten vendors.",
+    description:
+      "AI-powered business-growth partner — four divisions and eight AI-powered services across media, marketing, technology, and healthcare. Co-Founder & CTO, with Co-CEO Sharif Md. Abid. Founded 2026 · Dhaka.",
+    theme: "cyan" as const,
+    link: "https://www.upwardbd.com",
+    icon: "🚀",
+    stat: "4 divisions · 8 AI services",
+  },
   {
     name: "AZAI Labs",
     tagline: "Build with agents, not headcount.",

@@ -16,7 +16,7 @@ const inter = Inter({
 const SITE = "https://azantor.xyz";
 const TITLE = "Arifuzzaman “Antor” — Founder & CEO, Technical Project Manager & QA Leader";
 const DESCRIPTION =
-  "Arifuzzaman Antor (Arifuz Zaman Antor / Azantor / azaworld) — Founder & CEO of AZAI Labs, Technical Project Manager at Platformz, QA & Delivery Leader, SDET, podcaster and AI tech instructor from Dhaka, Bangladesh. Explore the interactive portfolio.";
+  "Arifuzzaman Antor (Arifuz Zaman Antor / Azantor / azaworld) — Founder & CEO of AZAI Labs, Co-Founder & CTO of Upward, Technical Project Manager at Platformz, QA & Delivery Leader, SDET, podcaster and AI tech instructor from Dhaka, Bangladesh. Explore the interactive portfolio.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   creator: "Arifuzzaman Antor",
   keywords: [
     "Arifuzzaman Antor", "Antor", "Azantor", "Arifuz Antor", "Arifuz Zaman Antor",
-    "Arifuzzaman", "Arifuz", "AZA", "azaworld", "AZAI Labs", "AZADEMY", "azantor",
+    "Arifuzzaman", "Arifuz", "AZA", "azaworld", "AZAI Labs", "AZADEMY", "azantor", "Upward", "upwardbd",
     "AZA Execution Podcast", "Personal Brand Studio", "Listen2AZA",
     "Technical Project Manager", "TPM", "Sr. Software Engineer", "SDET",
     "QA Engineer", "QA Lead", "Software QA", "Test Automation", "Playwright",
@@ -71,8 +71,9 @@ const personLd = {
   ],
   url: SITE,
   image: `${SITE}/og.png`,
-  jobTitle: "Founder & CEO · Technical Project Manager · QA & Delivery Leader",
+  jobTitle: "Founder & CEO · Co-Founder & CTO · Technical Project Manager · QA & Delivery Leader",
   hasOccupation: [
+    { "@type": "Occupation", name: "Co-Founder & CTO" },
     { "@type": "Occupation", name: "Technical Project Manager" },
     { "@type": "Occupation", name: "QA Lead / SDET" },
     { "@type": "Occupation", name: "Founder & CEO" },
@@ -82,6 +83,7 @@ const personLd = {
   description: DESCRIPTION,
   worksFor: [
     { "@type": "Organization", name: "AZAI Labs", url: "https://azailabs.dev" },
+    { "@type": "Organization", name: "Upward", url: "https://www.upwardbd.com" },
     { "@type": "Organization", name: "Platformz", url: "https://platformz.us" },
   ],
   alumniOf: [
@@ -144,6 +146,16 @@ const podcastLd = {
 // Organizations he founded — connects "AZAI Labs founder", "AZADEMY founder",
 // and "Personal Brand Studio" searches back to him.
 const orgsLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Upward",
+    url: "https://www.upwardbd.com",
+    slogan: "One growth partner. Not ten vendors.",
+    description: "AI-powered business-growth partner — four divisions and eight AI-powered services across media, marketing, technology, and healthcare. Co-founded by Arifuzzaman Antor (CTO).",
+    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+    foundingDate: "2026",
+  },
   {
     "@context": "https://schema.org",
     "@type": "Organization",
