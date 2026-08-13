@@ -72,6 +72,13 @@ const personLd = {
   url: SITE,
   image: `${SITE}/og.png`,
   jobTitle: "Founder & CEO · Technical Project Manager · QA & Delivery Leader",
+  hasOccupation: [
+    { "@type": "Occupation", name: "Technical Project Manager" },
+    { "@type": "Occupation", name: "QA Lead / SDET" },
+    { "@type": "Occupation", name: "Founder & CEO" },
+    { "@type": "Occupation", name: "Podcast Host" },
+    { "@type": "Occupation", name: "AI & Tech Instructor" },
+  ],
   description: DESCRIPTION,
   worksFor: [
     { "@type": "Organization", name: "AZAI Labs", url: "https://azailabs.dev" },
@@ -109,6 +116,72 @@ const profilePageLd = {
   description: DESCRIPTION,
 };
 
+// WebSite schema — names the site itself for brand queries (azantor, antor.os).
+const webSiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Arifuzzaman Antor — azantor.xyz",
+  alternateName: ["azantor", "antor.os", "Antor portfolio"],
+  url: SITE,
+  author: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+};
+
+// Podcast schema — ties "AZA Execution Podcast" searches to him and this site.
+const podcastLd = {
+  "@context": "https://schema.org",
+  "@type": "PodcastSeries",
+  name: "AZA Execution Podcast",
+  alternateName: ["The AZA Execution Show", "AZA Podcast"],
+  url: "https://azapodcast.com",
+  description:
+    "Ideas are cheap. Execution is everything. Long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done — hosted by Arifuzzaman Antor. Weekly, video & audio, Bangla & English.",
+  inLanguage: ["en", "bn"],
+  author: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+  actor: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+  sameAs: ["https://www.youtube.com/@azapod", "https://www.facebook.com/azapod"],
+};
+
+// Organizations he founded — connects "AZAI Labs founder", "AZADEMY founder",
+// and "Personal Brand Studio" searches back to him.
+const orgsLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "AZAI Labs",
+    url: "https://azailabs.dev",
+    slogan: "Build with agents, not headcount.",
+    description: "AI agents lab shipping practical automation for quality, operations, and decision-making — AI products, services & augmented AI talent.",
+    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+    foundingDate: "2025",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "AZADEMY",
+    url: "https://azademy.org",
+    slogan: "Learning meets earning.",
+    description: "Tech academy teaching CS, AI & technology, freelancing, and how to land remote jobs — founded by Arifuzzaman Antor.",
+    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Personal Brand Studio",
+    url: `${SITE}/personal-brand-studio`,
+    slogan: "Premium personal-brand websites, built for you.",
+    description: "Bespoke, animated personal-brand websites for doctors, founders, consultants, and executives — founded by Arifuzzaman Antor.",
+    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    name: "Silent Sacrifice Abdus Sattar Foundation",
+    url: "https://ssasf.vercel.app",
+    description: "Scholarships, mentorship, Quran education, and community support in Bangladesh — founded by Arifuzzaman Antor in honor of his father.",
+    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+  },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -124,6 +197,18 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(podcastLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgsLd) }}
         />
         <div className="aurora-bg" aria-hidden />
         {children}
