@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { azademySocials, media, mediaPlaylist, podcast, profile } from "../../content";
 import Section from "../ui/Section";
 import Reveal from "../fx/Reveal";
@@ -8,9 +8,33 @@ import TiltCard from "../ui/TiltCard";
 import VideoLightbox from "../ui/VideoLightbox";
 import { useGame } from "../game/GameProvider";
 
+// The podcast launch film, playing silently behind the podcast card.
+const LAUNCH_VIDEO = "2UdL9zfAXUk";
+
 export default function Media() {
   const [open, setOpen] = useState<{ id: string; title: string } | null>(null);
+  const [bgVideo, setBgVideo] = useState(false);
+  const bgRef = useRef<HTMLDivElement>(null);
   const { addXp } = useGame();
+
+  // Load the ambient background video only when the card scrolls into view,
+  // and never for reduced-motion users.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = bgRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setBgVideo(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   const play = (v: { id: string; title: string }) => {
     setOpen(v);
@@ -27,8 +51,29 @@ export default function Media() {
         </a>
       </p>
 
-      {/* AZA Execution Podcast — live */}
-      <div className="mb-8 rounded-2xl border border-magenta/30 bg-gradient-to-r from-magenta/10 to-violet/10 p-5">
+      {/* AZA Execution Podcast — live, with the launch film playing softly behind */}
+      <div
+        ref={bgRef}
+        className="relative mb-8 overflow-hidden rounded-2xl border border-magenta/30 bg-gradient-to-r from-magenta/10 to-violet/10 p-5"
+      >
+        {/* Ambient background video — muted, looping, click-through */}
+        {bgVideo && (
+          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${LAUNCH_VIDEO}?autoplay=1&mute=1&loop=1&playlist=${LAUNCH_VIDEO}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3`}
+              title=""
+              tabIndex={-1}
+              className="absolute left-1/2 top-1/2 aspect-video h-[140%] min-w-full -translate-x-1/2 -translate-y-1/2 opacity-30"
+              allow="autoplay; encrypted-media"
+              loading="lazy"
+            />
+            {/* readability scrim */}
+            <span className="absolute inset-0 bg-gradient-to-r from-[#0B1026]/90 via-[#0B1026]/70 to-[#0B1026]/40" />
+            <span className="absolute inset-0 bg-gradient-to-t from-[#0B1026]/85 via-transparent to-[#0B1026]/60" />
+          </div>
+        )}
+
+        <div className="relative">
         <div className="flex flex-wrap items-center gap-3">
           <span className="flex items-center gap-1.5 rounded-full bg-magenta/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-magenta">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red-500" aria-hidden />
@@ -82,6 +127,7 @@ export default function Media() {
           <a href={podcast.facebook} target="_blank" rel="noreferrer" className="glass rounded-full px-4 py-1.5 text-xs text-muted transition-colors hover:text-magenta">
             Facebook
           </a>
+        </div>
         </div>
       </div>
 
