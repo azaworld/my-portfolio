@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AIBot from "./AIBot";
+import Image from "next/image";
+import portrait from "../../assets/arifuz.jpg";
 
-// AI-mascot preloader: blinking robot + cascading welcome text.
-// Shows once per browser session; skipped for reduced motion.
 const WELCOME = "Welcome to Arifuz Antor's Portfolio";
-const SUB = "> booting antor.os v5.0 — AI modules online …";
+const SUB = "> booting antor.os v5.0 — all systems online …";
 
 export default function Preloader() {
   const [stage, setStage] = useState<"boot" | "exit" | "done">("boot");
@@ -47,8 +46,9 @@ export default function Preloader() {
       aria-hidden
     >
       <div className="flex w-full max-w-lg flex-col items-center px-6 text-center">
-        {/* AI bot with blinking eyes */}
-        <AIBot size={132} />
+        <div className="relative h-28 w-28 overflow-hidden rounded-full border-2 border-cyan/50 shadow-[0_0_30px_-5px_var(--cyan)]">
+          <Image src={portrait} alt="Arifuzzaman Antor" priority fill className="object-cover" />
+        </div>
 
         {/* Welcome text — letters cascade in one by one */}
         <h1 className="mt-6 text-xl font-bold sm:text-2xl" style={{ fontFamily: "var(--font-display, inherit)" }}>
