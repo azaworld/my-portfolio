@@ -1,6 +1,4 @@
 import GameProvider from "./components/game/GameProvider";
-import Hud from "./components/game/Hud";
-import Confetti from "./components/game/Confetti";
 import CustomCursor from "./components/fx/CustomCursor";
 import Preloader from "./components/fx/Preloader";
 import Navbar from "./components/ui/Navbar";
@@ -31,9 +29,7 @@ export default function Home() {
       <SectionViewerProvider>
       <Preloader />
       <CustomCursor />
-      <Confetti />
       <Navbar />
-      <Hud />
 
       <main className="mx-auto w-full max-w-6xl px-6">
         <Hero />
