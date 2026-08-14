@@ -53,6 +53,24 @@ export default function Footer() {
           </span>
         </button>
 
+        {/* Résumé + CV downloads — easy to find, one tap */}
+        <div className="flex flex-wrap justify-center gap-3">
+          <a
+            href="/resume.pdf"
+            download="Arifuzzaman_Antor_Sr_QA_Engineer_SDET_Resume.pdf"
+            className="flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-5 py-2.5 text-sm font-semibold text-cyan transition-all hover:-translate-y-0.5 hover:bg-cyan/20"
+          >
+            📄 Résumé — Sr. QA · SDET <span className="text-xs font-normal opacity-70">(PDF)</span>
+          </a>
+          <a
+            href="/cv.pdf"
+            download="Arifuzzaman_Antor_Full_Portfolio_CV.pdf"
+            className="flex items-center gap-2 rounded-full border border-violet/40 bg-violet/10 px-5 py-2.5 text-sm font-semibold text-violet transition-all hover:-translate-y-0.5 hover:bg-violet/20"
+          >
+            📘 Full CV — everything <span className="text-xs font-normal opacity-70">(PDF)</span>
+          </a>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted">
           <a href={profile.github} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">GitHub</a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition-colors hover:text-cyan">LinkedIn</a>
