@@ -111,7 +111,7 @@ export default function Navbar() {
 
   return (
     // the fixed header is the containing block for the absolute dropdown panel
-    <header className="glass fixed left-1/2 top-4 z-[70] w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 rounded-2xl px-4 shadow-lg">
+    <header className="glass-solid fixed left-1/2 top-4 z-[70] w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 rounded-2xl px-4 shadow-lg">
       <nav className="flex items-center justify-between py-3" aria-label="Main">
         <a href="#top" className="font-display text-sm font-bold tracking-tight">
           <span className="text-aurora">ANTOR</span>

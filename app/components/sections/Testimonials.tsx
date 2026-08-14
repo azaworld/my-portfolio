@@ -45,9 +45,10 @@ export default function Testimonials() {
                 key={t.author}
                 className="glass absolute inset-0 flex flex-col justify-between rounded-2xl p-7 transition-all duration-700"
                 style={{
-                  transform: `translateX(${pos * 55}%) translateZ(${pos === 0 ? 0 : -160}px) rotateY(${pos * -22}deg) scale(${pos === 0 ? 1 : 0.86})`,
-                  opacity: pos === 0 ? 1 : 0.15,
-                  filter: pos === 0 ? "none" : "blur(4px)",
+                  transform: `translateX(${pos * 70}%) translateZ(${pos === 0 ? 0 : -200}px) rotateY(${pos * -18}deg) scale(${pos === 0 ? 1 : 0.8})`,
+                  opacity: pos === 0 ? 1 : 0,
+                  visibility: pos === 0 ? "visible" : "hidden",
+                  transitionProperty: "transform, opacity, visibility",
                   zIndex: pos === 0 ? 2 : 1,
                   pointerEvents: pos === 0 ? "auto" : "none",
                 }}
