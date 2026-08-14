@@ -1,6 +1,7 @@
 import GameProvider from "./components/game/GameProvider";
 import CustomCursor from "./components/fx/CustomCursor";
 import Preloader from "./components/fx/Preloader";
+import HashScroll from "./components/fx/HashScroll";
 import Navbar from "./components/ui/Navbar";
 import SectionViewerProvider from "./components/ui/SectionViewer";
 import BackToTop from "./components/ui/BackToTop";
@@ -28,6 +29,7 @@ export default function Home() {
     <GameProvider>
       <SectionViewerProvider>
       <Preloader />
+      <HashScroll />
       <CustomCursor />
       <Navbar />
 

@@ -175,7 +175,7 @@ function MissionCard({ mission, onOpen, delay }: { mission: Mission; onOpen: (m:
             </ul>
           )}
           <p className="mt-4 font-mono text-xs text-violet transition-colors group-hover:text-cyan">
-            Open debrief → <span className="text-muted">(+15 XP)</span>
+            Open debrief {"→"} <span className="text-muted">(+15 XP)</span>
           </p>
           </div>
         </button>

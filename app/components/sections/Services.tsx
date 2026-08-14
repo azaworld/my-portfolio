@@ -8,7 +8,7 @@ import Magnetic from "../fx/Magnetic";
 
 export default function Services() {
   return (
-    <Section id="services" kicker="hire me" title={<>Work With <span className="text-aurora">Me</span></>}>
+    <Section id="services" kicker="global leader · consultant · coach · expert" title={<>Work With <span className="text-aurora">Me</span></>}>
       <div className="-mt-4 mb-8 flex flex-wrap items-center gap-3">
         <span className="inline-flex items-center gap-2 rounded-full border border-[#34d399]/40 bg-[#34d399]/10 px-3.5 py-1.5 text-sm text-[#34d399]">
           <span className="h-2 w-2 animate-pulse rounded-full bg-[#34d399]" aria-hidden />
@@ -17,9 +17,9 @@ export default function Services() {
         <span className="text-sm text-muted">{availability.note}</span>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s, i) => (
-          <Reveal key={s.name} delay={(i % 2) * 120}>
+          <Reveal key={s.name} delay={(i % 3) * 100}>
             <TiltCard className="h-full">
               <article
                 className="glass relative flex h-full flex-col overflow-hidden rounded-2xl p-6"
