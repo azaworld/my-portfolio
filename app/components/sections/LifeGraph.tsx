@@ -70,11 +70,28 @@ export default function LifeGraph() {
             <p className="mt-1 text-xs text-muted sm:text-sm">
               12 chapters, 2020 → today. Watch the climb — bottom to top.
             </p>
-            <p className="mt-1.5 text-xs font-medium text-cyan sm:text-sm">
-              ≈16.5 years of combined experience in 6 calendar years — because up to 5 roles ran in parallel.
-            </p>
           </div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">level 1 → 12</p>
+        </div>
+
+        {/* The experience math — actual vs combined, and exactly how it's counted */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span className="flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.04] px-3 py-1.5 text-xs text-muted">
+            🗓 <b className="text-text">6+ yrs</b>&nbsp;actual calendar time (Jul 2020 → today)
+          </span>
+          <span className="flex items-center gap-1.5 rounded-full border border-cyan/30 bg-cyan/10 px-3 py-1.5 text-xs text-cyan">
+            Σ <b>≈16.5 yrs</b>&nbsp;combined — all 12 role durations added up
+          </span>
+          <span className="flex items-center gap-1.5 rounded-full border border-amber/30 bg-amber/10 px-3 py-1.5 text-xs text-amber">
+            ⚡ peak: <b>5 roles at once</b>&nbsp;(2024–25)
+          </span>
+        </div>
+        <p className="mt-2 text-xs leading-relaxed text-muted sm:text-sm">
+          <b className="text-text">How the math works:</b> each of the 12 roles below was a real job with its own
+          deliverables. Add up every role&apos;s duration as if worked one after another and it totals ≈16.5 years —
+          lived in just 6 calendar years, because several roles always ran in parallel.
+        </p>
+        <div>
         </div>
 
         <div className="no-scrollbar -mx-5 mt-4 overflow-x-auto px-5 sm:mx-0 sm:px-0">

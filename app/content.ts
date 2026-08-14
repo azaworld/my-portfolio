@@ -36,21 +36,21 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: 16, suffix: "+", label: "Combined years of experience — up to 5 roles in parallel" },
+  { value: 6, suffix: "+", label: "Actual years in tech — since 2020" },
+  { value: 16, suffix: "+", label: "Combined years — 12 parallel roles, durations added up" },
   { value: 30, suffix: "+", label: "People led — eng, DevOps, design, marketing" },
-  { value: 40, suffix: "+", label: "Clients & companies served" },
   { value: 50, suffix: "+", label: "Projects & products shipped" },
 ];
 
 // Full cumulative tally — rendered as the stat grid in Career Analytics.
 export const careerTotals = [
-  { value: 16, suffix: "+", label: "Combined years of experience — in just 6 calendar years" },
+  { value: 6, suffix: "+", label: "Actual calendar years — 2020 to today" },
+  { value: 16, suffix: "+", label: "Combined years — every role's duration added up" },
   { value: 12, suffix: "", label: "Companies & roles" },
-  { value: 40, suffix: "+", label: "Clients & companies served" },
+  { value: 5, suffix: "", label: "Most roles held at once (2024–25)" },
   { value: 30, suffix: "+", label: "People led across teams" },
   { value: 50, suffix: "+", label: "Projects & products shipped" },
   { value: 23, suffix: "", label: "Freelance jobs · all ★5.0" },
-  { value: 7, suffix: "", label: "Industries shipped into" },
   { value: 5, suffix: "", label: "Ventures founded" },
 ];
 
