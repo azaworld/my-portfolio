@@ -134,7 +134,12 @@ export default function LifeGraph() {
             {STORY.map((s, i) => {
               const p = pt(i);
               const above = i % 2 === 0;
-              const lx = labelX(p.x);
+              // Edge nodes anchor outward so their labels never crowd a neighbor:
+              // first node hugs the left edge, last node hugs the right edge.
+              const isFirst = i === 0;
+              const isLast = i === n - 1;
+              const lx = isFirst ? 10 : isLast ? W - 10 : labelX(p.x);
+              const anchor = isFirst ? "start" : isLast ? "end" : "middle";
               return (
                 <g
                   key={i}
@@ -160,7 +165,7 @@ export default function LifeGraph() {
                   <text
                     x={lx}
                     y={above ? p.y - 40 : p.y + 34}
-                    textAnchor="middle"
+                    textAnchor={anchor}
                     fontSize="11"
                     fontWeight="700"
                     fill="#E7EAF5"
@@ -170,7 +175,7 @@ export default function LifeGraph() {
                   <text
                     x={lx}
                     y={above ? p.y - 27 : p.y + 47}
-                    textAnchor="middle"
+                    textAnchor={anchor}
                     fontSize="9.5"
                     fill="#8B93B0"
                   >
