@@ -26,7 +26,7 @@ export const profile = {
   youtube: "https://www.youtube.com/@azademy",
   podcast: "https://azapodcast.com",
   azailabs: "https://azailabs.dev",
-  azademy: "https://azademy.org",
+  azademy: "https://azademy.vercel.app",
   upwork: "https://www.upwork.com/freelancers/~01b1ba72ba57683f43",
   listen2aza: "https://www.youtube.com/@Listen2AZA",
   foundation: "https://ssasf.vercel.app",
@@ -1360,7 +1360,7 @@ export const ventures = [
     description:
       "An academy that teaches CS, AI & technology, freelancing, and how to land remote jobs — plus real interviews with experts on how to give and take technical interviews. Founder.",
     theme: "amber" as const,
-    link: "https://azademy.org",
+    link: "https://azademy.vercel.app",
     icon: "🎓",
     stat: "Real interview sessions",
   },
@@ -1408,7 +1408,7 @@ export const azademySocials = [
   { label: "X", url: "https://twitter.com/azademy" },
   { label: "Medium", url: "https://medium.com/azademy" },
   { label: "TikTok", url: "https://tiktok.com/@azademy" },
-  { label: "azademy.org", url: "https://azademy.org" },
+  { label: "azademy site", url: "https://azademy.vercel.app" },
 ];
 
 // ----------------------------------------------------------------------------

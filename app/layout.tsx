@@ -170,7 +170,7 @@ const orgsLd = [
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "AZADEMY",
-    url: "https://azademy.org",
+    url: "https://azademy.vercel.app",
     slogan: "Learning meets earning.",
     description: "Tech academy teaching CS, AI & technology, freelancing, and how to land remote jobs — founded by Arifuzzaman Antor.",
     founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },

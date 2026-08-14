@@ -210,7 +210,7 @@ export default function Contact() {
               </li>
               <li>
                 <a href={profile.azademy} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
-                  <span aria-hidden>🎓</span> AZADEMY — azademy.org
+                  <span aria-hidden>🎓</span> AZADEMY — azademy.vercel.app
                 </a>
               </li>
               <li>

@@ -69,7 +69,7 @@ export default function BiodataClient() {
         </Row>
         <Row label="Ventures Founded">
           <a href="https://azailabs.dev" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZAI Labs</a> ·{" "}
-          <a href="https://azademy.org" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZADEMY</a> (tech academy) ·{" "}
+          <a href="https://azademy.vercel.app" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZADEMY</a> (tech academy) ·{" "}
           <a href="https://azapodcast.com" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZA Execution Podcast</a> ·{" "}
           Listen2AZA (audiobooks)
         </Row>
