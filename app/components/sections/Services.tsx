@@ -57,7 +57,7 @@ export default function Services() {
 
       {/* Hire hub — direct channels */}
       <Reveal delay={150}>
-        <div className="glass glow-border mt-8 rounded-2xl p-7 sm:p-9">
+        <div className="glass glow-border mt-8 rounded-2xl p-5 sm:p-7 lg:p-9">
           <div className="text-center">
             <h3 className="font-display text-xl font-bold sm:text-2xl">
               Ready to <span className="text-aurora">hire</span>?

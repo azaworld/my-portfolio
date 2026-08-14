@@ -63,7 +63,7 @@ export default function LifeGraph() {
 
   return (
     <Reveal>
-      <div ref={ref} className="glass mt-6 overflow-hidden rounded-2xl p-5 sm:p-6">
+      <div ref={ref} id="life-graph" className="glass scroll-mt-28 overflow-hidden rounded-2xl p-4 sm:p-6">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <div>
             <h3 className="text-sm font-semibold sm:text-base">📈 The full story — year by year</h3>
@@ -97,10 +97,10 @@ export default function LifeGraph() {
         <div>
         </div>
 
-        <div className="no-scrollbar -mx-5 mt-4 overflow-x-auto px-5 sm:mx-0 sm:px-0">
+        <div className="-mx-4 mt-4 max-w-[calc(100%+2rem)] overflow-x-auto px-4 sm:-mx-6 sm:max-w-[calc(100%+3rem)] sm:px-6">
           <svg
             viewBox={`0 0 ${W} ${H}`}
-            className="min-w-[820px] sm:min-w-0 sm:w-full"
+            className="w-[820px] sm:w-full"
             role="img"
             aria-label="Career staircase from QA Engineer in 2020 to Co-Founder & CTO of Upward in 2026"
           >

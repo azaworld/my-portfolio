@@ -140,7 +140,7 @@ export default function Studio() {
 
       {/* Order block */}
       <Reveal delay={150}>
-        <div id="studio-order" className="glass glow-border mt-8 scroll-mt-28 rounded-2xl p-7 sm:p-9">
+        <div id="studio-order" className="glass glow-border mt-8 scroll-mt-28 rounded-2xl p-5 sm:p-7 lg:p-9">
           <h3 className="font-display text-xl font-bold sm:text-2xl">
             Order your site <span className="text-aurora">today</span>
           </h3>
@@ -150,13 +150,13 @@ export default function Studio() {
 
           {/* Quick channels */}
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href={waLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-[#0b1026] transition-transform hover:-translate-y-0.5">
+            <a href={waLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-semibold text-[#0b1026] transition-transform hover:-translate-y-0.5">
               💬 WhatsApp
             </a>
-            <a href={studio.linkedin} target="_blank" rel="noreferrer" className="glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors hover:text-cyan">
+            <a href={studio.linkedin} target="_blank" rel="noreferrer" className="glass inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition-colors hover:text-cyan">
               💼 LinkedIn
             </a>
-            <a href={`mailto:${studio.email}?subject=Site%20order`} className="glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors hover:text-cyan">
+            <a href={`mailto:${studio.email}?subject=Site%20order`} className="glass inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition-colors hover:text-cyan">
               📧 Email
             </a>
           </div>

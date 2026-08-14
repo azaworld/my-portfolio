@@ -59,7 +59,7 @@ export default function Premium() {
 
       {/* Perks + CTA */}
       <Reveal delay={150}>
-        <div className="mt-8 flex flex-col items-center gap-6 rounded-2xl border border-amber/30 bg-gradient-to-b from-amber/[0.07] to-transparent p-8 text-center">
+        <div className="mt-8 flex flex-col items-center gap-6 rounded-2xl border border-amber/30 bg-gradient-to-b from-amber/[0.07] to-transparent p-5 text-center sm:p-8">
           <p className="font-display text-lg font-semibold sm:text-xl">{premium.tagline}</p>
           <ul className="flex flex-wrap justify-center gap-2.5">
             {premium.perks.map((perk) => (
@@ -71,7 +71,7 @@ export default function Premium() {
           <Magnetic>
             <a
               href="#contact"
-              className="inline-block rounded-xl bg-gradient-to-r from-amber via-[#fcd34d] to-amber bg-[length:200%_auto] px-8 py-3.5 text-sm font-bold text-[#0b1026] shadow-lg shadow-amber/30 transition-all hover:bg-right"
+              className="inline-block rounded-xl bg-gradient-to-r from-amber via-[#fcd34d] to-amber bg-[length:200%_auto] px-6 py-3.5 text-sm font-bold text-[#0b1026] shadow-lg shadow-amber/30 transition-all hover:bg-right sm:px-8"
             >
               Apply for a premium slot →
             </a>

@@ -6,10 +6,10 @@ import { useSectionViewer } from "./SectionViewer";
 import useKonami from "../fx/useKonami";
 
 const LINKS = [
+  { label: "Ventures", href: "#my-ventures" },
   { label: "Tree", href: "#tree" },
   { label: "Origin", href: "#about" },
   { label: "Missions", href: "#missions" },
-  { label: "Ventures", href: "#ventures" },
   { label: "Premium", href: "#premium" },
 ];
 

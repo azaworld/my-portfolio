@@ -217,7 +217,7 @@ export default function MissionLog() {
           rel="noreferrer"
           className="glass glow-border mt-8 flex flex-wrap items-center justify-between gap-5 rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-0.5"
         >
-          <div className="min-w-52">
+          <div className="min-w-0 sm:min-w-52">
             <h3 className="font-display text-lg font-bold">
               ⚔️ Side Quests <span className="text-sm font-normal text-muted">— freelance</span>
             </h3>

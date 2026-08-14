@@ -49,7 +49,7 @@ const SOCIALS = [
 
 function SocialRow() {
   return (
-    <div className="flex items-center justify-center gap-2.5">
+    <div className="flex flex-wrap items-center justify-center gap-2.5">
       {SOCIALS.map((s) => (
         <a
           key={s.label}
@@ -137,9 +137,9 @@ export default function Hero() {
           {profile.identity}
         </p>
 
-        <h1 className="font-display mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl">
+        <h1 className="font-display mt-5 text-4xl font-bold leading-tight tracking-tight sm:text-5xl sm:leading-[1.05] lg:text-7xl">
           <KineticText text={profile.shortName} baseDelay={200} />
-          <span className="text-aurora block text-3xl sm:text-5xl">
+          <span className="text-aurora block text-2xl leading-snug sm:text-5xl sm:leading-[1.05]">
             <KineticText text="turns chaos into shipped products." baseDelay={600} />
           </span>
         </h1>

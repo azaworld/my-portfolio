@@ -36,7 +36,7 @@ export default function Testimonials() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="relative h-72 overflow-hidden sm:h-56">
+        <div className="relative min-h-72 overflow-hidden sm:h-56 sm:min-h-0">
           {testimonials.map((t, i) => {
             const offset = ((i - index) % count + count) % count; // 0 = front
             const pos = offset === 0 ? 0 : offset === 1 ? 1 : -1;
