@@ -1473,6 +1473,7 @@ export const volunteering = [
 export const projects = [
   {
     name: "EcomTestPilot — FUR4 Playwright E2E on AWS",
+    preview: "https://opengraph.githubassets.com/1/azaworld/playwright-e2e-docker-aws",
     org: "Platformz / Personal",
     period: "2024 — Present",
     blurb: "Production-grade Playwright E2E test suite for fur4.com and refer.fur4.com — Dockerized, deployed on AWS EC2, scheduled every 15 min via PM2. Covers homepage integrity, referral & dealer CTAs, registration forms, social login (Google, Facebook, LinkedIn), product rendering, cart & guest checkout. Microsoft Teams webhook notifications on failure.",
@@ -1482,6 +1483,7 @@ export const projects = [
   },
   {
     name: "FUR4 k6 Load Testing Suite",
+    preview: "https://opengraph.githubassets.com/1/azaworld/Fur4-Load-Testing-K6",
     org: "Platformz / Personal",
     period: "2024 — Present",
     blurb: "k6 load-testing framework for FUR4's GraphQL API — smoke, load, stress, spike & soak profiles. InfluxDB + Grafana real-time dashboards, HTML stakeholder reports, AWS EC2 deployment, GitHub Actions CI/CD, and Microsoft Teams notifications.",
@@ -1491,6 +1493,7 @@ export const projects = [
   },
   {
     name: "k6 GraphQL Load Testing Framework",
+    preview: "https://opengraph.githubassets.com/1/azaworld/k6-graphql-loadtesting",
     org: "Personal",
     period: "2024",
     blurb: "Reusable, production-grade GraphQL load testing framework with Docker, AWS EC2 deployment, GitHub Actions CI/CD, HTML pie-chart reports, and Microsoft Teams webhook alerts. Covers mutations and queries with flexible load profiles.",
@@ -1500,6 +1503,7 @@ export const projects = [
   },
   {
     name: "FirstTrip Playwright QA Framework",
+    preview: "https://opengraph.githubassets.com/1/azaworld/firsttrip-playwright-qa-automation",
     org: "Personal",
     period: "2024",
     blurb: "Full Page Object Model automation framework in Playwright + TypeScript for FirstTrip's flight search platform. Covers flight search, airline filtering, price comparison, sign-in modal verification, and screenshot reporting — wired into GitHub Actions CI.",
@@ -1509,6 +1513,7 @@ export const projects = [
   },
   {
     name: "Adobe Project Neo — Playwright E2E",
+    preview: "https://opengraph.githubassets.com/1/azaworld/Adobe-Project-Neo-Playwright",
     org: "Personal",
     period: "2024",
     blurb: "Playwright + TypeScript E2E automation suite for Adobe Project Neo — Adobe's AI-powered 3D design tool. Covers core user flows with GitHub Actions CI/CD integration.",
@@ -1518,6 +1523,7 @@ export const projects = [
   },
   {
     name: "Cypress Cloud — Parallel CI Project",
+    preview: "https://opengraph.githubassets.com/1/azaworld/CypressCloudProject",
     org: "Personal",
     period: "2023",
     blurb: "Cypress Cloud project demonstrating parallel test execution, Cypress Cloud recording & run analytics, and full GitHub Actions CI integration — a reference implementation for teams scaling their test suite.",
@@ -1527,6 +1533,7 @@ export const projects = [
   },
   {
     name: "FUR4 Omnichannel Platform",
+    preview: "/projects/fur4.jpg",
     org: "Platformz",
     period: "2024 — Present",
     blurb: "Enterprise pet-brand ecosystem — DTC (fur4.com), dealer portal (dealer.fur4.com), referral portal (refer.fur4.com), GOD ops dashboard & AI ops tower on Magento + React + GraphQL. Full QA: Playwright automation, manual, security (OWASP ZAP), load & performance (JMeter/k6). 60-day 3P EDI program across Amazon, Walmart, Target, Chewy, eBay & Macy's.",
@@ -1536,6 +1543,7 @@ export const projects = [
   },
   {
     name: "Rockerz Skate Platform",
+    preview: "/projects/rockerz.jpg",
     org: "Platformz",
     period: "2024 — Present",
     blurb: "Precision skate-guard platform — 4-zone live product color configurator, DTC, dealer portal, dealer-locator & referral portals on Magento + React + AWS. Full QA: automation, manual, security, load & performance across all portals.",
@@ -1545,6 +1553,7 @@ export const projects = [
   },
   {
     name: "DMV Raw Feeders Platform",
+    preview: "/projects/dmv.jpg",
     org: "Platformz",
     period: "2024 — Present",
     blurb: "Raw pet food delivery platform — zone-based delivery routing, subscription management & referral portal. Full QA: automation, manual, security & performance testing end to end.",
@@ -1553,14 +1562,16 @@ export const projects = [
   },
   {
     name: "MyGP — Backend Automation Framework",
+    preview: "/projects/mygp.jpg",
     org: "Grameenphone (via Miaki)",
     period: "2024 — 2025",
     blurb: "Built the complete backend test automation framework from zero for MyGP — the app of Bangladesh's largest mobile operator (millions of users). End-to-end backend API automation with Playwright, covering the full backend surface for reliable, repeatable regression.",
     tags: ["Playwright", "TypeScript", "API Testing", "Backend Automation", "Framework Build"],
-    link: "",
+    link: "https://play.google.com/store/apps/details?id=com.portonics.mygp",
   },
   {
     name: "Kinetik Health App — iOS & Android",
+    preview: "/projects/kinetik.jpg",
     org: "Kinetik",
     period: "2023 — 2025",
     blurb: "QA lead for the Kinetik Health App — NEMT member app (iOS + Android) for requesting, managing & tracking medical transport rides with real-time driver location. Full QA lifecycle: manual, Playwright/TypeScript API automation (AWS Lambda, SQS, S3), Appium mobile automation, and load testing — from first test case through production App Store & Google Play publish. Platform: 13M+ trips, $1.1B+ claims, 1.5M+ members across 44 states.",
@@ -1569,6 +1580,7 @@ export const projects = [
   },
   {
     name: "OpenCRVS — Civil Registration QA",
+    preview: "/projects/opencrvs.jpg",
     org: "Dynamic Solution Innovators",
     period: "2021 — 2022",
     blurb: "Cypress automation QA for OpenCRVS — UN-backed open-source civil registration so every person on the planet is recognised from birth. CI/CD integration, cross-browser suites, TestRail test management.",
@@ -1577,6 +1589,7 @@ export const projects = [
   },
   {
     name: "IPEMIS — Bangladesh Govt. Education MIS",
+    preview: "/projects/ipemis.jpg",
     org: "Dynamic Solution Innovators",
     period: "2021 — 2022",
     blurb: "Manual QA Engineer for IPEMIS (Integrated Primary Education Management Information System) — Bangladesh government's Department of Primary Education platform managing education records for millions of children nationwide.",
@@ -1585,6 +1598,7 @@ export const projects = [
   },
   {
     name: "Sothik — Bangladesh Govt. Bangla Spell Checker",
+    preview: "/projects/sothik.jpg",
     org: "REVE Systems",
     period: "2022 — 2023",
     blurb: "QA Lead for Sothik (spell.bangla.gov.bd) — Bangladesh government's official AI-powered Bangla spell & grammar checker (Bangla Academy). NLP accuracy evaluation, functional, regression, security (OWASP ZAP/Burp Suite), performance (JMeter/LoadRunner). Results: performance up 60%, critical defects down 30%.",
@@ -1593,6 +1607,7 @@ export const projects = [
   },
   {
     name: "CBMS — Customs Bond Commissionerate",
+    preview: "/projects/cbms.jpg",
     org: "REVE Systems",
     period: "2022 — 2023",
     blurb: "QA Engineer for CBMS (cbc.gov.bd) — Bangladesh government's Customs Bond Commissionerate Management System for processing and monitoring customs-duty bond transactions. End-to-end QA with detailed documentation.",
