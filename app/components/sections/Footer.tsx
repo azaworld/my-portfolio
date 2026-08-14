@@ -67,7 +67,7 @@ export default function Footer() {
             download="Arifuzzaman_Antor_TPM_Consultant_CV.pdf"
             className="flex items-center gap-2 rounded-full border border-violet/40 bg-violet/10 px-5 py-2.5 text-sm font-semibold text-violet transition-all hover:-translate-y-0.5 hover:bg-violet/20"
           >
-            📘 CV — TPM · Consultant <span className="text-xs font-normal opacity-70">(PDF)</span>
+            📘 CV — TPM · QA Consultant <span className="text-xs font-normal opacity-70">(PDF)</span>
           </a>
         </div>
 
