@@ -36,7 +36,7 @@ export const profile = {
 };
 
 export const heroStats = [
-  { value: 6, suffix: "+", label: "Years in tech & delivery" },
+  { value: 16, suffix: "+", label: "Combined years of experience — up to 5 roles in parallel" },
   { value: 30, suffix: "+", label: "People led — eng, DevOps, design, marketing" },
   { value: 40, suffix: "+", label: "Clients & companies served" },
   { value: 50, suffix: "+", label: "Projects & products shipped" },
@@ -44,7 +44,7 @@ export const heroStats = [
 
 // Full cumulative tally — rendered as the stat grid in Career Analytics.
 export const careerTotals = [
-  { value: 6, suffix: "+", label: "Years in tech & delivery" },
+  { value: 16, suffix: "+", label: "Combined years of experience — in just 6 calendar years" },
   { value: 12, suffix: "", label: "Companies & roles" },
   { value: 40, suffix: "+", label: "Clients & companies served" },
   { value: 30, suffix: "+", label: "People led across teams" },

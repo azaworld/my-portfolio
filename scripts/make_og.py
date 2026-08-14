@@ -86,7 +86,7 @@ d.rounded_rectangle([x0, 404, x0 + tw + 48, 462], radius=29, outline=VIOLET, wid
 d.text((x0 + 24, 417), tag, font=F(BOLD, 30), fill=PINK)
 
 # stats row
-stats = [("6+", "years"), ("30+", "people led"), ("50+", "shipped"), ("23 · 5.0", "Upwork jobs")]
+stats = [("16+", "combined yrs"), ("30+", "people led"), ("50+", "shipped"), ("23 · 5.0", "Upwork jobs")]
 sx = x0
 for num, lab in stats:
     d.text((sx, 508), num, font=F(BOLD, 34), fill=CYAN)

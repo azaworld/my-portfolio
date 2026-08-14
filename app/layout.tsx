@@ -16,7 +16,7 @@ const inter = Inter({
 const SITE = "https://azantor.xyz";
 const TITLE = "Arifuzzaman “Antor” — Founder & CEO, Technical Project Manager & QA Leader";
 const DESCRIPTION =
-  "Arifuzzaman Antor (Arifuz Zaman Antor / Azantor / azaworld) — Founder & CEO of AZAI Labs, Co-Founder & CTO of Upward, Technical Project Manager at Platformz, QA & Delivery Leader, SDET, podcaster and AI tech instructor from Dhaka, Bangladesh. Explore the interactive portfolio.";
+  "Arifuzzaman Antor (Arifuz Zaman Antor / Azantor / azaworld) — Founder & CEO of AZAI Labs, Co-Founder & CTO of Upward, Technical Project Manager at Platformz, QA & Delivery Leader, SDET, podcaster and AI tech instructor from Dhaka, Bangladesh. 16+ years of combined experience across parallel roles, compressed into 6 calendar years.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),

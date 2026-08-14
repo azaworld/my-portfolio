@@ -62,8 +62,9 @@ story += [Paragraph(
     "cross-functional team</b> — full QA ownership (automation, manual, security, load/performance) across all portals, "
     "a 3P hybrid EDI program delivered in <b>~60 days</b>, and CEO/CTO/CFO/CMO &amp; Board reporting. "
     "Founder &amp; CEO of <b>AZAI Labs</b> (AI agents doing real client work) and founder of <b>AZADEMY</b>. "
-    "Six years across QA, SDET, reliability, and program delivery for Mastercard, Grameenphone, Kinetik, Kintsugi, "
-    "and global insurance carriers — Upwork Top Rated, <b>23 jobs, all ★ 5.0</b>.", body)]
+    "<b>16+ years of combined experience compressed into 6 calendar years</b> — 12 roles, up to 5 in parallel — "
+    "across QA, SDET, reliability, and program delivery for Mastercard, Grameenphone, Kinetik, Kintsugi, "
+    "and global insurance carriers. Upwork Top Rated, <b>23 jobs, all ★ 5.0</b>.", body)]
 
 # ---- Core Competencies ----
 story += [Paragraph("Core Competencies", h_s)]
@@ -186,7 +187,7 @@ for e in ["B.Sc. Engineering, Computer Science &amp; Engineering — Shahjalal U
 story += [Paragraph("Selected Highlights", h_s)]
 hl = Table([[Paragraph("<b>60 days</b><br/><font size=7.3 color=#5A5F6B>12-month EDI program delivered</font>", body),
              Paragraph("<b>30+</b><br/><font size=7.3 color=#5A5F6B>people led across 3 platforms</font>", body),
-             Paragraph("<b>50+</b><br/><font size=7.3 color=#5A5F6B>projects &amp; products shipped</font>", body),
+             Paragraph("<b>16+ yrs</b><br/><font size=7.3 color=#5A5F6B>combined exp. in 6 calendar yrs</font>", body),
              Paragraph("<b>23 · ★5.0</b><br/><font size=7.3 color=#5A5F6B>Upwork jobs · Top Rated</font>", body),
              Paragraph("<b>5</b><br/><font size=7.3 color=#5A5F6B>ventures founded</font>", body)]],
            colWidths=[W/5]*5)

@@ -70,6 +70,9 @@ export default function LifeGraph() {
             <p className="mt-1 text-xs text-muted sm:text-sm">
               12 chapters, 2020 → today. Watch the climb — bottom to top.
             </p>
+            <p className="mt-1.5 text-xs font-medium text-cyan sm:text-sm">
+              ≈16.5 years of combined experience in 6 calendar years — because up to 5 roles ran in parallel.
+            </p>
           </div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted">level 1 → 12</p>
         </div>
