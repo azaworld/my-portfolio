@@ -103,8 +103,23 @@ function MissionCard({ mission, onOpen, delay }: { mission: Mission; onOpen: (m:
       <TiltCard className="h-full">
         <button
           onClick={() => onOpen(mission)}
-          className="glass glow-border flex h-full w-full flex-col rounded-2xl p-6 text-left"
+          className="glass glow-border flex h-full w-full flex-col overflow-hidden rounded-2xl text-left"
         >
+          {/* Company / product visual */}
+          {mission.preview && (
+            <div className="relative aspect-[8/3.2] overflow-hidden border-b border-white/10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={mission.preview}
+                alt={`${mission.short} — visual`}
+                loading="lazy"
+                className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+              <span className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" aria-hidden />
+            </div>
+          )}
+
+          <div className="flex flex-1 flex-col p-6 pt-5">
           <div className="flex items-center justify-between gap-2">
             <span className="flex items-center gap-2">
               <span className="font-mono text-[10px] font-bold text-violet">
@@ -123,6 +138,19 @@ function MissionCard({ mission, onOpen, delay }: { mission: Mission; onOpen: (m:
           <h3 className="font-display mt-4 text-xl font-bold">{mission.codename}</h3>
           <p className="mt-1 text-sm font-medium text-cyan">{mission.role}</p>
           <p className="text-xs text-muted">{mission.org}</p>
+          {/* Impact — the numbers that matter, readable in one glance */}
+          {mission.impact && (
+            <ul className="mt-3 flex flex-wrap gap-1.5">
+              {mission.impact.map((im) => (
+                <li
+                  key={im}
+                  className="rounded-full border border-amber/30 bg-amber/10 px-2.5 py-1 font-mono text-[10px] font-bold text-amber"
+                >
+                  {im}
+                </li>
+              ))}
+            </ul>
+          )}
           {/* Top outcomes as scannable bullets — the essay lives in the debrief */}
           <ul className="mt-4 flex-1 space-y-1.5">
             {mission.loot.slice(0, 3).map((l) => (
@@ -149,6 +177,7 @@ function MissionCard({ mission, onOpen, delay }: { mission: Mission; onOpen: (m:
           <p className="mt-4 font-mono text-xs text-violet transition-colors group-hover:text-cyan">
             Open debrief → <span className="text-muted">(+15 XP)</span>
           </p>
+          </div>
         </button>
       </TiltCard>
     </Reveal>

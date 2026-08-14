@@ -575,11 +575,15 @@ export type Mission = {
   bossFight: string; // the biggest challenge
   loot: string[]; // outcomes / metrics
   tech?: string[]; // "loadout" — technologies used, shown in the debrief
+  preview?: string; // card image — real product/company visual
+  impact?: string[]; // headline impact chips shown on the card
 };
 
 export const missions: Mission[] = [
   {
     id: "upward",
+    preview: "/ventures/upward.jpg",
+    impact: ["4 divisions", "8 AI services", "tech owned end-to-end"],
     codename: "Operation Upward",
     role: "Co-Founder & CTO",
     org: "Upward — upwardbd.com · Dhaka, Bangladesh",
@@ -607,6 +611,8 @@ export const missions: Mission[] = [
   },
   {
     id: "azailabs",
+    preview: "/ventures/azailabs.jpg",
+    impact: ["AI agents in production", "2–10 person team"],
     codename: "Operation Genesis",
     role: "Founder & CEO",
     org: "AZAI Labs — San Francisco, USA · remote-first from Dhaka",
@@ -634,6 +640,8 @@ export const missions: Mission[] = [
   },
   {
     id: "platformz",
+    preview: "/projects/fur4.jpg",
+    impact: ["12-mo EDI in ~60 days", "30+ people led", "5 portals live"],
     codename: "Operation Command Center",
     role: "Technical Project Manager",
     org: "Platformz — platformz.us",
@@ -668,6 +676,8 @@ export const missions: Mission[] = [
   },
   {
     id: "kintsugi",
+    preview: "/missions/kintsugi.jpg",
+    impact: ["features owned end-to-end", "CI quality gates"],
     codename: "Operation Precision",
     role: "Sr. Software QA Engineer · SDET",
     org: "Kintsugi — San Francisco, USA (remote)",
@@ -693,6 +703,8 @@ export const missions: Mission[] = [
   },
   {
     id: "allgen",
+    preview: "/missions/allgen.jpg",
+    impact: ["3 enterprise insurers", "2+ yrs of automation"],
     codename: "Operation Underwriter",
     role: "Software Automation Engineer II",
     org: "All Generation Tech — New York, NY, USA (remote)",
@@ -719,6 +731,8 @@ export const missions: Mission[] = [
   },
   {
     id: "grameenphone",
+    preview: "/projects/mygp.jpg",
+    impact: ["framework built from 0", "millions of users"],
     codename: "Operation Dialtone",
     role: "Software QA Engineer",
     org: "Grameenphone (via Miaki) — Dhaka, Bangladesh",
@@ -744,6 +758,8 @@ export const missions: Mission[] = [
   },
   {
     id: "kinetik",
+    preview: "/projects/kinetik.jpg",
+    impact: ["26,840+ rides in pilot", "both app stores", "1.5M+ members"],
     codename: "Operation Lifeline",
     role: "QA Engineer I",
     org: "Kinetik — Long Island City, New York, USA (remote)",
@@ -774,6 +790,8 @@ export const missions: Mission[] = [
   },
   {
     id: "mastercard",
+    preview: "/missions/mastercard.jpg",
+    impact: ["payment-critical scale", "DR playbooks adopted"],
     codename: "Operation Failsafe",
     role: "Senior Software Automation & Reliability Engineer",
     org: "Mastercard — Remote",
@@ -804,6 +822,8 @@ export const missions: Mission[] = [
   },
   {
     id: "intellex",
+    preview: "/missions/tcs.jpg",
+    impact: ["4-region global launch", "0 checkout bugs shipped"],
     codename: "Operation Global Cart",
     role: "Augmented Sr. SQA — Intellex via TCS",
     org: "Tata Consultancy Services — Remote (US client)",
@@ -832,6 +852,8 @@ export const missions: Mission[] = [
   },
   {
     id: "reve",
+    preview: "/projects/sothik.jpg",
+    impact: ["+60% performance", "−30% critical defects", "2 govt systems"],
     codename: "Operation Stronghold",
     role: "Software QA Engineer & Lead",
     org: "REVE Systems — Dhaka, Bangladesh (onsite)",
@@ -862,6 +884,8 @@ export const missions: Mission[] = [
   },
   {
     id: "dsi",
+    preview: "/projects/opencrvs.jpg",
+    impact: ["UN-backed OpenCRVS", "govt IPEMIS QA"],
     codename: "Operation Foundation",
     role: "Jr. Software QA Engineer",
     org: "Dynamic Solution Innovators Ltd. — Dhaka, Bangladesh (onsite)",
@@ -889,6 +913,7 @@ export const missions: Mission[] = [
   },
   {
     id: "carrybags",
+    impact: ["first automation framework", "remote before it was cool"],
     codename: "Operation First Blood",
     role: "Jr. Software QA Engineer (freelance)",
     org: "CarryBags Ltd — London, UK (part-time, remote)",
