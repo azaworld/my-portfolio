@@ -86,10 +86,13 @@ export default function LifeGraph() {
             ⚡ peak: <b>5 roles at once</b>&nbsp;(2024–25)
           </span>
         </div>
-        <p className="mt-2 text-xs leading-relaxed text-muted sm:text-sm">
-          <b className="text-text">How the math works:</b> each of the 12 roles below was a real job with its own
-          deliverables. Add up every role&apos;s duration as if worked one after another and it totals ≈16.5 years —
-          lived in just 6 calendar years, because several roles always ran in parallel.
+        <p className="mt-2 font-mono text-[11px] leading-relaxed text-muted sm:text-xs">
+          <span className="text-text">the math:</span>{" "}
+          <span className="text-cyan">Σ 12 role durations = 198 mo ≈ 16.5 yrs</span>
+          {"  ÷  "}
+          <span className="text-text">72 mo calendar (2020→now)</span>
+          {"  =  "}
+          <span className="text-amber">2.7× roles in parallel, on average</span>
         </p>
         <div>
         </div>
