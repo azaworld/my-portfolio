@@ -124,10 +124,10 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={handleNav(link.href)}
-              className={`rounded-lg px-3 py-1.5 text-sm transition-all ${
+              className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-all ${
                 active === link.href
-                  ? "bg-white/10 font-medium text-text"
-                  : "text-muted hover:text-text"
+                  ? "bg-white/10 text-text"
+                  : "text-text/85 hover:bg-white/5 hover:text-text"
               }`}
             >
               {link.label}
@@ -140,8 +140,8 @@ export default function Navbar() {
               onClick={() => setMoreOpen((o) => !o)}
               aria-expanded={moreOpen}
               aria-haspopup="menu"
-              className={`flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm transition-all ${
-                moreOpen ? "bg-white/10 font-medium text-text" : "text-muted hover:text-text"
+              className={`flex items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-medium transition-all ${
+                moreOpen ? "bg-white/10 text-text" : "text-text/85 hover:bg-white/5 hover:text-text"
               }`}
             >
               More
@@ -164,7 +164,7 @@ export default function Navbar() {
                     href={link.href}
                     role="menuitem"
                     onClick={handleNav(link.href)}
-                    className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-white/10 hover:text-text"
+                    className="rounded-lg px-3 py-2 text-sm font-medium text-text/85 transition-colors hover:bg-white/10 hover:text-text"
                   >
                     {link.label}
                   </a>
@@ -254,10 +254,10 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={handleNav(link.href)}
-              className={`rounded-xl px-4 py-3 text-sm transition-colors ${
+              className={`rounded-xl px-4 py-3 text-sm font-medium transition-colors ${
                 active === link.href
-                  ? "bg-white/10 font-medium text-text"
-                  : "text-muted hover:bg-white/10 hover:text-text"
+                  ? "bg-white/10 text-text"
+                  : "text-text/85 hover:bg-white/10 hover:text-text"
               }`}
             >
               {link.label}
