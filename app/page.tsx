@@ -6,6 +6,7 @@ import Navbar from "./components/ui/Navbar";
 import SectionViewerProvider from "./components/ui/SectionViewer";
 import BackToTop from "./components/ui/BackToTop";
 import Hero from "./components/sections/Hero";
+import VentureStrip from "./components/sections/VentureStrip";
 import TreeExperience from "./components/sections/TreeExperience";
 import About from "./components/sections/About";
 import SkillTree from "./components/sections/SkillTree";
@@ -35,6 +36,7 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-6xl px-6">
         <Hero />
+        <VentureStrip />
         <TreeExperience />
         <About />
         <SkillTree />
