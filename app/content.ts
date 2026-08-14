@@ -1308,6 +1308,7 @@ export const treeNodes = [
 export const ventures = [
   {
     name: "Upward",
+    preview: "/ventures/upward.jpg",
     tagline: "One growth partner. Not ten vendors.",
     description:
       "AI-powered business-growth partner — four divisions and eight AI-powered services across media, marketing, technology, and healthcare. Co-Founder & CTO, with Co-CEO Sharif Md. Abid. Founded 2026 · Dhaka.",
@@ -1318,6 +1319,7 @@ export const ventures = [
   },
   {
     name: "AZAI Labs",
+    preview: "/ventures/azailabs.jpg",
     tagline: "Build with agents, not headcount.",
     description:
       "An AI lab that ships real work — building AI products, delivering AI services, and placing augmented AI talent so teams move faster. Founded 2025 · San Francisco HQ, remote-first from Dhaka. Founder & CEO.",
@@ -1328,6 +1330,7 @@ export const ventures = [
   },
   {
     name: "AZADEMY",
+    preview: "/ventures/azademy.jpg",
     tagline: "Learning meets earning.",
     description:
       "An academy that teaches CS, AI & technology, freelancing, and how to land remote jobs — plus real interviews with experts on how to give and take technical interviews. Founder.",
@@ -1338,6 +1341,7 @@ export const ventures = [
   },
   {
     name: "AZA Execution Podcast",
+    preview: "/ventures/azapodcast.jpg",
     tagline: "Ideas are cheap. Execution is everything.",
     description:
       "My podcast — long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done. Weekly, video & audio, Bangla & English. Now streaming. Host & founder.",
@@ -1348,6 +1352,7 @@ export const ventures = [
   },
   {
     name: "Listen2AZA",
+    preview: "/ventures/listen2aza.jpg",
     tagline: "Stories you can press play on.",
     description:
       "An audiobook channel on YouTube — narrated books and stories for people who'd rather listen than scroll. Founder.",
@@ -1358,6 +1363,7 @@ export const ventures = [
   },
   {
     name: "Silent Sacrifice Abdus Sattar Foundation",
+    preview: "/ventures/ssasf.jpg",
     tagline: "Every father's silent sacrifice. Every child's potential.",
     description:
       "A foundation honoring my father, Sheikh Abdus Sattar — scholarships, free mentorship and internships, Quran education, support for struggling families and cancer patients, feeding the hungry, and tree plantation. 60+ Quran students in Ramadan 2025, 60 students mentored in year one.",
