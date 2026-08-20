@@ -182,10 +182,10 @@ export default function Navbar() {
             href="/cv.pdf"
             target="_blank"
             rel="noreferrer"
-            aria-label="Open Arifuzzaman Antor's CV"
+            aria-label="Open Arifuzzaman Antor's Technical Project Manager CV"
             className="inline-flex whitespace-nowrap rounded-lg border border-cyan/35 bg-cyan/10 px-2.5 py-1.5 text-xs font-bold text-cyan transition-all hover:-translate-y-0.5 hover:bg-cyan/20"
           >
-            📘 CV
+            📘 TPM CV
           </a>
 
           {/* Hot headline buttons — Personal Brand Studio + Podcast */}

@@ -1,220 +1,276 @@
-# Generates Arifuzzaman "Antor"'s resume -> public/resume.pdf
-# Run: python3 scripts/make_resume.py  (from repo root)
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.units import mm
-from reportlab.lib import colors
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.platypus import (BaseDocTemplate, PageTemplate, Frame, Paragraph, Spacer,
-                                Table, TableStyle, HRFlowable)
-import os
+"""Generate two ATS-friendly, job-focused CVs.
 
-OUT = os.path.join(os.path.dirname(__file__), "..", "public", "resume.pdf")
-VIOLET = colors.HexColor(0x5B21B6)
-CYAN   = colors.HexColor(0x0E7490)
-MAGENTA = colors.HexColor(0xBE185D)
-AMBER  = colors.HexColor(0xB45309)
-INK    = colors.HexColor(0x1A1C22)
-MUTED  = colors.HexColor(0x5A5F6B)
-LINE   = colors.HexColor(0xDAD7E3)
-TAGBG  = colors.HexColor(0xF3EEFB)
+Outputs:
+  public/resume.pdf  — SDET / QA Automation
+  public/cv.pdf      — Technical Project Manager
+
+Founder, CEO, CTO, podcast, and instructor roles are intentionally excluded so
+each document stays focused on the position being applied for.
+"""
+
+import os
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import mm
+from reportlab.platypus import (
+    BaseDocTemplate, Frame, HRFlowable, PageTemplate, Paragraph, Spacer, Table, TableStyle,
+)
+
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+SDET_OUT = os.path.join(ROOT, "public", "resume.pdf")
+TPM_OUT = os.path.join(ROOT, "public", "cv.pdf")
+
+NAVY = colors.HexColor("#172554")
+BLUE = colors.HexColor("#1D4ED8")
+CYAN = colors.HexColor("#0E7490")
+INK = colors.HexColor("#172033")
+MUTED = colors.HexColor("#566074")
+LINE = colors.HexColor("#D8DFEA")
+PALE = colors.HexColor("#F4F7FB")
 
 styles = getSampleStyleSheet()
-def S(name, **kw):
-    base = kw.pop("parent", styles["Normal"])
-    return ParagraphStyle(name, parent=base, **kw)
 
-name_s = S("name", fontName="Helvetica-Bold", fontSize=23, leading=26, textColor=VIOLET)
-role_s = S("role", fontName="Helvetica-Bold", fontSize=10.2, leading=13, textColor=CYAN)
-cont_s = S("cont", fontName="Helvetica", fontSize=8.3, leading=11.5, textColor=MUTED)
-h_s    = S("h", fontName="Helvetica-Bold", fontSize=10.8, leading=13, textColor=VIOLET, spaceBefore=9, spaceAfter=3)
-body   = S("body", fontName="Helvetica", fontSize=8.5, leading=11.6, textColor=INK)
-jt     = S("jt", fontName="Helvetica-Bold", fontSize=9.3, leading=11.6, textColor=INK, spaceBefore=5.5)
-org_s  = S("org", fontName="Helvetica", fontSize=8.3, leading=10.6, textColor=CYAN)
-bullet = S("bl", parent=body, leftIndent=10, bulletIndent=1, fontSize=8.3, leading=11.0)
-comp   = S("comp", parent=body, fontSize=8.2, leading=11.6)
-tagtxt = S("tag", fontName="Helvetica-Bold", fontSize=7.6, leading=9, textColor=VIOLET, alignment=1)
 
-doc = BaseDocTemplate(OUT, pagesize=A4, leftMargin=15*mm, rightMargin=15*mm, topMargin=11*mm, bottomMargin=12*mm)
-frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="main")
-def footer(canv, _d):
-    canv.saveState(); canv.setFont("Helvetica", 7); canv.setFillColor(MUTED)
-    canv.drawString(15*mm, 7.5*mm, "Arifuzzaman “Antor” — Résumé · azantor.xyz")
-    canv.drawRightString(A4[0]-15*mm, 7.5*mm, f"Page {canv.getPageNumber()}")
-    canv.restoreState()
-doc.addPageTemplates([PageTemplate(id="all", frames=[frame], onPage=footer)])
-story, W = [], doc.width
+def style(name, **kwargs):
+    parent = kwargs.pop("parent", styles["Normal"])
+    return ParagraphStyle(name, parent=parent, **kwargs)
 
-# ---- Header ----
-story += [Paragraph("ARIFUZZAMAN “ANTOR”", name_s)]
-story += [Paragraph(
-    "Founder &amp; CEO, AZAI Labs · Co-Founder &amp; CTO, Upward · "
-    "Technical Project Manager, Platformz · QA &amp; Delivery Leader", role_s), Spacer(1, 3)]
-story += [Paragraph(
-    "Dhaka, Bangladesh (remote worldwide) · WhatsApp +880 1580 497264 · arifuzantor@gmail.com<br/>"
-    "linkedin.com/in/azantor · github.com/azaworld · azantor.xyz", cont_s)]
-story += [Spacer(1, 4), HRFlowable(width="100%", thickness=1.2, color=VIOLET)]
 
-# ---- Executive Summary ----
-story += [Paragraph("Executive Summary", h_s)]
-story += [Paragraph(
-    "Delivery leader and QA engineer who turns chaos into shipped products. Technical Project Manager at "
-    "Platformz, running three enterprise client platforms (FUR4, Rockerz, DMV Raw Feeders) with a <b>30+ person "
-    "cross-functional team</b> — full QA ownership (automation, manual, security, load/performance) across all portals, "
-    "a 3P hybrid EDI program delivered in <b>~60 days</b>, and CEO/CTO/CFO/CMO &amp; Board reporting. "
-    "Founder &amp; CEO of <b>AZAI Labs</b> (AI agents doing real client work) and founder of <b>AZADEMY</b>. "
-    "<b>16+ years of combined experience compressed into 6 calendar years</b> — 12 roles, up to 5 in parallel — "
-    "across QA, SDET, reliability, and program delivery for Mastercard, Grameenphone, Kinetik, Kintsugi, "
-    "and global insurance carriers. Upwork Top Rated, <b>23 jobs, all ★ 5.0</b>.", body)]
+NAME = style("Name", fontName="Helvetica-Bold", fontSize=20.5, leading=23, textColor=NAVY)
+HEADLINE = style("Headline", fontName="Helvetica-Bold", fontSize=9.5, leading=11.5, textColor=CYAN)
+CONTACT = style("Contact", fontName="Helvetica", fontSize=7.6, leading=9.5, textColor=MUTED)
+SECTION = style("Section", fontName="Helvetica-Bold", fontSize=9.7, leading=11.5, textColor=BLUE, spaceBefore=5.5, spaceAfter=2)
+BODY = style("Body", fontName="Helvetica", fontSize=7.7, leading=9.6, textColor=INK)
+JOB = style("Job", fontName="Helvetica-Bold", fontSize=8.5, leading=9.8, textColor=INK, spaceBefore=3)
+ORG = style("Org", fontName="Helvetica", fontSize=7.5, leading=8.8, textColor=CYAN)
+BULLET = style("Bullet", parent=BODY, leftIndent=9, bulletIndent=1, fontSize=7.45, leading=9.1)
+SMALL = style("Small", parent=BODY, fontSize=7.2, leading=8.8)
+TAG = style("Tag", fontName="Helvetica-Bold", fontSize=6.8, leading=7.8, textColor=NAVY, alignment=1)
 
-# ---- Core Competencies ----
-story += [Paragraph("Core Competencies", h_s)]
-comp_rows = [
-    ["Program &amp; Delivery Management", "Cross-team Leadership (30+ people)", "AI Agents &amp; LLM Products"],
-    ["Test Automation · Playwright / TS", "API, Performance &amp; Security Testing", "CI/CD · AWS · Terraform · Docker"],
-    ["Stakeholder &amp; CTO Reporting", "QA Strategy &amp; Release Gates", "Magento · EDI · E-commerce"],
-]
-ct = Table([[Paragraph(f"• {c}", comp) for c in r] for r in comp_rows], colWidths=[W/3]*3)
-ct.setStyle(TableStyle([("LEFTPADDING",(0,0),(-1,-1),2),("RIGHTPADDING",(0,0),(-1,-1),6),
-                        ("TOPPADDING",(0,0),(-1,-1),1),("BOTTOMPADDING",(0,0),(-1,-1),1)]))
-story += [ct]
 
-# ---- Experience ----
-story += [Paragraph("Experience", h_s)]
-def job(title, org, period, bullets):
-    story.append(Paragraph(f"{title} <font size=7.6 color=#5A5F6B>· {period}</font>", jt))
-    story.append(Paragraph(org, org_s))
-    for b in bullets:
-        story.append(Paragraph(b, bullet, bulletText="–"))
+def make_doc(path, footer_label):
+    doc = BaseDocTemplate(
+        path, pagesize=A4, leftMargin=15 * mm, rightMargin=15 * mm,
+        topMargin=8 * mm, bottomMargin=10 * mm, title=footer_label,
+        author="Arifuzzaman Antor", subject=footer_label,
+    )
+    frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="main")
 
-job("Co-Founder &amp; Chief Technology Officer", "Upward — upwardbd.com · Dhaka", "2026 – Present", [
-    "Co-founded an AI-powered business-growth partner — 4 divisions, 8 AI-powered services (media, marketing, technology &amp; healthcare); own the technology end to end as CTO.",
-])
-job("Founder &amp; Chief Executive Officer", "AZAI Labs — San Francisco, USA (remote-first)", "2025 – Present", [
-    "Founded an AI agents lab shipping practical automation — agents in production doing real client work. Also founder of AZADEMY (tech education) and host of the AZA Execution Podcast.",
-])
-job("Technical Project Manager", "Platformz — platformz.us", "Sep 2024 – Present", [
-    "Single point of delivery accountability for 3 enterprise platforms alongside the CEO — leading 30+ person team: FE, BE, DevOps, design, QA, marketing &amp; HubSpot.",
-    "<b>FUR4 (fur4.com)</b>: 5 portals (DTC, dealer.fur4.com, refer.fur4.com, GOD ops, AI tower) on Magento + React + GraphQL; live on Chewy, Amazon, Walmart, eBay &amp; Macy's; 3P EDI program delivered in <b>~60 days</b>.",
-    "<b>Rockerz (rockerz.com)</b>: 4-zone product configurator, DTC, dealer &amp; referral portals. <b>DMV Raw Feeders (dmvrawfeeders.com)</b>: zone-based delivery routing, subscriptions &amp; referral portal.",
-    "Full QA across all portals — automation (Playwright/TS), manual, security (OWASP ZAP/Burp Suite), load &amp; performance (JMeter/k6).",
-    "CEO, CTO, CFO, CMO &amp; Board of Directors reporting — roadmap, risk register, delivery status &amp; P&amp;L alignment.",
-])
-job("Sr. Software QA Engineer · SDET", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Aug 2026", [
-    "Quality engineering and SDET on an AI-powered sales-tax platform where correctness is the product.",
-    "Playwright + TypeScript automation wired into CI; quality gates for AI-driven features.",
-])
-job("Software Automation Engineer II", "All Generation Tech — New York, USA (remote)", "Feb 2024 – May 2026", [
-    "Test automation for global insurance platforms serving CFC, Tokio Marine Kiln, and American National (ANICO).",
-])
-job("Software QA Engineer", "Grameenphone (via Miaki) — Dhaka", "Feb 2024 – Mar 2025", [
-    "Designed and built the complete backend test-automation framework for MyGP — Bangladesh's largest mobile operator app — from zero.",
-])
-job("QA Engineer I", "Kinetik — Long Island City, New York, USA (remote)", "Sep 2023 – Sep 2025", [
-    "QA lead for the <b>Kinetik Health App</b> (iOS &amp; Android, App Store &amp; Google Play) — NEMT member app; 26,840+ pilot rides, 1.5M+ members across 44 states. Full lifecycle: manual, Playwright/TS API automation (AWS Lambda, SQS, S3), <b>Appium mobile automation</b>, load testing.",
-    "Zero-surprise weekly launches across Trip Scheduler, Trip Assistant &amp; RCM; QA architecture adopted org-wide.",
-])
-job("Sr. Software Automation &amp; Reliability Engineer", "Mastercard — remote", "Jan 2025 – Jun 2025", [
-    "Chaos engineering, observability (Prometheus/Grafana), and AWS + Terraform infrastructure automation for payment-critical systems.",
-    "Built CI/CD pipelines (Jenkins, GitLab CI); authored incident-response &amp; DR playbooks; mentored junior engineers.",
-])
-job("Software QA Engineer &amp; Lead", "REVE Systems — Dhaka", "Dec 2022 – Aug 2023", [
-    "QA Lead for <b>Sothik</b> (spell.bangla.gov.bd) — Bangladesh govt. official Bangla spell checker (Bangla Academy): performance up <b>60%</b>, defects down <b>30%</b>. QA Engineer for <b>CBMS</b> (cbc.gov.bd) — govt. Customs Bond system. Security (OWASP ZAP, Burp Suite, Kali Linux), performance (JMeter, LoadRunner), mobile (Xamarin, AWS Device Farm).",
-])
-job("Augmented Sr. Software QA Engineer", "Intelex via TCS — US client, global Magento (4 regions)", "2024 – 2025", [
-    "2FA/verification flows (Twilio, SendGrid); multi-currency &amp; multi-language commerce validation across USA, UK, Canada &amp; Europe; Magento ↔ QuickBooks/ShipBob/Mailchimp integrations.",
-])
-job("Jr. Software QA Engineer", "Dynamic Solution Innovators — Dhaka", "Sep 2021 – Nov 2022", [
-    "Cypress automation for <b>OpenCRVS</b> (UN-backed civil registration) + manual QA for <b>IPEMIS</b> (Bangladesh govt. Integrated Primary Education MIS, Dept. of Primary Education). Also QA for Movandi (5G mmWave) and Altech (clean energy, DR Congo).",
-])
-job("Software QA Engineer (part-time)", "CarryBags Ltd — London, UK (remote)", "2020 – 2021", [
-    "First professional QA role — manual mobile QA on Android &amp; iOS, cross-device compatibility, and test cases from specs &amp; user stories.",
-])
+    def footer(canvas, _doc):
+        canvas.saveState()
+        canvas.setFont("Helvetica", 7)
+        canvas.setFillColor(MUTED)
+        canvas.drawString(15 * mm, 5.5 * mm, f"Arifuzzaman Antor · {footer_label} · azantor.xyz")
+        canvas.drawRightString(A4[0] - 15 * mm, 5.5 * mm, f"Page {canvas.getPageNumber()}")
+        canvas.restoreState()
 
-# ---- Career Story ----
-story += [Paragraph("Career Story", h_s)]
-story += [Paragraph(
-    "From mobile QA in 2020 (CarryBags) → global Magento commerce (TCS) → OpenCRVS + IPEMIS (DSI) → govt. Bangla "
-    "spell checker &amp; CBMS (REVE) → chaos engineering at Mastercard → Kinetik Health App (Appium, iOS/Android "
-    "publish) → MyGP backend framework → insurance automation (All Gen Tech) → Sr. SDET at Kintsugi → TPM at "
-    "Platformz → Founder &amp; CEO, AZAI Labs → Co-Founder &amp; CTO, Upward.", body)]
+    doc.addPageTemplates([PageTemplate(id="all", frames=[frame], onPage=footer)])
+    return doc
 
-# ---- Skills tag cloud ----
-story += [Paragraph("Tools &amp; Technologies", h_s)]
-tags = ["Playwright", "TypeScript", "Cypress", "Appium", "k6", "JMeter", "OWASP ZAP", "Burp Suite",
-        "Docker", "GitHub Actions", "AWS", "Jenkins", "GitLab CI", "Postman", "Grafana", "Terraform",
-        "Next.js", "React", "Python", "Java", "C++", "Magento", "EDI", "LLM Agents"]
-tag_cols = 8
-tag_rows = [tags[i:i+tag_cols] for i in range(0, len(tags), tag_cols)]
-tt = Table([[Paragraph(t, tagtxt) for t in r] + [""]*(tag_cols-len(r)) for r in tag_rows], colWidths=[W/tag_cols]*tag_cols)
-tt.setStyle(TableStyle([
-    ("BACKGROUND",(0,0),(-1,-1), TAGBG),
-    ("BOX",(0,0),(-1,-1),0,colors.white),
-    ("LEFTPADDING",(0,0),(-1,-1),3),("RIGHTPADDING",(0,0),(-1,-1),3),
-    ("TOPPADDING",(0,0),(-1,-1),4),("BOTTOMPADDING",(0,0),(-1,-1),4),
-]))
-story += [Spacer(1, 1), tt]
 
-# ---- Key Projects ----
-story += [Paragraph("Key Projects", h_s)]
-proj_rows = [
-    [("FUR4 · Rockerz · DMV Raw Feeders", "Platformz · 2024–Present", "Three enterprise platforms live in production. Full QA — automation (Playwright/TS), manual, security (OWASP ZAP), load & perf (JMeter/k6) — across all portals. 60-day 3P EDI program. CEO/CTO/CFO/CMO & board reporting."),
-     ("MyGP Backend Automation", "Grameenphone · 2024–2025", "Built the complete backend test-automation framework for Bangladesh's largest mobile operator app.")],
-    [("Sothik — Bangla Spell Checker", "REVE Systems · 2022–Present", "AI-powered Bengali grammar & spell checker — QA Lead; performance up 60%, defects down 30%."),
-     ("OpenCRVS", "Dynamic Solution Innovators · 2021–2022", "Open-source civil registration so every person on the planet is recognised from birth — Cypress test design.")],
-]
-def proj_cell(name, meta, blurb):
-    return Paragraph(f"<b>{name}</b> <font size=7.2 color=#5A5F6B>· {meta}</font><br/><font size=7.8>{blurb}</font>", comp)
-pt = Table([[proj_cell(*c1), proj_cell(*c2)] for c1, c2 in proj_rows], colWidths=[W/2]*2)
-pt.setStyle(TableStyle([("LEFTPADDING",(0,0),(-1,-1),2),("RIGHTPADDING",(0,0),(-1,-1),10),
-                        ("TOPPADDING",(0,0),(-1,-1),3),("BOTTOMPADDING",(0,0),(-1,-1),6)]))
-story += [pt]
+def header(story, headline, portfolio_path):
+    story.append(Paragraph("ARIFUZZAMAN “ANTOR”", NAME))
+    story.append(Paragraph(headline, HEADLINE))
+    story.append(Spacer(1, 2))
+    story.append(Paragraph(
+        "Dhaka, Bangladesh · Remote worldwide · +880 1580 497264 · arifuzantor@gmail.com<br/>"
+        f"linkedin.com/in/azantor · github.com/azaworld · azantor.xyz/{portfolio_path}", CONTACT,
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1.1, color=BLUE))
 
-# ---- Ventures & Community ----
-story += [Paragraph("Ventures &amp; Community", h_s)]
-story += [Paragraph(
-    "<b>AZAI Labs</b> (AI agents lab, Founder &amp; CEO) · <b>AZADEMY</b> (learning-meets-earning tech academy, Founder) · "
-    "<b>AZA Execution Podcast</b> (Host &amp; Founder) · <b>Listen2AZA</b> (audiobooks, Founder) · "
-    "<b>Silent Sacrifice Abdus Sattar Foundation</b> (scholarships, mentorship, 60+ Quran students in year one — in honor of my father)", body)]
 
-# ---- Education ----
-story += [Paragraph("Education &amp; Certifications", h_s)]
-for e in ["B.Sc. Engineering, Computer Science &amp; Engineering — Shahjalal University of Science and Technology (2017 – 2020)",
-          "Machine Learning Specialization — Coursera (2020)",
-          "Programming for Everybody (Python) — Coursera (2020)"]:
-    story += [Paragraph(e, bullet, bulletText="–")]
+def section(story, title):
+    story.append(Paragraph(title, SECTION))
 
-# ---- Selected Highlights ----
-story += [Paragraph("Selected Highlights", h_s)]
-hl = Table([[Paragraph("<b>60 days</b><br/><font size=7.3 color=#5A5F6B>12-month EDI program delivered</font>", body),
-             Paragraph("<b>30+</b><br/><font size=7.3 color=#5A5F6B>people led across 3 platforms</font>", body),
-             Paragraph("<b>16+ yrs</b><br/><font size=7.3 color=#5A5F6B>combined exp. in 6 calendar yrs</font>", body),
-             Paragraph("<b>23 · ★5.0</b><br/><font size=7.3 color=#5A5F6B>Upwork jobs · Top Rated</font>", body),
-             Paragraph("<b>5</b><br/><font size=7.3 color=#5A5F6B>ventures founded</font>", body)]],
-           colWidths=[W/5]*5)
-hl.setStyle(TableStyle([("BOX",(0,0),(-1,-1),0.5,LINE),("INNERGRID",(0,0),(-1,-1),0.4,LINE),
-                        ("LEFTPADDING",(0,0),(-1,-1),8),("TOPPADDING",(0,0),(-1,-1),6),("BOTTOMPADDING",(0,0),(-1,-1),6),
-                        ("BACKGROUND",(0,0),(-1,-1), colors.HexColor(0xF6F4FA))]))
-story += [hl]
 
-# ---- Client Voice ----
-story += [Paragraph("Client Voice", h_s)]
-quote_s = S("quote", fontName="Helvetica-Oblique", fontSize=8.0, leading=10.6, textColor=INK)
-attr_s  = S("attr", fontName="Helvetica-Bold", fontSize=7.4, leading=9.4, textColor=VIOLET, spaceBefore=2)
-def quote_cell(text, attr):
-    return [Paragraph(f"“{text}”", quote_s), Paragraph(f"— {attr}", attr_s)]
-quotes = [
-    ("Very reliable, proactive, helps us with his critical thinking and always delivers.", "GameFlix, long-term client · Upwork ★5.0"),
-    ("Responsible and professional, gives clear feedback, and is always on time.", "Grameenphone project client · Upwork ★5.0"),
-]
-qt = Table([[quote_cell(*quotes[0]), quote_cell(*quotes[1])]], colWidths=[W/2]*2)
-qt.setStyle(TableStyle([
-    ("LINEBEFORE",(1,0),(1,-1),1,LINE),
-    ("BACKGROUND",(0,0),(-1,-1), TAGBG),
-    ("LEFTPADDING",(0,0),(0,-1),12),("LEFTPADDING",(1,0),(1,-1),16),
-    ("RIGHTPADDING",(0,0),(-1,-1),12),
-    ("TOPPADDING",(0,0),(-1,-1),6),("BOTTOMPADDING",(0,0),(-1,-1),6),
-]))
-story += [qt]
+def job(story, title, org, period, bullets):
+    story.append(Paragraph(f"{title} <font size=7.6 color=#566074>· {period}</font>", JOB))
+    story.append(Paragraph(org, ORG))
+    for item in bullets:
+        story.append(Paragraph(item, BULLET, bulletText="–"))
 
-doc.build(story)
-print("WROTE", OUT)
+
+def competency_table(story, rows, width):
+    table = Table([[Paragraph(f"• {cell}", SMALL) for cell in row] for row in rows], colWidths=[width / len(rows[0])] * len(rows[0]))
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), PALE), ("BOX", (0, 0), (-1, -1), 0.5, LINE),
+        ("INNERGRID", (0, 0), (-1, -1), 0.35, LINE), ("LEFTPADDING", (0, 0), (-1, -1), 6),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 6), ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+    ]))
+    story.append(table)
+
+
+def tag_table(story, tags, width, columns=7):
+    rows = [tags[index:index + columns] for index in range(0, len(tags), columns)]
+    padded = [row + [""] * (columns - len(row)) for row in rows]
+    table = Table([[Paragraph(cell, TAG) if cell else "" for cell in row] for row in padded], colWidths=[width / columns] * columns)
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), PALE), ("LEFTPADDING", (0, 0), (-1, -1), 2),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 2), ("TOPPADDING", (0, 0), (-1, -1), 2.5),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 2.5),
+    ]))
+    story.append(table)
+
+
+def build_sdet():
+    doc = make_doc(SDET_OUT, "SDET & QA Automation CV")
+    story = []
+    header(story, "Senior SDET · QA Automation &amp; Reliability Engineer · QA Consultant", "sdet")
+
+    section(story, "Professional Summary")
+    story.append(Paragraph(
+        "Senior quality engineer with <b>6+ years</b> of experience building automation and release-confidence "
+        "systems across web, mobile, API, performance, security, and reliability engineering. Strong hands-on "
+        "delivery with <b>Playwright + TypeScript</b>, Selenium, Cypress, Appium, Postman, k6/JMeter, Docker, "
+        "AWS, Terraform, and CI/CD. Built MyGP's complete backend automation framework, led mobile QA through "
+        "production launch at Kinetik, and engineered resilience for payment-critical systems at Mastercard. "
+        "Upwork Top Rated with 23 completed jobs and a 5.0 rating.", BODY,
+    ))
+
+    section(story, "Core SDET Competencies")
+    competency_table(story, [
+        ["Automation Architecture", "API &amp; Contract Testing", "Mobile Automation"],
+        ["Performance Engineering", "Security Testing", "CI/CD Quality Gates"],
+        ["Reliability &amp; Observability", "Test Strategy &amp; Release QA", "Mentoring &amp; Code Review"],
+    ], doc.width)
+
+    section(story, "Professional Experience")
+    job(story, "Senior Software QA Engineer · SDET", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Aug 2026", [
+        "Built Playwright + TypeScript automation and CI quality gates for an AI-powered sales-tax platform where correctness is product-critical.",
+        "Partnered with engineering on feature-level quality, risk analysis, regression coverage, and release readiness.",
+    ])
+    job(story, "Software Automation Engineer II", "All Generation Tech — New York, USA (remote)", "Feb 2024 – May 2026", [
+        "Designed and maintained automation for regulated insurance platforms serving CFC, Tokio Marine Kiln, and American National (ANICO).",
+    ])
+    job(story, "Senior Software Automation &amp; Reliability Engineer", "Mastercard — remote", "Jan 2025 – Jun 2025", [
+        "Built functional and performance automation; ran JMeter/Locust load tests and controlled chaos-engineering exercises for payment-critical systems.",
+        "Implemented Prometheus/Grafana observability, AWS + Terraform infrastructure automation, CI/CD pipelines, and incident-response/DR playbooks.",
+    ])
+    job(story, "Augmented Senior Software QA Engineer", "Intelex via TCS — US client", "2024 – 2025", [
+        "Automated global Magento commerce coverage across four regions, including Twilio 2FA, multi-currency/language flows, and QuickBooks, ShipBob, and Mailchimp integrations.",
+    ])
+    job(story, "Software QA Engineer", "Grameenphone via Miaki — MyGP", "Feb 2024 – Mar 2025", [
+        "Architected and built the complete Playwright backend automation framework from zero for MyGP, covering the full backend regression surface.",
+    ])
+    job(story, "Software QA Engineer I", "Kinetik — New York, USA (remote)", "Sep 2023 – Sep 2025", [
+        "Led QA for Trip Scheduler, Trip Assistant, RCM, and the Kinetik Health App; delivered manual, API, Appium mobile, security, and load coverage.",
+        "Took the iOS/Android member app through production release; automated AWS-backed flows using Playwright, Lambda, SQS, and S3.",
+    ])
+    job(story, "Software QA Engineer &amp; Lead", "REVE Systems — Dhaka", "Dec 2022 – Aug 2023", [
+        "Led QA for Sothik and CBMS; improved Sothik performance by 60% and reduced critical defects by 30% through regression strategy.",
+        "Executed JMeter/LoadRunner performance tests and OWASP ZAP, Burp Suite, and Kali Linux security assessments.",
+    ])
+    job(story, "Junior Software QA Engineer", "Dynamic Solution Innovators — Dhaka", "Sep 2021 – Nov 2022", [
+        "Built Cypress automation for OpenCRVS and delivered QA for IPEMIS, Movandi 5G, and Altech using TestRail and CI practices.",
+    ])
+    job(story, "Software QA Engineer (part-time)", "CarryBags Ltd — London, UK (remote)", "Jul 2020 – Aug 2021", [
+        "Delivered functional, usability, compatibility, performance, mobile, and cross-device testing with disciplined regression coverage.",
+    ])
+
+    section(story, "Technical Toolkit")
+    tag_table(story, [
+        "Playwright", "TypeScript", "Selenium", "Cypress", "Appium", "Postman", "REST Assured",
+        "GraphQL", "k6", "JMeter", "Locust", "LoadRunner", "OWASP ZAP", "Burp Suite",
+        "Docker", "AWS", "Terraform", "Jenkins", "GitHub Actions", "GitLab CI", "Grafana",
+        "Prometheus", "QASE", "TestRail", "Jira", "Allure", "SQL", "Magento",
+    ], doc.width)
+
+    section(story, "Selected Engineering Outcomes")
+    for item in [
+        "Built MyGP's complete backend automation framework from zero with Playwright.",
+        "Led Kinetik Health App QA through App Store and Google Play production release.",
+        "Improved Sothik performance by 60% and reduced critical defects by 30%.",
+        "Created payment-system resilience coverage using load, observability, chaos, and DR practices.",
+        "Delivered 23 freelance QA engagements with a 5.0 rating and Top Rated status on Upwork.",
+    ]:
+        story.append(Paragraph(item, BULLET, bulletText="–"))
+
+    section(story, "Education")
+    story.append(Paragraph("B.Sc. Engineering, Computer Science &amp; Engineering — Shahjalal University of Science and Technology · 2017–2020", BULLET, bulletText="–"))
+    doc.build(story)
+
+
+def build_tpm():
+    doc = make_doc(TPM_OUT, "Technical Project Manager CV")
+    story = []
+    header(story, "Technical Project Manager · Product Delivery &amp; Engineering Operations · QA Leader", "cv.pdf")
+
+    section(story, "Professional Summary")
+    story.append(Paragraph(
+        "Technical Project Manager and engineering-delivery leader with <b>6+ years</b> of hands-on software "
+        "and quality experience. At Platformz, lead delivery for three client platforms with a <b>30+ person "
+        "cross-functional organization</b> spanning engineering, DevOps, design, QA, marketing, and HubSpot. "
+        "Own roadmaps, dependencies, risks, release readiness, executive reporting, and full QA strategy. "
+        "Known for turning ambiguous programs into measurable plans, including compressing a 12-month 3P "
+        "hybrid EDI initiative into approximately <b>60 days</b>.", BODY,
+    ))
+
+    section(story, "Core TPM Competencies")
+    competency_table(story, [
+        ["Program &amp; Portfolio Delivery", "Roadmaps &amp; Prioritization", "Cross-Team Coordination"],
+        ["RAID &amp; Dependency Management", "Executive &amp; Board Reporting", "Release Management"],
+        ["Agile / Scrum / Kanban", "Product &amp; QA Strategy", "Vendor &amp; Client Leadership"],
+    ], doc.width)
+
+    section(story, "Professional Experience")
+    job(story, "Technical Project Manager", "Platformz — platformz.us", "Sep 2024 – Present", [
+        "Own end-to-end delivery for FUR4, Rockerz, and DMV Raw Feeders with executive sponsorship; lead 30+ engineers, DevOps specialists, designers, QA professionals, marketers, and functional leads.",
+        "Translate business goals into roadmaps, sprint plans, ownership, milestones, release criteria, and executive-ready delivery reporting.",
+        "Run dependency, scope, resource, and risk management across frontend, backend, Magento, React, AWS, GraphQL, EDI, marketing, and operations workstreams.",
+        "Delivered a 12-month 3P hybrid EDI marketplace program in approximately 60 days across Amazon, Walmart, Target, Chewy, eBay, and Macy's.",
+        "Own release quality across automation, manual, API, security, load, and performance testing; report status, risks, and decisions to executive and board stakeholders.",
+    ])
+    job(story, "Senior Software QA Engineer · SDET", "Kintsugi — San Francisco, USA (remote)", "Sep 2025 – Aug 2026", [
+        "Led feature-level quality planning, engineering coordination, test strategy, and release readiness for an AI-powered sales-tax platform.",
+    ])
+    job(story, "Software Automation Engineer II", "All Generation Tech — New York, USA (remote)", "Feb 2024 – May 2026", [
+        "Coordinated automation delivery across regulated insurance clients including CFC, Tokio Marine Kiln, and American National (ANICO).",
+    ])
+    job(story, "Software QA Engineer I", "Kinetik — New York, USA (remote)", "Sep 2023 – Sep 2025", [
+        "Led quality strategy across Trip Scheduler, Trip Assistant, RCM, and the Kinetik Health App; coordinated product, engineering, DevOps, and release stakeholders.",
+        "Planned risk-based test coverage and release gates from manual QA through API, mobile automation, security, performance, and production launch.",
+    ])
+    job(story, "Senior Software Automation &amp; Reliability Engineer", "Mastercard — remote", "Jan 2025 – Jun 2025", [
+        "Facilitated reliability, chaos, incident-response, and disaster-recovery initiatives with platform engineers; mentored junior engineers.",
+    ])
+    job(story, "Augmented Senior Software QA Engineer", "Intelex via TCS — US client", "2024 – 2025", [
+        "Led quality coordination for a four-region global Magento platform covering regional requirements and third-party integrations.",
+    ])
+    job(story, "Software QA Engineer", "Grameenphone via Miaki — MyGP", "Feb 2024 – Mar 2025", [
+        "Owned planning and delivery of the complete backend automation framework for a large-scale telecom application.",
+    ])
+    job(story, "Earlier Quality Engineering Roles", "REVE Systems · Dynamic Solution Innovators · CarryBags Ltd", "Jul 2020 – Aug 2023", [
+        "Progressed from execution-focused QA to test planning, stakeholder communication, mentoring, risk-based quality leadership, and cross-team release support.",
+        "Delivered government, civic-tech, telecom, mobile, and e-commerce programs including Sothik, CBMS, OpenCRVS, and IPEMIS.",
+    ])
+
+    section(story, "Selected Program Portfolio")
+    for name, result in [
+        ("FUR4", "Five portals on Magento + React + GraphQL; multi-marketplace EDI, operations dashboard, dealer and referral ecosystems."),
+        ("Rockerz", "DTC, dealer, referral, and dealer-locator platforms with a four-zone interactive product configurator."),
+        ("DMV Raw Feeders", "Zone-based delivery routing, subscription management, referral workflows, and production operations."),
+        ("Kinetik Health", "Cross-product healthcare QA and release leadership covering scheduling, trip assistance, RCM, and mobile."),
+        ("MyGP", "Backend automation program designed and delivered from zero for Bangladesh's largest mobile operator app."),
+    ]:
+        story.append(Paragraph(f"<b>{name}:</b> {result}", BULLET, bulletText="–"))
+
+    section(story, "Delivery Toolkit")
+    tag_table(story, [
+        "Jira", "Confluence", "QASE", "TestRail", "Scrum", "Kanban", "RAID Logs",
+        "Roadmaps", "Release Planning", "Risk Management", "Stakeholder Reporting", "Team Leadership", "EDI", "Magento",
+        "React", "GraphQL", "AWS", "Docker", "Playwright", "k6", "JMeter",
+    ], doc.width)
+
+    section(story, "Education")
+    story.append(Paragraph("B.Sc. Engineering, Computer Science &amp; Engineering — Shahjalal University of Science and Technology · 2017–2020", BULLET, bulletText="–"))
+    doc.build(story)
+
+
+if __name__ == "__main__":
+    build_sdet()
+    build_tpm()
+    print("WROTE", SDET_OUT)
+    print("WROTE", TPM_OUT)
