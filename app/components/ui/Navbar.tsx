@@ -175,6 +175,17 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
+          {/* Always-visible CV shortcut — opens a clean, shareable PDF URL. */}
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Arifuzzaman Antor's CV"
+            className="inline-flex whitespace-nowrap rounded-lg border border-cyan/35 bg-cyan/10 px-2.5 py-1.5 text-xs font-bold text-cyan transition-all hover:-translate-y-0.5 hover:bg-cyan/20"
+          >
+            📘 CV
+          </a>
+
           {/* Hot headline buttons — Personal Brand Studio + Podcast */}
           {HOT.map((b) => (
             <a
