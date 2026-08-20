@@ -177,6 +177,12 @@ export default function Hero() {
           >
             ⭐ Top Rated on Upwork
           </a>
+          <a
+            href="/verified"
+            className="inline-flex items-center gap-2 rounded-xl border border-cyan/40 bg-cyan/10 px-4 py-3.5 text-sm font-medium text-cyan transition-all hover:-translate-y-0.5 hover:bg-cyan/20"
+          >
+            🪪 Govt-Verified Freelancer
+          </a>
         </div>
 
         {/* Animated counters */}

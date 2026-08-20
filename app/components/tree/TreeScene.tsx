@@ -133,12 +133,11 @@ function SpiderWebs({ positions }: { positions: [number, number, number][] }) {
 // Falling leaves — drift down like snow from the canopy
 function FallingLeaves({ positions, count = 60 }: { positions: [number, number, number][]; count?: number }) {
   const ref = useRef<THREE.Points>(null);
-  const { posArr, speeds, drifts, spins } = useMemo(() => {
+  const { posArr, speeds, drifts } = useMemo(() => {
     const rng = makeRng(999);
     const posArr = new Float32Array(count * 3);
     const speeds = new Float32Array(count);
     const drifts = new Float32Array(count * 2);
-    const spins = new Float32Array(count);
     for (let i = 0; i < count; i++) {
       const src = positions[Math.floor(rng() * positions.length)];
       posArr[i * 3] = src[0] + (rng() - 0.5) * 2;
@@ -147,9 +146,8 @@ function FallingLeaves({ positions, count = 60 }: { positions: [number, number, 
       speeds[i] = 0.008 + rng() * 0.015;
       drifts[i * 2] = (rng() - 0.5) * 0.006;
       drifts[i * 2 + 1] = (rng() - 0.5) * 0.004;
-      spins[i] = (rng() - 0.5) * 0.02;
     }
-    return { posArr, speeds, drifts, spins };
+    return { posArr, speeds, drifts };
   }, [positions, count]);
 
   useFrame((state) => {
