@@ -91,6 +91,7 @@ function JourneyCard({
 function Journey() {
   const [openLv, setOpenLv] = useState<number | null>(null);
   const { addXp } = useGame();
+  const orderedJourney = [...journey].sort((a, b) => a.lv - b.lv);
 
   const toggle = (lv: number) => {
     setOpenLv((o) => (o === lv ? null : lv));
@@ -117,7 +118,7 @@ function Journey() {
         />
 
         <ol className="space-y-10">
-          {journey.map((step, i) => {
+          {orderedJourney.map((step, i) => {
             const left = i % 2 === 0;
             return (
               <li key={step.lv} className="relative sm:grid sm:grid-cols-2 sm:gap-12">

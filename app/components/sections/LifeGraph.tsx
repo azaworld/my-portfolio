@@ -8,16 +8,16 @@ import Reveal from "../fx/Reveal";
 // orb continuously climbs the staircase. Scrolls horizontally on small screens.
 const STORY = [
   { year: "2020", icon: "🎮", role: "QA Engineer (part-time)", org: "CarryBags · London", lv: 1 },
-  { year: "2021", icon: "🌍", role: "Augmented Sr. SQA", org: "Intellex via TCS · US", lv: 2 },
-  { year: "2021", icon: "🐣", role: "Jr. QA Engineer", org: "DSI · OpenCRVS + IPEMIS", lv: 3 },
-  { year: "2022", icon: "💳", role: "Sr. Reliability Engineer", org: "Mastercard", lv: 4 },
-  { year: "2022", icon: "🛡️", role: "QA Engineer & Lead", org: "REVE · govt. systems", lv: 5 },
-  { year: "2023", icon: "🚑", role: "QA Engineer I", org: "Kinetik · New York", lv: 6 },
-  { year: "2024", icon: "📱", role: "QA Engineer", org: "Grameenphone · MyGP", lv: 7 },
-  { year: "2024", icon: "🛟", role: "Automation Eng II", org: "All Gen Tech · NY", lv: 8 },
-  { year: "2024", icon: "🎯", role: "Technical Project Manager", org: "Platformz", lv: 9 },
-  { year: "2025", icon: "🧠", role: "Sr. SDET", org: "Kintsugi · SF", lv: 10 },
-  { year: "2025", icon: "👑", role: "Founder & CEO", org: "AZAI Labs · AZADEMY", lv: 11 },
+  { year: "2021", icon: "🐣", role: "Jr. QA Engineer", org: "DSI · OpenCRVS + IPEMIS", lv: 2 },
+  { year: "2022", icon: "🛡️", role: "QA Engineer & Lead", org: "REVE · govt. systems", lv: 3 },
+  { year: "2023", icon: "🚑", role: "QA Engineer I", org: "Kinetik · New York", lv: 4 },
+  { year: "2024", icon: "📱", role: "QA Engineer", org: "Grameenphone · MyGP", lv: 5 },
+  { year: "2024", icon: "🛟", role: "Automation Eng II", org: "All Gen Tech · NY", lv: 6 },
+  { year: "2024–25", icon: "🌍", role: "Augmented Sr. SQA", org: "Intelex via TCS · US", lv: 7 },
+  { year: "Sep 2024|— Present", icon: "🎯", role: "Technical Project Manager", org: "Platformz", lv: 8 },
+  { year: "Jan–Jun|2025", icon: "💳", role: "Sr. Reliability Engineer", org: "Mastercard", lv: 9 },
+  { year: "2025", icon: "👑", role: "Founder & CEO", org: "AZAI Labs · AZADEMY", lv: 10 },
+  { year: "Sep 2025", icon: "🧠", role: "Sr. SDET", org: "Kintsugi · SF", lv: 11 },
   { year: "2026", icon: "🚀", role: "Co-Founder & CTO", org: "Upward · upwardbd.com", lv: 12 },
 ];
 
@@ -100,7 +100,7 @@ export default function LifeGraph() {
         <div className="-mx-4 mt-4 max-w-[calc(100%+2rem)] overflow-x-auto px-4 sm:-mx-6 sm:max-w-[calc(100%+3rem)] sm:px-6">
           <svg
             viewBox={`0 0 ${W} ${H}`}
-            className="w-[820px] sm:w-full"
+            className="w-[1040px] sm:w-full"
             role="img"
             aria-label="Career staircase from QA Engineer in 2020 to Co-Founder & CTO of Upward in 2026"
           >
@@ -163,6 +163,7 @@ export default function LifeGraph() {
               const isLast = i === n - 1;
               const lx = isFirst ? 10 : isLast ? W - 10 : labelX(p.x);
               const anchor = isFirst ? "start" : isLast ? "end" : "middle";
+              const yearLines = s.year.split("|");
               return (
                 <g
                   key={i}
@@ -177,8 +178,19 @@ export default function LifeGraph() {
                   <text x={p.x} y={p.y + 5} textAnchor="middle" fontSize="14">{s.icon}</text>
 
                   {/* year + level — fixed rows at the bottom, clear of all labels */}
-                  <text x={p.x} y={H - 20} textAnchor="middle" fontSize="12.5" fontWeight="700" fill={COLORS[i]}>
-                    {s.year}
+                  <text
+                    x={p.x}
+                    y={yearLines.length > 1 ? H - 29 : H - 20}
+                    textAnchor="middle"
+                    fontSize="11.5"
+                    fontWeight="700"
+                    fill={COLORS[i]}
+                  >
+                    {yearLines.map((line, lineIndex) => (
+                      <tspan key={line} x={p.x} dy={lineIndex === 0 ? 0 : 12}>
+                        {line}
+                      </tspan>
+                    ))}
                   </text>
                   <text x={p.x} y={H - 5} textAnchor="middle" fontSize="9.5" fill="#8B93B0" fontFamily="monospace">
                     lv {s.lv}

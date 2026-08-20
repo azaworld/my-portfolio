@@ -113,14 +113,14 @@ job("QA Engineer I", "Kinetik — Long Island City, New York, USA (remote)", "Se
     "QA lead for the <b>Kinetik Health App</b> (iOS &amp; Android, App Store &amp; Google Play) — NEMT member app; 26,840+ pilot rides, 1.5M+ members across 44 states. Full lifecycle: manual, Playwright/TS API automation (AWS Lambda, SQS, S3), <b>Appium mobile automation</b>, load testing.",
     "Zero-surprise weekly launches across Trip Scheduler, Trip Assistant &amp; RCM; QA architecture adopted org-wide.",
 ])
-job("Sr. Software Automation &amp; Reliability Engineer", "Mastercard — remote", "Feb 2022 – Aug 2023", [
+job("Sr. Software Automation &amp; Reliability Engineer", "Mastercard — remote", "Jan 2025 – Jun 2025", [
     "Chaos engineering, observability (Prometheus/Grafana), and AWS + Terraform infrastructure automation for payment-critical systems.",
     "Built CI/CD pipelines (Jenkins, GitLab CI); authored incident-response &amp; DR playbooks; mentored junior engineers.",
 ])
 job("Software QA Engineer &amp; Lead", "REVE Systems — Dhaka", "Dec 2022 – Aug 2023", [
     "QA Lead for <b>Sothik</b> (spell.bangla.gov.bd) — Bangladesh govt. official Bangla spell checker (Bangla Academy): performance up <b>60%</b>, defects down <b>30%</b>. QA Engineer for <b>CBMS</b> (cbc.gov.bd) — govt. Customs Bond system. Security (OWASP ZAP, Burp Suite, Kali Linux), performance (JMeter, LoadRunner), mobile (Xamarin, AWS Device Farm).",
 ])
-job("Augmented Sr. Software QA Engineer", "Intellex via TCS — US client, global Magento (4 regions)", "2021 – 2022", [
+job("Augmented Sr. Software QA Engineer", "Intelex via TCS — US client, global Magento (4 regions)", "2024 – 2025", [
     "2FA/verification flows (Twilio, SendGrid); multi-currency &amp; multi-language commerce validation across USA, UK, Canada &amp; Europe; Magento ↔ QuickBooks/ShipBob/Mailchimp integrations.",
 ])
 job("Jr. Software QA Engineer", "Dynamic Solution Innovators — Dhaka", "Sep 2021 – Nov 2022", [

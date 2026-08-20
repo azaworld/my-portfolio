@@ -8,8 +8,10 @@ import TiltCard from "../ui/TiltCard";
 import CountUp from "../fx/CountUp";
 import { useGame } from "../game/GameProvider";
 
+const orderedMissions = [...missions].sort((a, b) => b.start - a.start);
+
 // Mission number = position from the oldest (M-01) to the newest.
-const missionNumber = (m: Mission) => missions.length - missions.indexOf(m);
+const missionNumber = (m: Mission) => orderedMissions.length - orderedMissions.indexOf(m);
 
 function MissionModal({ mission, onClose }: { mission: Mission; onClose: () => void }) {
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -204,7 +206,7 @@ export default function MissionLog() {
         </p>
       </Reveal>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {missions.map((mission, i) => (
+        {orderedMissions.map((mission, i) => (
           <MissionCard key={mission.id} mission={mission} onOpen={openDebrief} delay={(i % 3) * 100} />
         ))}
       </div>
