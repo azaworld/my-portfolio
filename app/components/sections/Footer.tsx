@@ -56,6 +56,12 @@ export default function Footer() {
         {/* Résumé + CV downloads — easy to find, one tap */}
         <div className="flex flex-wrap justify-center gap-3">
           <a
+            href="/sdet"
+            className="flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-5 py-2.5 text-sm font-semibold text-amber transition-all hover:-translate-y-0.5 hover:bg-amber/20"
+          >
+            🧪 SDET CV <span className="text-xs font-normal opacity-70">(shareable page)</span>
+          </a>
+          <a
             href="/resume.pdf"
             download="Arifuzzaman_Antor_Sr_QA_Engineer_SDET_Resume.pdf"
             className="flex items-center gap-2 rounded-full border border-cyan/40 bg-cyan/10 px-5 py-2.5 text-sm font-semibold text-cyan transition-all hover:-translate-y-0.5 hover:bg-cyan/20"

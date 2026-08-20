@@ -179,6 +179,11 @@ export default function Contact() {
                 </a>
               </li>
               <li>
+                <a href="/sdet" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
+                  <span aria-hidden>🧪</span> SDET & QA Automation CV — shareable page
+                </a>
+              </li>
+              <li>
                 <a href="/resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
                   <span aria-hidden>📄</span> Résumé — Sr. QA · SDET (PDF)
                 </a>

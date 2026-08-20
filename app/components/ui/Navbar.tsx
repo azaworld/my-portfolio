@@ -15,6 +15,7 @@ const LINKS = [
 
 // Secondary sections — live in the "More ▾" dropdown (desktop) and the mobile menu.
 const MORE_LINKS = [
+  { label: "SDET CV", href: "/sdet" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#community" },
