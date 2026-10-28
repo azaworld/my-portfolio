@@ -34,7 +34,7 @@ export default function BiodataClient() {
         </h1>
         <p className="mt-1 font-mono text-xs uppercase tracking-[0.3em] text-muted">Biodata</p>
         <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-muted">
-          Founder, engineer, and delivery leader from a respectable Muslim family — building companies,
+          Engineer and delivery leader from a respectable Muslim family — building companies,
           teaching technology, and running a charitable foundation in honor of his father.
         </p>
       </header>
@@ -55,7 +55,7 @@ export default function BiodataClient() {
 
       <Section title="Profession & Career">
         <Row label="Current Roles">
-          Founder &amp; CEO — <a href="https://azailabs.dev" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZAI Labs</a> (AI products &amp; services) ·
+          Ventures Lead — <a href="https://azailabs.dev" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZAI Labs</a> (AI products &amp; services) ·
           Technical Project Manager — <a href="https://platformz.us" target="_blank" rel="noreferrer" className="text-cyan hover:underline">Platformz</a> (US) ·
           Sr. Software Engineer — Kintsugi (San Francisco, remote)
         </Row>
@@ -67,14 +67,14 @@ export default function BiodataClient() {
         <Row label="Freelance Record">
           Upwork <span className="text-amber">Top Rated</span> — 23 completed jobs, every one rated ★5.0
         </Row>
-        <Row label="Ventures Founded">
+        <Row label="Ventures">
           <a href="https://azailabs.dev" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZAI Labs</a> ·{" "}
           <a href="https://azademy.vercel.app" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZADEMY</a> (tech academy) ·{" "}
           <a href="https://azapodcast.com" target="_blank" rel="noreferrer" className="text-cyan hover:underline">AZA Execution Podcast</a> ·{" "}
           Listen2AZA (audiobooks)
         </Row>
         <Row label="Community & Faith">
-          Founder &amp; runner of the{" "}
+          Runs the{" "}
           <a href="https://ssasf.vercel.app" target="_blank" rel="noreferrer" className="text-cyan hover:underline">
             Silent Sacrifice Abdus Sattar Foundation
           </a>{" "}

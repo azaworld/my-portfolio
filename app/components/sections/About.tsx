@@ -10,7 +10,7 @@ import { useGame } from "../game/GameProvider";
 
 // Roles shown as animated chips in the origin column.
 const roleBadges = [
-  { icon: "👑", label: "Founder", color: "var(--amber)" },
+  { icon: "👑", label: "Ventures Lead", color: "var(--amber)" },
   { icon: "🎙️", label: "Podcaster", color: "var(--magenta)" },
   { icon: "🎯", label: "Technical Project Manager", color: "var(--violet)" },
   { icon: "🧠", label: "Sr. Software Engineer", color: "var(--cyan)" },

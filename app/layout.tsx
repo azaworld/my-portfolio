@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 const SITE = "https://azantor.xyz";
-const TITLE = "Arifuzzaman “Antor” — Founder & CEO, Technical Project Manager & QA Leader";
+const TITLE = "Arifuzzaman “Antor” — Senior SDET, Technical Project Manager & QA Leader";
 const DESCRIPTION =
-  "Arifuzzaman Antor (Arifuz Zaman Antor / Azantor / azaworld) — Founder & CEO of AZAI Labs, Co-Founder & CTO of Upward, Technical Project Manager at Platformz, QA & Delivery Leader, SDET, podcaster and AI tech instructor from Dhaka, Bangladesh. 16+ years of combined experience across parallel roles, compressed into 6 calendar years.";
+  "Arifuzzaman Antor (Arifuz Zaman Antor / Azantor / azaworld) — Technical Project Manager at Platformz, QA & Delivery Leader, Senior SDET, podcaster and AI tech instructor from Dhaka, Bangladesh. 16+ years of combined experience across parallel roles, compressed into 6 calendar years.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "AZA Execution Podcast", "Personal Brand Studio", "Listen2AZA",
     "Technical Project Manager", "TPM", "Sr. Software Engineer", "SDET",
     "QA Engineer", "QA Lead", "Software QA", "Test Automation", "Playwright",
-    "Cypress", "Appium", "k6 load testing", "AI agents", "Founder", "CEO",
+    "Cypress", "Appium", "k6 load testing", "AI agents",
     "Dhaka Bangladesh", "Bangladesh QA engineer", "remote QA engineer", "portfolio",
   ],
   alternates: { canonical: SITE },
@@ -71,12 +71,10 @@ const personLd = {
   ],
   url: SITE,
   image: `${SITE}/og.png`,
-  jobTitle: "Founder & CEO · Co-Founder & CTO · Technical Project Manager · QA & Delivery Leader",
+  jobTitle: "Senior SDET · Technical Project Manager · QA & Delivery Leader",
   hasOccupation: [
-    { "@type": "Occupation", name: "Co-Founder & CTO" },
     { "@type": "Occupation", name: "Technical Project Manager" },
     { "@type": "Occupation", name: "QA Lead / SDET" },
-    { "@type": "Occupation", name: "Founder & CEO" },
     { "@type": "Occupation", name: "Podcast Host" },
     { "@type": "Occupation", name: "AI & Tech Instructor" },
   ],
@@ -143,7 +141,7 @@ const podcastLd = {
   sameAs: ["https://www.youtube.com/@azapod", "https://www.facebook.com/azapod"],
 };
 
-// Organizations he founded — connects "AZAI Labs founder", "AZADEMY founder",
+// Organizations he is associated with — connects "AZAI Labs", "AZADEMY",
 // and "Personal Brand Studio" searches back to him.
 const orgsLd = [
   {
@@ -152,9 +150,7 @@ const orgsLd = [
     name: "Upward",
     url: "https://www.upwardbd.com",
     slogan: "One growth partner. Not ten vendors.",
-    description: "AI-powered business-growth partner — four divisions and eight AI-powered services across media, marketing, technology, and healthcare. Co-founded by Arifuzzaman Antor (CTO).",
-    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
-    foundingDate: "2026",
+    description: "AI-powered business-growth partner — four divisions and eight AI-powered services across media, marketing, technology, and healthcare.",
   },
   {
     "@context": "https://schema.org",
@@ -163,8 +159,6 @@ const orgsLd = [
     url: "https://azailabs.dev",
     slogan: "Build with agents, not headcount.",
     description: "AI agents lab shipping practical automation for quality, operations, and decision-making — AI products, services & augmented AI talent.",
-    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
-    foundingDate: "2025",
   },
   {
     "@context": "https://schema.org",
@@ -172,8 +166,7 @@ const orgsLd = [
     name: "AZADEMY",
     url: "https://azademy.vercel.app",
     slogan: "Learning meets earning.",
-    description: "Tech academy teaching CS, AI & technology, freelancing, and how to land remote jobs — founded by Arifuzzaman Antor.",
-    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+    description: "Tech academy teaching CS, AI & technology, freelancing, and how to land remote jobs.",
   },
   {
     "@context": "https://schema.org",
@@ -181,16 +174,14 @@ const orgsLd = [
     name: "Personal Brand Studio",
     url: `${SITE}/personal-brand-studio`,
     slogan: "Premium personal-brand websites, built for you.",
-    description: "Bespoke, animated personal-brand websites for doctors, founders, consultants, and executives — founded by Arifuzzaman Antor.",
-    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+    description: "Bespoke, animated personal-brand websites for doctors, founders, consultants, and executives.",
   },
   {
     "@context": "https://schema.org",
     "@type": "NGO",
     name: "Silent Sacrifice Abdus Sattar Foundation",
     url: "https://ssasf.vercel.app",
-    description: "Scholarships, mentorship, Quran education, and community support in Bangladesh — founded by Arifuzzaman Antor in honor of his father.",
-    founder: { "@type": "Person", name: "Arifuzzaman Antor", url: SITE },
+    description: "Scholarships, mentorship, Quran education, and community support in Bangladesh in honor of his father.",
   },
 ];
 

@@ -16,9 +16,9 @@ const STORY = [
   { year: "2024–25", icon: "🌍", role: "Augmented Sr. SQA", org: "Intelex via TCS · US", lv: 7 },
   { year: "Sep 2024|— Present", icon: "🎯", role: "Technical Project Manager", org: "Platformz", lv: 8 },
   { year: "Jan–Jun|2025", icon: "💳", role: "Sr. Reliability Engineer", org: "Mastercard", lv: 9 },
-  { year: "2025", icon: "👑", role: "Founder & CEO", org: "AZAI Labs · AZADEMY", lv: 10 },
+  { year: "2025", icon: "👑", role: "Ventures Lead", org: "AZAI Labs · AZADEMY", lv: 10 },
   { year: "Sep 2025", icon: "🧠", role: "Sr. SDET", org: "Kintsugi · SF", lv: 11 },
-  { year: "2026", icon: "🚀", role: "Co-Founder & CTO", org: "Upward · upwardbd.com", lv: 12 },
+  { year: "2026", icon: "🚀", role: "Technology Lead", org: "Upward · upwardbd.com", lv: 12 },
 ];
 
 const COLORS = [
@@ -102,7 +102,7 @@ export default function LifeGraph() {
             viewBox={`0 0 ${W} ${H}`}
             className="w-[1040px] sm:w-full"
             role="img"
-            aria-label="Career staircase from QA Engineer in 2020 to Co-Founder & CTO of Upward in 2026"
+            aria-label="Career staircase from QA Engineer in 2020 to Technology Lead at Upward in 2026"
           >
             <defs>
               <linearGradient id="life-line" x1="0" y1="1" x2="1" y2="0">

@@ -54,7 +54,7 @@ export default function Projects() {
                   <div className="flex flex-1 flex-col p-5">
                     <div className="flex items-start justify-between gap-3">
                       <h3 className="font-semibold leading-snug">{p.name}</h3>
-                      {isLink && <span className="shrink-0 text-sm text-cyan">↗</span>}
+                      {isLink && <span className="shrink-0 font-mono text-xs text-cyan">{p.link.includes("github.com") ? "GitHub ↗" : "↗"}</span>}
                     </div>
                     <p className="mt-1 font-mono text-[11px] text-cyan">{p.org}</p>
                     <p className="font-mono text-[10px] text-muted">{p.period}</p>

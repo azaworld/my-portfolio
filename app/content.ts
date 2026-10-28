@@ -15,9 +15,9 @@ export const profile = {
     "I solve blockers before breakfast",
   ],
   identity:
-    "Founder & CEO @ AZAI Labs · Co-Founder & CTO @ Upward · Technical Project Manager @ Platformz · QA & Delivery Leader · Podcaster",
+    "Technical Project Manager @ Platformz · Senior SDET · QA & Delivery Leader · Podcaster",
   pitch:
-    "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms, and I build companies — AZAI Labs ships AI products and augmented AI talent, Upward (upwardbd.com) is the AI-powered growth partner I co-founded as CTO, and AZADEMY teaches engineers to land remote jobs and ace interviews.",
+    "The person who turns chaos into shipped products. I'm the TPM at Platformz running three client platforms. Alongside that I work with AZAI Labs (AI products and augmented AI talent), Upward (upwardbd.com, an AI-powered growth partner), and AZADEMY, which teaches engineers to land remote jobs and ace interviews.",
   email: "arifuzantor@gmail.com",
   linkedin: "https://linkedin.com/in/azantor",
   github: "https://github.com/azaworld",
@@ -51,7 +51,7 @@ export const careerTotals = [
   { value: 30, suffix: "+", label: "People led across teams" },
   { value: 50, suffix: "+", label: "Projects & products shipped" },
   { value: 23, suffix: "", label: "Freelance jobs · all ★5.0" },
-  { value: 5, suffix: "", label: "Ventures founded" },
+  { value: 5, suffix: "", label: "Ventures" },
 ];
 
 // RPG character stats for the About section (0–100)
@@ -66,8 +66,7 @@ export const originStory = [
   `Every team has that person who sees the whole board — who knows which piece is
    blocked, which dependency is about to bite, and which conversation will unblock
    three engineers at once. That's the role I was built for.`,
-  `Today I build companies and run delivery: founder & CEO of AZAI Labs, founder of
-   AZADEMY and Listen2AZA, TPM at Platformz — and I run the
+  `Today I run delivery as TPM at Platformz, work with AZAI Labs and AZADEMY, and support the
    Silent Sacrifice Abdus Sattar Foundation in honor of my father. The mission
    everywhere is the same: turn chaos into shipped products. Here's how the
    character leveled up:`,
@@ -203,14 +202,14 @@ export const journey: JourneyStep[] = [
     icon: "🎯",
     title: "Technical Project Manager",
     where: "Platformz",
-    note: "3 client platforms · 30+ person team · CEO/CTO/CFO/CMO & board reporting.",
+    note: "3 client platforms · 30+ person team · C-suite & board reporting.",
     details: [
       "FUR4 (fur4.com) — DTC storefront, dealer portal, referral portal, GOD ops dashboard, AI ops tower; 60-day 3P EDI program across Amazon, Walmart, Target, Chewy, eBay, Macy's",
       "Rockerz (rockerz.com) — 4-zone interactive product configurator, DTC, dealer portal, dealer-locator, referral portal on Magento + React + AWS",
       "DMV Raw Feeders (dmvrawfeeders.com) — zone-based delivery routing, subscription management, referral portal",
       "Full QA ownership: automation (Playwright/TS), manual, security (OWASP ZAP), load & performance (JMeter/k6) across all portals",
       "Led 30+ person cross-functional team: engineering, DevOps, FE, BE, design, marketing, HubSpot",
-      "CEO, CTO, CFO, CMO & board of directors reporting — roadmap, risk register, delivery status, and P&L alignment",
+      "C-suite & board of directors reporting — roadmap, risk register, delivery status, and P&L alignment",
     ],
   },
   {
@@ -229,7 +228,7 @@ export const journey: JourneyStep[] = [
     lv: 10,
     year: "2025 — Present",
     icon: "👑",
-    title: "Founder & CEO — New Game+",
+    title: "Ventures Lead — New Game+",
     where: "AZAI Labs · AZADEMY · Listen2AZA · SSAS Foundation",
     note: "Build with agents. Teach engineers. Tell stories. Honor my father.",
     details: [
@@ -243,11 +242,11 @@ export const journey: JourneyStep[] = [
     lv: 12,
     year: "2026 — Present",
     icon: "🚀",
-    title: "Co-Founder & CTO",
+    title: "Technology Lead",
     where: "Upward — upwardbd.com",
     note: "AI-powered business-growth partner · 4 divisions · 8 AI services.",
     details: [
-      "Co-founded Upward — one integrated growth partner replacing ten scattered vendors",
+      "Upward — one integrated growth partner replacing ten scattered vendors",
       "Own the technology: platform, AI services, and engineering across all divisions",
       "4 divisions, 8 AI-powered services — media, marketing, technology & healthcare",
     ],
@@ -297,7 +296,7 @@ export const skillTree: SkillNode[] = [
     branch: "Leadership",
     level: 5,
     example:
-      "CEO, CTO, CFO, CMO & Board of Directors reporting at Platformz — roadmap, risk register, delivery status, and P&L alignment. Direct delivery partnership with the CEO.",
+      "C-suite & Board of Directors reporting at Platformz — roadmap, risk register, delivery status, and P&L alignment. Direct delivery partnership with client leadership.",
   },
   {
     id: "qa-team-leadership",
@@ -467,7 +466,7 @@ export const skillTree: SkillNode[] = [
     branch: "Entrepreneurship",
     level: 5,
     example:
-      "Founder & CEO of AZAI Labs — an AI agents lab shipping practical automation for quality, operations, and decision-making (build with agents, not headcount) — and founder of AZADEMY, Listen2AZA, and the SSAS Foundation.",
+      "Builds at AZAI Labs — an AI agents lab shipping practical automation for quality, operations, and decision-making (build with agents, not headcount) — and involved with AZADEMY, Listen2AZA, and the SSAS Foundation.",
   },
   {
     id: "ai-agents",
@@ -499,7 +498,7 @@ export const skillTree: SkillNode[] = [
     branch: "Entrepreneurship",
     level: 5,
     example:
-      "Founded Personal Brand Studio — bespoke, animated personal-brand websites for doctors, founders, and executives. Three live client sites shipped: azantor.xyz, sharif-abid.xyz, timothymunroroberts.com.",
+      "Personal Brand Studio — bespoke, animated personal-brand websites for doctors, founders, and executives. Three live client sites shipped: azantor.xyz, sharif-abid.xyz, timothymunroroberts.com.",
   },
   {
     id: "freelancing",
@@ -522,7 +521,7 @@ export const skillTree: SkillNode[] = [
     branch: "Entrepreneurship",
     level: 4,
     example:
-      "Founder of AZADEMY — 'learning meets earning': practical AI & tech courses, build videos, and real interview sessions engineered to get CS people hired.",
+      "AZADEMY — 'learning meets earning': practical AI & tech courses, build videos, and real interview sessions engineered to get CS people hired.",
   },
   {
     id: "podcasting",
@@ -530,7 +529,7 @@ export const skillTree: SkillNode[] = [
     branch: "Entrepreneurship",
     level: 4,
     example:
-      "Host & founder of the AZA Execution Podcast (azapodcast.com) — long-form conversations on how world-class work gets done. Plus two YouTube channels: AZADEMY (interviews) and Listen2AZA (audiobooks).",
+      "Host of the AZA Execution Podcast (azapodcast.com) — long-form conversations on how world-class work gets done. Plus two YouTube channels: AZADEMY (interviews) and Listen2AZA (audiobooks).",
   },
   {
     id: "product",
@@ -553,7 +552,7 @@ export const skillTree: SkillNode[] = [
     branch: "Entrepreneurship",
     level: 4,
     example:
-      "Run the SSAS Foundation — scholarships, mentorship, and 60+ Quran students in year one. Founder of Telescope Team, empowering rural communities through education since 2017.",
+      "Involved with the SSAS Foundation — scholarships, mentorship, and 60+ Quran students in year one. Volunteer with Telescope Team, empowering rural communities through education since 2017.",
   },
 ];
 
@@ -585,7 +584,7 @@ export const missions: Mission[] = [
     preview: "/ventures/upward.jpg",
     impact: ["4 divisions", "8 AI services", "tech owned end-to-end"],
     codename: "Operation Upward",
-    role: "Co-Founder & CTO",
+    role: "Technology Lead",
     org: "Upward — upwardbd.com · Dhaka, Bangladesh",
     short: "Upward",
     period: "2026 — Present",
@@ -593,12 +592,11 @@ export const missions: Mission[] = [
     end: null,
     status: "ACTIVE",
     brief:
-      "Co-founded Upward — an AI-powered business-growth partner: four divisions and eight AI-powered services (media, marketing, technology, healthcare) under one roof. As CTO, I own the technology end to end.",
+      "Upward — an AI-powered business-growth partner: four divisions and eight AI-powered services (media, marketing, technology, healthcare) under one roof. I own the technology end to end.",
     objectives: [
       "Own the technology: platform architecture, AI services, and engineering across all four divisions",
       "Build and ship the 8 AI-powered services — media, marketing, technology & healthcare",
       "Position Upward as one integrated growth partner replacing ten scattered vendors",
-      "Co-lead the company with Co-CEO Sharif Md. Abid",
     ],
     bossFight:
       "Building a multi-division services company and its technology platform at the same time — while running delivery for three other client platforms. Ruthless prioritization, daily cadence, agents doing the heavy lifting.",
@@ -614,7 +612,7 @@ export const missions: Mission[] = [
     preview: "/ventures/azailabs.jpg",
     impact: ["AI agents in production", "2–10 person team"],
     codename: "Operation Genesis",
-    role: "Founder & CEO",
+    role: "Ventures Lead",
     org: "AZAI Labs — San Francisco, USA · remote-first from Dhaka",
     short: "AZAI Labs",
     period: "2025 — Present",
@@ -651,7 +649,7 @@ export const missions: Mission[] = [
     end: null,
     status: "ACTIVE",
     brief:
-      "Running delivery for three enterprise client platforms alongside the CEO — leading a 30+ person cross-functional team and owning full QA, engineering process, and C-suite reporting.",
+      "Running delivery for three enterprise client platforms alongside client leadership — leading a 30+ person cross-functional team and owning full QA, engineering process, and C-suite reporting.",
     objectives: [
       "FUR4 (fur4.com) — 5-portal enterprise omnichannel ecosystem: DTC storefront, B2B dealer portal (dealer.fur4.com), influencer referral portal (refer.fur4.com), GOD ops-health dashboard, AI operations control tower — on a Magento + React + GraphQL core",
       "FUR4 3P hybrid EDI program across Amazon, Walmart, Target, Chewy, eBay & Macy's — full EDI lifecycle compliance, end-to-end automation, inventory rules & SLA management",
@@ -659,7 +657,7 @@ export const missions: Mission[] = [
       "DMV Raw Feeders (dmvrawfeeders.com) — zone-based delivery routing, subscription management, referral portal",
       "Full QA ownership across all portals: automation (Playwright + TypeScript), manual testing, security (OWASP ZAP, Burp Suite), load & performance testing (JMeter, k6)",
       "Led 30+ person cross-functional team: FE engineers, BE engineers, DevOps, design, QA, marketing, and HubSpot",
-      "CEO, CTO, CFO, CMO & Board of Directors reporting — roadmap, risk register, delivery status, compliance, and P&L alignment",
+      "C-suite & Board of Directors reporting — roadmap, risk register, delivery status, compliance, and P&L alignment",
       "Daily delivery cadence across retail, EDI, integration, fulfillment, and engineering — single point of accountability",
     ],
     bossFight:
@@ -670,7 +668,7 @@ export const missions: Mission[] = [
       "3 enterprise client platforms in stable, monitored production",
       "Full QA coverage: automation + manual + security + load/performance across all portals",
       "30+ person cross-functional team on one delivery cadence",
-      "C-suite & board reporting trusted by CEO, CTO, CFO, CMO",
+      "C-suite & board reporting trusted by executive leadership",
     ],
     tech: ["Magento", "React", "GraphQL", "AWS", "EDI", "Docker", "Playwright", "JMeter", "k6", "OWASP ZAP", "HubSpot", "Jira", "CI/CD"],
   },
@@ -967,12 +965,12 @@ export const careerAnalytics = {
   // Seniority climb — role level (1–11) by year, for the growth curve.
   growth: [
     { year: "2020", level: 1, label: "QA (part-time)", icon: "🎮", color: "bg-blue-400" },
-    { year: "2021", level: 3, label: "Sr. SQA · Jr. QA", icon: "🌍", color: "bg-cyan-400" },
-    { year: "2022", level: 5, label: "Reliability · QA", icon: "💳", color: "bg-violet-400" },
+    { year: "2021", level: 3, label: "Jr. QA", icon: "🐣", color: "bg-cyan-400" },
+    { year: "2022", level: 5, label: "QA Engineer & Lead", icon: "🛡️", color: "bg-violet-400" },
     { year: "2023", level: 6, label: "QA Lead", icon: "🚑", color: "bg-magenta-400" },
     { year: "2024", level: 9, label: "Automation Eng II · TPM", icon: "🎯", color: "bg-amber-400" },
-    { year: "2025", level: 11, label: "Founder & CEO", icon: "👑", color: "bg-emerald-400" },
-    { year: "2026", level: 12, label: "Co-Founder & CTO, Upward", icon: "🚀", color: "bg-sky-400" },
+    { year: "2025", level: 11, label: "Ventures Lead", icon: "👑", color: "bg-emerald-400" },
+    { year: "2026", level: 12, label: "Technology Lead, Upward", icon: "🚀", color: "bg-sky-400" },
   ],
   // Where the experience concentrates (relative weight, 0–100).
   domains: [
@@ -1006,7 +1004,7 @@ export const services = [
       "Fractional TPM / delivery lead — standups, cadence, blocker-clearing, risk registers",
       "Product management — roadmap, prioritization, backlog, and customer-signal strategy",
       "Cross-team coordination for 30+ person orgs: engineering, DevOps, design, QA, marketing",
-      "CEO / CTO / CFO / CMO & board of directors reporting — P&L alignment, risk, delivery status",
+      "C-suite & board of directors reporting — P&L alignment, risk, delivery status",
       "Agile transformation — Scrum, Kanban, flow-based delivery, WIP limits, cycle-time tracking",
     ],
     ideal: "Startups scaling past 10 engineers, or enterprises that need a senior operator who reports to the C-suite.",
@@ -1211,7 +1209,7 @@ export const studio = {
       name: "Arifuzzaman Antor",
       role: "Product Builder",
       bio: "Building and evolving the platform through innovation, technology, and continuous improvement.",
-      cred: "TPM · Sr. Software Engineer · Founder, AZAI Labs",
+      cred: "TPM · Sr. Software Engineer · AZAI Labs",
       img: "antor",
       linkedin: "https://www.linkedin.com/in/azantor/",
       whatsapp: "8801580497264",
@@ -1337,7 +1335,7 @@ export const studio = {
   showcase: [
     {
       name: "Arifuzzaman Antor",
-      role: "Founder · Technical Project Manager · Engineer",
+      role: "Technical Project Manager · Senior SDET",
       url: "https://azantor.xyz",
       blurb: "The flagship demo — 3D living résumé, gamified sections, fully interactive.",
     },
@@ -1444,7 +1442,7 @@ export const treeNodes = [
 ];
 
 // ----------------------------------------------------------------------------
-// VENTURES — "founded worlds"
+// VENTURES
 // ----------------------------------------------------------------------------
 export const ventures = [
   {
@@ -1452,7 +1450,7 @@ export const ventures = [
     preview: "/ventures/upward.jpg",
     tagline: "One growth partner. Not ten vendors.",
     description:
-      "AI-powered business-growth partner — four divisions and eight AI-powered services across media, marketing, technology, and healthcare. Co-Founder & CTO, with Co-CEO Sharif Md. Abid. Founded 2026 · Dhaka.",
+      "AI-powered business-growth partner — four divisions and eight AI-powered services across media, marketing, technology, and healthcare. Launched 2026 · Dhaka.",
     theme: "cyan" as const,
     link: "https://www.upwardbd.com",
     icon: "🚀",
@@ -1463,7 +1461,7 @@ export const ventures = [
     preview: "/ventures/azailabs.jpg",
     tagline: "Build with agents, not headcount.",
     description:
-      "An AI lab that ships real work — building AI products, delivering AI services, and placing augmented AI talent so teams move faster. Founded 2025 · San Francisco HQ, remote-first from Dhaka. Founder & CEO.",
+      "An AI lab that ships real work — building AI products, delivering AI services, and placing augmented AI talent so teams move faster. Launched 2025 · San Francisco HQ, remote-first from Dhaka.",
     theme: "violet" as const,
     link: "https://azailabs.dev",
     icon: "🤖",
@@ -1474,7 +1472,7 @@ export const ventures = [
     preview: "/ventures/azademy.jpg",
     tagline: "Learning meets earning.",
     description:
-      "An academy that teaches CS, AI & technology, freelancing, and how to land remote jobs — plus real interviews with experts on how to give and take technical interviews. Founder.",
+      "An academy that teaches CS, AI & technology, freelancing, and how to land remote jobs — plus real interviews with experts on how to give and take technical interviews.",
     theme: "amber" as const,
     link: "https://azademy.vercel.app",
     icon: "🎓",
@@ -1485,7 +1483,7 @@ export const ventures = [
     preview: "/ventures/azapodcast.jpg",
     tagline: "Ideas are cheap. Execution is everything.",
     description:
-      "My podcast — long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done. Weekly, video & audio, Bangla & English. Now streaming. Host & founder.",
+      "My podcast — long-form conversations with operators, founders, builders, scientists, and artists on how world-class work actually gets done. Weekly, video & audio, Bangla & English. Now streaming. Host.",
     theme: "cyan" as const,
     link: "https://azapodcast.com",
     icon: "🎙️",
@@ -1496,7 +1494,7 @@ export const ventures = [
     preview: "/ventures/listen2aza.jpg",
     tagline: "Stories you can press play on.",
     description:
-      "An audiobook channel on YouTube — narrated books and stories for people who'd rather listen than scroll. Founder.",
+      "An audiobook channel on YouTube — narrated books and stories for people who'd rather listen than scroll.",
     theme: "magenta" as const,
     link: "https://www.youtube.com/@Listen2AZA",
     icon: "📚",
@@ -1587,7 +1585,7 @@ export const education = [
 export const volunteering = [
   {
     icon: "🔭",
-    role: "Founder",
+    role: "Volunteer",
     org: "Telescope Team",
     period: "2017 — Present",
     note: "Empowering rural communities through education — teacher training, digital literacy, infrastructure, and scholarships at the grassroots level.",

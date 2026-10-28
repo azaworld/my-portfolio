@@ -91,7 +91,7 @@ function GrowthCurve() {
         ))}
       </svg>
       <p className="mt-2 text-center text-xs text-muted">
-        Freelancer → Engineer → Lead → TPM → <span className="text-amber">Founder</span>
+        Freelancer → Engineer → Lead → TPM → <span className="text-amber">Ventures Lead</span>
       </p>
     </div>
   );

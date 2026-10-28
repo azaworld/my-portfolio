@@ -27,6 +27,16 @@ export const metadata: Metadata = {
   },
 };
 
+const sdetRepos: [string, string, string][] = [
+  ["EcomTestPilot", "Playwright + TypeScript E2E suite in Docker on AWS EC2, Teams alerts", "https://github.com/azaworld/playwright-e2e-docker-aws"],
+  ["FUR4 k6 Load Testing", "k6 load-testing suite for the FUR4 platform", "https://github.com/azaworld/Fur4-Load-Testing-K6"],
+  ["k6 GraphQL Load Testing", "GraphQL load scenarios, thresholds and reporting", "https://github.com/azaworld/k6-graphql-loadtesting"],
+  ["FirstTrip Playwright Framework", "Playwright QA automation suite with CI", "https://github.com/azaworld/firsttrip-playwright-qa-automation"],
+  ["Adobe Project Neo E2E", "Playwright E2E automation for a 3D design tool", "https://github.com/azaworld/Adobe-Project-Neo-Playwright"],
+  ["Cypress Cloud Parallel CI", "Cypress parallel runs, recording and CI integration", "https://github.com/azaworld/CypressCloudProject"],
+  ["QA Roadmap", "Open QA curriculum: manual, automation, AI, API, performance, security", "https://github.com/azaworld/qa-roadmap"],
+]
+
 const capabilities = [
   ["Automation", "Playwright · TypeScript · Selenium · Cypress · Appium"],
   ["API & Integration", "Postman · REST Assured · GraphQL · AWS APIs"],
@@ -101,6 +111,27 @@ export default function SdetCvPage() {
               <p className="mt-2 text-sm leading-relaxed text-muted">{tools}</p>
             </article>
           ))}
+        </section>
+
+        <section className="glass mt-6 rounded-3xl p-5 sm:p-8" aria-label="Code on GitHub">
+          <h2 className="font-display text-xl font-bold">Code on GitHub</h2>
+          <p className="mt-1 text-xs text-muted">
+            Full profile at{" "}
+            <a href={profile.github} target="_blank" rel="noreferrer" className="text-cyan hover:underline">
+              github.com/azaworld
+            </a>
+          </p>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {sdetRepos.map(([name, desc, url]) => (
+              <li key={url}>
+                <a href={url} target="_blank" rel="noreferrer" className="glass glow-border block h-full rounded-2xl p-4 hover:text-cyan">
+                  <span className="font-semibold">{name}</span>
+                  <span className="mt-1 block text-sm text-muted">{desc}</span>
+                  <span className="mt-2 block font-mono text-[11px] text-cyan">GitHub ↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="glass mt-6 overflow-hidden rounded-3xl p-3 sm:p-5">

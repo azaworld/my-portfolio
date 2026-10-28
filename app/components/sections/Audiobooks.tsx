@@ -18,7 +18,7 @@ export default function Audiobooks() {
   };
 
   return (
-    <Section id="audiobooks" kicker="founded world · listen2aza" title={<>The <span className="text-aurora">Audiobook</span> channel</>}>
+    <Section id="audiobooks" kicker="ventures · listen2aza" title={<>The <span className="text-aurora">Audiobook</span> channel</>}>
       <p className="-mt-4 mb-8 max-w-2xl text-sm text-muted">
         Listen2AZA — I narrate books worth hearing in Bangla, from marketing classics to
         productivity. Stories and ideas you can press play on.{" "}

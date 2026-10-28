@@ -15,7 +15,7 @@ const THEME_STYLES = {
 
 export default function Ventures() {
   return (
-    <Section id="ventures" kicker="founded worlds" title={<>Entre<span className="text-aurora">preneurship</span></>}>
+    <Section id="ventures" kicker="ventures" title={<>Ven<span className="text-aurora">tures</span></>}>
       <p className="-mt-4 mb-8 max-w-xl text-sm text-muted">
         Six ventures, all live — tap a preview to visit the real thing.
       </p>
