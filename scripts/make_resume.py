@@ -74,7 +74,7 @@ def header(story, headline, portfolio_path):
     story.append(Paragraph(headline, HEADLINE))
     story.append(Spacer(1, 2))
     story.append(Paragraph(
-        "Dhaka, Bangladesh · Remote worldwide · +880 1580 497264 · arifuzantor@gmail.com<br/>"
+        "+880 1580 497264 · arifuzantor@gmail.com<br/>"
         f"linkedin.com/in/azantor · github.com/azaworld · azantor.xyz/{portfolio_path}", CONTACT,
     ))
     story.append(Spacer(1, 4))
@@ -159,11 +159,11 @@ def build_sdet():
         "Led QA for Trip Scheduler, Trip Assistant, RCM, and the Kinetik Health App; delivered manual, API, Appium mobile, security, and load coverage.",
         "Took the iOS/Android member app through production release; automated AWS-backed flows using Playwright, Lambda, SQS, and S3.",
     ])
-    job(story, "Software QA Engineer &amp; Lead", "REVE Systems — Dhaka", "Dec 2022 – Aug 2023", [
+    job(story, "Software QA Engineer &amp; Lead", "REVE Systems", "Dec 2022 – Aug 2023", [
         "Led QA for Sothik and CBMS; improved Sothik performance by 60% and reduced critical defects by 30% through regression strategy.",
         "Executed JMeter/LoadRunner performance tests and OWASP ZAP, Burp Suite, and Kali Linux security assessments.",
     ])
-    job(story, "Junior Software QA Engineer", "Dynamic Solution Innovators — Dhaka", "Sep 2021 – Nov 2022", [
+    job(story, "Junior Software QA Engineer", "Dynamic Solution Innovators", "Sep 2021 – Nov 2022", [
         "Built Cypress automation for OpenCRVS and delivered QA for IPEMIS, Movandi 5G, and Altech using TestRail and CI practices.",
     ])
     job(story, "Software QA Engineer (part-time)", "CarryBags Ltd — London, UK (remote)", "Jul 2020 – Aug 2021", [
@@ -253,7 +253,7 @@ def build_tpm():
         ("Rockerz", "DTC, dealer, referral, and dealer-locator platforms with a four-zone interactive product configurator."),
         ("DMV Raw Feeders", "Zone-based delivery routing, subscription management, referral workflows, and production operations."),
         ("Kinetik Health", "Cross-product healthcare QA and release leadership covering scheduling, trip assistance, RCM, and mobile."),
-        ("MyGP", "Backend automation program designed and delivered from zero for Bangladesh's largest mobile operator app."),
+        ("MyGP", "Backend automation program designed and delivered from zero for the country's largest mobile operator app."),
     ]:
         story.append(Paragraph(f"<b>{name}:</b> {result}", BULLET, bulletText="–"))
 
