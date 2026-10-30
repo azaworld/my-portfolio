@@ -82,6 +82,13 @@ export default function Footer() {
           >
             📗 CV — Project Manager <span className="text-xs font-normal opacity-70">(PDF)</span>
           </a>
+          <a
+            href="/technical-project-manager-cv.pdf"
+            download="Arifuzzaman_Antor_Technical_Project_Manager_CV.pdf"
+            className="flex items-center gap-2 rounded-full border border-violet/40 bg-violet/10 px-5 py-2.5 text-sm font-semibold text-violet transition-all hover:-translate-y-0.5 hover:bg-violet/20"
+          >
+            🌍 CV — Technical Project Manager, International <span className="text-xs font-normal opacity-70">(PDF)</span>
+          </a>
         </div>
 
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted">
