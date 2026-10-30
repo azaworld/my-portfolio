@@ -194,6 +194,11 @@ export default function Contact() {
                 </a>
               </li>
               <li>
+                <a href="/project-manager-cv.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
+                  <span aria-hidden>📗</span> CV — Project Manager (PDF)
+                </a>
+              </li>
+              <li>
                 <a href="/ecard.png" download="Arifuzzaman-Antor-eCard.png" className="flex items-center gap-3 text-muted transition-colors hover:text-cyan">
                   <span aria-hidden>🪪</span> Download eCard (image)
                 </a>
